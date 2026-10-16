@@ -1,0 +1,67 @@
+{
+  "search_terms": [
+    "chartered accountant transaction advisory",
+    "financial due diligence",
+    "valuation chartered accountant",
+    "FP&A chartered accountant",
+    "finance manager chartered accountant"
+  ],
+  "location": "Mumbai, Maharashtra, India",
+  "distance_miles": 40,
+  "sites": [
+    "linkedin",
+    "indeed",
+    "naukri"
+  ],
+  "hours_old": 4,
+  "results_per_search": 10,
+  "max_jobs_to_analyse_per_run": 10,
+  "min_score_to_send": 65,
+  "min_salary_inr_per_year": 1300000,
+  "title_must_contain_any": [
+    "account",
+    "financ",
+    "fp&a",
+    "fpa",
+    "valuation",
+    "transaction",
+    "diligence",
+    "m&a",
+    "deal",
+    "consult",
+    "controller",
+    "advisory",
+    "investment banking",
+    "corporate finance",
+    "planning",
+    "analyst",
+    "ca "
+  ],
+  "title_exclude_any": [
+    "intern",
+    "trainee",
+    "article",
+    "director",
+    "vice president",
+    "vp ",
+    "avp",
+    "head ",
+    "chief",
+    "cfo",
+    "senior manager",
+    "sr. manager",
+    "sales",
+    "teacher",
+    "faculty",
+    "tutor",
+    "accounts payable",
+    "accounts receivable",
+    "data entry",
+    "insurance agent"
+  ],
+  "gemini_models": [
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-flash-lite-latest"
+  ]
+}

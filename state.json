@@ -1,0 +1,160 @@
+{
+ "seen": [
+  "kroll|finance manager ii",
+  "li-4477370948",
+  "tata motors global services limited|executive accounts receivable",
+  "cygnus solutions|assistant manager",
+  "biological e|direct taxation pharma industry",
+  "accenture|delivery operations associate manager inc",
+  "accenture|delivery operations team lead",
+  "bnp paribas|avp interco lec icare",
+  "bnp paribas|avp financial management accounting",
+  "li-4477373745",
+  "holiday concepts|accountant",
+  "divyesh j shah associates|audit and tax assistant",
+  "capwise financial services private limited|vice president vp investment banking defence aerospace",
+  "premier consultants|avp vp credit real estate finance and construction finance",
+  "vrecruitfirst|associate transaction advisory ca",
+  "east india udyog|assistant manager accounts",
+  "bdo india|assistant manager manager financial due diligence",
+  "capwise financial services private limited|partner director healthcare life sciences",
+  "jpmorganchase|centralized research group security resiliency initiative vice president",
+  "li-4479340750",
+  "premier consultants|relationship manager mnc",
+  "bdi group india|chartered accountant 1 2 years",
+  "kroll|trainee investigations diligence and compliance specialist",
+  "fibe|manager taxation",
+  "jpmorganchase|centralized research group security resiliency initiative associate",
+  "accenture|record to report ops associate",
+  "li-4476154267",
+  "austro plastic industries llp|accountant tally accountant",
+  "quick placements|account manager chartered accountant",
+  "rgas associates llp|junior associate article assistant",
+  "capwise financial services private limited|partner director industrial sector",
+  "alaric securities|business development manager",
+  "knotify services|client reporting specialist",
+  "only what s needed by food pharmer|financial reporting controllership international business",
+  "goel ganga developments|senior advocate legal",
+  "adm|senior manager finance controlling",
+  "li-4477369320",
+  "integrity data services|senior back office executive",
+  "mufg pension market services|apprentice ca",
+  "li-4480343977",
+  "navi mumbai international airport|lead finance accounts",
+  "li-4479341855",
+  "henkel|business controller",
+  "li-4440527527",
+  "danone|assistant manager finance",
+  "li-4480345590",
+  "centotech services private limited|senior finance consultant",
+  "li-4479327777",
+  "kraft heinz|financial analyst ii",
+  "li-4470004140",
+  "flexing it|media finance consultant",
+  "li-4480364327",
+  "dentsu global services|corporate finance manager audits controllership",
+  "li-4471437705",
+  "dp world|manager finance express logistics",
+  "li-4480357324",
+  "marsh|deputy manager finance and accounting taxation",
+  "li-4480356312"
+ ],
+ "tg_offset": 984431251,
+ "chat_id": 675453067,
+ "gap_log": [
+  {
+   "date": "2026-10-16",
+   "skill": "Term loan proposals & CMA preparation"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Pitch deck & CIM preparation"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "FEMA & corporate restructuring compliance"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Transfer pricing"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Industrial training student status"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "5-10 years of experience"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Aviation sector financial governance"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Manufacturing Industry exposure"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "7 Years experience (Post Qualification)"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "SAP B1 FICO"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Blackline"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "3-5 years post-qualification experience"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Media/FMCG finance experience"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Vendor payments & invoice processing operations"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Treasury management"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "IFRS"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "US GAAP"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "IFRS"
+  },
+  {
+   "date": "2026-10-16",
+   "skill": "Transfer pricing"
+  }
+ ],
+ "last_run": "2026-10-16T17:34+05:30",
+ "diag": {
+  "per_site": {
+   "linkedin": 50,
+   "indeed": 0,
+   "naukri": 30
+  },
+  "errors": [
+   "AI: Gemini failed: Expecting ',' delimiter: line 12 column 2 (char 194)"
+  ],
+  "secs_linkedin": 43,
+  "secs_indeed": 10,
+  "secs_naukri": 25,
+  "candidates": 25,
+  "analysed": 10,
+  "sent": 3,
+  "ai": "gemini"
+ }
+}

@@ -1,0 +1,295 @@
+{
+  "name": "ISMAEEL SYED, CA",
+  "contact": "{{CONTACT_LINE}}",
+  "linkedin_url": "https://www.linkedin.com/in/ismaeelsyed",
+  "headlines": {
+    "advisory": "Transaction Advisory  |  Financial Due Diligence  |  Valuation",
+    "fpa": "FP&A  |  Budgeting & MIS  |  Financial Reporting",
+    "consulting": "Finance Consulting  |  Transaction Advisory  |  Process Improvement"
+  },
+  "summaries": {
+    "advisory": "Chartered Accountant who has worked on both sides of a deal: diligencing a healthcare InsurTech acquisition structured through a demerger, and getting an industrial & logistics platform IPO-ready alongside a Big 4 team. Three years of audit on companies with ₹2,000+ Cr turnover taught me how numbers break; modelling and valuation are how I now put them to work.",
+    "fpa": "Chartered Accountant who builds the plans and reports management actually uses: an annual operating plan tested against prior-year actuals, Power BI variance dashboards, and MIS and fund-flow reporting during a ₹2,600 Cr IPO preparation. Three years of audit on companies with ₹2,000+ Cr turnover give me a sharp eye for where numbers go wrong.",
+    "consulting": "Chartered Accountant who likes working out how an unfamiliar business really makes money, from a healthcare InsurTech acquisition to an industrial & logistics platform preparing for IPO. I turn messy situations into usable outputs: operating plans, controls and SOPs, dashboards and automation that saved 50+ hours a month."
+  },
+  "current_job": {
+    "title": "Transformatrix Global LLP, Mumbai  —  Assistant Manager, Finance & Accounts",
+    "dates": "Nov 2025 – Present",
+    "sections": {
+      "fdd": {
+        "heading": "Financial Due Diligence  ·  Healthcare InsurTech acquisition",
+        "bullets": [
+          {
+            "id": "fdd1",
+            "text": {
+              "advisory": "Assessed a healthcare InsurTech target’s hospital-claim financing model (NBFC bridge loans pending insurer settlement) across revenue streams, hospital receivables and settlement-linked payables for the acquirer",
+              "fpa": "Mapped the revenue drivers and working-capital cycle of a healthcare InsurTech business, where NBFCs bridge-funded hospital claims until insurer settlement, to explain its earnings and cash flows to the acquirer",
+              "consulting": "Broke down how a healthcare InsurTech business made money (NBFC bridge funding of hospital claims until insurer settlement) and where that model carried earnings and counterparty risk"
+            },
+            "tags": [
+              "due diligence",
+              "revenue",
+              "working capital",
+              "receivable",
+              "business model",
+              "healthcare",
+              "insurance",
+              "nbfc",
+              "risk",
+              "cash flow"
+            ]
+          },
+          {
+            "id": "fdd2",
+            "text": {
+              "advisory": "Contributed to the quality-of-earnings review and GST / income-tax exposure analysis for the acquirer",
+              "fpa": "Reviewed earnings quality and GST / income-tax exposures to separate recurring performance from one-offs",
+              "consulting": "Worked on the quality-of-earnings and GST / income-tax exposure review that fed the acquirer’s risk assessment"
+            },
+            "optional": true,
+            "tags": [
+              "quality of earnings",
+              "qoe",
+              "ebitda",
+              "tax",
+              "gst",
+              "income tax",
+              "normalis",
+              "normaliz"
+            ]
+          },
+          {
+            "id": "fdd3",
+            "text": {
+              "advisory": "Traced how a Sec 230–232 demerger scheme moved **~₹5 Cr of liabilities** into the resulting company ahead of acquisition, and evaluated the exposure for the client; also supported tax diligence on a cross-border deal",
+              "fpa": "Identified **~₹5 Cr of liabilities** that a Sec 230–232 demerger scheme was shifting into the resulting company before the sale, and quantified the balance-sheet impact for the client",
+              "consulting": "Uncovered how a Sec 230–232 demerger scheme was moving **~₹5 Cr of liabilities** into the resulting company before the sale, and set out the exposure for the client; also supported tax diligence on a cross-border deal"
+            },
+            "tags": [
+              "demerger",
+              "restructuring",
+              "scheme",
+              "liabilit",
+              "cross-border",
+              "m&a",
+              "acquisition",
+              "deal",
+              "balance sheet"
+            ]
+          }
+        ]
+      },
+      "ipo": {
+        "heading": "Pre-IPO Reporting  ·  Industrial & logistics parks platform, alongside a Big 4 firm",
+        "bullets": [
+          {
+            "id": "ipo1",
+            "text": {
+              "advisory": "Prepared financial statements for all **12 entities in a ~₹1,000 Cr acquisition** by the platform ahead of its **₹2,600 Cr IPO**; supported group consolidation and first-time Ind AS adoption (Ind AS 101)",
+              "fpa": "Prepared financial statements for **12 acquired entities** and supported group consolidation and first-time Ind AS adoption (Ind AS 101) for a platform preparing a **₹2,600 Cr IPO**",
+              "consulting": "Delivered financial statements for all **12 entities in a ~₹1,000 Cr acquisition**, alongside a Big 4 team, so the platform could move to Ind AS and consolidate ahead of its **₹2,600 Cr IPO**"
+            },
+            "tags": [
+              "ipo",
+              "consolidation",
+              "ind as",
+              "financial statements",
+              "acquisition",
+              "reporting",
+              "drhp",
+              "listing",
+              "big 4"
+            ]
+          },
+          {
+            "id": "ipo2",
+            "text": {
+              "advisory": "Built Ind AS 116 lease, OCRPS and deferred tax workings in SAP; delivered the related-party consolidation report under SEBI LODR, plus MIS and fund-flow reporting for liquidity monitoring",
+              "fpa": "Produced the MIS and fund-flow reports management used to monitor liquidity during IPO preparation; built Ind AS 116 lease, OCRPS and deferred tax workings in SAP",
+              "consulting": "Built Ind AS 116 lease, OCRPS and deferred tax workings in SAP and the related-party report under SEBI LODR; ran MIS and fund-flow reporting for liquidity monitoring"
+            },
+            "tags": [
+              "mis",
+              "fund flow",
+              "cash flow",
+              "liquidity",
+              "sap",
+              "lease",
+              "ind as 116",
+              "deferred tax",
+              "related party",
+              "sebi",
+              "lodr",
+              "treasury"
+            ]
+          }
+        ]
+      },
+      "budget": {
+        "heading": "Budgeting, Controls & Analytics",
+        "bullets": [
+          {
+            "id": "bud1",
+            "text": {
+              "advisory": "Built the Annual Operating Plan for a charitable trust’s Food & Garment divisions, testing assumptions against prior-year actuals; identified provisioning gaps and wrote SOPs to close them",
+              "fpa": "Built the **Annual Operating Plan** for a charitable trust’s Food & Garment divisions from department budgets up, testing each assumption against prior-year actuals before governing-body approval",
+              "consulting": "Set up budgeting and controls for a charitable trust: built the Food & Garment divisions’ operating plan, found provisioning gaps and control weaknesses, and wrote the SOPs to close them"
+            },
+            "tags": [
+              "budget",
+              "aop",
+              "annual operating plan",
+              "forecast",
+              "planning",
+              "control",
+              "sop",
+              "process",
+              "provision"
+            ]
+          },
+          {
+            "id": "bud2",
+            "text": {
+              "advisory": "Built 3-statement models with scenario analysis and Power BI variance dashboards (DAX, star schema) for management reviews",
+              "fpa": "Designed **Power BI** budget-vs-actual dashboards (DAX, star schema) for department-wise variance reviews; built 3-statement models with scenario analysis",
+              "consulting": "Designed Power BI variance dashboards (DAX, star schema) and 3-statement models with scenario analysis for management reviews"
+            },
+            "tags": [
+              "power bi",
+              "dashboard",
+              "variance",
+              "model",
+              "scenario",
+              "analytics",
+              "visuali",
+              "dax",
+              "budget vs actual",
+              "mis"
+            ]
+          },
+          {
+            "id": "bud3",
+            "text": {
+              "advisory": "Facilitated Foreign Tax Credit claims saving **₹9.34 Cr a year** in double taxation",
+              "fpa": "Facilitated Foreign Tax Credit claims saving **₹9.34 Cr a year** in double taxation",
+              "consulting": "Facilitated Foreign Tax Credit claims saving **₹9.34 Cr a year** in double taxation"
+            },
+            "optional": true,
+            "tags": [
+              "tax",
+              "foreign tax",
+              "international",
+              "cost saving",
+              "savings"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "past_job": {
+    "title": "M. Bhaskara Rao & Co., Hyderabad  —  Article Assistant",
+    "dates": "Feb 2020 – Jan 2023",
+    "bullets": [
+      {
+        "id": "art1",
+        "text": {
+          "advisory": "Ran the statutory audit of a **₹2,000+ Cr mining conglomerate** end to end, reporting directly to the engagement partner (former Chairman, ICAI Hyderabad)",
+          "fpa": "Ran the statutory audit of a **₹2,000+ Cr mining conglomerate** end to end, reporting directly to the engagement partner (former Chairman, ICAI Hyderabad)",
+          "consulting": "Ran the statutory audit of a **₹2,000+ Cr mining conglomerate** end to end, reporting directly to the engagement partner (former Chairman, ICAI Hyderabad)"
+        },
+        "tags": [
+          "audit",
+          "statutory",
+          "stakeholder",
+          "client"
+        ]
+      },
+      {
+        "id": "art2",
+        "text": {
+          "advisory": "Also audited two agri-seed companies (~₹200 Cr turnover each); across the three engagements handled CARO reporting, JV/subsidiary consolidation and ICFR testing",
+          "fpa": "Also audited two agri-seed companies (~₹200 Cr turnover each); across the three engagements handled JV/subsidiary consolidation, ICFR testing and CARO reporting",
+          "consulting": "Also audited two agri-seed companies (~₹200 Cr turnover each); across the three engagements tested internal controls (ICFR), handled JV/subsidiary consolidation and CARO reporting"
+        },
+        "tags": [
+          "icfr",
+          "internal control",
+          "ifc",
+          "consolidation",
+          "caro",
+          "audit",
+          "compliance"
+        ]
+      },
+      {
+        "id": "art3",
+        "text": {
+          "advisory": "Automated multi-branch trial balance consolidation in Excel VBA, saving **50+ hours a month**; adopted firm-wide",
+          "fpa": "Automated multi-branch trial balance consolidation in Excel VBA, cutting **50+ hours a month** of manual work; adopted firm-wide",
+          "consulting": "Automated multi-branch trial balance consolidation in Excel VBA, saving **50+ hours a month**; the firm adopted it across engagements"
+        },
+        "tags": [
+          "excel",
+          "vba",
+          "automation",
+          "macro",
+          "process improvement",
+          "efficien"
+        ]
+      },
+      {
+        "id": "art4",
+        "text": {
+          "advisory": "Drafted tax audit (3CA/3CB) and transfer pricing (3CEB) reports; ran internal and stock audits for power, BFSI and architecture clients",
+          "fpa": "Drafted tax audit (3CA/3CB) and transfer pricing (3CEB) reports; ran internal and stock audits for power, BFSI and architecture clients",
+          "consulting": "Ran internal and stock audits for power, BFSI and architecture clients; drafted tax audit (3CA/3CB) and transfer pricing (3CEB) reports"
+        },
+        "optional": true,
+        "tags": [
+          "internal audit",
+          "transfer pricing",
+          "tax audit",
+          "stock audit",
+          "bfsi",
+          "power sector"
+        ]
+      }
+    ]
+  },
+  "education": [
+    [
+      "Chartered Accountant",
+      "Institute of Chartered Accountants of India",
+      "2025"
+    ],
+    [
+      "B.Com",
+      "Osmania University (St. Joseph’s Degree College); A+ in Financial Accounting",
+      "2022"
+    ]
+  ],
+  "finance_skills": [
+    "Financial due diligence",
+    "Quality of earnings",
+    "DCF valuation (WACC, terminal value)",
+    "Ind AS (101, 116)",
+    "Consolidation",
+    "3-statement modelling",
+    "AOP",
+    "Variance analysis",
+    "MIS reporting",
+    "Statutory audit",
+    "Internal controls"
+  ],
+  "tool_skills": [
+    "Excel & VBA (certified)",
+    "Power BI (DAX)",
+    "Alteryx (certified)",
+    "SAP",
+    "Oracle",
+    "Tally",
+    "CCH ProSystem fx"
+  ],
+  "facts_for_matching": "CA qualified May 2025. ~1 year post-qualification experience plus 3 years articleship (Feb 2020 – Jan 2023). Current CTC 10 LPA fixed, notice period 30 days, based in Kharghar, Navi Mumbai. Has NOT done hands-on valuation for a client (knows DCF/WACC theory), no LBO modelling, no Capital IQ / PitchBook, no CFA, no Big 4 employment (worked alongside a Big 4 team as client-side preparer)."
+}
