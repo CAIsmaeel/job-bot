@@ -248,7 +248,7 @@ def prefilter(jobs, state):
 # ---------------------------------------------------------------- rule-based fallback (no AI)
 DOMAIN_WORDS = {
     "advisory": ["due diligence", "transaction", "valuation", "m&a", "mergers", "acquisition", "deal", "quality of earnings", "financial modelling", "financial modeling", "dcf"],
-    "fpa": ["fp&a", "budget", "forecast", "variance", "mis", "planning", "business finance", "controller", "month end", "month-end", "aop", "cost control"],
+    "fpa": ["fp&a", "budget", "forecast", "variance", "mis", "planning", "business finance", "business partner", "commercial finance", "controller", "month end", "month-end", "aop", "cost control", "corporate development", "unit economics"],
     "consulting": ["consult", "client engagement", "advisory services", "process improvement", "strategy", "transformation", "stakeholder"],
 }
 SKILL_WORDS = {
@@ -427,7 +427,16 @@ def analyse_rules(job, state):
     m = re.search(r"(\d{1,2})\s*(?:\+|plus)?\s*(?:-|–|to)?\s*(\d{1,2})?\s*\+?\s*(?:years|yrs)", jd)
     if m:
         years = int(m.group(1))
-    score = 40 + min(len(matched), 8) * 5 + {"advisory": 12, "fpa": 8, "consulting": 5}[domain]
+    # Preference (epilepsy: regular hours matter): in-company FP&A / business finance first,
+    # in-house corporate development next, advisory-firm roles with deal-season late nights last.
+    score = 40 + min(len(matched), 8) * 5 + {"fpa": 14, "advisory": 6, "consulting": 4}[domain]
+    if "corporate development" in jd or "corp dev" in jd:
+        score += 8
+    company = str(job.get("company") or "").lower()
+    if any(f in company for f in ["deloitte", "kpmg", "ernst", " ey", "pwc", "pricewaterhouse"]) or "big 4 firm" in jd:
+        score -= 12
+    if any(w in jd for w in ["24x7", "long hours", "work under extreme pressure", "night shift", "rotational shift"]):
+        score -= 10
     if any(w in jd for w in [" ca ", "chartered accountant", "qualified ca"]):
         score += 8
     if years is not None and years >= 4:
@@ -509,7 +518,7 @@ CURRENT PROFILE SUMMARY: {PROFILE['summaries'][d]}
 CURRENT CV BULLETS (id, section, text; **bold** marks key numbers):
 {chr(10).join(lines)}
 
-His preferences: Valuation / M&A / Transaction Advisory / FDD first, then FP&A / Finance Controller, then finance consulting.
+His preferences: FP&A / Business Finance / Finance Controller roles inside a company FIRST (he needs regular working hours and enough sleep), then in-house Corporate Development / M&A teams, then finance consulting. Roles at Big 4 or advisory firms with deal-season late nights, night shifts or 'long hours' should score lower (about 15 points less than an equivalent in-company role).
 Investment banking only if Shariah-compliant (no interest-based lending, conventional debt syndication or conventional banking products).
 Target fixed pay ₹13 LPA+. Navi Mumbai / Mumbai.
 
