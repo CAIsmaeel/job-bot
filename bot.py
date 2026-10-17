@@ -418,6 +418,7 @@ def bullet_pool(orig):
 
 
 STOP = set("a an the and or of to for in on at by with from into its it this that as was were be been is are over under up down across through during before after ahead each all both their his her our my".split())
+SAFE_NEW = set("prepared built created delivered developed designed produced supported handled performed reviewed analysed analyzed monitored tracked using used including covering management monthly quarterly reporting reports report statements financial key team teams helped ensured led drove".split())
 LEAK = ["working hours", "regular hours", "near home", "close to home", "work-life", "commute", "night shift",
         "epilep", "health", "halal", "shariah", "looking for", "seeking", "prefer"]
 
@@ -443,8 +444,8 @@ def safe_rewrite(new, orig, state, max_ratio=1.3):
     pool = bullet_pool(orig)
     if any(t in new.lower() and t not in pool for t in CLAIM_TERMS):
         return orig  # mentions work/tools this bullet never had
-    if len(words(new) - words(pool)) > 2:
-        return orig  # too many new words = new facts creeping in (e.g. "outlet-wise", "bookkeeping")
+    if words(new) - words(pool) - SAFE_NEW:
+        return orig  # any new content word = a new fact creeping in (e.g. "outlet-wise", "bookkeeping")
     if not nums(orig.replace("**", "")) <= nums(new.replace("**", "")):
         return orig  # dropped a key number (e.g. the ₹2,600 Cr IPO)
     if any(w in new.lower() for w in LEAK):
