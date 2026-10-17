@@ -1,15 +1,20 @@
 name: job-bot
+# Self-running loop: each run checks jobs every hour for ~5 hours, then starts the next run itself.
+# (GitHub's own cron schedule was not firing reliably, so it is only a backup kick here.)
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: "17 1-17 * * *"   # every hour at :47 India time, 7 AM to 11 PM (public repo = free minutes)
-  workflow_dispatch: {}        # "Run workflow" button for testing
+    - cron: "17 */6 * * *"   # backup: restarts the loop if it ever stops
 permissions:
   contents: write
-concurrency: job-bot
+  actions: write
+concurrency:
+  group: job-bot
+  cancel-in-progress: false
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,18 +22,35 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python bot.py
+      - name: Run bot every hour (7 AM - 11 PM India time)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CONTACT_LINE: ${{ secrets.CONTACT_LINE }}
-      - name: Save memory (seen jobs, learned skills)
-        if: always()
         run: |
           git config user.name "job-bot"
           git config user.email "job-bot@users.noreply.github.com"
-          git add state.json || true
-          git diff --cached --quiet && exit 0
-          git commit -m "bot state"
-          for i in 1 2 3; do git pull --rebase -X theirs -q origin main && git push -q && exit 0; sleep 5; done
-          exit 1
+          save() {
+            git add state.json 2>/dev/null || true
+            git diff --cached --quiet && return 0
+            git commit -q -m "bot state"
+            for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && return 0; sleep 5; done
+          }
+          for round in 1 2 3 4 5; do
+            hour=$(TZ=Asia/Kolkata date +%H)
+            if [ "$hour" -ge 7 ] && [ "$hour" -lt 23 ]; then
+              timeout 12m python bot.py || echo "bot run failed, continuing"
+              save
+            else
+              echo "Night time ($hour h IST) - skipping"
+            fi
+            [ "$round" -lt 5 ] && sleep 3300
+          done
+      - name: Start the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/run.yml/dispatches \
+            -d '{"ref":"main"}' && echo "next run started"
