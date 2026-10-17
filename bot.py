@@ -250,6 +250,10 @@ def prefilter(jobs, state):
         keys.add(key)
         title = " " + str(j.get("title") or "").lower() + " "
         comp = " " + str(j.get("company") or "").lower() + " "
+        loc = str(j.get("location") or "").lower()
+        if not (j.get("is_remote") or any(p in loc for p in CFG.get("allowed_locations", ["mumbai"]))):
+            seen.add(key)  # Gurugram / Bengaluru / Pune etc: outside Mumbai region
+            continue
         if any(x in comp for x in CFG.get("exclude_companies", [])):
             seen.add(key)  # bank / lender / Big 4 / advisory firm: not for him
             continue
