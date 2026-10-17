@@ -9,7 +9,7 @@
   },
   "summaries": {
     "advisory": "Chartered Accountant who has worked on both sides of a deal: diligencing a healthcare InsurTech acquisition structured through a demerger, and getting an industrial & logistics platform IPO-ready alongside a Big 4 team. Three years of audit on companies with ₹2,000+ Cr turnover taught me how numbers break; modelling and valuation are how I now put them to work.",
-    "fpa": "Chartered Accountant who builds the plans and reports management actually uses: an annual operating plan tested against prior-year actuals, Power BI variance dashboards, and MIS and fund-flow reporting during a ₹2,600 Cr IPO preparation. Three years of audit on companies with ₹2,000+ Cr turnover give me a sharp eye for where numbers go wrong.",
+    "fpa": "Chartered Accountant who builds the plans and reports management actually uses: an annual operating plan tested against prior-year actuals, Power BI variance dashboards, and MIS and fund-flow reporting through an IPO preparation. Three years of statutory audit taught me exactly where numbers go wrong.",
     "consulting": "Chartered Accountant who likes working out how an unfamiliar business really makes money, from a healthcare InsurTech acquisition to an industrial & logistics platform preparing for IPO. I turn messy situations into usable outputs: operating plans, controls and SOPs, dashboards and automation that saved 50+ hours a month."
   },
   "current_job": {
@@ -75,7 +75,8 @@
               "acquisition",
               "deal",
               "balance sheet"
-            ]
+            ],
+            "core": true
           }
         ]
       },
@@ -99,7 +100,8 @@
               "drhp",
               "listing",
               "big 4"
-            ]
+            ],
+            "core": true
           },
           {
             "id": "ipo2",
@@ -145,7 +147,8 @@
               "sop",
               "process",
               "provision"
-            ]
+            ],
+            "core": true
           },
           {
             "id": "bud2",
@@ -203,7 +206,8 @@
           "statutory",
           "stakeholder",
           "client"
-        ]
+        ],
+        "core": true
       },
       {
         "id": "art2",
@@ -236,7 +240,8 @@
           "macro",
           "process improvement",
           "efficien"
-        ]
+        ],
+        "core": true
       },
       {
         "id": "art4",
@@ -291,5 +296,11 @@
     "Tally",
     "CCH ProSystem fx"
   ],
-  "facts_for_matching": "CA qualified May 2025. ~1 year post-qualification experience plus 3 years articleship (Feb 2020 – Jan 2023). Current CTC 10 LPA fixed, notice period 30 days, based in Kharghar, Navi Mumbai. Has NOT done hands-on valuation for a client (knows DCF/WACC theory), no LBO modelling, no Capital IQ / PitchBook, no CFA, no Big 4 employment (worked alongside a Big 4 team as client-side preparer)."
+  "facts_for_matching": "CA qualified May 2025. ~1 year post-qualification experience plus 3 years articleship (Feb 2020 – Jan 2023). Current CTC 10 LPA fixed, notice period 30 days, based in Kharghar, Navi Mumbai. Has NOT done hands-on valuation for a client (knows DCF/WACC theory), no LBO modelling, no Capital IQ / PitchBook, no CFA, no Big 4 employment (worked alongside a Big 4 team as client-side preparer).",
+  "highlights": [
+    "**₹2,600 Cr** IPO reporting",
+    "**12 entities** consolidated",
+    "**~₹5 Cr** liabilities found",
+    "**50+ hrs/month** automated"
+  ]
 }

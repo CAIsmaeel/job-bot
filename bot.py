@@ -682,12 +682,13 @@ def build_cv(a, state, path):
     from reportlab.lib.units import mm
 
     navy, grey = HexColor("#1F3A5F"), HexColor("#555555")
-    base = ParagraphStyle("b", fontName="Carlito", fontSize=10, leading=12.6)
+    base = ParagraphStyle("b", fontName="Carlito", fontSize=10.8, leading=14.4, spaceAfter=1.5)
     S = {
         "name": ParagraphStyle("n", parent=base, fontName="Carlito-Bold", fontSize=17, leading=20, alignment=TA_CENTER, textColor=navy),
         "head": ParagraphStyle("h", parent=base, alignment=TA_CENTER, textColor=grey, fontSize=10),
         "contact": ParagraphStyle("c", parent=base, alignment=TA_CENTER, fontSize=9),
-        "sec": ParagraphStyle("s", parent=base, fontName="Carlito-Bold", textColor=navy, fontSize=10.5, spaceBefore=7, spaceAfter=2),
+        "sec": ParagraphStyle("s", parent=base, fontName="Carlito-Bold", textColor=navy, fontSize=11.4, spaceBefore=11, spaceAfter=2),
+        "hl": ParagraphStyle("hl", parent=base, alignment=TA_CENTER, fontSize=10.2, textColor=navy),
         "body": ParagraphStyle("p", parent=base, alignment=TA_JUSTIFY),
         "role": ParagraphStyle("r", parent=base, fontName="Carlito-Bold", fontSize=10.3),
         "date": ParagraphStyle("d", parent=base, textColor=grey, fontSize=9, alignment=2),
@@ -709,32 +710,36 @@ def build_cv(a, state, path):
 
     rel = a.get("relevance") or {}
 
-    def ranked(items):
-        return sorted(items, key=lambda b: -rel.get(b["id"], 0))
+    def ranked(items, limit=None):
+        order = sorted(range(len(items)), key=lambda i: (-rel.get(items[i]["id"], 0), not items[i].get("core"), i))
+        keep = order[:limit] if limit else order
+        return [items[i] for i in keep]
 
     def text_of(b):
         return a.get("rewrites", {}).get(b["id"]) or btext(b, a["domain"])
 
     def bullets(items):
-        return ListFlowable([ListItem(Paragraph(md(text_of(b)), base), leftIndent=11, value="•") for b in items],
-                            bulletType="bullet", start="•", leftIndent=11, bulletFontSize=8)
+        return ListFlowable([ListItem(Paragraph(md(text_of(b)), base), leftIndent=12, value="•") for b in items],
+                            bulletType="bullet", start="•", leftIndent=12, bulletFontSize=10.8,
+                            bulletFontName="Carlito", bulletOffsetY=0, spaceBefore=1)
 
     def story(drop):
         d = a["domain"]
-        st = [Paragraph(PROFILE["name"], S["name"]), Paragraph(md(a.get("headline") or PROFILE["headlines"][d]), S["head"]),
+        st = [Paragraph(PROFILE["name"], S["name"]), Paragraph(md(PROFILE["headlines"][d]), S["head"]),
               Paragraph(md(PROFILE["contact"]).replace("linkedin.com/in/ismaeelsyed",
                         f'<a href="{PROFILE["linkedin_url"]}" color="#1F3A5F">linkedin.com/in/ismaeelsyed</a>'), S["contact"])]
-        st += section("Profile") + [Paragraph(md(a.get("summary") or PROFILE["summaries"][d]), S["body"])]
+        st += section("Profile") + [Paragraph(md(PROFILE["summaries"][d]), S["body"]), Spacer(1, 4),
+                                    Paragraph("  ·  ".join(md(h) for h in PROFILE["highlights"]), S["hl"])]
         st += section("Experience")
         cj = PROFILE["current_job"]
         st.append(role(cj["title"], cj["dates"]))
-        for sid in a["section_order"]:
+        for n, sid in enumerate(a["section_order"]):
             sec = cj["sections"][sid]
             st.append(Paragraph(md(sec["heading"]), S["sub"]))
-            st.append(bullets(ranked([b for b in sec["bullets"] if b["id"] not in drop])))
+            st.append(bullets(ranked([b for b in sec["bullets"] if b["id"] not in drop], 3 if n == 0 else 2)))
         pj = PROFILE["past_job"]
         st.append(role(pj["title"], pj["dates"]))
-        st.append(bullets(ranked([b for b in pj["bullets"] if b["id"] not in drop])))
+        st.append(bullets(ranked([b for b in pj["bullets"] if b["id"] not in drop], 3)))
         st += section("Education")
         for deg, inst, yr in PROFILE["education"]:
             st.append(role(f"{deg}<font name='Carlito'>  —  {md(inst)}</font>", yr))
