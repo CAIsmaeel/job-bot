@@ -155,6 +155,26 @@ def gap_report(state, days=7):
     return "\n".join(lines)
 
 
+def maybe_daily_digest(state):
+    now = dt.datetime.now(IST)
+    today = now.date().isoformat()
+    if now.hour < 21 or state.get("last_digest") == today:
+        return
+    items = sorted([n for n in state.get("near_miss", []) if n["date"] == today], key=lambda n: -n["score"])[:10]
+    sent = state.get("sent_count", {}).get(today, 0)
+    lines = [f"🌙 <b>Aaj ka summary</b>: {sent} job(s) CV ke saath bheji."]
+    if items:
+        lines.append("\n<b>Thoda kam match wali jobs</b> (score 45–64, CV nahi banaya). Pasand aaye toh khud dekh lo:")
+        for i, n in enumerate(items, 1):
+            lines.append(f"{i}. {n['score']} · <a href=\"{html.escape(n['url'])}\">{html.escape(n['title'])}</a> @ {html.escape(n['company'])} ({html.escape(n['site'])})")
+    else:
+        lines.append("Aaj aur koi kaam ki job nahi mili.")
+    send(state, "\n".join(lines))
+    state["last_digest"] = today
+    cutoff = (now - dt.timedelta(days=3)).date().isoformat()
+    state["near_miss"] = [n for n in state.get("near_miss", []) if n["date"] >= cutoff]
+
+
 def maybe_weekly_report(state):
     now = dt.datetime.now(IST)
     week = now.strftime("%G-W%V")
@@ -190,7 +210,7 @@ def fetch_jobs():
                     site_name=[site], search_term=term, location=CFG["location"],
                     distance=CFG["distance_miles"], results_wanted=CFG["results_per_search"],
                     hours_old=CFG["hours_old"], country_indeed="India",
-                    fetch_description=True, linkedin_fetch_description=True, verbose=0,
+                    fetch_description=True, verbose=0,
                 )
                 if df is not None and len(df):
                     frames.append(df)
@@ -198,7 +218,7 @@ def fetch_jobs():
             except Exception as e:
                 print(f"{site} / {term}: {str(e)[:150]}")
                 DIAG["errors"].append(f"{site}: {str(e)[:120]}")
-            time.sleep(2)
+            time.sleep(6 if site == "linkedin" else 2)
         DIAG[f"secs_{site}"] = int(time.time() - t0)
     if not frames:
         return []
@@ -786,6 +806,11 @@ def process(job, state):
         state.setdefault("gap_log", []).append({"date": today, "skill": g["skill"]})
     if a["score"] < CFG["min_score_to_send"] or not a.get("halal_ok", True):
         print(f"skip {a['score']} {job.get('title')} @ {job.get('company')}")
+        if a["score"] >= 45 and a.get("halal_ok", True):
+            state.setdefault("near_miss", []).append({
+                "date": today, "score": a["score"], "title": str(a.get("role_title") or job.get("title")),
+                "company": str(a.get("company") or job.get("company")), "site": str(job.get("site")),
+                "url": str(job.get("job_url_direct") or job.get("job_url")), "note": str(a.get("match_note") or "")[:120]})
         return False
     OUT.mkdir(exist_ok=True)
     comp = safe_name(a.get("company") or job.get("company"))
@@ -794,6 +819,8 @@ def process(job, state):
     build_cv(a, state, cv)
     build_letter(a, job, cl)
     send(state, job_message(a, job))
+    sc = state.setdefault("sent_count", {})
+    sc[today] = sc.get(today, 0) + 1
     send_file(state, cv, "CV — is JD ke hisaab se")
     send_file(state, cl, "Cover letter (zaroorat ho toh)")
     return True
@@ -809,6 +836,7 @@ def main():
         save_state(state)
         return
     maybe_weekly_report(state)
+    maybe_daily_digest(state)
     if state.get("paused"):
         save_state(state)
         return

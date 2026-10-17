@@ -44,7 +44,7 @@ jobs:
             else
               echo "Night time ($hour h IST) - skipping"
             fi
-            [ "$round" -lt 5 ] && sleep 3300
+            if [ "$round" -lt 5 ]; then sleep 3300; fi
           done
       - name: Start the next run
         if: always()
