@@ -229,6 +229,10 @@ def prefilter(jobs, state):
             continue
         keys.add(key)
         title = " " + str(j.get("title") or "").lower() + " "
+        comp = " " + str(j.get("company") or "").lower() + " "
+        if any(x in comp for x in CFG.get("exclude_companies", [])):
+            seen.add(key)  # bank / lender / Big 4 / advisory firm: not for him
+            continue
         if not any(w in title for w in inc) or any(w in title for w in exc):
             seen.add(key)
             continue
@@ -437,6 +441,11 @@ def analyse_rules(job, state):
         score -= 12
     if any(w in jd for w in ["24x7", "long hours", "work under extreme pressure", "night shift", "rotational shift"]):
         score -= 10
+    title = " " + str(job.get("title") or "").lower() + " "
+    # Backward-looking roles (reporting/compliance) rank below planning/business finance
+    if any(w in title for w in ["external reporting", "statutory reporting", "regulatory reporting", "financial reporting", " audit", " tax", "accountant", "accounts executive", "compliance"]) \
+            and not any(w in title for w in ["fp&a", "planning", "business finance", "controller"]):
+        score -= 12
     if any(w in jd for w in [" ca ", "chartered accountant", "qualified ca"]):
         score += 8
     if years is not None and years >= 4:
@@ -518,6 +527,7 @@ CURRENT PROFILE SUMMARY: {PROFILE['summaries'][d]}
 CURRENT CV BULLETS (id, section, text; **bold** marks key numbers):
 {chr(10).join(lines)}
 
+Pure reporting / audit / tax / compliance roles score about 12 points lower (he wants forward-looking work). Banks, lenders and Big 4 / advisory firms are already excluded.
 His preferences: FP&A / Business Finance / Finance Controller roles inside a company FIRST (he needs regular working hours and enough sleep), then in-house Corporate Development / M&A teams, then finance consulting. Roles at Big 4 or advisory firms with deal-season late nights, night shifts or 'long hours' should score lower (about 15 points less than an equivalent in-company role).
 Investment banking only if Shariah-compliant (no interest-based lending, conventional debt syndication or conventional banking products).
 Target fixed pay ₹13 LPA+. Navi Mumbai / Mumbai.
@@ -769,6 +779,7 @@ def safe_name(s):
 
 def process(job, state):
     a = analyse(job, state)
+    DIAG.setdefault("checked", []).append(f"{a['score']} | {job.get('title')} @ {job.get('company')} ({job.get('site')})"[:120])
     state.setdefault("seen", []).extend([job["_key"], job["_jid"]])
     today = dt.datetime.now(IST).date().isoformat()
     for g in a["gaps"]:
