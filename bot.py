@@ -417,6 +417,15 @@ def bullet_pool(orig):
     return orig.lower()
 
 
+STOP = set("a an the and or of to for in on at by with from into its it this that as was were be been is are over under up down across through during before after ahead each all both their his her our my".split())
+LEAK = ["working hours", "regular hours", "near home", "close to home", "work-life", "commute", "night shift",
+        "epilep", "health", "halal", "shariah", "looking for", "seeking", "prefer"]
+
+
+def words(t):
+    return {w for w in re.findall(r"[a-z][a-z&\-]{2,}", t.lower()) if w not in STOP}
+
+
 def safe_rewrite(new, orig, state, max_ratio=1.3):
     """Accept an AI rewrite only if it keeps the same numbers, adds no new acronyms/tools and has no buzzwords."""
     if not isinstance(new, str):
@@ -434,6 +443,15 @@ def safe_rewrite(new, orig, state, max_ratio=1.3):
     pool = bullet_pool(orig)
     if any(t in new.lower() and t not in pool for t in CLAIM_TERMS):
         return orig  # mentions work/tools this bullet never had
+    if len(words(new) - words(pool)) > 2:
+        return orig  # too many new words = new facts creeping in (e.g. "outlet-wise", "bookkeeping")
+    if not nums(orig.replace("**", "")) <= nums(new.replace("**", "")):
+        return orig  # dropped a key number (e.g. the ₹2,600 Cr IPO)
+    if any(w in new.lower() for w in LEAK):
+        return orig
+    for b in re.findall(r"\*\*(.+?)\*\*", orig):  # keep key numbers bold
+        if b in new and f"**{b}**" not in new:
+            new = new.replace(b, f"**{b}**", 1)
     if new.count("**") % 2:
         new = new.replace("**", "")
     return new
@@ -569,6 +587,9 @@ RULES FOR REWRITING (very important):
 - One line of natural, plain English per bullet, past tense, starting with a strong verb; about the same length as the original. No buzzwords (spearheaded, leveraged, synergy, dynamic, passionate, results-driven, robust, seamless).
 - The summary: 2–3 sentences in the same plain, human tone as the current one, aimed at this role, using only the facts above.
 - It must read like a sharp human wrote it, not AI.
+- NEVER mention his preferences (working hours, location, commute, health, halal) anywhere in the CV.
+- NEVER add the employer's context to his past work (e.g. do not call his dashboards "outlet-wise" because the JD says outlets). Use only words already in the bullet, plus at most two of the JD's terms for the SAME thing.
+- Keep the strongest facts: the ₹2,600 Cr IPO, 12 entities, ~₹5 Cr liabilities, ₹2,000+ Cr audit, 50+ hours a month.
 
 Return JSON with exactly these keys:
 {{
@@ -601,7 +622,8 @@ Return JSON with exactly these keys:
     s_ref = PROFILE["summaries"][d] + " " + PROFILE["summaries"][a["domain"]]
     summ = str(a.get("summary") or "").strip()
     ok = (180 < len(summ) < 520 and nums(summ) <= nums(s_ref) and acronyms(summ) <= acronyms(corpus(state))
-          and not any(w in summ.lower() for w in BANNED))
+          and not any(w in summ.lower() for w in BANNED) and not any(w in summ.lower() for w in LEAK)
+          and len(words(summ) - words(corpus(state))) <= 4)
     a["summary"] = summ if ok else None
     hl = str(a.get("headline") or "")
     a["headline"] = hl if (hl and len(hl) < 90 and acronyms(hl) <= acronyms(corpus(state)) and not any(w in hl.lower() for w in BANNED)) else None
