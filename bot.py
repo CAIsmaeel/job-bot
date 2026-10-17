@@ -824,6 +824,43 @@ def job_message(a, job):
     return "\n".join(lines)
 
 
+# ---------------------------------------------------------------- referrals
+AGENCY = ["recruit", "placement", "consultan", "talent", "staffing", "manpower", "hiring", "search", "hr services", "people"]
+
+
+def referral_block(a, job):
+    from urllib.parse import quote
+    company = str(a.get("company") or job.get("company") or "").strip()
+    role = str(a.get("role_title") or job.get("title") or "this").strip()
+    if not company or any(w in company.lower() for w in AGENCY):
+        return None  # posted by a recruitment agency: no one inside to ask
+    def ppl(q):
+        return "https://www.linkedin.com/search/results/people/?keywords=" + quote(q)
+    links = [
+        ("🎓 Alumni (St. Joseph's / Osmania / M. Bhaskara Rao)", ppl(f'{company} "St. Joseph" OR Osmania OR "Bhaskara Rao"')),
+        ("🧾 CAs in their finance team", ppl(f"{company} chartered accountant finance")),
+        ("👔 Finance head / hiring manager", ppl(f'{company} "finance controller" OR "head of finance" OR "FP&A manager" OR CFO')),
+    ]
+    msgs = [
+        ("Alumni ko",
+         f"Hi [Name], saw you're at {company}. I'm a fellow [St. Joseph's / Osmania] grad, now a CA in Mumbai. "
+         f"I've applied for the {role} role there. Would you be open to a quick chat about the team, or a referral if I seem a fit? Thanks either way!"),
+        ("Finance team ke CA ko",
+         f"Hi [Name], I'm a CA in Navi Mumbai working on MIS, budgeting and consolidation. "
+         f"The {role} opening at {company} is close to what I do. Would you be comfortable referring me? Happy to share my CV. Thanks!"),
+        ("Hiring manager ko",
+         f"Hi [Name], I applied for the {role} role on your team. I'm a CA who built an AOP and Power BI variance dashboards, "
+         f"and prepared financials for 12 entities ahead of a ₹2,600 Cr IPO. Happy to share more if useful. Thanks for your time!"),
+    ]
+    e = html.escape
+    out = [f"🤝 <b>Referral: {e(company)}</b>  (har job pe 2–3 log kaafi hain)", ""]
+    out += [f'{n}. <a href="{e(u)}">{e(t)}</a>' for n, (t, u) in enumerate(links, 1)]
+    out += ["", "<b>Connect request ke saath bhejo</b> ([Name] badal dena):"]
+    for t, m in msgs:
+        out.append(f"\n<i>{e(t)}:</i>\n<code>{e(m[:300])}</code>")
+    return "\n".join(out)
+
+
 # ---------------------------------------------------------------- main
 def safe_name(s):
     return re.sub(r"[^A-Za-z0-9]+", "_", str(s or "Company")).strip("_")[:40] or "Company"
@@ -855,6 +892,9 @@ def process(job, state):
     sc[today] = sc.get(today, 0) + 1
     send_file(state, cv, "CV — is JD ke hisaab se")
     send_file(state, cl, "Cover letter (zaroorat ho toh)")
+    rb = referral_block(a, job)
+    if rb:
+        send(state, rb)
     return True
 
 
