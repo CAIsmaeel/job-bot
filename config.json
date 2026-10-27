@@ -62,7 +62,12 @@
     "data entry",
     "insurance agent",
     "lead ",
-    "principal"
+    "principal",
+    "junior",
+    "jr.",
+    "jr ",
+    "accounts executive",
+    "accounting specialist"
   ],
   "gemini_models": [
     "gemini-2.5-flash-lite",
