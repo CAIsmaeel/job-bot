@@ -297,6 +297,9 @@ SKILL_WORDS = {
     "SAP": ["sap"],
     "Oracle": ["oracle"],
     "Tally": ["tally"],
+    "Financial statements (Ind AS)": ["financial statement", "financial reporting", "book closure", "finalisation", "finalization"],
+    "Cash flow & fund flow": ["cash flow", "fund flow", "liquidity", "working capital"],
+    "GST & direct tax": ["gst", "direct tax", "income tax", "indirect tax"],
 }
 GAP_WORDS = {
     "LBO modelling": (["lbo", "leveraged buyout"], "2 weeks"),
@@ -312,6 +315,47 @@ GAP_WORDS = {
     "Pitch books / IMs": (["pitch book", "pitchbook", "information memorandum", " im "], "1 week"),
     "Big 4 experience": (["big 4 experience", "big four experience", "big4 experience"], "n/a"),
     "Transfer pricing": (["transfer pricing"], "2 weeks"),
+    "Capex planning & tracking": (["capex", "capital expenditure"], "1 week"),
+    "Cost & profitability analysis": (["cost accounting", "costing", "profitability analysis", "product cost", "standard cost"], "2 weeks"),
+    "Month-end close": (["month end close", "month-end close", "monthly close", "book closing"], "1 week"),
+    "SAP FICO / S/4HANA": (["sap fico", "s/4hana", "s4hana", "s/4 hana"], "2 weeks"),
+    "Revenue recognition (Ind AS 115)": (["ind as 115", "revenue recognition", "ifrs 15"], "1 week"),
+    "Treasury & cash management": (["treasury", "cash management", "fund management"], "2 weeks"),
+    "Unit economics & pricing": (["unit economics", "pricing analysis", "contribution margin"], "1 week"),
+}
+
+# True headline phrases, picked by what the JD asks for most (no-AI mode headline)
+HEADLINE_WORDS = [
+    ("FP&A", ["fp&a", "financial planning"]),
+    ("Business Finance", ["business finance", "business partner", "commercial finance"]),
+    ("Budgeting & Forecasting", ["budget", "forecast", "aop", "annual operating plan"]),
+    ("MIS & Management Reporting", ["mis", "management report", "dashboard"]),
+    ("Variance Analysis", ["variance", "budget vs actual"]),
+    ("Financial Reporting (Ind AS)", ["financial reporting", "ind as", "ifrs", "financial statement"]),
+    ("Consolidation", ["consolidat"]),
+    ("Financial Due Diligence", ["due diligence", "fdd", "quality of earnings"]),
+    ("Internal Controls", ["internal control", "icfr", "ifc", "sox"]),
+    ("Cash Flow & Liquidity", ["cash flow", "fund flow", "liquidity", "working capital"]),
+    ("Process Automation", ["automation", "process improvement", "vba", "alteryx"]),
+]
+SHORT = {"FP&A": "FP&A", "Business Finance": "business finance", "Budgeting & Forecasting": "budgeting",
+         "MIS & Management Reporting": "MIS reporting", "Variance Analysis": "variance analysis",
+         "Financial Reporting (Ind AS)": "Ind AS reporting", "Consolidation": "consolidation",
+         "Financial Due Diligence": "due diligence", "Internal Controls": "internal controls",
+         "Cash Flow & Liquidity": "cash-flow reporting", "Process Automation": "automation"}
+# What he has actually done for each of those (used to write a plain, JD-specific summary)
+EVIDENCE = {
+    "FP&A": "built an annual operating plan from department budgets up and tested it against prior-year actuals",
+    "Business Finance": "built an annual operating plan from department budgets up and tested it against prior-year actuals",
+    "Budgeting & Forecasting": "built an annual operating plan from department budgets up and tested it against prior-year actuals",
+    "MIS & Management Reporting": "prepared the MIS and fund-flow reports management used during a ₹2,600 Cr IPO preparation",
+    "Variance Analysis": "set up budget-vs-actual variance reviews for a client's divisions",
+    "Financial Reporting (Ind AS)": "prepared Ind AS financial statements for 12 entities ahead of a ₹2,600 Cr IPO, alongside a Big 4 team",
+    "Consolidation": "prepared Ind AS financial statements for 12 entities ahead of a ₹2,600 Cr IPO, alongside a Big 4 team",
+    "Financial Due Diligence": "worked on the financial due diligence of a healthcare InsurTech acquisition",
+    "Internal Controls": "tested internal controls and CARO compliance across three statutory audits",
+    "Cash Flow & Liquidity": "prepared the MIS and fund-flow reports management used to track liquidity during a ₹2,600 Cr IPO preparation",
+    "Process Automation": "built an Excel VBA macro that saved the audit team 50+ hours a month",
 }
 
 
@@ -321,7 +365,7 @@ SECTOR_WORDS = [
     ("financial services", ["bfsi", "nbfc", "fintech", "banking", "insurance", "asset management", "wealth"]),
     ("manufacturing", ["manufacturing", "plant", "factory", "industrial", "auto components", "chemicals"]),
     ("consumer and retail", ["fmcg", "consumer", "retail", "d2c", "e-commerce", "ecommerce"]),
-    ("infrastructure and energy", ["infrastructure", "infra ", "energy", "power", "renewable", "solar", "ports"]),
+    ("infrastructure and energy", ["infrastructure", "infra ", "energy", "power sector", "power plant", "power generation", "renewable", "solar", "ports"]),
     ("technology", ["saas", "software", "it services", "technology company", "tech company"]),
     ("logistics", ["logistics", "supply chain", "shipping"]),
 ]
@@ -342,9 +386,9 @@ FOCUS_WORDS = [
     ("IPO readiness", ["ipo", "listing", "drhp"]),
 ]
 WHY_TEMPLATES = {
-    "advisory": "{lead} {focus}{sector} is the work I have been doing on my last two engagements, and the part of finance I want to go deeper into.",
-    "fpa": "{lead} {focus}{sector} is the kind of work I enjoy most: building numbers that people actually use to make decisions.",
-    "consulting": "{lead} {focus}{sector} suits the way I like to work: getting under the skin of a business quickly and fixing what slows it down.",
+    "advisory": "{lead} {focus}{sector} is close to the deal-side work I do now, and it is where I want to build my career.",
+    "fpa": "{lead} {focus}{sector} is close to the work I do now, and it is the direction I want to grow in.",
+    "consulting": "{lead} {focus}{sector} is close to the client work I do now, and I would like to do more of it.",
 }
 BANNED = ["spearhead", "leverag", "synerg", "passionate", "dynamic", "results-driven", "esteemed", "utiliz", "utilis",
           "go-getter", "thought leader", "seamless", "cutting-edge", "world-class", "robust", "delve", "tapestry", "proven track record"]
@@ -393,6 +437,34 @@ def rules_why(job, domain):
     return WHY_TEMPLATES[domain].format(lead=lead, focus=(", " if any(" and " in f for f in focus) else " and ").join(focus), sector=sector)
 
 
+def jd_focus(job, n=3):
+    jd = jd_text(job)
+    scored = sorted([(sum(jd.count(w) for w in ws), i, name) for i, (name, ws) in enumerate(HEADLINE_WORDS)], key=lambda x: (-x[0], x[1]))
+    return [name for c, i, name in scored if c > 0][:n]
+
+
+def rules_headline(job, domain):
+    f = jd_focus(job, 3)
+    if len(f) < 2:
+        return PROFILE["headlines"][domain]
+    return "  |  ".join(f)
+
+
+def rules_summary(job, domain):
+    f = jd_focus(job, 3)
+    if not f:
+        return PROFILE["summaries"][domain]
+    ev = []
+    for name in f + ["Financial Reporting (Ind AS)", "Budgeting & Forecasting"]:
+        e = EVIDENCE[name]
+        if e not in ev and e.split(" ")[1] not in [x.split(" ")[1] for x in ev]:  # one fact per piece of work
+            ev.append(e)
+    short = [SHORT[n] for n in f[:2]]
+    s1 = f"Chartered Accountant (2025) with a year of hands-on {' and '.join(short)} work, after three years of statutory audit."
+    s2 = f"In my current role I {ev[0]}, and {ev[1]}."
+    return s1 + " " + s2
+
+
 # ---------------------------------------------------------------- validation (no invented facts)
 def nums(t):
     return set(re.findall(r"\d[\d,]*(?:\.\d+)?", t))
@@ -427,7 +499,7 @@ def words(t):
     return {w for w in re.findall(r"[a-z][a-z&\-]{2,}", t.lower()) if w not in STOP}
 
 
-def safe_rewrite(new, orig, state, max_ratio=1.3):
+def safe_rewrite(new, orig, state, max_ratio=1.3, jd=""):
     """Accept an AI rewrite only if it keeps the same numbers, adds no new acronyms/tools and has no buzzwords."""
     if not isinstance(new, str):
         return orig
@@ -444,8 +516,9 @@ def safe_rewrite(new, orig, state, max_ratio=1.3):
     pool = bullet_pool(orig)
     if any(t in new.lower() and t not in pool for t in CLAIM_TERMS):
         return orig  # mentions work/tools this bullet never had
-    if words(new) - words(pool) - SAFE_NEW:
-        return orig  # any new content word = a new fact creeping in (e.g. "outlet-wise", "bookkeeping")
+    extra = words(new) - words(pool) - SAFE_NEW
+    if extra - words(jd) or len(extra) > 3:
+        return orig  # new content words only if they are the JD's own terms, max 3 (no "outlet-wise" inventions)
     if not nums(orig.replace("**", "")) <= nums(new.replace("**", "")):
         return orig  # dropped a key number (e.g. the ₹2,600 Cr IPO)
     if any(w in new.lower() for w in LEAK):
@@ -493,6 +566,8 @@ def analyse_rules(job, state):
         score += 8
     if years is not None and years >= 4:
         score -= 30
+    if years is not None and years >= 5:
+        score = 0  # far too senior for ~1 year post-qualification: no point applying
     score -= 5 * len(gaps)
     debt = any(w in jd for w in ["debt syndication", "dcm", "loan syndication", "lending", "fixed income", "credit underwriting"])
     halal_ok = not ("investment bank" in jd and debt)
@@ -507,6 +582,7 @@ def analyse_rules(job, state):
         "role_title": job.get("title"), "company": job.get("company"),
         "match_note": f"{len(matched)} skills JD se match (no-AI mode)",
         "relevance": rel, "rewrites": {}, "ai": False,
+        "headline": rules_headline(job, domain), "summary": rules_summary(job, domain),
     }, state)
 
 
@@ -586,7 +662,8 @@ RULES FOR REWRITING (very important):
 - Rewrite EVERY bullet so it speaks the JD's language: use the JD's own terms for the same work, lead with what this employer cares about, and cut what it doesn't.
 - Keep every fact true. Do NOT add any tool, skill, number, client, sector, responsibility or result that is not already in that bullet. Keep all numbers exactly as written and keep the ** around them.
 - One line of natural, plain English per bullet, past tense, starting with a strong verb; about the same length as the original. No buzzwords (spearheaded, leveraged, synergy, dynamic, passionate, results-driven, robust, seamless).
-- The summary: 2–3 sentences in the same plain, human tone as the current one, aimed at this role, using only the facts above.
+- The summary: exactly 2 sentences, plain recruiter-friendly English. Sentence 1: "Chartered Accountant (2025) with a year of <the 2 JD functions he has really done> work and three years of statutory audit before that." Sentence 2: the two facts from his bullets that answer this JD's main requirements. No slogans, no "I build numbers people use", no adjectives about himself.
+- The headline: 3 phrases from the JD's own wording for work he has really done.
 - It must read like a sharp human wrote it, not AI.
 - NEVER mention his preferences (working hours, location, commute, health, halal) anywhere in the CV.
 - NEVER add the employer's context to his past work (e.g. do not call his dashboards "outlet-wise" because the JD says outlets). Use only words already in the bullet, plus at most two of the JD's terms for the SAME thing.
@@ -617,17 +694,18 @@ Return JSON with exactly these keys:
     safe = {}
     for _, b in all_bullets():
         shown = btext(b, d)  # the exact text Gemini was given
-        r = safe_rewrite((a.get("rewrites") or {}).get(b["id"]), shown, state)
+        r = safe_rewrite((a.get("rewrites") or {}).get(b["id"]), shown, state, jd=jd_text(job))
         safe[b["id"]] = btext(b, a["domain"]) if r == shown else r
     a["rewrites"] = safe
     s_ref = PROFILE["summaries"][d] + " " + PROFILE["summaries"][a["domain"]]
     summ = str(a.get("summary") or "").strip()
     ok = (180 < len(summ) < 520 and nums(summ) <= nums(s_ref) and acronyms(summ) <= acronyms(corpus(state))
           and not any(w in summ.lower() for w in BANNED) and not any(w in summ.lower() for w in LEAK)
-          and len(words(summ) - words(corpus(state))) <= 4)
-    a["summary"] = summ if ok else None
+          and len(words(summ) - words(corpus(state)) - words(jd_text(job))) <= 2)
+    a["summary"] = summ if ok else base["summary"]
     hl = str(a.get("headline") or "")
-    a["headline"] = hl if (hl and len(hl) < 90 and acronyms(hl) <= acronyms(corpus(state)) and not any(w in hl.lower() for w in BANNED)) else None
+    a["headline"] = hl if (hl and len(hl) < 90 and acronyms(hl) <= acronyms(corpus(state)) | acronyms(str(job.get("description") or ""))
+                           and not any(w in hl.lower() for w in BANNED)) else base["headline"]
     why = a.get("why_line") or ""
     a["why_line"] = why if (why and not nums(why) and len(why) < 260 and not any(w in why.lower() for w in BANNED)) else base["why_line"]
     order = [i for i in (a.get("bullet_order") or []) if i in base["relevance"]]
@@ -669,6 +747,9 @@ def pdf_setup():
 
 
 def md(t):
+    t = re.sub(r"\*{3,}", "", str(t))  # never print stray markdown like "****"
+    if t.count("**") % 2:
+        t = t.replace("**", "")
     t = html.escape(t, quote=False)
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
 
@@ -725,11 +806,10 @@ def build_cv(a, state, path):
 
     def story(drop):
         d = a["domain"]
-        st = [Paragraph(PROFILE["name"], S["name"]), Paragraph(md(PROFILE["headlines"][d]), S["head"]),
+        st = [Paragraph(PROFILE["name"], S["name"]), Paragraph(md(a.get("headline") or PROFILE["headlines"][d]), S["head"]),
               Paragraph(md(PROFILE["contact"]).replace("linkedin.com/in/ismaeelsyed",
                         f'<a href="{PROFILE["linkedin_url"]}" color="#1F3A5F">linkedin.com/in/ismaeelsyed</a>'), S["contact"])]
-        st += section("Profile") + [Paragraph(md(PROFILE["summaries"][d]), S["body"]), Spacer(1, 4),
-                                    Paragraph("  ·  ".join(md(h) for h in PROFILE["highlights"]), S["hl"])]
+        st += section("Profile") + [Paragraph(md(a.get("summary") or PROFILE["summaries"][d]), S["body"])]
         st += section("Experience")
         cj = PROFILE["current_job"]
         st.append(role(cj["title"], cj["dates"]))
@@ -746,7 +826,9 @@ def build_cv(a, state, path):
         st += section("Skills")
         fin_all = PROFILE["finance_skills"] + [s for s in state.get("learned", []) if s not in PROFILE["tool_skills"]]
         first = [s for s in a["matched_skills"] if s in fin_all]
-        fin = first + [s for s in fin_all if s not in first]
+        learn = [g["skill"] for g in a.get("gaps", []) if g.get("learn_time") not in ("n/a", "long term")
+                 and g["skill"] not in ("Big 4 experience", "CFA")]
+        fin = first + learn + [s for s in fin_all if s not in first]  # JD skills he is learning before the interview
         tools = [s for s in a["matched_skills"] if s in PROFILE["tool_skills"]]
         tools += [s for s in PROFILE["tool_skills"] if s not in tools]
         st.append(Paragraph("<b>Finance:</b> " + md(", ".join(fin)), base))
@@ -779,7 +861,10 @@ def build_letter(a, job, path):
     role_t = a.get("role_title") or job.get("title")
     company = a.get("company") or job.get("company")
     why = a["why_line"] or ""
-    paras = LETTERS[a["domain"]]
+    rel = a.get("relevance") or {}
+    cur = [b for sec in PROFILE["current_job"]["sections"].values() for b in sec["bullets"]]
+    top = sorted(cur, key=lambda b: (-rel.get(b["id"], 0), not b.get("core")))[:3]
+    proof = [(a.get("rewrites", {}).get(b["id"]) or btext(b, a["domain"])).replace("**", "") for b in top]
     st = [Paragraph(PROFILE["name"], ParagraphStyle("n", parent=base, fontName="Carlito-Bold", fontSize=16, textColor=navy, spaceAfter=0))]
     t = Table([[Paragraph(md(PROFILE["contact"]), ParagraphStyle("c", parent=base, fontSize=9, textColor=HexColor("#555555"), spaceAfter=0))]],
               colWidths=[A4[0] - 2 * 25 * mm - 12])
@@ -790,9 +875,13 @@ def build_letter(a, job, path):
     st.append(Paragraph(f"Hiring Team<br/>{md(str(company))}<br/>{md(loc)}", base))
     st.append(Paragraph(f"<b>Re: {md(str(role_t))}</b>", base))
     st.append(Paragraph("Dear Hiring Team,", base))
-    for p in paras:
-        p = p.format(role=role_t, company=company, why=why).strip()
-        st.append(Paragraph(md(p), base))
+    st.append(Paragraph(md(f"I am a Chartered Accountant (2025) applying for the {role_t} role at {company}. {why}".strip()), base))
+    st.append(Paragraph("The parts of my current work at Transformatrix Global that are closest to this role:", base))
+    from reportlab.platypus import ListFlowable, ListItem
+    st.append(ListFlowable([ListItem(Paragraph(md(p), ParagraphStyle("li", parent=base, spaceAfter=3)), leftIndent=14, value="•") for p in proof],
+                           bulletType="bullet", start="•", leftIndent=14, bulletFontName="Carlito"))
+    st.append(Spacer(1, 6))
+    st.append(Paragraph(md(LETTERS["audit"]), base))
     st.append(Paragraph(md(LETTERS["closing"]), base))
     st.append(Paragraph("Regards,<br/><b>Ismaeel Syed, CA</b>", base))
     SimpleDocTemplate(str(path), pagesize=A4, leftMargin=25 * mm, rightMargin=25 * mm, topMargin=20 * mm, bottomMargin=18 * mm,
@@ -817,7 +906,7 @@ def job_message(a, job):
         lines.append("🎯 JD match: " + e(", ".join(a["matched_skills"][:6])))
     if a["gaps"]:
         lines.append("📚 Seekhna padega: " + e(", ".join(f"{g['skill']} ({g.get('learn_time', '?')})" for g in a["gaps"])))
-        lines.append("   ↳ Ye CV mein NAHI daala. Seekh lo toh: /learned " + e(a["gaps"][0]["skill"]))
+        lines.append("   ↳ ⚠️ Ye skills CV ke Skills section mein DAALE hain — interview se pehle zaroor seekh lena. Seekh liya toh: /learned " + e(a["gaps"][0]["skill"]))
     if a.get("required_years"):
         lines.append(f"🧾 Experience maanga: {e(a['required_years'])} saal")
     lines.append(f"\n👉 <a href=\"{e(job.get('job_url_direct') or job.get('job_url'))}\">Apply link</a>  — neeche CV + cover letter ready hai")

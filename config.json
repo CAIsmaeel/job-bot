@@ -5,9 +5,9 @@
     "FP&A manager",
     "finance manager chartered accountant",
     "assistant manager finance chartered accountant",
-    "financial controller chartered accountant",
     "corporate development chartered accountant",
-    "commercial finance manager"
+    "commercial finance manager",
+    "financial analyst chartered accountant"
   ],
   "location": "Mumbai, Maharashtra, India",
   "distance_miles": 40,
@@ -60,7 +60,9 @@
     "accounts payable",
     "accounts receivable",
     "data entry",
-    "insurance agent"
+    "insurance agent",
+    "lead ",
+    "principal"
   ],
   "gemini_models": [
     "gemini-2.5-flash-lite",

@@ -8,9 +8,9 @@
     "consulting": "Finance Consulting  |  Transaction Advisory  |  Process Improvement"
   },
   "summaries": {
-    "advisory": "Chartered Accountant who has worked on both sides of a deal: diligencing a healthcare InsurTech acquisition structured through a demerger, and getting an industrial & logistics platform IPO-ready alongside a Big 4 team. Three years of audit on companies with ₹2,000+ Cr turnover taught me how numbers break; modelling and valuation are how I now put them to work.",
-    "fpa": "Chartered Accountant who builds the plans and reports management actually uses: an annual operating plan tested against prior-year actuals, Power BI variance dashboards, and MIS and fund-flow reporting through an IPO preparation. Three years of statutory audit taught me exactly where numbers go wrong.",
-    "consulting": "Chartered Accountant who likes working out how an unfamiliar business really makes money, from a healthcare InsurTech acquisition to an industrial & logistics platform preparing for IPO. I turn messy situations into usable outputs: operating plans, controls and SOPs, dashboards and automation that saved 50+ hours a month."
+    "advisory": "Chartered Accountant (2025) with a year of deal-side work: financial due diligence on a healthcare InsurTech acquisition and Ind AS reporting for 12 entities ahead of a ₹2,600 Cr IPO, alongside a Big 4 team. Three years of statutory audit before that, including a ~₹2,400 Cr company.",
+    "fpa": "Chartered Accountant (2025) with a year of budgeting, MIS and Ind AS reporting work: an annual operating plan built from department budgets, and MIS and fund-flow reporting for a ₹2,600 Cr IPO preparation. Three years of statutory audit before that, including a ~₹2,400 Cr company.",
+    "consulting": "Chartered Accountant (2025) with a year across due diligence, pre-IPO reporting and budgeting for clients in healthcare, logistics and the non-profit sector. Three years of statutory audit before that, including a ~₹2,400 Cr company, and an Excel VBA tool that saved 50+ hours a month."
   },
   "current_job": {
     "title": "Transformatrix Global LLP, Mumbai  —  Assistant Manager, Finance & Accounts",
@@ -61,16 +61,15 @@
           {
             "id": "fdd3",
             "text": {
-              "advisory": "Traced how a Sec 230–232 demerger scheme moved **~₹5 Cr of liabilities** into the resulting company ahead of acquisition, and evaluated the exposure for the client; also supported tax diligence on a cross-border deal",
-              "fpa": "Identified **~₹5 Cr of liabilities** that a Sec 230–232 demerger scheme was shifting into the resulting company before the sale, and quantified the balance-sheet impact for the client",
-              "consulting": "Uncovered how a Sec 230–232 demerger scheme was moving **~₹5 Cr of liabilities** into the resulting company before the sale, and set out the exposure for the client; also supported tax diligence on a cross-border deal"
+              "advisory": "Traced how a Sec 230–232 demerger scheme moved **~₹5 Cr of liabilities** into the resulting company before the sale, and set out the balance-sheet impact for the acquirer",
+              "fpa": "Identified **~₹5 Cr of liabilities** that a Sec 230–232 demerger scheme was shifting into the resulting company before the sale, and set out the balance-sheet impact for the acquirer",
+              "consulting": "Found how a Sec 230–232 demerger scheme was moving **~₹5 Cr of liabilities** into the resulting company before the sale, and set out the exposure for the acquirer"
             },
             "tags": [
               "demerger",
               "restructuring",
               "scheme",
               "liabilit",
-              "cross-border",
               "m&a",
               "acquisition",
               "deal",
@@ -106,9 +105,9 @@
           {
             "id": "ipo2",
             "text": {
-              "advisory": "Built Ind AS 116 lease, OCRPS and deferred tax workings in SAP; delivered the related-party consolidation report under SEBI LODR, plus MIS and fund-flow reporting for liquidity monitoring",
-              "fpa": "Produced the MIS and fund-flow reports management used to monitor liquidity during IPO preparation; built Ind AS 116 lease, OCRPS and deferred tax workings in SAP",
-              "consulting": "Built Ind AS 116 lease, OCRPS and deferred tax workings in SAP and the related-party report under SEBI LODR; ran MIS and fund-flow reporting for liquidity monitoring"
+              "advisory": "Built Ind AS 116 lease, OCRPS and deferred tax workings in SAP; prepared MIS and fund-flow reports to track liquidity during IPO preparation",
+              "fpa": "Prepared the MIS and fund-flow reports management used to track liquidity during IPO preparation; built Ind AS 116 lease, OCRPS and deferred tax workings in SAP",
+              "consulting": "Built Ind AS 116 lease, OCRPS and deferred tax workings in SAP; prepared MIS and fund-flow reports to track liquidity during IPO preparation"
             },
             "tags": [
               "mis",
@@ -119,9 +118,6 @@
               "lease",
               "ind as 116",
               "deferred tax",
-              "related party",
-              "sebi",
-              "lodr",
               "treasury"
             ]
           }
@@ -197,9 +193,9 @@
       {
         "id": "art1",
         "text": {
-          "advisory": "Ran the statutory audit of a **₹2,000+ Cr mining conglomerate** end to end, reporting directly to the engagement partner (former Chairman, ICAI Hyderabad)",
-          "fpa": "Ran the statutory audit of a **₹2,000+ Cr mining conglomerate** end to end, reporting directly to the engagement partner (former Chairman, ICAI Hyderabad)",
-          "consulting": "Ran the statutory audit of a **₹2,000+ Cr mining conglomerate** end to end, reporting directly to the engagement partner (former Chairman, ICAI Hyderabad)"
+          "advisory": "Ran the statutory audit of a **~₹2,400 Cr** infrastructure & mining company (Ind AS) end to end, reporting to the engagement partner (former Chairman, ICAI Hyderabad)",
+          "fpa": "Ran the statutory audit of a **~₹2,400 Cr** infrastructure & mining company (Ind AS) end to end, reporting to the engagement partner (former Chairman, ICAI Hyderabad)",
+          "consulting": "Ran the statutory audit of a **~₹2,400 Cr** infrastructure & mining company (Ind AS) end to end, reporting to the engagement partner (former Chairman, ICAI Hyderabad)"
         },
         "tags": [
           "audit",
@@ -212,9 +208,9 @@
       {
         "id": "art2",
         "text": {
-          "advisory": "Also audited two agri-seed companies (~₹200 Cr turnover each); across the three engagements handled CARO reporting, JV/subsidiary consolidation and ICFR testing",
-          "fpa": "Also audited two agri-seed companies (~₹200 Cr turnover each); across the three engagements handled JV/subsidiary consolidation, ICFR testing and CARO reporting",
-          "consulting": "Also audited two agri-seed companies (~₹200 Cr turnover each); across the three engagements tested internal controls (ICFR), handled JV/subsidiary consolidation and CARO reporting"
+          "advisory": "Audited two agri-seed companies (~₹200 Cr turnover each); across these engagements handled JV/subsidiary consolidation, ICFR testing and CARO reporting",
+          "fpa": "Audited two agri-seed companies (~₹200 Cr turnover each); across these engagements handled JV/subsidiary consolidation, ICFR testing and CARO reporting",
+          "consulting": "Audited two agri-seed companies (~₹200 Cr turnover each); across these engagements handled JV/subsidiary consolidation, ICFR testing and CARO reporting"
         },
         "tags": [
           "icfr",
@@ -229,9 +225,9 @@
       {
         "id": "art3",
         "text": {
-          "advisory": "Automated multi-branch trial balance consolidation in Excel VBA, saving **50+ hours a month**; adopted firm-wide",
-          "fpa": "Automated multi-branch trial balance consolidation in Excel VBA, cutting **50+ hours a month** of manual work; adopted firm-wide",
-          "consulting": "Automated multi-branch trial balance consolidation in Excel VBA, saving **50+ hours a month**; the firm adopted it across engagements"
+          "advisory": "Built an Excel VBA macro that automated trial balance reconciliation, saving **50+ hours a month**; rolled out across the audit team",
+          "fpa": "Built an Excel VBA macro that automated trial balance reconciliation, saving **50+ hours a month**; rolled out across the audit team",
+          "consulting": "Built an Excel VBA macro that automated trial balance reconciliation, saving **50+ hours a month**; rolled out across the audit team"
         },
         "tags": [
           "excel",
@@ -270,8 +266,8 @@
     ],
     [
       "B.Com",
-      "Osmania University (St. Joseph’s Degree College); A+ in Financial Accounting",
-      "2022"
+      "Osmania University, Hyderabad (72.8%; A+ in Financial Accounting)",
+      "2020"
     ]
   ],
   "finance_skills": [
@@ -296,7 +292,7 @@
     "Tally",
     "CCH ProSystem fx"
   ],
-  "facts_for_matching": "CA qualified May 2025. ~1 year post-qualification experience plus 3 years articleship (Feb 2020 – Jan 2023). Current CTC 10 LPA fixed, notice period 30 days, based in Kharghar, Navi Mumbai. Has NOT done hands-on valuation for a client (knows DCF/WACC theory), no LBO modelling, no Capital IQ / PitchBook, no CFA, no Big 4 employment (worked alongside a Big 4 team as client-side preparer).",
+  "facts_for_matching": "CA qualified May 2025. ~1 year post-qualification experience plus 3 years articleship (Feb 2020 – Jan 2023). Current CTC 10 LPA fixed, notice period 30 days, based in Kharghar, Navi Mumbai. Has NOT done hands-on valuation for a client (knows DCF/WACC theory), no LBO modelling, no Capital IQ / PitchBook, no CFA, no Big 4 employment (worked alongside a Big 4 team as client-side preparer). Mining audit client turnover ~₹2,400 Cr (FY22). Did NOT do SEBI LODR work. B.Com 2020.",
   "highlights": [
     "**₹2,600 Cr** IPO reporting",
     "**12 entities** consolidated",

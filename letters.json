@@ -1,21 +1,4 @@
 {
-  "closing": "I’m based in Navi Mumbai and on a 30-day notice period. I’d welcome a conversation about where I could be useful to your team.",
-  "advisory": [
-    "I’m applying for the {role} role at {company}. {why}",
-    "Over the past year I have worked on deals from two angles. On the acquirer’s side, I was part of the financial due diligence on a healthcare InsurTech business being bought through a demerger. Understanding its model, where hospitals were funded through NBFC bridge loans while insurer settlements caught up, mattered more than any single schedule, because that was where the earnings risk sat. It was also how we traced roughly ₹5 Cr of liabilities that the scheme was moving into the resulting company ahead of the sale.",
-    "On the other side, I prepared the financial statements for all 12 entities in a ~₹1,000 Cr acquisition by an industrial and logistics platform ahead of its ₹2,600 Cr IPO, working alongside a Big 4 team on Ind AS 101 adoption and consolidation. The deadlines were tight and the numbers had to hold up to scrutiny from several directions at once.",
-    "Before qualifying, I spent three years in statutory audit, including running the audit of a ₹2,000+ Cr mining company end to end. That is where I learnt to read a balance sheet sceptically, which I’d argue is most of what diligence is."
-  ],
-  "fpa": [
-    "I’m applying for the {role} role at {company}. {why}",
-    "Most of my work so far has been about making numbers useful to the people making decisions. For a charitable trust’s Food & Garment divisions, I built the annual operating plan from the department level up, testing each assumption against prior-year actuals before it went to the governing body. I then built the Power BI dashboards used to track budget against actuals through the year.",
-    "On a pre-IPO engagement for an industrial and logistics platform, I prepared the financial statements of the 12 entities it had acquired and produced the MIS and fund-flow reports management relied on to watch liquidity while the ₹2,600 Cr IPO was being prepared. Separately, I helped put through Foreign Tax Credit claims that save ₹9.34 Cr a year in double taxation.",
-    "I also like fixing the process behind the numbers. As an article assistant, I wrote an Excel VBA tool that consolidated multi-branch trial balances and saved more than 50 hours a month; the firm went on to adopt it across its engagements."
-  ],
-  "consulting": [
-    "I’m applying for the {role} role at {company}. {why}",
-    "What I enjoy most is walking into an unfamiliar business and working out how it really makes money. In the past year that has meant a healthcare InsurTech company financing hospital claims ahead of insurer settlement, an industrial and logistics platform preparing for a ₹2,600 Cr IPO, and a charitable trust that needed a proper operating plan and tighter controls. Before that, audit work took me through mining, agriculture, power and BFSI.",
-    "The common thread has been turning a messy situation into something decision-makers can act on: an operating plan tested against actuals, SOPs that closed the control gaps we found, Power BI dashboards for monthly reviews, and an Excel VBA tool that saved my audit firm more than 50 hours a month.",
-    "As a Chartered Accountant, I bring the financial grounding that makes recommendations hold up when someone checks the numbers, and I’d like to apply it to a wider set of business problems."
-  ]
+  "closing": "I am based in Navi Mumbai and on a 30-day notice period. I would be glad to talk about the role whenever suits you.",
+  "audit": "Before this, I spent three years in statutory audit at M. Bhaskara Rao & Co., Hyderabad, including the audit of a ~₹2,400 Cr infrastructure & mining company, where I also built an Excel VBA macro that saved the team 50+ hours a month."
 }
