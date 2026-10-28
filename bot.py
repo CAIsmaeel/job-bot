@@ -872,11 +872,6 @@ def build_letter(a, job, path):
     base = ParagraphStyle("b", fontName="Carlito", fontSize=11, leading=15, spaceAfter=9)
     role_t = a.get("role_title") or job.get("title")
     company = a.get("company") or job.get("company")
-    why = a["why_line"] or ""
-    rel = a.get("relevance") or {}
-    cur = [b for sec in PROFILE["current_job"]["sections"].values() for b in sec["bullets"]]
-    top = sorted(cur, key=lambda b: (-rel.get(b["id"], 0), not b.get("core")))[:3]
-    proof = [(a.get("rewrites", {}).get(b["id"]) or btext(b, a["domain"])).replace("**", "") for b in top]
     st = [Paragraph(PROFILE["name"], ParagraphStyle("n", parent=base, fontName="Carlito-Bold", fontSize=16, textColor=navy, spaceAfter=0))]
     t = Table([[Paragraph(md(PROFILE["contact"]), ParagraphStyle("c", parent=base, fontSize=9, textColor=HexColor("#555555"), spaceAfter=0))]],
               colWidths=[A4[0] - 2 * 25 * mm - 12])
@@ -887,13 +882,34 @@ def build_letter(a, job, path):
     st.append(Paragraph(f"Hiring Team<br/>{md(str(company))}<br/>{md(loc)}", base))
     st.append(Paragraph(f"<b>Re: {md(str(role_t))}</b>", base))
     st.append(Paragraph("Dear Hiring Team,", base))
-    st.append(Paragraph(md(f"I am a Chartered Accountant (2025) applying for the {role_t} role at {company}. {why}".strip()), base))
-    st.append(Paragraph("The parts of my current work at Transformatrix Global that are closest to this role:", base))
-    from reportlab.platypus import ListFlowable, ListItem
-    st.append(ListFlowable([ListItem(Paragraph(md(p), ParagraphStyle("li", parent=base, spaceAfter=3)), leftIndent=14, value="•") for p in proof],
-                           bulletType="bullet", start="•", leftIndent=14, bulletFontName="Carlito"))
-    st.append(Spacer(1, 6))
-    st.append(Paragraph(md(LETTERS["audit"]), base))
+    focus = jd_focus(job, 4)
+    keys = []
+    for name in focus + ["Financial Reporting (Ind AS)", "Budgeting & Forecasting", "Financial Due Diligence"]:
+        k = EVIDENCE_KEY[name]
+        if k not in keys:
+            keys.append(k)
+    keys = keys[:3]
+    if "ipo" in keys and "mis" in keys and keys.index("mis") < keys.index("ipo"):
+        i, j = keys.index("mis"), keys.index("ipo")
+        keys[i], keys[j] = "ipo", "mis"  # tell the IPO story in order: statements first, then MIS
+    needs = []
+    for n in focus[:3]:
+        if SHORT[n] not in needs:
+            needs.append(SHORT[n])
+    ask = (", ".join(needs[:-1]) + " and " + needs[-1]) if len(needs) > 1 else (needs[0] if needs else "")
+    p1 = f"I would like to be considered for the {role_t} role at {company}."
+    if ask:
+        p1 += f" The role asks for {ask}, which is close to what I have been doing for the past year."
+    proof = []
+    for k in keys:
+        t = LETTERS["proof"][k]
+        if k == "mis" and "ipo" in keys and keys.index("ipo") < keys.index("mis"):
+            t = LETTERS["proof"]["mis_after_ipo"]
+        if k == "var" and "aop" in keys and keys.index("aop") < keys.index("var"):
+            t = LETTERS["proof"]["var_after_aop"]
+        proof.append(t)
+    st.append(Paragraph(md(p1), base))
+    st.append(Paragraph(md(" ".join(proof)), base))
     st.append(Paragraph(md(LETTERS["closing"]), base))
     st.append(Paragraph("Regards,<br/><b>Ismaeel Syed, CA</b>", base))
     SimpleDocTemplate(str(path), pagesize=A4, leftMargin=25 * mm, rightMargin=25 * mm, topMargin=20 * mm, bottomMargin=18 * mm,
