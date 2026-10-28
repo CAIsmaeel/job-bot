@@ -908,7 +908,7 @@ def build_letter(a, job, path):
         if k == "var" and "aop" in keys and keys.index("aop") < keys.index("var"):
             t = LETTERS["proof"]["var_after_aop"]
         elif k == "var" and proof:
-            t = "Separately, " + t[0].lower() + t[1:]
+            t = "Separately, " + t
         proof.append(t)
     st.append(Paragraph(md(p1), base))
     st.append(Paragraph(md(" ".join(proof)), base))
