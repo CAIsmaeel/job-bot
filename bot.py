@@ -889,9 +889,9 @@ def build_letter(a, job, path):
         if k not in keys:
             keys.append(k)
     keys = keys[:3]
-    if "ipo" in keys and "mis" in keys and keys.index("mis") < keys.index("ipo"):
-        i, j = keys.index("mis"), keys.index("ipo")
-        keys[i], keys[j] = "ipo", "mis"  # tell the IPO story in order: statements first, then MIS
+    if "ipo" in keys and "mis" in keys:  # tell the IPO story together: statements first, then MIS
+        keys.remove("mis")
+        keys.insert(keys.index("ipo") + 1, "mis")
     needs = []
     for n in focus[:3]:
         if SHORT[n] not in needs:
