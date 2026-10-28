@@ -343,19 +343,18 @@ SHORT = {"FP&A": "FP&A", "Business Finance": "business finance", "Budgeting & Fo
          "Financial Reporting (Ind AS)": "Ind AS reporting", "Consolidation": "consolidation",
          "Financial Due Diligence": "due diligence", "Internal Controls": "internal controls",
          "Cash Flow & Liquidity": "cash-flow reporting", "Process Automation": "automation"}
-# What he has actually done for each of those (used to write a plain, JD-specific summary)
+# Which real piece of work proves each headline area (one fact per key, never repeated)
+EVIDENCE_KEY = {"FP&A": "aop", "Business Finance": "aop", "Budgeting & Forecasting": "aop", "Variance Analysis": "var",
+                "MIS & Management Reporting": "mis", "Cash Flow & Liquidity": "mis", "Financial Reporting (Ind AS)": "ipo",
+                "Consolidation": "ipo", "Financial Due Diligence": "fdd", "Internal Controls": "ctl", "Process Automation": "vba"}
 EVIDENCE = {
-    "FP&A": "built an annual operating plan from department budgets up and tested it against prior-year actuals",
-    "Business Finance": "built an annual operating plan from department budgets up and tested it against prior-year actuals",
-    "Budgeting & Forecasting": "built an annual operating plan from department budgets up and tested it against prior-year actuals",
-    "MIS & Management Reporting": "prepared the MIS and fund-flow reports management used during a ₹2,600 Cr IPO preparation",
-    "Variance Analysis": "set up budget-vs-actual variance reviews for a client's divisions",
-    "Financial Reporting (Ind AS)": "prepared Ind AS financial statements for 12 entities ahead of a ₹2,600 Cr IPO, alongside a Big 4 team",
-    "Consolidation": "prepared Ind AS financial statements for 12 entities ahead of a ₹2,600 Cr IPO, alongside a Big 4 team",
-    "Financial Due Diligence": "worked on the financial due diligence of a healthcare InsurTech acquisition",
-    "Internal Controls": "tested internal controls and CARO compliance across three statutory audits",
-    "Cash Flow & Liquidity": "prepared the MIS and fund-flow reports management used to track liquidity during a ₹2,600 Cr IPO preparation",
-    "Process Automation": "built an Excel VBA macro that saved the audit team 50+ hours a month",
+    "aop": "built a client's annual operating plan from department budgets up, testing each assumption against prior-year actuals",
+    "var": "set up budget-vs-actual variance reviews for a client's divisions",
+    "ipo": "prepared Ind AS financial statements for 12 acquired entities ahead of a ₹2,600 Cr IPO, alongside a Big 4 team",
+    "mis": "prepared the MIS and fund-flow reports management used to track liquidity during a ₹2,600 Cr IPO preparation",
+    "fdd": "worked on the financial due diligence of a healthcare InsurTech acquisition",
+    "ctl": "tested internal controls and CARO compliance across three statutory audits",
+    "vba": "built an Excel VBA macro that saved the audit team 50+ hours a month",
 }
 
 
@@ -454,14 +453,25 @@ def rules_summary(job, domain):
     f = jd_focus(job, 3)
     if not f:
         return PROFILE["summaries"][domain]
-    ev = []
+    keys = []
     for name in f + ["Financial Reporting (Ind AS)", "Budgeting & Forecasting"]:
-        e = EVIDENCE[name]
-        if e not in ev and e.split(" ")[1] not in [x.split(" ")[1] for x in ev]:  # one fact per piece of work
-            ev.append(e)
-    short = [SHORT[n] for n in f[:2]]
+        k = EVIDENCE_KEY[name]
+        if k not in keys:
+            keys.append(k)
+    keys = keys[:2]
+    if set(keys) == {"ipo", "mis"}:
+        s2 = ("In my current role I prepared Ind AS financial statements for 12 acquired entities and the MIS and fund-flow "
+              "reports management used to track liquidity ahead of a ₹2,600 Cr IPO, alongside a Big 4 team.")
+    elif set(keys) == {"aop", "var"}:
+        s2 = (f"In my current role I {EVIDENCE['aop']}, and set up the budget-vs-actual variance reviews that tracked it.")
+    else:
+        s2 = f"In my current role I {EVIDENCE[keys[0]]}, and {EVIDENCE[keys[1]]}."
+    short = []
+    for n in f:
+        if SHORT[n] not in short:
+            short.append(SHORT[n])
+    short = (short + ["Ind AS reporting", "budgeting"])[:2] if len(short) < 2 else short[:2]
     s1 = f"Chartered Accountant (2025) with a year of hands-on {' and '.join(short)} work, after three years of statutory audit."
-    s2 = f"In my current role I {ev[0]}, and {ev[1]}."
     return s1 + " " + s2
 
 
@@ -702,10 +712,12 @@ Return JSON with exactly these keys:
     ok = (180 < len(summ) < 520 and nums(summ) <= nums(s_ref) and acronyms(summ) <= acronyms(corpus(state))
           and not any(w in summ.lower() for w in BANNED) and not any(w in summ.lower() for w in LEAK)
           and len(words(summ) - words(corpus(state)) - words(jd_text(job))) <= 2)
-    a["summary"] = summ if ok else base["summary"]
+    a["summary"] = base["summary"]  # AI summaries kept failing checks or sounded generated: use the clean JD-based one
     hl = str(a.get("headline") or "")
     a["headline"] = hl if (hl and len(hl) < 90 and acronyms(hl) <= acronyms(corpus(state)) | acronyms(str(job.get("description") or ""))
                            and not any(w in hl.lower() for w in BANNED)) else base["headline"]
+    a["headline"] = base["headline"]  # consistent, true phrases picked from the JD
+    a["cv_learn"] = base["gaps"]  # clean skill names only (AI gap names can be long/odd)
     why = a.get("why_line") or ""
     a["why_line"] = why if (why and not nums(why) and len(why) < 260 and not any(w in why.lower() for w in BANNED)) else base["why_line"]
     order = [i for i in (a.get("bullet_order") or []) if i in base["relevance"]]
@@ -826,7 +838,7 @@ def build_cv(a, state, path):
         st += section("Skills")
         fin_all = PROFILE["finance_skills"] + [s for s in state.get("learned", []) if s not in PROFILE["tool_skills"]]
         first = [s for s in a["matched_skills"] if s in fin_all]
-        learn = [g["skill"] for g in a.get("gaps", []) if g.get("learn_time") not in ("n/a", "long term")
+        learn = [g["skill"] for g in a.get("cv_learn", a.get("gaps", [])) if g.get("learn_time") not in ("n/a", "long term")
                  and g["skill"] not in ("Big 4 experience", "CFA")]
         fin = first + learn + [s for s in fin_all if s not in first]  # JD skills he is learning before the interview
         tools = [s for s in a["matched_skills"] if s in PROFILE["tool_skills"]]
