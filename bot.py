@@ -95,18 +95,6 @@ HELP = (
 )
 
 
-def join_codes():
-    codes = set()
-    for p in (ROOT / "users").glob("*/config.json"):
-        try:
-            c = json.loads(p.read_text(encoding="utf-8")).get("join_code")
-            if c:
-                codes.add(c.lower())
-        except Exception:
-            pass
-    return codes
-
-
 def handle_commands(state):
     if DRY_RUN:
         return
@@ -124,11 +112,6 @@ def handle_commands(state):
             if text.lower().startswith(("/start", "/help")):
                 continue
         if chat_id != state["chat_id"]:
-            # A friend joining with their code (e.g. "/start pragdesh" or just "pragdesh") gets their own alerts
-            word = text.lower().replace("/start", "").strip()
-            if word and word in join_codes():
-                state.setdefault("guests", {})[word] = chat_id
-                tg("sendMessage", chat_id=chat_id, text="✅ Connected! Ab har ghante (7 AM – 11 PM) aapke liye nayi matching jobs yahan aayengi. Har alert pe usi din apply kijiye.")
             continue
         low = text.lower()
         learned = state.setdefault("learned", [])
@@ -1073,15 +1056,7 @@ def process(job, state):
 def main():
     state = load_state()
     pdf_setup()
-    if SIMPLE:
-        # Friends share the main bot: their chat id is recorded by the main run when they send their join code
-        try:
-            main_state = json.loads((ROOT / "state.json").read_text(encoding="utf-8"))
-            state["chat_id"] = main_state.get("guests", {}).get(CFG["join_code"])
-        except Exception:
-            pass
-    else:
-        handle_commands(state)
+    handle_commands(state)
     save_state(state)
     if not state.get("chat_id"):
         print("No Telegram chat yet: open your bot in Telegram and send /start")

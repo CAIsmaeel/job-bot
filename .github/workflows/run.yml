@@ -25,6 +25,7 @@ jobs:
       - name: Run bot every hour (7 AM - 11 PM India time)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_TOKEN_PRAGDESH: ${{ secrets.TELEGRAM_TOKEN_PRAGDESH }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CONTACT_LINE: ${{ secrets.CONTACT_LINE }}
         run: |
@@ -42,10 +43,11 @@ jobs:
             if [ "$hour" -ge 7 ] && [ "$hour" -lt 23 ]; then
               timeout 12m python bot.py || echo "bot run failed, continuing"
               save
-              for u in users/*/; do
-                BOT_HOME="$u" GEMINI_API_KEY="" timeout 9m python bot.py || echo "$u run failed"
+              # Pragdesh: his own separate bot (secret TELEGRAM_TOKEN_PRAGDESH), his own chat and jobs
+              if [ -n "$TELEGRAM_TOKEN_PRAGDESH" ]; then
+                BOT_HOME=users/pragdesh TELEGRAM_TOKEN="$TELEGRAM_TOKEN_PRAGDESH" GEMINI_API_KEY="" timeout 9m python bot.py || echo "pragdesh run failed"
                 save
-              done
+              fi
             else
               echo "Night time ($hour h IST) - skipping"
             fi
