@@ -36,6 +36,7 @@ def load(name):
 
 CFG = load("config.json")
 SIMPLE = bool(CFG.get("simple_mode"))  # job alerts + one fixed CV (for friends/clients)
+EN = CFG.get("lang") == "en"  # English-only messages for people who don't read Hinglish
 PROFILE = load("profile.json")
 # Phone/email live in a GitHub secret so the repo can be public
 PROFILE["contact"] = PROFILE["contact"].replace("{{CONTACT_LINE}}", os.environ.get(
@@ -95,6 +96,12 @@ HELP = (
 )
 
 
+HELP_EN = (
+    "Commands:\n/pause - stop job alerts\n/resume - start job alerts again\n\n"
+    "Note: the bot checks for new jobs every hour (7 AM - 11 PM), so replies come on the next run."
+)
+
+
 def handle_commands(state):
     if DRY_RUN:
         return
@@ -108,7 +115,8 @@ def handle_commands(state):
             continue
         if not state.get("chat_id"):
             state["chat_id"] = chat_id  # first person to talk to the bot owns it
-            send(state, "✅ Bot connect ho gaya! Ab har ghante (7 AM – 11 PM) nayi jobs yahan aayengi.\n\n" + HELP)
+            send(state, ("✅ Connected! New matching jobs will arrive here every hour (7 AM - 11 PM). Apply the same day you get an alert.\n\n" + HELP_EN)
+                 if EN else "✅ Bot connect ho gaya! Ab har ghante (7 AM – 11 PM) nayi jobs yahan aayengi.\n\n" + HELP)
             if text.lower().startswith(("/start", "/help")):
                 continue
         if chat_id != state["chat_id"]:
@@ -132,12 +140,12 @@ def handle_commands(state):
             send(state, gap_report(state, days=30))
         elif low.startswith("/pause"):
             state["paused"] = True
-            send(state, "⏸️ Bot pause. /resume se wapas chalu karo.")
+            send(state, "⏸️ Job alerts paused. Send /resume to start again." if EN else "⏸️ Bot pause. /resume se wapas chalu karo.")
         elif low.startswith("/resume"):
             state["paused"] = False
-            send(state, "▶️ Bot chalu.")
+            send(state, "▶️ Job alerts are on again." if EN else "▶️ Bot chalu.")
         elif low.startswith("/start") or low.startswith("/help"):
-            send(state, HELP)
+            send(state, HELP_EN if EN else HELP)
 
 
 # ---------------------------------------------------------------- gaps
@@ -166,13 +174,17 @@ def maybe_daily_digest(state):
         return
     items = sorted([n for n in state.get("near_miss", []) if n["date"] == today], key=lambda n: -n["score"])[:10]
     sent = state.get("sent_count", {}).get(today, 0)
-    lines = [f"🌙 <b>Aaj ka summary</b>: {sent} job(s) CV ke saath bheji."]
+    if EN:
+        lines = [f"🌙 <b>Today's summary</b>: {sent} matching job(s) sent."]
+    else:
+        lines = [f"🌙 <b>Aaj ka summary</b>: {sent} job(s) CV ke saath bheji."]
     if items:
-        lines.append("\n<b>Thoda kam match wali jobs</b> (score 45–64, CV nahi banaya). Pasand aaye toh khud dekh lo:")
+        lines.append("\n<b>Slightly lower matches</b> worth a look:" if EN else
+                     "\n<b>Thoda kam match wali jobs</b> (score 45–64, CV nahi banaya). Pasand aaye toh khud dekh lo:")
         for i, n in enumerate(items, 1):
             lines.append(f"{i}. {n['score']} · <a href=\"{html.escape(n['url'])}\">{html.escape(n['title'])}</a> @ {html.escape(n['company'])} ({html.escape(n['site'])})")
     else:
-        lines.append("Aaj aur koi kaam ki job nahi mili.")
+        lines.append("No other relevant jobs found today." if EN else "Aaj aur koi kaam ki job nahi mili.")
     send(state, "\n".join(lines))
     state["last_digest"] = today
     cutoff = (now - dt.timedelta(days=3)).date().isoformat()
@@ -182,6 +194,8 @@ def maybe_daily_digest(state):
 def maybe_weekly_report(state):
     now = dt.datetime.now(IST)
     week = now.strftime("%G-W%V")
+    if SIMPLE:
+        return  # skill-gap report is only for the main (CV-tailoring) bot
     if now.weekday() == 6 and now.hour >= 18 and state.get("last_weekly") != week:  # Sunday evening
         send(state, gap_report(state, days=7))
         state["last_weekly"] = week
@@ -1028,13 +1042,13 @@ def process(job, state):
         url = job.get("job_url_direct") or job.get("job_url")
         msg = (f"🎯 <b>{e(job.get('title'))}</b>\n🏢 {e(job.get('company'))}\n📍 {e(job.get('location'))}  •  {e(job.get('site'))}\n"
                f"⭐ Match: {a['score']}/100  ({e(a['match_note'])})\n"
-               + (f"⏳ JD mein {a['required_years']}+ saal likha hai\n" if a.get("required_years") else "")
-               + f"\n👉 <a href=\"{e(url)}\">Apply here</a>  (jaldi apply karo, pehle 24 ghante sabse zaroori)")
+               + (f"⏳ JD asks for {a['required_years']}+ years\n" if a.get("required_years") else "")
+               + f"\n👉 <a href=\"{e(url)}\">Apply here</a>  (apply today: the first 24 hours matter most)")
         send(state, msg)
         sc = state.setdefault("sent_count", {})
         sc[today] = sc.get(today, 0) + 1
         if CFG.get("fixed_cv") and (HOME / CFG["fixed_cv"]).exists() and sc[today] == 1:
-            send_file(state, HOME / CFG["fixed_cv"], "Aaj ki jobs ke liye CV (yahi use karo)")
+            send_file(state, HOME / CFG["fixed_cv"], "Your CV for today's applications")
         return True
     OUT.mkdir(exist_ok=True)
     comp = safe_name(a.get("company") or job.get("company"))
