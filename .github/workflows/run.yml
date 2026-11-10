@@ -25,26 +25,32 @@ jobs:
       - name: Run bot every hour (7 AM - 11 PM India time)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_TOKEN_PRAGDESH: ${{ secrets.TELEGRAM_TOKEN_PRAGDESH }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CONTACT_LINE: ${{ secrets.CONTACT_LINE }}
         run: |
           git config user.name "job-bot"
           git config user.email "job-bot@users.noreply.github.com"
           save() {
-            git add state.json 2>/dev/null || true
+            git add state.json users/*/state.json 2>/dev/null || true
             git diff --cached --quiet && return 0
             git commit -q -m "bot state"
             for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && return 0; sleep 5; done
           }
           for round in 1 2 3 4 5; do
+            t0=$(date +%s)
             hour=$(TZ=Asia/Kolkata date +%H)
             if [ "$hour" -ge 7 ] && [ "$hour" -lt 23 ]; then
               timeout 12m python bot.py || echo "bot run failed, continuing"
               save
+              if [ -n "$TELEGRAM_TOKEN_PRAGDESH" ]; then
+                BOT_HOME=users/pragdesh TELEGRAM_TOKEN="$TELEGRAM_TOKEN_PRAGDESH" GEMINI_API_KEY="" timeout 9m python bot.py || echo "pragdesh run failed"
+                save
+              fi
             else
               echo "Night time ($hour h IST) - skipping"
             fi
-            if [ "$round" -lt 5 ]; then sleep 3300; fi
+            if [ "$round" -lt 5 ]; then left=$((3300 - ($(date +%s) - t0))); [ "$left" -gt 60 ] || left=60; sleep "$left"; fi
           done
       - name: Start the next run
         if: always()

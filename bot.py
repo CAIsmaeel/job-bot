@@ -18,8 +18,10 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).parent
-STATE_FILE = ROOT / "state.json"
-OUT = ROOT / "out"
+# Each person has their own folder (config, state, CV). Ismaeel = repo root; others = users/<name>
+HOME = (ROOT / os.environ["BOT_HOME"]) if os.environ.get("BOT_HOME") else ROOT
+STATE_FILE = HOME / "state.json"
+OUT = HOME / "out"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
 TG_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
@@ -28,10 +30,12 @@ DRY_RUN = os.environ.get("DRY_RUN") == "1"  # local testing: no network calls
 
 
 def load(name):
-    return json.loads((ROOT / name).read_text(encoding="utf-8"))
+    p = HOME / name if (HOME / name).exists() else ROOT / name
+    return json.loads(p.read_text(encoding="utf-8"))
 
 
 CFG = load("config.json")
+SIMPLE = bool(CFG.get("simple_mode"))  # job alerts + one fixed CV (for friends/clients)
 PROFILE = load("profile.json")
 # Phone/email live in a GitHub secret so the repo can be public
 PROFILE["contact"] = PROFILE["contact"].replace("{{CONTACT_LINE}}", os.environ.get(
@@ -603,7 +607,26 @@ def all_skills(state):
 AI_OFF = {"off": False}
 
 
+def analyse_simple(job, state):
+    jd = jd_text(job)
+    matched = [k for k in CFG["match_keywords"] if re.search(r"(?<![a-z])" + re.escape(k.lower()) + r"(?![a-z])", jd)]
+    years = None
+    m = re.search(r"(\d{1,2})\s*(?:\+|plus)?\s*(?:-|–|to)?\s*(\d{1,2})?\s*\+?\s*(?:years|yrs)", jd)
+    if m:
+        years = int(m.group(1))
+    score = 40 + min(len(matched), 8) * 6
+    if any(w in jd for w in CFG.get("bonus_words", [])):
+        score += 10
+    if years is not None and years > CFG.get("max_years", 2):
+        score -= 35
+    return {"score": max(0, min(100, score)), "matched_skills": matched, "required_years": years, "halal_ok": True,
+            "gaps": [], "role_title": job.get("title"), "company": job.get("company"),
+            "match_note": f"{len(matched)} keywords match: " + ", ".join(matched[:6])}
+
+
 def analyse(job, state):
+    if SIMPLE:
+        return analyse_simple(job, state)
     base = analyse_rules(job, state)
     if not GEMINI_KEY or AI_OFF["off"]:
         return base
@@ -1000,6 +1023,19 @@ def process(job, state):
                 "company": str(a.get("company") or job.get("company")), "site": str(job.get("site")),
                 "url": str(job.get("job_url_direct") or job.get("job_url")), "note": str(a.get("match_note") or "")[:120]})
         return False
+    if SIMPLE:
+        e = lambda x: html.escape(str(x or ""))
+        url = job.get("job_url_direct") or job.get("job_url")
+        msg = (f"🎯 <b>{e(job.get('title'))}</b>\n🏢 {e(job.get('company'))}\n📍 {e(job.get('location'))}  •  {e(job.get('site'))}\n"
+               f"⭐ Match: {a['score']}/100  ({e(a['match_note'])})\n"
+               + (f"⏳ JD mein {a['required_years']}+ saal likha hai\n" if a.get("required_years") else "")
+               + f"\n👉 <a href=\"{e(url)}\">Apply here</a>  (jaldi apply karo, pehle 24 ghante sabse zaroori)")
+        send(state, msg)
+        sc = state.setdefault("sent_count", {})
+        sc[today] = sc.get(today, 0) + 1
+        if CFG.get("fixed_cv") and (HOME / CFG["fixed_cv"]).exists() and sc[today] == 1:
+            send_file(state, HOME / CFG["fixed_cv"], "Aaj ki jobs ke liye CV (yahi use karo)")
+        return True
     OUT.mkdir(exist_ok=True)
     comp = safe_name(a.get("company") or job.get("company"))
     cv = OUT / f"Ismaeel_Syed_CV_{comp}.pdf"
@@ -1036,7 +1072,7 @@ def main():
         jobs = prefilter(fetch_jobs(), state)
         DIAG["candidates"] = len(jobs)
         # Best jobs first, whichever site they came from (quick no-AI score)
-        quick = {id(j): analyse_rules(j, state)["score"] for j in jobs}
+        quick = {id(j): (analyse_simple if SIMPLE else analyse_rules)(j, state)["score"] for j in jobs}
         jobs.sort(key=lambda j: -quick[id(j)])
         DIAG["by_site_queued"] = {s: sum(1 for j in jobs[: CFG["max_jobs_to_analyse_per_run"]] if j.get("site") == s) for s in CFG["sites"]}
         print(f"{len(jobs)} new candidate jobs")
