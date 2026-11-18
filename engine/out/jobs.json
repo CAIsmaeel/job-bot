@@ -132,18 +132,6 @@
   "first_seen": "2026-11-18T10:12:10Z"
  },
  {
-  "key": "b2b3b1eddad4260c",
-  "company": "EXL",
-  "title": "Senior Executive-MIS",
-  "category": "FP&A / Business Finance",
-  "location": "Chennai, Tamil Nadu, India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/20932",
-  "posted": "2026-10-21",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T10:12:10Z"
- },
- {
   "key": "7b3043f73ff1c7bd",
   "company": "JPMorgan Chase",
   "title": "Asset and Wealth Management Audit - AVP",
@@ -180,18 +168,6 @@
   "first_seen": "2026-11-18T06:19:13Z"
  },
  {
-  "key": "7eaec8782aac730c",
-  "company": "Godrej Industries",
-  "title": "Manager - Finance",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India",
-  "url": "https://careers.godrejindustries.com/in/en/job/P-101073",
-  "posted": "2026-08-24T09:11:08.315+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:19:13Z"
- },
- {
   "key": "778415101071e64d",
   "company": "GE HealthCare",
   "title": "Associate Service Finance Analyst",
@@ -222,18 +198,6 @@
   "category": "Accounts Receivable / O2C",
   "location": "Bangalore, India",
   "url": "https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/",
-  "posted": null,
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "7b23b98d8bbbdbf3",
-  "company": "Volvo Group",
-  "title": "Product Quality Assurance Lead",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bangalore, India",
-  "url": "https://jobs.volvogroup.com/job/Bangalore-Product-Quality-Assurance-Lead-560058/1377141555/",
   "posted": null,
   "platform": "successfactors",
   "approx": false,
@@ -2359,6 +2323,18 @@
   "location": "Mumbai, Maharashtra, India",
   "url": "https://careers.godrejindustries.com/in/en/job/P-101861",
   "posted": "2026-10-19T09:44:56.011+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "412fcbb700006cd2",
+  "company": "Godrej Industries",
+  "title": "Manager - Finance",
+  "category": "Accounting / Finance (general)",
+  "location": "Mumbai, Maharashtra, India",
+  "url": "https://careers.godrejindustries.com/in/en/job/P-101655",
+  "posted": "2026-10-09T09:48:41.443+0000",
   "platform": "phenom",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"

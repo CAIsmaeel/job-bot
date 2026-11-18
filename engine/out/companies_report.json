@@ -175,7 +175,7 @@
    "company_domain": "exlservice.com"
   },
   "raw": 539,
-  "kept": 46
+  "kept": 45
  },
  {
   "company": "Barclays",
@@ -590,7 +590,7 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 287,
+  "raw": 288,
   "kept": 9
  },
  {
@@ -683,7 +683,7 @@
    "origin": "https://www.synchronycareers.com",
    "company_domain": "synchronycareers.com"
   },
-  "raw": 29,
+  "raw": 27,
   "kept": 0
  },
  {
@@ -837,8 +837,8 @@
    "found_on": "https://jobs.volvogroup.com/",
    "company_domain": "volvogroup.com"
   },
-  "raw": 22,
-  "kept": 4
+  "raw": 8,
+  "kept": 3
  },
  {
   "company": "Continental",
@@ -861,7 +861,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 35,
+  "raw": 32,
   "kept": 2
  },
  {
@@ -998,7 +998,7 @@
    "found_on": "https://careers.reckitt.com/",
    "company_domain": "reckitt.com"
   },
-  "raw": 51,
+  "raw": 25,
   "kept": 18
  },
  {
@@ -1011,7 +1011,7 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 27,
+  "raw": 28,
   "kept": 4
  },
  {
@@ -1035,7 +1035,7 @@
    "origin": "https://jobs.sanofi.com",
    "company_domain": "sanofi.com"
   },
-  "raw": 1465,
+  "raw": 1462,
   "kept": 5
  },
  {
@@ -1176,7 +1176,7 @@
    "found_on": "https://careers.tatamotors.com/",
    "company_domain": "tatamotors.com"
   },
-  "raw": 57,
+  "raw": 8,
   "kept": 0
  },
  {
@@ -1236,7 +1236,7 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 756,
+  "raw": 754,
   "kept": 21
  },
  {
