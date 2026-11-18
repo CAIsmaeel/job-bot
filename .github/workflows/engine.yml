@@ -1,0 +1,41 @@
+name: engine
+# Finance job engine: reads finance jobs in India from company career sites,
+# builds the jobs page (engine/out/site/index.html) and posts new jobs to the Telegram channel.
+# Separate from the personal job bot (bot.py / run.yml), which it does not touch.
+on:
+  schedule:
+    - cron: "23 1-17/2 * * *"   # every 2 hours, about 6:53 AM to 10:53 PM India time
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: engine
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Run engine
+        env:
+          TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
+          TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
+          BRAND_NAME: ${{ vars.BRAND_NAME }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          SIMULATOR_URL: ${{ vars.SIMULATOR_URL }}
+        run: python engine/engine.py
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "engine"
+          git config user.email "engine@users.noreply.github.com"
+          git add -f engine/out
+          git diff --cached --quiet && exit 0
+          git commit -q -m "engine results"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && exit 0; sleep 5; done
+          exit 1

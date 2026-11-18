@@ -1,0 +1,550 @@
+[
+ {
+  "name": "Mastercard",
+  "careers": "https://careers.mastercard.com"
+ },
+ {
+  "name": "Visa",
+  "careers": "https://jobs.smartrecruiters.com/Visa"
+ },
+ {
+  "name": "JPMorgan Chase",
+  "careers": "https://careers.jpmorgan.com/in/en/home"
+ },
+ {
+  "name": "Caterpillar",
+  "careers": "https://careers.caterpillar.com"
+ },
+ {
+  "name": "PwC India",
+  "careers": "https://www.pwc.in/careers.html"
+ },
+ {
+  "name": "EY",
+  "careers": "https://careers.ey.com"
+ },
+ {
+  "name": "Deloitte USI",
+  "careers": "https://usijobs.deloitte.com"
+ },
+ {
+  "name": "KPMG India",
+  "careers": "https://kpmg.com/in/en/home/careers.html"
+ },
+ {
+  "name": "Grant Thornton Bharat",
+  "careers": "https://www.grantthornton.in/careers/"
+ },
+ {
+  "name": "BDO India",
+  "careers": "https://www.bdo.in/en-gb/careers"
+ },
+ {
+  "name": "Accenture",
+  "careers": "https://www.accenture.com/in-en/careers"
+ },
+ {
+  "name": "Genpact",
+  "careers": "https://www.genpact.com/careers"
+ },
+ {
+  "name": "WNS",
+  "careers": "https://www.wns.com/careers"
+ },
+ {
+  "name": "EXL",
+  "careers": "https://www.exlservice.com/careers"
+ },
+ {
+  "name": "Barclays",
+  "careers": "https://search.jobs.barclays"
+ },
+ {
+  "name": "HSBC",
+  "careers": "https://www.hsbc.com/careers"
+ },
+ {
+  "name": "Deutsche Bank",
+  "careers": "https://careers.db.com"
+ },
+ {
+  "name": "Citi",
+  "careers": "https://jobs.citi.com"
+ },
+ {
+  "name": "Goldman Sachs",
+  "careers": "https://higher.gs.com"
+ },
+ {
+  "name": "Morgan Stanley",
+  "careers": "https://www.morganstanley.com/careers"
+ },
+ {
+  "name": "Wells Fargo",
+  "careers": "https://www.wellsfargojobs.com"
+ },
+ {
+  "name": "American Express",
+  "careers": "https://www.americanexpress.com/en-us/careers/"
+ },
+ {
+  "name": "Maersk",
+  "careers": "https://www.maersk.com/careers"
+ },
+ {
+  "name": "Michelin",
+  "careers": "https://jobs.michelin.com"
+ },
+ {
+  "name": "Shell",
+  "careers": "https://www.shell.in/careers.html"
+ },
+ {
+  "name": "BP",
+  "careers": "https://www.bp.com/en/global/corporate/careers.html"
+ },
+ {
+  "name": "Unilever",
+  "careers": "https://careers.unilever.com"
+ },
+ {
+  "name": "Nestle",
+  "careers": "https://www.nestle.in/jobs"
+ },
+ {
+  "name": "P&G",
+  "careers": "https://www.pgcareers.com"
+ },
+ {
+  "name": "Siemens",
+  "careers": "https://jobs.siemens.com"
+ },
+ {
+  "name": "Honeywell",
+  "careers": "https://careers.honeywell.com"
+ },
+ {
+  "name": "Cummins",
+  "careers": "https://cummins.jobs"
+ },
+ {
+  "name": "Bosch",
+  "careers": "https://www.bosch.in/careers/"
+ },
+ {
+  "name": "Schneider Electric",
+  "careers": "https://careers.se.com"
+ },
+ {
+  "name": "AB InBev",
+  "careers": "https://www.ab-inbev.com/careers/"
+ },
+ {
+  "name": "Diageo",
+  "careers": "https://www.diageo.com/en/careers"
+ },
+ {
+  "name": "Novartis",
+  "careers": "https://www.novartis.com/careers"
+ },
+ {
+  "name": "Capgemini",
+  "careers": "https://www.capgemini.com/in-en/careers/"
+ },
+ {
+  "name": "Cognizant",
+  "careers": "https://careers.cognizant.com"
+ },
+ {
+  "name": "IBM",
+  "careers": "https://www.ibm.com/careers"
+ },
+ {
+  "name": "Kroll",
+  "careers": "https://careers.kroll.com"
+ },
+ {
+  "name": "TresVista",
+  "careers": "https://www.tresvista.com/careers"
+ },
+ {
+  "name": "Alvarez & Marsal",
+  "careers": "https://www.alvarezandmarsal.com/careers"
+ },
+ {
+  "name": "BNY",
+  "careers": "https://www.bny.com/corporate/global/en/careers.html"
+ },
+ {
+  "name": "State Street",
+  "careers": "https://careers.statestreet.com"
+ },
+ {
+  "name": "Northern Trust",
+  "careers": "https://careers.northerntrust.com"
+ },
+ {
+  "name": "Fidelity Investments",
+  "careers": "https://jobs.fidelity.com"
+ },
+ {
+  "name": "BlackRock",
+  "careers": "https://careers.blackrock.com"
+ },
+ {
+  "name": "Nomura",
+  "careers": "https://www.nomura.com/careers/"
+ },
+ {
+  "name": "UBS",
+  "careers": "https://www.ubs.com/global/en/careers.html"
+ },
+ {
+  "name": "Standard Chartered",
+  "careers": "https://www.sc.com/en/careers/"
+ },
+ {
+  "name": "Societe Generale",
+  "careers": "https://careers.societegenerale.com"
+ },
+ {
+  "name": "BNP Paribas",
+  "careers": "https://group.bnpparibas/en/careers"
+ },
+ {
+  "name": "NatWest",
+  "careers": "https://jobs.natwestgroup.com"
+ },
+ {
+  "name": "Lloyds Banking Group",
+  "careers": "https://www.lloydsbankinggroup.com/careers.html"
+ },
+ {
+  "name": "Synchrony",
+  "careers": "https://www.synchronycareers.com"
+ },
+ {
+  "name": "Target",
+  "careers": "https://corporate.target.com/careers"
+ },
+ {
+  "name": "Walmart",
+  "careers": "https://careers.walmart.com"
+ },
+ {
+  "name": "Lowe's",
+  "careers": "https://talent.lowes.com"
+ },
+ {
+  "name": "Dell",
+  "careers": "https://jobs.dell.com"
+ },
+ {
+  "name": "HP",
+  "careers": "https://jobs.hp.com"
+ },
+ {
+  "name": "Intel",
+  "careers": "https://jobs.intel.com"
+ },
+ {
+  "name": "Uber",
+  "careers": "https://www.uber.com/careers"
+ },
+ {
+  "name": "Airbus",
+  "careers": "https://www.airbus.com/en/careers"
+ },
+ {
+  "name": "Boeing",
+  "careers": "https://jobs.boeing.com"
+ },
+ {
+  "name": "GE HealthCare",
+  "careers": "https://careers.gehealthcare.com"
+ },
+ {
+  "name": "Philips",
+  "careers": "https://www.careers.philips.com"
+ },
+ {
+  "name": "Volvo Group",
+  "careers": "https://jobs.volvogroup.com"
+ },
+ {
+  "name": "Continental",
+  "careers": "https://jobs.continental.com"
+ },
+ {
+  "name": "ABB",
+  "careers": "https://careers.abb"
+ },
+ {
+  "name": "Eaton",
+  "careers": "https://jobs.eaton.com"
+ },
+ {
+  "name": "Emerson",
+  "careers": "https://www.emerson.com/en-us/careers"
+ },
+ {
+  "name": "Johnson Controls",
+  "careers": "https://jobs.johnsoncontrols.com"
+ },
+ {
+  "name": "Carrier",
+  "careers": "https://careers.carrier.com"
+ },
+ {
+  "name": "Otis",
+  "careers": "https://careers.otis.com"
+ },
+ {
+  "name": "3M",
+  "careers": "https://www.3m.com/3M/en_US/careers-us/"
+ },
+ {
+  "name": "Coca-Cola",
+  "careers": "https://careers.coca-colacompany.com"
+ },
+ {
+  "name": "PepsiCo",
+  "careers": "https://www.pepsicojobs.com"
+ },
+ {
+  "name": "Mondelez",
+  "careers": "https://www.mondelezinternational.com/careers"
+ },
+ {
+  "name": "Colgate-Palmolive",
+  "careers": "https://jobs.colgate.com"
+ },
+ {
+  "name": "Reckitt",
+  "careers": "https://careers.reckitt.com"
+ },
+ {
+  "name": "GSK",
+  "careers": "https://jobs.gsk.com"
+ },
+ {
+  "name": "AstraZeneca",
+  "careers": "https://careers.astrazeneca.com"
+ },
+ {
+  "name": "Sanofi",
+  "careers": "https://jobs.sanofi.com"
+ },
+ {
+  "name": "Pfizer",
+  "careers": "https://www.pfizer.com/about/careers"
+ },
+ {
+  "name": "Abbott",
+  "careers": "https://www.jobs.abbott"
+ },
+ {
+  "name": "Medtronic",
+  "careers": "https://jobs.medtronic.com"
+ },
+ {
+  "name": "Thermo Fisher",
+  "careers": "https://jobs.thermofisher.com"
+ },
+ {
+  "name": "Baxter",
+  "careers": "https://jobs.baxter.com"
+ },
+ {
+  "name": "Ericsson",
+  "careers": "https://jobs.ericsson.com"
+ },
+ {
+  "name": "Nokia",
+  "careers": "https://careers.nokia.com"
+ },
+ {
+  "name": "Vodafone (VOIS)",
+  "careers": "https://careers.vodafone.com"
+ },
+ {
+  "name": "Reliance Industries",
+  "careers": "https://careers.ril.com",
+  "india_default": true
+ },
+ {
+  "name": "Tata Steel",
+  "careers": "https://www.tatasteel.com/careers/",
+  "india_default": true
+ },
+ {
+  "name": "Tata Motors",
+  "careers": "https://careers.tatamotors.com",
+  "india_default": true
+ },
+ {
+  "name": "Titan",
+  "careers": "https://www.titancompany.in/careers",
+  "india_default": true
+ },
+ {
+  "name": "Mahindra",
+  "careers": "https://www.mahindra.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "HDFC Bank",
+  "careers": "https://www.hdfc.bank.in/careers",
+  "india_default": true
+ },
+ {
+  "name": "ICICI Bank",
+  "careers": "https://www.icicicareers.com",
+  "india_default": true
+ },
+ {
+  "name": "Kotak Mahindra Bank",
+  "careers": "https://www.kotak.com/en/about-us/careers.html",
+  "india_default": true
+ },
+ {
+  "name": "Axis Bank",
+  "careers": "https://www.axisbank.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "IDFC FIRST Bank",
+  "careers": "https://www.idfcfirstbank.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Bajaj Finance",
+  "careers": "https://bflcareers.peoplestrong.com",
+  "india_default": true
+ },
+ {
+  "name": "Godrej Industries",
+  "careers": "https://www.godrejindustries.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Aditya Birla Group",
+  "careers": "https://careers.adityabirla.com",
+  "india_default": true
+ },
+ {
+  "name": "Hindalco",
+  "careers": "https://www.hindalco.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Vedanta",
+  "careers": "https://www.vedantalimited.com/eng/careers.php",
+  "india_default": true
+ },
+ {
+  "name": "JSW",
+  "careers": "https://www.jsw.in/careers",
+  "india_default": true
+ },
+ {
+  "name": "Adani Group",
+  "careers": "https://careers.adani.com",
+  "india_default": true
+ },
+ {
+  "name": "ITC",
+  "careers": "https://www.itcportal.com/careers/",
+  "india_default": true
+ },
+ {
+  "name": "Marico",
+  "careers": "https://marico.com/india/careers",
+  "india_default": true
+ },
+ {
+  "name": "Dabur",
+  "careers": "https://www.dabur.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Pidilite",
+  "careers": "https://www.pidilite.com/careers/",
+  "india_default": true
+ },
+ {
+  "name": "Larsen & Toubro",
+  "careers": "https://www.larsentoubro.com/corporate/careers/",
+  "india_default": true
+ },
+ {
+  "name": "Asian Paints",
+  "careers": "https://careers.asianpaints.com",
+  "india_default": true
+ },
+ {
+  "name": "Infosys",
+  "careers": "https://www.infosys.com/careers/",
+  "india_default": true
+ },
+ {
+  "name": "Wipro",
+  "careers": "https://careers.wipro.com",
+  "india_default": true
+ },
+ {
+  "name": "HCLTech",
+  "careers": "https://www.hcltech.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Tech Mahindra",
+  "careers": "https://careers.techmahindra.com",
+  "india_default": true
+ },
+ {
+  "name": "Airtel",
+  "careers": "https://www.airtel.in/careers",
+  "india_default": true
+ },
+ {
+  "name": "Flipkart",
+  "careers": "https://www.flipkartcareers.com",
+  "india_default": true
+ },
+ {
+  "name": "Razorpay",
+  "careers": "https://razorpay.com/jobs/",
+  "india_default": true
+ },
+ {
+  "name": "Paytm",
+  "careers": "https://paytm.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "PhonePe",
+  "careers": "https://www.phonepe.com/careers/",
+  "india_default": true
+ },
+ {
+  "name": "Zomato (Eternal)",
+  "careers": "https://www.zomato.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Swiggy",
+  "careers": "https://careers.swiggy.com",
+  "india_default": true
+ },
+ {
+  "name": "Nykaa",
+  "careers": "https://www.nykaa.com/careers",
+  "india_default": true
+ },
+ {
+  "name": "Groww",
+  "careers": "https://groww.in/careers",
+  "india_default": true
+ }
+]
