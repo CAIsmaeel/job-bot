@@ -1,23 +1,23 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T10:12:10Z
+Run: 2026-11-18T10:21:37Z
 
 - Companies: 128
-- Companies with finance jobs in India: 24
+- Companies with finance jobs in India: 23
 - Finance jobs in India (after title filter, de-duplicated): 325
-- New this run: 12
+- New this run: 1
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
 | oracle | 7 | 168 |
-| phenom | 9 | 50 |
+| phenom | 9 | 51 |
 | successfactors | 10 | 35 |
 | eightfold | 7 | 23 |
 | lever | 1 | 17 |
 | smartrecruiters | 2 | 16 |
-| sitemap | 69 | 15 |
+| sitemap | 69 | 14 |
 | greenhouse | 1 | 1 |
 | workday | 20 | 0 |
 | phenom+sitemap | 2 | 0 |
@@ -28,7 +28,7 @@ Run: 2026-11-18T10:12:10Z
 |---|---|
 | Accounting / Finance (general) | 99 |
 | Audit / Assurance / SOX | 57 |
-| Record to Report / GL | 22 |
+| Record to Report / GL | 21 |
 | Tax | 19 |
 | Treasury | 19 |
 | Controllership / Reporting | 19 |
@@ -36,7 +36,7 @@ Run: 2026-11-18T10:12:10Z
 | Risk / Credit | 16 |
 | Accounts Receivable / O2C | 15 |
 | Deals / Valuation / IB | 13 |
-| Payroll | 10 |
+| Payroll | 11 |
 | Finance Transformation / Systems | 9 |
 | Accounts Payable / P2P | 5 |
 | Costing | 4 |
@@ -61,13 +61,12 @@ Run: 2026-11-18T10:12:10Z
 | GE HealthCare | phenom | 29 | 5 |  |
 | Sanofi | sitemap | 1465 | 5 |  |
 | Cummins | oracle | 150 | 4 |  |
-| Emerson | oracle | 176 | 4 |  |
-| GSK | phenom | 28 | 4 |  |
+| Emerson | oracle | 177 | 4 |  |
+| GSK | phenom | 27 | 4 |  |
 | Thermo Fisher | phenom | 48 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
 | Volvo Group | successfactors | 21 | 3 |  |
-| ABB | phenom | 34 | 2 |  |
-| Synchrony | sitemap | 27 | 1 |  |
+| ABB | phenom | 34 | 3 |  |
 | Razorpay | greenhouse | 27 | 1 |  |
 | Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
 | Visa | smartrecruiters | 0 | 0 |  |
@@ -116,6 +115,7 @@ Run: 2026-11-18T10:12:10Z
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
 | Lloyds Banking Group | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Synchrony | sitemap | 29 | 0 |  |
 | Target | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Walmart | sitemap | 0 | 0 |  |
 | Lowe's | phenom | 31 | 0 |  |
@@ -178,7 +178,7 @@ Run: 2026-11-18T10:12:10Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
-| Synchrony | [identity governance user reconciliation senior analyst](https://www.synchronycareers.com/job/hyderabad/identity-governance-user-reconciliation-senior-analyst/49398/102489446976) | Record to Report / GL | hyderabad |
+| ABB | [HR Operation- Team lead (India Payroll with Factory Payroll)](https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply) | Payroll | Bangalore, Karnātaka, India |
 | Sanofi | [sr accounting analyst a2r balance sheet review](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-balance-sheet-review/2649/47009821824) | Accounting / Finance (general) | hyderabad |
 | Kotak Mahindra Bank | [Area Sales Manager - HF - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275807) | Accounting / Finance (general) | Gujarat, India India |
 | Kotak Mahindra Bank | [Team Sales Manager - Tractor and Crop Finance - Tractors and Farm Equi](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275809) | Accounting / Finance (general) | Sumerpur, Rajasthan, India India |

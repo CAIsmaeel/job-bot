@@ -683,8 +683,8 @@
    "origin": "https://www.synchronycareers.com",
    "company_domain": "synchronycareers.com"
   },
-  "raw": 27,
-  "kept": 1
+  "raw": 29,
+  "kept": 0
  },
  {
   "company": "Target",
@@ -862,7 +862,7 @@
    "company_domain": "careers.abb"
   },
   "raw": 34,
-  "kept": 2
+  "kept": 3
  },
  {
   "company": "Eaton",
@@ -887,7 +887,7 @@
    "found_on": "https://www.emerson.com/en/corporate/careers",
    "company_domain": "emerson.com"
   },
-  "raw": 176,
+  "raw": 177,
   "kept": 4
  },
  {
@@ -1011,7 +1011,7 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 28,
+  "raw": 27,
   "kept": 4
  },
  {
