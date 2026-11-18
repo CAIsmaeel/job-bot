@@ -27,6 +27,6 @@ jobs:
         run: |
           git config user.name "engine"
           git config user.email "engine@users.noreply.github.com"
-          git add engine/out
+          git add -f engine/out
           git diff --cached --quiet || git commit -m "engine results"
           git push origin HEAD:engine-v0

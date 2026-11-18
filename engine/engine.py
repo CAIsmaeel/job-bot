@@ -84,14 +84,34 @@ def sess():
     return _tl[k]
 
 
+import threading
+WD_LOCK = threading.Lock()   # Workday sites share one backend: talk to them one request at a time
+
+
+def _call(method, url, **kw):
+    slow = "myworkdayjobs.com" in url
+    for wait in (0, 8, 20, 45):
+        if wait:
+            time.sleep(wait)
+        if slow:
+            with WD_LOCK:
+                time.sleep(1.5)
+                r = sess().request(method, url, timeout=T, allow_redirects=True, **kw)
+        else:
+            time.sleep(0.6)
+            r = sess().request(method, url, timeout=T, allow_redirects=True, **kw)
+        if r.status_code != 429:
+            return r
+    return r
+
+
 def get(url, **kw):
-    time.sleep(0.6)
-    return sess().get(url, timeout=T, allow_redirects=True, **kw)
+    return _call("GET", url, **kw)
 
 
 def post(url, **kw):
-    time.sleep(0.6)
-    return sess().post(url, timeout=T, **kw)
+    kw.setdefault("headers", {"Accept": "application/json", "Content-Type": "application/json"})
+    return _call("POST", url, **kw)
 
 
 def clean(s):
@@ -195,8 +215,8 @@ def a_workday(c):
     walk(r.json().get("facets"))
     india_facet = {k: v for k, v in facets.items() if "country" in k.lower() or "location" in k.lower()} or facets
     out, ids = [], set()
-    for term in TERMS:
-        for off in range(0, 100, 20):
+    for term in TERMS[:6]:
+        for off in range(0, 60, 20):
             body = {"limit": 20, "offset": off, "searchText": term, "appliedFacets": india_facet}
             j = post(api, json=body).json()
             posts = j.get("jobPostings", [])
@@ -275,7 +295,7 @@ def a_lever(c):
 
 def a_eightfold(c):
     out, ids = [], set()
-    dom = c.get("domain") or ""
+    dom = c.get("domain") or c.get("company_domain") or ""
     for term in TERMS:
         api = f"https://{c['host']}/api/apply/v2/jobs?domain={dom}&query={quote(term)}&location=India&start=0&num=50"
         for p in get(api).json().get("positions", []):
@@ -291,13 +311,14 @@ def a_eightfold(c):
 def a_phenom(c):
     out, ids = [], set()
     for term in TERMS[:5]:
-        u = f"{c['origin']}{c['prefix']}/search-results?keywords={quote(term)}&location=India"
+        u = f"{c['origin']}{c['prefix']}/search-results?keywords={quote(term)}"
         t = get(u).text
-        m = re.search(r'"eagerLoadRefineSearch"\s*:\s*(\{.*?\})\s*,\s*"(?:jobwidgetSettings|nlpFlags|[a-zA-Z]+Settings)"', t, re.S)
         jobs = []
-        if m:
+        i = t.find('"eagerLoadRefineSearch"')
+        if i >= 0:
             try:
-                jobs = json.loads(m.group(1)).get("data", {}).get("jobs", [])
+                obj, _ = json.JSONDecoder().raw_decode(t[t.index("{", i):])
+                jobs = (obj.get("data") or {}).get("jobs", []) or []
             except Exception:
                 jobs = []
         if not jobs:
@@ -334,6 +355,23 @@ def a_avature(c):
 
 def a_successfactors(c):
     out, ids = [], set()
+    for term in TERMS:
+        for start in range(0, 100, 25):
+            t = get(f"{c['origin']}/search/?q={quote(term)}&locationsearch=India&startrow={start}").text
+            rows = re.findall(r'<tr class="data-row[^"]*">(.*?)</tr>', t, re.S)
+            for row in rows:
+                a = re.search(r'href="(/job/[^"]+)"[^>]*>(.*?)</a>', row, re.S)
+                if not a or a.group(1) in ids:
+                    continue
+                ids.add(a.group(1))
+                loc = re.search(r'class="jobLocation"[^>]*>(.*?)</span>', row, re.S)
+                date = re.search(r'class="jobDate"[^>]*>(.*?)</span>', row, re.S)
+                out.append({"id": a.group(1), "title": clean(a.group(2)), "location": clean(loc.group(1)) if loc else "India",
+                            "url": c["origin"] + a.group(1), "posted": clean(date.group(1)) if date else None})
+            if len(rows) < 25:
+                break
+    if out:
+        return out
     for term in TERMS:
         r = get(f"{c['origin']}/services/rss/job/?locale=en_US&keywords={quote(term)}")
         if r.status_code != 200 or "<item" not in r.text:
@@ -400,6 +438,8 @@ def run_company(co):
     rep = {"company": name, "careers": url}
     try:
         cfg = co.get("ats") or discover(name, url)[0]
+        host = urlparse(url).netloc.split(".")
+        cfg.setdefault("company_domain", ".".join(host[-3:] if host[-2] in ("co", "com") and len(host[-1]) == 2 else host[-2:]))
         rep["platform"] = cfg["platform"]
         rep["config"] = {k: v for k, v in cfg.items() if k != "platform"}
         raw = ADAPTERS[cfg["platform"]](cfg)
