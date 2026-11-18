@@ -1,24 +1,24 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T11:56:53Z
+Run: 2026-11-18T16:36:03Z
 
 - Companies: 128
 - Companies with finance jobs in India: 23
 - Finance jobs in India (after title filter, de-duplicated): 320
-- New this run: 1
+- New this run: 4
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| oracle | 7 | 165 |
+| oracle | 7 | 163 |
 | phenom | 9 | 51 |
 | successfactors | 10 | 35 |
-| eightfold | 7 | 23 |
+| eightfold | 7 | 25 |
 | lever | 1 | 17 |
 | smartrecruiters | 2 | 14 |
-| sitemap | 69 | 14 |
-| greenhouse | 1 | 1 |
+| sitemap | 69 | 13 |
+| greenhouse | 1 | 2 |
 | workday | 20 | 0 |
 | phenom+sitemap | 2 | 0 |
 
@@ -26,17 +26,17 @@ Run: 2026-11-18T11:56:53Z
 
 | Area | Jobs |
 |---|---|
-| Accounting / Finance (general) | 93 |
+| Accounting / Finance (general) | 96 |
 | Audit / Assurance / SOX | 58 |
-| Record to Report / GL | 21 |
+| Controllership / Reporting | 20 |
+| Record to Report / GL | 20 |
 | Tax | 19 |
-| Treasury | 19 |
-| Controllership / Reporting | 19 |
+| Treasury | 18 |
 | Risk / Credit | 17 |
 | FP&A / Business Finance | 17 |
-| Accounts Receivable / O2C | 16 |
+| Accounts Receivable / O2C | 15 |
 | Deals / Valuation / IB | 12 |
-| Payroll | 11 |
+| Payroll | 10 |
 | Finance Transformation / Systems | 9 |
 | Accounts Payable / P2P | 5 |
 | Costing | 4 |
@@ -45,30 +45,30 @@ Run: 2026-11-18T11:56:53Z
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| JPMorgan Chase | oracle | 268 | 47 |  |
-| EXL | oracle | 537 | 46 |  |
-| KPMG India | oracle | 386 | 32 |  |
+| JPMorgan Chase | oracle | 271 | 47 |  |
+| EXL | oracle | 538 | 45 |  |
+| KPMG India | oracle | 393 | 31 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
-| HSBC | eightfold | 41 | 23 |  |
-| Kotak Mahindra Bank | oracle | 754 | 21 |  |
-| Reckitt | successfactors | 51 | 18 |  |
+| HSBC | eightfold | 38 | 25 |  |
+| Kotak Mahindra Bank | oracle | 750 | 21 |  |
+| Reckitt | successfactors | 52 | 18 |  |
 | Paytm | lever | 194 | 17 |  |
 | Bosch | smartrecruiters | 264 | 14 |  |
 | BNY | oracle | 83 | 11 |  |
-| BlackRock | sitemap | 287 | 9 |  |
 | Mahindra | successfactors | 62 | 9 |  |
+| BlackRock | sitemap | 289 | 8 |  |
 | Titan | phenom | 24 | 8 |  |
 | GE HealthCare | phenom | 29 | 5 |  |
-| Sanofi | sitemap | 1462 | 5 |  |
+| GSK | phenom | 27 | 5 |  |
+| Sanofi | sitemap | 1458 | 5 |  |
 | Cummins | oracle | 150 | 4 |  |
-| Volvo Group | successfactors | 22 | 4 |  |
+| Volvo Group | successfactors | 23 | 4 |  |
 | Emerson | oracle | 177 | 4 |  |
-| GSK | phenom | 28 | 4 |  |
 | Thermo Fisher | phenom | 48 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
-| ABB | phenom | 34 | 3 |  |
-| Razorpay | greenhouse | 27 | 1 |  |
-| Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
+| ABB | phenom | 33 | 2 |  |
+| Razorpay | greenhouse | 28 | 2 |  |
+| Mastercard | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
 | PwC India | sitemap | 0 | 0 |  |
@@ -76,8 +76,8 @@ Run: 2026-11-18T11:56:53Z
 | Deloitte USI | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs |
 | Grant Thornton Bharat | sitemap | 0 | 0 |  |
 | BDO India | sitemap | 0 | 0 |  |
-| Accenture | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
-| Genpact | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Accenture | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs |
+| Genpact | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
 | WNS | sitemap | 0 | 0 |  |
 | Barclays | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Deutsche Bank | sitemap | 0 | 0 |  |
@@ -110,7 +110,7 @@ Run: 2026-11-18T11:56:53Z
 | Fidelity Investments | sitemap | 0 | 0 |  |
 | Nomura | sitemap | 0 | 0 |  |
 | UBS | sitemap | 0 | 0 |  |
-| Standard Chartered | successfactors | 78 | 0 |  |
+| Standard Chartered | successfactors | 79 | 0 |  |
 | Societe Generale | sitemap | 0 | 0 |  |
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
@@ -135,7 +135,7 @@ Run: 2026-11-18T11:56:53Z
 | Coca-Cola | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | PepsiCo | sitemap | 0 | 0 |  |
 | Mondelez | phenom+sitemap | 0 | 0 |  |
-| Colgate-Palmolive | successfactors | 74 | 0 |  |
+| Colgate-Palmolive | successfactors | 73 | 0 |  |
 | AstraZeneca | eightfold | 0 | 0 |  |
 | Pfizer | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Abbott | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
@@ -163,8 +163,8 @@ Run: 2026-11-18T11:56:53Z
 | Pidilite | sitemap | 0 | 0 |  |
 | Larsen & Toubro | sitemap | 0 | 0 |  |
 | Infosys | sitemap | 0 | 0 |  |
-| Wipro | successfactors | 105 | 0 |  |
-| HCLTech | successfactors | 99 | 0 |  |
+| Wipro | successfactors | 106 | 0 |  |
+| HCLTech | successfactors | 101 | 0 |  |
 | Tech Mahindra | sitemap | 0 | 0 |  |
 | Airtel | sitemap | 0 | 0 |  |
 | Flipkart | sitemap | 0 | 0 |  |
@@ -178,22 +178,26 @@ Run: 2026-11-18T11:56:53Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
+| Razorpay | [Analyst, Financial Operations](https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4754957005) | Accounting / Finance (general) | Bengaluru |
+| HSBC | [Manager Product Control](https://portal.careers.hsbc.com/careers/job/563774612458141) | Controllership / Reporting | Bangalore, Karnataka, India |
+| HSBC | [CA Industrial Trainee](https://portal.careers.hsbc.com/careers/job/563774612231544) | Accounting / Finance (general) | Bangalore, Karnataka, India |
+| GSK | [Senior Principal - Tech Finance Manager](https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Senior-Principal---Tech-Finance-Manager_449169/apply) | Accounting / Finance (general) | Bengaluru, India |
 | EXL | [Assistant Manager Credit Control-German Language Expert](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15316) | Accounts Receivable / O2C | Noida, Uttar Pradesh, India |
 | KPMG India | [Audit Associate 2 - FS- Private Equity - GGN](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30052066) | Audit / Assurance / SOX | Gurgaon, Haryana, India |
 | EXL | [Assistant Manager - Coding Auditors](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19173) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
 | EXL | [Senior Executive - Coding Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/14804) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
 | Volvo Group | [Tax Analyst](https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/) | Tax | Bangalore, India |
-| ABB | [HR Operation- Team lead (India Payroll with Factory Payroll)](https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply) | Payroll | Bangalore, Karnātaka, India |
 | Sanofi | [sr accounting analyst a2r balance sheet review](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-balance-sheet-review/2649/47009821824) | Accounting / Finance (general) | hyderabad |
 | KPMG India | [Assistant Manager - Credit Risk](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049726) | Risk / Credit | Bangalore, Karnataka, India |
 | KPMG India | [Senior Associate 1 - Canada Audit](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049948) | Audit / Assurance / SOX | Bangalore, Karnataka, India |
 | HSBC | [Manager Operations - Fund Accounting - Yardi](https://portal.careers.hsbc.com/careers/job/563774612613279) | Accounting / Finance (general) | Bangalore, Karnataka, India |
-| GSK | [Principal - Tech Finance Analyst](https://jobs.gsk.com/us/en/job/449029) | Accounting / Finance (general) | Hyderabad, India |
-| GSK | [Associate Director, Product Owner - SAP HR S4, Strada and Mercans Payr](https://jobs.gsk.com/us/en/job/448824) | Payroll | Hyderabad, India |
+| GSK | [Principal - Tech Finance Analyst](https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Hyderabad-Wework-Krishe-Emerald/Principal---Tech-Finance-Analyst_449029/apply) | Accounting / Finance (general) | Hyderabad, India |
+| GSK | [Associate Director, Product Owner - SAP HR S4, Strada and Mercans Payr](https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Hyderabad-Wework-Krishe-Emerald/Associate-Director--Product-Owner---SAP-HR-S4--Strada-and-Mercans-Payroll_448824/apply) | Payroll | Hyderabad, India |
 | EXL | [Senior Executive - Clinical Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/18171) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
 | JPMorgan Chase | [Asset and Wealth Management Audit - AVP](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210802422) | Audit / Assurance / SOX | Mumbai, Maharashtra, India |
 | HSBC | [Assistant Vice President - Management Reporting](https://portal.careers.hsbc.com/careers/job/563774612464089) | FP&A / Business Finance | Chennai, Tamil Nadu, India |
 | Kotak Mahindra Bank | [Team Member - Training - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790) | Accounting / Finance (general) | Haryana, India |
+| Godrej Industries | [Manager - Finance](https://careers.godrejindustries.com/in/en/job/P-101073) | Accounting / Finance (general) | Mumbai, Maharashtra, India |
 | GE HealthCare | [Associate Service Finance Analyst](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India |
 | Volvo Group | [Senior Accountant](https://jobs.volvogroup.com/job/Bangalore-Senior-Accountant-562122/1375785155/) | Accounting / Finance (general) | Bangalore, India |
 | Volvo Group | [OTC Global Process Solution Key User](https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/) | Accounts Receivable / O2C | Bangalore, India |
@@ -234,7 +238,3 @@ Run: 2026-11-18T11:56:53Z
 | Reckitt | [Manager - International Tax](https://careers.reckitt.com/job/Hyderabad-Manager-International-Tax-Tela-NA/1455019033/) | Tax | Hyderabad, Telangana, India, N/A |
 | Razorpay | [Executive, Finance](https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4746959005) | Accounting / Finance (general) | Bengaluru |
 | Paytm | [Business Finance (Lending)](https://jobs.lever.co/paytm/837c89a3-3598-410c-a0a3-3af4927a42ed) | FP&A / Business Finance | Noida, Uttar Pradesh |
-| Paytm | [Credit Risk - Manager](https://jobs.lever.co/paytm/0395d0aa-517e-472f-8989-b377895220b7) | Risk / Credit | Noida, Uttar Pradesh |
-| Paytm | [Credit Risk Analyst](https://jobs.lever.co/paytm/ad781ae8-cd4a-44c1-a74b-2822118b7c3d) | Risk / Credit | Noida, Uttar Pradesh |
-| Paytm | [Field Facilitator - Digital & Financial Literacy - 6 months Contractua](https://jobs.lever.co/paytm/8b2f5989-2a41-436c-a01c-78468652ac31) | Accounting / Finance (general) | Noida, Uttar Pradesh |
-| Paytm | [Finance & Reporting Manager](https://jobs.lever.co/paytm/da08f565-bb69-4489-a7d5-ffe79fd452cd) | Accounting / Finance (general) | Luxembourg |

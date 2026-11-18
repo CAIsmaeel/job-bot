@@ -1,5 +1,53 @@
 [
  {
+  "key": "c013fa4ed5c57f17",
+  "company": "Razorpay",
+  "title": "Analyst, Financial Operations",
+  "category": "Accounting / Finance (general)",
+  "location": "Bengaluru",
+  "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4754957005",
+  "posted": "2026-11-18T09:10:03-05:00",
+  "platform": "greenhouse",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
+  "key": "d7973b6e52cb417b",
+  "company": "HSBC",
+  "title": "Manager Product Control",
+  "category": "Controllership / Reporting",
+  "location": "Bangalore, Karnataka, India",
+  "url": "https://portal.careers.hsbc.com/careers/job/563774612458141",
+  "posted": 1791868753,
+  "platform": "eightfold",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
+  "key": "f43ad502e04f16ca",
+  "company": "HSBC",
+  "title": "CA Industrial Trainee",
+  "category": "Accounting / Finance (general)",
+  "location": "Bangalore, Karnataka, India",
+  "url": "https://portal.careers.hsbc.com/careers/job/563774612231544",
+  "posted": 1786532592,
+  "platform": "eightfold",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
+  "key": "3c04fd847979b457",
+  "company": "GSK",
+  "title": "Senior Principal - Tech Finance Manager",
+  "category": "Accounting / Finance (general)",
+  "location": "Bengaluru, India",
+  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Senior-Principal---Tech-Finance-Manager_449169/apply",
+  "posted": "2026-11-18T00:00:00.000+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
   "key": "08bd2aff7cced0dd",
   "company": "EXL",
   "title": "Assistant Manager Credit Control-German Language Expert",
@@ -60,18 +108,6 @@
   "first_seen": "2026-11-18T10:28:24Z"
  },
  {
-  "key": "c24fced5ad16bba9",
-  "company": "ABB",
-  "title": "HR Operation- Team lead (India Payroll with Factory Payroll)",
-  "category": "Payroll",
-  "location": "Bangalore, Karnātaka, India",
-  "url": "https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply",
-  "posted": "2026-11-17T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T10:21:37Z"
- },
- {
   "key": "6af6758b1d78e245",
   "company": "Sanofi",
   "title": "sr accounting analyst a2r balance sheet review",
@@ -125,7 +161,7 @@
   "title": "Principal - Tech Finance Analyst",
   "category": "Accounting / Finance (general)",
   "location": "Hyderabad, India",
-  "url": "https://jobs.gsk.com/us/en/job/449029",
+  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Hyderabad-Wework-Krishe-Emerald/Principal---Tech-Finance-Analyst_449029/apply",
   "posted": "2026-11-18T00:00:00.000+0000",
   "platform": "phenom",
   "approx": false,
@@ -137,7 +173,7 @@
   "title": "Associate Director, Product Owner - SAP HR S4, Strada and Mercans Payroll",
   "category": "Payroll",
   "location": "Hyderabad, India",
-  "url": "https://jobs.gsk.com/us/en/job/448824",
+  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Hyderabad-Wework-Krishe-Emerald/Associate-Director--Product-Owner---SAP-HR-S4--Strada-and-Mercans-Payroll_448824/apply",
   "posted": "2026-11-18T00:00:00.000+0000",
   "platform": "phenom",
   "approx": false,
@@ -188,6 +224,18 @@
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790",
   "posted": "2026-11-18",
   "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:19:13Z"
+ },
+ {
+  "key": "7eaec8782aac730c",
+  "company": "Godrej Industries",
+  "title": "Manager - Finance",
+  "category": "Accounting / Finance (general)",
+  "location": "Mumbai, Maharashtra, India",
+  "url": "https://careers.godrejindustries.com/in/en/job/P-101073",
+  "posted": "2026-08-24T09:11:08.315+0000",
+  "platform": "phenom",
   "approx": false,
   "first_seen": "2026-11-18T06:19:13Z"
  },
@@ -1464,18 +1512,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "d6ba7cf1e4d383a0",
-  "company": "KPMG India",
-  "title": "Oracle Finance Functional - Associate Consultant (GL/AP/iExpense/AR/FA/Cash/SLA)",
-  "category": "Record to Report / GL",
-  "location": "Bangalore, Karnataka, India",
-  "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30032946",
-  "posted": "2025-09-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "70d86ed02d110030",
   "company": "KPMG India",
   "title": "UK-Manager-Audit-CLR A-GGN",
@@ -2376,18 +2412,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "412fcbb700006cd2",
-  "company": "Godrej Industries",
-  "title": "Manager - Finance",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India",
-  "url": "https://careers.godrejindustries.com/in/en/job/P-101655",
-  "posted": "2026-10-09T09:48:41.443+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "7c3c1b3ca07dc62f",
   "company": "Godrej Industries",
   "title": "Executive - Finance",
@@ -2694,7 +2718,7 @@
   "category": "Accounting / Finance (general)",
   "location": "Hyderabad, India",
   "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Hyderabad-Wework-Krishe-Emerald/Associate-Director---Enterprise-Systems-Finance-Business-Operations_448857/apply",
-  "posted": "2026-11-17T00:00:00.000+0000",
+  "posted": "2026-11-18T00:00:00.000+0000",
   "platform": "phenom",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -2856,18 +2880,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "263a48f4491c9dcc",
-  "company": "EXL",
-  "title": "Assistant Manager - R2R",
-  "category": "Record to Report / GL",
-  "location": "Noida, Uttar Pradesh, India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19127",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "721fbb8752c3ac3a",
   "company": "EXL",
   "title": "Assistant Manager - Credit Control",
@@ -3019,18 +3031,6 @@
   "location": "Noida, Uttar Pradesh, India",
   "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19497",
   "posted": "2026-10-19",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "c5e2402096e0a1ad",
-  "company": "EXL",
-  "title": "Executive - Accounts Receivables",
-  "category": "Accounts Receivable / O2C",
-  "location": "Bengaluru, Karnataka, India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21216",
-  "posted": "2026-10-15",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -3223,6 +3223,18 @@
   "location": "Noida, Uttar Pradesh, India",
   "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/18558",
   "posted": "2026-10-15",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "209ea9f2f6f639be",
+  "company": "EXL",
+  "title": "Assistant Manager - R2R",
+  "category": "Record to Report / GL",
+  "location": "Noida, Uttar Pradesh, India",
+  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19779",
+  "posted": "2026-09-08",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -3594,18 +3606,6 @@
   "category": "Accounting / Finance (general)",
   "location": "mumbai",
   "url": "https://careers.blackrock.com/job/mumbai/fund-accounting-private-credit-associate/45831/97913289200",
-  "posted": null,
-  "platform": "sitemap",
-  "approx": true,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "58af9c52629afc51",
-  "company": "BlackRock",
-  "title": "capital deployment and liquidity management private financing solutions pfs associate",
-  "category": "Treasury",
-  "location": "mumbai",
-  "url": "https://careers.blackrock.com/job/mumbai/capital-deployment-and-liquidity-management-private-financing-solutions-pfs-associate/45831/101617172160",
   "posted": null,
   "platform": "sitemap",
   "approx": true,

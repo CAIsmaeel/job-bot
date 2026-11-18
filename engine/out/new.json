@@ -1,14 +1,50 @@
 [
  {
-  "key": "08bd2aff7cced0dd",
-  "company": "EXL",
-  "title": "Assistant Manager Credit Control-German Language Expert",
-  "category": "Accounts Receivable / O2C",
-  "location": "Noida, Uttar Pradesh, India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15316",
-  "posted": "2026-11-18",
-  "platform": "oracle",
+  "key": "d7973b6e52cb417b",
+  "company": "HSBC",
+  "title": "Manager Product Control",
+  "category": "Controllership / Reporting",
+  "location": "Bangalore, Karnataka, India",
+  "url": "https://portal.careers.hsbc.com/careers/job/563774612458141",
+  "posted": 1791868753,
+  "platform": "eightfold",
   "approx": false,
-  "first_seen": "2026-11-18T11:56:53Z"
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
+  "key": "f43ad502e04f16ca",
+  "company": "HSBC",
+  "title": "CA Industrial Trainee",
+  "category": "Accounting / Finance (general)",
+  "location": "Bangalore, Karnataka, India",
+  "url": "https://portal.careers.hsbc.com/careers/job/563774612231544",
+  "posted": 1786532592,
+  "platform": "eightfold",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
+  "key": "3c04fd847979b457",
+  "company": "GSK",
+  "title": "Senior Principal - Tech Finance Manager",
+  "category": "Accounting / Finance (general)",
+  "location": "Bengaluru, India",
+  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Senior-Principal---Tech-Finance-Manager_449169/apply",
+  "posted": "2026-11-18T00:00:00.000+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
+ },
+ {
+  "key": "c013fa4ed5c57f17",
+  "company": "Razorpay",
+  "title": "Analyst, Financial Operations",
+  "category": "Accounting / Finance (general)",
+  "location": "Bengaluru",
+  "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4754957005",
+  "posted": "2026-11-18T09:10:03-05:00",
+  "platform": "greenhouse",
+  "approx": false,
+  "first_seen": "2026-11-18T16:36:03Z"
  }
 ]

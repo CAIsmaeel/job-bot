@@ -10,7 +10,7 @@
    "found_on": "https://careers.mastercard.com/us/en/",
    "company_domain": "mastercard.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -36,7 +36,7 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 268,
+  "raw": 271,
   "kept": 47
  },
  {
@@ -98,8 +98,8 @@
    "found_on": "https://kpmg.com/in/en/careers.html",
    "company_domain": "kpmg.com"
   },
-  "raw": 386,
-  "kept": 32
+  "raw": 393,
+  "kept": 31
  },
  {
   "company": "Grant Thornton Bharat",
@@ -134,7 +134,7 @@
    "found_on": "https://www.accenture.com/in-en/careers",
    "company_domain": "accenture.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -149,7 +149,7 @@
    "found_on": "https://www.genpact.com/careers",
    "company_domain": "genpact.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -174,8 +174,8 @@
    "found_on": "https://www.exlservice.com/careers",
    "company_domain": "exlservice.com"
   },
-  "raw": 537,
-  "kept": 46
+  "raw": 538,
+  "kept": 45
  },
  {
   "company": "Barclays",
@@ -202,8 +202,8 @@
    "found_on": "https://portal.careers.hsbc.com/careers?location=any&pid=563774612287498&domain=hsbc.com&sort_by=relevance&triggerGoButton=false&triggerGoButton=true",
    "company_domain": "hsbc.com"
   },
-  "raw": 41,
-  "kept": 23
+  "raw": 38,
+  "kept": 25
  },
  {
   "company": "Deutsche Bank",
@@ -590,8 +590,8 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 287,
-  "kept": 9
+  "raw": 289,
+  "kept": 8
  },
  {
   "company": "Nomura",
@@ -624,7 +624,7 @@
    "found_on": "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
    "company_domain": "sc.com"
   },
-  "raw": 78,
+  "raw": 79,
   "kept": 0
  },
  {
@@ -837,7 +837,7 @@
    "found_on": "https://jobs.volvogroup.com/",
    "company_domain": "volvogroup.com"
   },
-  "raw": 22,
+  "raw": 23,
   "kept": 4
  },
  {
@@ -861,8 +861,8 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 34,
-  "kept": 3
+  "raw": 33,
+  "kept": 2
  },
  {
   "company": "Eaton",
@@ -986,7 +986,7 @@
    "found_on": "https://jobs.colgate.com/",
    "company_domain": "colgate.com"
   },
-  "raw": 74,
+  "raw": 73,
   "kept": 0
  },
  {
@@ -998,7 +998,7 @@
    "found_on": "https://careers.reckitt.com/",
    "company_domain": "reckitt.com"
   },
-  "raw": 51,
+  "raw": 52,
   "kept": 18
  },
  {
@@ -1011,8 +1011,8 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 28,
-  "kept": 4
+  "raw": 27,
+  "kept": 5
  },
  {
   "company": "AstraZeneca",
@@ -1035,7 +1035,7 @@
    "origin": "https://jobs.sanofi.com",
    "company_domain": "sanofi.com"
   },
-  "raw": 1462,
+  "raw": 1458,
   "kept": 5
  },
  {
@@ -1236,7 +1236,7 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 754,
+  "raw": 750,
   "kept": 21
  },
  {
@@ -1427,7 +1427,7 @@
    "found_on": "https://careers.wipro.com/",
    "company_domain": "wipro.com"
   },
-  "raw": 105,
+  "raw": 106,
   "kept": 0
  },
  {
@@ -1439,7 +1439,7 @@
    "found_on": "https://careers.hcltech.com/",
    "company_domain": "hcltech.com"
   },
-  "raw": 99,
+  "raw": 101,
   "kept": 0
  },
  {
@@ -1484,8 +1484,8 @@
    "found_on": "https://razorpay.com/careers/",
    "company_domain": "razorpay.com"
   },
-  "raw": 27,
-  "kept": 1
+  "raw": 28,
+  "kept": 2
  },
  {
   "company": "Paytm",
