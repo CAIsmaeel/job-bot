@@ -225,7 +225,41 @@ def discover(name, url):
                 if l not in seen:
                     queue.append(l)
             first = r
-    return {"platform": "sitemap", "origin": "{0.scheme}://{0.netloc}".format(urlparse(url))}, None
+    cfg = probe_boards(name)
+    if cfg:
+        return cfg, None
+    return {"platform": "sitemap", "origin": "{0.scheme}://{0.netloc}".format(urlparse(url)), "probed": True}, None
+
+
+def slugs(name):
+    base = re.sub(r"\(.*?\)", " ", name).lower().replace("&", " and ")
+    words = re.findall(r"[a-z0-9]+", base)
+    drop = {"india", "bank", "group", "limited", "ltd", "the", "and", "inc", "technologies", "services"}
+    core = [w for w in words if w not in drop] or words
+    out = []
+    for s in ("".join(words), "".join(core), "-".join(core), core[0] if core else ""):
+        if s and s not in out:
+            out.append(s)
+    return out[:4]
+
+
+def probe_boards(name):
+    """Careers page did not reveal the hiring system: ask the public job-board APIs by company slug."""
+    for s in slugs(name):
+        tests = [
+            ("greenhouse", f"https://boards-api.greenhouse.io/v1/boards/{s}/jobs", lambda j: j.get("jobs"), {"token": s}),
+            ("lever", f"https://api.lever.co/v0/postings/{s}?mode=json&limit=1", lambda j: isinstance(j, list) and j, {"name": s}),
+            ("smartrecruiters", f"https://api.smartrecruiters.com/v1/companies/{s}/postings?limit=1",
+             lambda j: j.get("totalFound"), {"company": s}),
+        ]
+        for plat, u, ok, cfg in tests:
+            try:
+                r = get(u)
+                if r.ok and ok(r.json()):
+                    return {"platform": plat, "found_on": u, **cfg}
+            except Exception:
+                pass
+    return None
 
 
 # ---------------- adapters: each returns list of dicts {id,title,location,url,posted} ----------------
@@ -481,7 +515,7 @@ CACHE_DAYS = 7
 
 def cached_cfg(name):
     c = CACHE.get(name)
-    if not c or c["cfg"].get("platform") == "sitemap":
+    if not c or (c["cfg"].get("platform") == "sitemap" and not c["cfg"].get("probed")):
         return None
     try:
         age = (datetime.now(timezone.utc) - datetime.strptime(c["at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)).days
