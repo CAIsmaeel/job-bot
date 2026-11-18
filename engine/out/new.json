@@ -1,14 +1,38 @@
 [
  {
-  "key": "d8075729a9b1a464",
-  "company": "Volvo Group",
-  "title": "Tax Analyst",
-  "category": "Tax",
-  "location": "Bangalore, IN, 560058",
-  "url": "https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/",
-  "posted": null,
-  "platform": "successfactors",
+  "key": "5c09427e2f44c4a7",
+  "company": "KPMG India",
+  "title": "Audit Associate 2 - FS- Private Equity - GGN",
+  "category": "Audit / Assurance / SOX",
+  "location": "Gurgaon, Haryana, India",
+  "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30052066",
+  "posted": "2026-11-18",
+  "platform": "oracle",
   "approx": false,
-  "first_seen": "2026-11-18T10:28:24Z"
+  "first_seen": "2026-11-18T10:57:25Z"
+ },
+ {
+  "key": "e112d006ddbd4eee",
+  "company": "EXL",
+  "title": "Assistant Manager - Coding Auditors",
+  "category": "Audit / Assurance / SOX",
+  "location": "Chennai, Tamil Nadu, India",
+  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19173",
+  "posted": "2026-11-18",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T10:57:25Z"
+ },
+ {
+  "key": "c0d8fe6a442a1caf",
+  "company": "EXL",
+  "title": "Senior Executive - Coding Auditor",
+  "category": "Audit / Assurance / SOX",
+  "location": "Chennai, Tamil Nadu, India",
+  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/14804",
+  "posted": "2026-11-18",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T10:57:25Z"
  }
 ]

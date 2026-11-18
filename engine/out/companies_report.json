@@ -36,7 +36,7 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 262,
+  "raw": 266,
   "kept": 46
  },
  {
@@ -70,7 +70,7 @@
    "found_on": "https://careers.ey.com/",
    "company_domain": "ey.com"
   },
-  "raw": 70,
+  "raw": 73,
   "kept": 0
  },
  {
@@ -84,7 +84,7 @@
    "found_on": "https://www.deloitte.com/global/en/careers/job-search.html",
    "company_domain": "deloitte.com"
   },
-  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -98,8 +98,8 @@
    "found_on": "https://kpmg.com/in/en/careers.html",
    "company_domain": "kpmg.com"
   },
-  "raw": 387,
-  "kept": 31
+  "raw": 386,
+  "kept": 32
  },
  {
   "company": "Grant Thornton Bharat",
@@ -174,8 +174,8 @@
    "found_on": "https://www.exlservice.com/careers",
    "company_domain": "exlservice.com"
   },
-  "raw": 537,
-  "kept": 47
+  "raw": 539,
+  "kept": 46
  },
  {
   "company": "Barclays",
@@ -188,7 +188,7 @@
    "found_on": "https://search.jobs.barclays/",
    "company_domain": "jobs.barclays"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://barclays.wd3.myworkdayjobs.com/wday/cxs/barclays/External_Career_Site_Barclays/jobs",
+  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -412,7 +412,7 @@
    "company_domain": "bosch.in"
   },
   "raw": 264,
-  "kept": 16
+  "kept": 14
  },
  {
   "company": "Schneider Electric",
@@ -590,7 +590,7 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 288,
+  "raw": 287,
   "kept": 9
  },
  {
@@ -683,8 +683,8 @@
    "origin": "https://www.synchronycareers.com",
    "company_domain": "synchronycareers.com"
   },
-  "raw": 27,
-  "kept": 1
+  "raw": 29,
+  "kept": 0
  },
  {
   "company": "Target",
@@ -861,7 +861,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 32,
+  "raw": 35,
   "kept": 2
  },
  {
@@ -999,7 +999,7 @@
    "company_domain": "reckitt.com"
   },
   "raw": 51,
-  "kept": 19
+  "kept": 18
  },
  {
   "company": "GSK",
@@ -1011,7 +1011,7 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 28,
+  "raw": 27,
   "kept": 4
  },
  {
@@ -1236,8 +1236,8 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 765,
-  "kept": 24
+  "raw": 756,
+  "kept": 21
  },
  {
   "company": "Axis Bank",
@@ -1496,7 +1496,7 @@
    "found_on": "https://paytm.com/careers",
    "company_domain": "paytm.com"
   },
-  "raw": 195,
+  "raw": 194,
   "kept": 17
  },
  {

@@ -1,23 +1,23 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T10:28:24Z
+Run: 2026-11-18T10:57:25Z
 
 - Companies: 128
-- Companies with finance jobs in India: 24
-- Finance jobs in India (after title filter, de-duplicated): 325
-- New this run: 1
+- Companies with finance jobs in India: 23
+- Finance jobs in India (after title filter, de-duplicated): 318
+- New this run: 3
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| oracle | 7 | 167 |
+| oracle | 7 | 164 |
 | phenom | 9 | 50 |
-| successfactors | 10 | 36 |
+| successfactors | 10 | 35 |
 | eightfold | 7 | 23 |
 | lever | 1 | 17 |
-| smartrecruiters | 2 | 16 |
-| sitemap | 69 | 15 |
+| smartrecruiters | 2 | 14 |
+| sitemap | 69 | 14 |
 | greenhouse | 1 | 1 |
 | workday | 20 | 0 |
 | phenom+sitemap | 2 | 0 |
@@ -26,10 +26,10 @@ Run: 2026-11-18T10:28:24Z
 
 | Area | Jobs |
 |---|---|
-| Accounting / Finance (general) | 99 |
-| Audit / Assurance / SOX | 57 |
-| Record to Report / GL | 22 |
-| Tax | 20 |
+| Accounting / Finance (general) | 93 |
+| Audit / Assurance / SOX | 58 |
+| Record to Report / GL | 21 |
+| Tax | 19 |
 | Treasury | 19 |
 | Controllership / Reporting | 19 |
 | FP&A / Business Finance | 18 |
@@ -45,17 +45,17 @@ Run: 2026-11-18T10:28:24Z
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| EXL | oracle | 537 | 47 |  |
-| JPMorgan Chase | oracle | 262 | 46 |  |
-| KPMG India | oracle | 387 | 31 |  |
+| JPMorgan Chase | oracle | 266 | 46 |  |
+| EXL | oracle | 539 | 46 |  |
+| KPMG India | oracle | 386 | 32 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
-| Kotak Mahindra Bank | oracle | 765 | 24 |  |
 | HSBC | eightfold | 41 | 23 |  |
-| Reckitt | successfactors | 51 | 19 |  |
-| Paytm | lever | 195 | 17 |  |
-| Bosch | smartrecruiters | 264 | 16 |  |
+| Kotak Mahindra Bank | oracle | 756 | 21 |  |
+| Reckitt | successfactors | 51 | 18 |  |
+| Paytm | lever | 194 | 17 |  |
+| Bosch | smartrecruiters | 264 | 14 |  |
 | BNY | oracle | 83 | 11 |  |
-| BlackRock | sitemap | 288 | 9 |  |
+| BlackRock | sitemap | 287 | 9 |  |
 | Mahindra | successfactors | 62 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
 | GE HealthCare | phenom | 29 | 5 |  |
@@ -63,24 +63,23 @@ Run: 2026-11-18T10:28:24Z
 | Cummins | oracle | 150 | 4 |  |
 | Volvo Group | successfactors | 22 | 4 |  |
 | Emerson | oracle | 177 | 4 |  |
-| GSK | phenom | 28 | 4 |  |
+| GSK | phenom | 27 | 4 |  |
 | Thermo Fisher | phenom | 48 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
-| ABB | phenom | 32 | 2 |  |
-| Synchrony | sitemap | 27 | 1 |  |
+| ABB | phenom | 35 | 2 |  |
 | Razorpay | greenhouse | 27 | 1 |  |
 | Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
 | PwC India | sitemap | 0 | 0 |  |
-| EY | successfactors | 70 | 0 |  |
-| Deloitte USI | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
+| EY | successfactors | 73 | 0 |  |
+| Deloitte USI | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs |
 | Grant Thornton Bharat | sitemap | 0 | 0 |  |
 | BDO India | sitemap | 0 | 0 |  |
 | Accenture | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Genpact | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | WNS | sitemap | 0 | 0 |  |
-| Barclays | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://barclays.wd3.myworkdayjobs.com/wday/cxs/barclays/External_Career_Site_Barclays/jobs |
+| Barclays | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Deutsche Bank | sitemap | 0 | 0 |  |
 | Citi | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Goldman Sachs | sitemap | 0 | 0 |  |
@@ -116,6 +115,7 @@ Run: 2026-11-18T10:28:24Z
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
 | Lloyds Banking Group | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Synchrony | sitemap | 29 | 0 |  |
 | Target | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Walmart | sitemap | 0 | 0 |  |
 | Lowe's | phenom | 31 | 0 |  |
@@ -178,27 +178,26 @@ Run: 2026-11-18T10:28:24Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
-| Volvo Group | [Tax Analyst](https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/) | Tax | Bangalore, IN, 560058 |
-| Synchrony | [identity governance user reconciliation senior analyst](https://www.synchronycareers.com/job/hyderabad/identity-governance-user-reconciliation-senior-analyst/49398/102489446976) | Record to Report / GL | hyderabad |
+| KPMG India | [Audit Associate 2 - FS- Private Equity - GGN](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30052066) | Audit / Assurance / SOX | Gurgaon, Haryana, India |
+| EXL | [Assistant Manager - Coding Auditors](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19173) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
+| EXL | [Senior Executive - Coding Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/14804) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
+| Volvo Group | [Tax Analyst](https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/) | Tax | Bangalore, India |
 | Sanofi | [sr accounting analyst a2r balance sheet review](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-balance-sheet-review/2649/47009821824) | Accounting / Finance (general) | hyderabad |
-| Kotak Mahindra Bank | [Area Sales Manager - HF - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275807) | Accounting / Finance (general) | Gujarat, India India |
-| Kotak Mahindra Bank | [Team Sales Manager - Tractor and Crop Finance - Tractors and Farm Equi](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275809) | Accounting / Finance (general) | Sumerpur, Rajasthan, India India |
-| KPMG India | [Assistant Manager - Credit Risk](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049726) | Risk / Credit | Bangalore, Karnataka, India India |
-| KPMG India | [Senior Associate 1 - Canada Audit](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049948) | Audit / Assurance / SOX | Bangalore, Karnataka, India India |
+| KPMG India | [Assistant Manager - Credit Risk](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049726) | Risk / Credit | Bangalore, Karnataka, India |
+| KPMG India | [Senior Associate 1 - Canada Audit](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049948) | Audit / Assurance / SOX | Bangalore, Karnataka, India |
 | HSBC | [Manager Operations - Fund Accounting - Yardi](https://portal.careers.hsbc.com/careers/job/563774612613279) | Accounting / Finance (general) | Bangalore, Karnataka, India |
 | GSK | [Principal - Tech Finance Analyst](https://jobs.gsk.com/us/en/job/449029) | Accounting / Finance (general) | Hyderabad, India |
 | GSK | [Associate Director, Product Owner - SAP HR S4, Strada and Mercans Payr](https://jobs.gsk.com/us/en/job/448824) | Payroll | Hyderabad, India |
-| EXL | [Senior Executive - Clinical Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/18171) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India India |
-| EXL | [Senior Executive-MIS](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/20932) | FP&A / Business Finance | Chennai, Tamil Nadu, India India |
-| EXL | [Senior Executive - Coding Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/16344) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India India |
-| JPMorgan Chase | [Asset and Wealth Management Audit - AVP](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210802422) | Audit / Assurance / SOX | Mumbai, Maharashtra, India India |
+| EXL | [Senior Executive - Clinical Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/18171) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
+| EXL | [Senior Executive-MIS](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/20932) | FP&A / Business Finance | Chennai, Tamil Nadu, India |
+| JPMorgan Chase | [Asset and Wealth Management Audit - AVP](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210802422) | Audit / Assurance / SOX | Mumbai, Maharashtra, India |
 | HSBC | [Assistant Vice President - Management Reporting](https://portal.careers.hsbc.com/careers/job/563774612464089) | FP&A / Business Finance | Chennai, Tamil Nadu, India |
-| Kotak Mahindra Bank | [Team Member - Training - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790) | Accounting / Finance (general) | Haryana, India India |
+| Kotak Mahindra Bank | [Team Member - Training - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790) | Accounting / Finance (general) | Haryana, India |
 | Godrej Industries | [Manager - Finance](https://careers.godrejindustries.com/in/en/job/P-101073) | Accounting / Finance (general) | Mumbai, Maharashtra, India |
-| GE HealthCare | [Associate Service Finance Analyst](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India, 560066 |
-| Volvo Group | [Senior Accountant](https://jobs.volvogroup.com/job/Bangalore-Senior-Accountant-562122/1375785155/) | Accounting / Finance (general) | Bangalore, IN, 562122 |
-| Volvo Group | [OTC Global Process Solution Key User](https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/) | Accounts Receivable / O2C | Bangalore, IN, 562122 |
-| Volvo Group | [Product Quality Assurance Lead](https://jobs.volvogroup.com/job/Bangalore-Product-Quality-Assurance-Lead-560058/1377141555/) | Audit / Assurance / SOX | Bangalore, IN, 560058 |
+| GE HealthCare | [Associate Service Finance Analyst](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India |
+| Volvo Group | [Senior Accountant](https://jobs.volvogroup.com/job/Bangalore-Senior-Accountant-562122/1375785155/) | Accounting / Finance (general) | Bangalore, India |
+| Volvo Group | [OTC Global Process Solution Key User](https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/) | Accounts Receivable / O2C | Bangalore, India |
+| Volvo Group | [Product Quality Assurance Lead](https://jobs.volvogroup.com/job/Bangalore-Product-Quality-Assurance-Lead-560058/1377141555/) | Audit / Assurance / SOX | Bangalore, India |
 | Titan | [Accounting Executive- Asset Management](https://careers.titan.in/in/en/job/P-104471) | Accounting / Finance (general) | Bengaluru, Karnataka, India |
 | Titan | [Manager-Indirect Taxation](https://careers.titan.in/in/en/job/P-105941) | Tax | Bengaluru, Karnataka, India |
 | Titan | [Manager-Mergers and Acquisition](https://careers.titan.in/in/en/job/P-107784) | Deals / Valuation / IB | Bengaluru, Karnataka, India |
@@ -215,26 +214,27 @@ Run: 2026-11-18T10:28:24Z
 | Sanofi | [fixed assets senior analyst](https://jobs.sanofi.com/en/job/hyderabad/fixed-assets-senior-analyst/2649/45299962752) | Record to Report / GL | hyderabad |
 | Sanofi | [accounting analyst closing and reporting a2r](https://jobs.sanofi.com/en/job/hyderabad/accounting-analyst-closing-and-reporting-a2r/2649/44816838720) | Accounting / Finance (general) | hyderabad |
 | Sanofi | [sr accounting analyst a2r closing and reporting](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-closing-and-reporting/2649/38723873408) | Accounting / Finance (general) | hyderabad |
-| Reckitt | [IT&D Analyst SAP Finance](https://careers.reckitt.com/job/Hyderabad-IT&amp;D-Analyst-SAP-Finance-Tela-NA/1450560233/) | Finance Transformation / Systems | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Finance Manager - Intercompany](https://careers.reckitt.com/job/Hyderabad-Finance-Manager-Intercompany-Tela-NA/1452545033/) | Record to Report / GL | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Sr. Manager Finance- Sales](https://careers.reckitt.com/job/Gurugram-Sr_-Manager-Finance-Sales-Hary-NA/1450360533/) | Accounting / Finance (general) | Gurugram, Haryana, IN, N/A |
-| Reckitt | [IT&D SAP Senior Finance Analyst](https://careers.reckitt.com/job/Hyderabad-IT&amp;D-SAP-Senior-Finance-Analyst-Tela-NA/1450578733/) | Accounting / Finance (general) | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Controls Assurance Manager](https://careers.reckitt.com/job/Hyderabad-Controls-Assurance-Manager-Tela-NA/1454603433/) | Audit / Assurance / SOX | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Assistant Manager - Payroll](https://careers.reckitt.com/job/Hyderabad-Assistant-Manager-Payroll-Tela-NA/1437616833/) | Payroll | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [RTR Assistant Manager EEU](https://careers.reckitt.com/job/Hyderabad-RTR-Assistant-Manager-EEU-Tela-NA/1457159333/) | Record to Report / GL | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [RTR Assistant Manager](https://careers.reckitt.com/job/Hyderabad-RTR-Assistant-Manager-Tela-NA/1457159833/) | Record to Report / GL | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [RTR Senior Analyst](https://careers.reckitt.com/job/Hyderabad-RTR-Senior-Analyst-Tela-NA/1457155733/) | Record to Report / GL | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [RTR Analyst](https://careers.reckitt.com/job/Hyderabad-RTR-Analyst-Tela-NA/1457158933/) | Record to Report / GL | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Commercial Accounting, OTC Senior Manager](https://careers.reckitt.com/job/Hyderabad-Commercial-Accounting%2C-OTC-Senior-Manager-Tela-NA/1436415433/) | Accounts Receivable / O2C | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Controls Assurance Assistant Manager, EM](https://careers.reckitt.com/job/Hyderabad-Controls-Assurance-Assistant-Manager%2C-EM-Tela-NA/1454608633/) | Audit / Assurance / SOX | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Global Payroll Project Lead](https://careers.reckitt.com/job/Hyderabad-Global-Payroll-Project-Lead-Tela-NA/1449772133/) | Payroll | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Indirect Tax Compliance Analyst](https://careers.reckitt.com/job/Hyderabad-Indirect-Tax-Compliance-Analyst-Tela-NA/1452362733/) | Tax | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Internal Audit Manager - Data Analytics](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Manager-Data-Analytics-Tela-NA/1411372533/) | Audit / Assurance / SOX | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Internal Audit Assistant Manager - Data Analytics](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Assistant-Manager-Data-Analytics-Tela-NA/1424597033/) | Audit / Assurance / SOX | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Internal Audit Manager - DA and Innovation](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Manager-DA-and-Innovation-Tela-NA/1411389433/) | Audit / Assurance / SOX | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Internal Audit Manager - Ops and Quality Assurance](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Manager-Ops-and-Quality-Assurance-Tela-NA/1411392533/) | Audit / Assurance / SOX | Hyderabad, Telangana, IN, N/A |
-| Reckitt | [Manager - International Tax](https://careers.reckitt.com/job/Hyderabad-Manager-International-Tax-Tela-NA/1455019033/) | Tax | Hyderabad, Telangana, IN, N/A |
+| Reckitt | [IT&D Analyst SAP Finance](https://careers.reckitt.com/job/Hyderabad-IT&amp;D-Analyst-SAP-Finance-Tela-NA/1450560233/) | Finance Transformation / Systems | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Finance Manager - Intercompany](https://careers.reckitt.com/job/Hyderabad-Finance-Manager-Intercompany-Tela-NA/1452545033/) | Record to Report / GL | Hyderabad, Telangana, India, N/A |
+| Reckitt | [IT&D SAP Senior Finance Analyst](https://careers.reckitt.com/job/Hyderabad-IT&amp;D-SAP-Senior-Finance-Analyst-Tela-NA/1450578733/) | Accounting / Finance (general) | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Controls Assurance Manager](https://careers.reckitt.com/job/Hyderabad-Controls-Assurance-Manager-Tela-NA/1454603433/) | Audit / Assurance / SOX | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Assistant Manager - Payroll](https://careers.reckitt.com/job/Hyderabad-Assistant-Manager-Payroll-Tela-NA/1437616833/) | Payroll | Hyderabad, Telangana, India, N/A |
+| Reckitt | [RTR Assistant Manager EEU](https://careers.reckitt.com/job/Hyderabad-RTR-Assistant-Manager-EEU-Tela-NA/1457159333/) | Record to Report / GL | Hyderabad, Telangana, India, N/A |
+| Reckitt | [RTR Assistant Manager](https://careers.reckitt.com/job/Hyderabad-RTR-Assistant-Manager-Tela-NA/1457159833/) | Record to Report / GL | Hyderabad, Telangana, India, N/A |
+| Reckitt | [RTR Senior Analyst](https://careers.reckitt.com/job/Hyderabad-RTR-Senior-Analyst-Tela-NA/1457155733/) | Record to Report / GL | Hyderabad, Telangana, India, N/A |
+| Reckitt | [RTR Analyst](https://careers.reckitt.com/job/Hyderabad-RTR-Analyst-Tela-NA/1457158933/) | Record to Report / GL | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Commercial Accounting, OTC Senior Manager](https://careers.reckitt.com/job/Hyderabad-Commercial-Accounting%2C-OTC-Senior-Manager-Tela-NA/1436415433/) | Accounts Receivable / O2C | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Controls Assurance Assistant Manager, EM](https://careers.reckitt.com/job/Hyderabad-Controls-Assurance-Assistant-Manager%2C-EM-Tela-NA/1454608633/) | Audit / Assurance / SOX | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Global Payroll Project Lead](https://careers.reckitt.com/job/Hyderabad-Global-Payroll-Project-Lead-Tela-NA/1449772133/) | Payroll | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Indirect Tax Compliance Analyst](https://careers.reckitt.com/job/Hyderabad-Indirect-Tax-Compliance-Analyst-Tela-NA/1452362733/) | Tax | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Internal Audit Manager - Data Analytics](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Manager-Data-Analytics-Tela-NA/1411372533/) | Audit / Assurance / SOX | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Internal Audit Assistant Manager - Data Analytics](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Assistant-Manager-Data-Analytics-Tela-NA/1424597033/) | Audit / Assurance / SOX | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Internal Audit Manager - DA and Innovation](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Manager-DA-and-Innovation-Tela-NA/1411389433/) | Audit / Assurance / SOX | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Internal Audit Manager - Ops and Quality Assurance](https://careers.reckitt.com/job/Hyderabad-Internal-Audit-Manager-Ops-and-Quality-Assurance-Tela-NA/1411392533/) | Audit / Assurance / SOX | Hyderabad, Telangana, India, N/A |
+| Reckitt | [Manager - International Tax](https://careers.reckitt.com/job/Hyderabad-Manager-International-Tax-Tela-NA/1455019033/) | Tax | Hyderabad, Telangana, India, N/A |
 | Razorpay | [Executive, Finance](https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4746959005) | Accounting / Finance (general) | Bengaluru |
 | Paytm | [Business Finance (Lending)](https://jobs.lever.co/paytm/837c89a3-3598-410c-a0a3-3af4927a42ed) | FP&A / Business Finance | Noida, Uttar Pradesh |
 | Paytm | [Credit Risk - Manager](https://jobs.lever.co/paytm/0395d0aa-517e-472f-8989-b377895220b7) | Risk / Credit | Noida, Uttar Pradesh |
 | Paytm | [Credit Risk Analyst](https://jobs.lever.co/paytm/ad781ae8-cd4a-44c1-a74b-2822118b7c3d) | Risk / Credit | Noida, Uttar Pradesh |
+| Paytm | [Field Facilitator - Digital & Financial Literacy - 6 months Contractua](https://jobs.lever.co/paytm/8b2f5989-2a41-436c-a01c-78468652ac31) | Accounting / Finance (general) | Noida, Uttar Pradesh |
+| Paytm | [Finance & Reporting Manager](https://jobs.lever.co/paytm/da08f565-bb69-4489-a7d5-ffe79fd452cd) | Accounting / Finance (general) | Luxembourg |
