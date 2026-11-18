@@ -46,7 +46,8 @@ NOT_FIN = re.compile(r"software|developer|engineer(?!ing finance)|architect|devo
                      r"lending collection|collections? (executive|officer|agent)|area collection|collection manager|recovery|tele ?caller|"
                      r"quality (auditor|analyst)|\bvoice\b|design assurance|product manag|program manag|product team|"
                      r"strategic accounts|key accounts?|account (manager|executive|director)|\bit due diligence|"
-                     r"housing finance.*(sales|product)|loan officer", re.I)
+                     r"housing finance.*(sales|product)|loan officer|\bsales\b(?! tax| accounting| audit| finance)|"
+                     r"identity|governance user|access management|\biam\b|user reconciliation|business development", re.I)
 INDIA = re.compile(r"\bindia\b|\bind\b|, ?in\b|mumbai|navi mumbai|thane|pune|bengaluru|bangalore|hyderabad|chennai|gurgaon|gurugram|"
                    r"noida|delhi|kolkata|ahmedabad|vadodara|jaipur|kochi|coimbatore|chandigarh|indore|nagpur|lucknow|bhubaneswar|"
                    r"vizag|visakhapatnam|mysore|mysuru|trivandrum|thiruvananthapuram|goa|surat|jamnagar|bhopal|maharashtra|karnataka|"
@@ -71,6 +72,18 @@ def tidy_title(t):
     t = re.sub(r"\s*_\s*", " - ", t)
     t = re.sub(r"\s*[(\[]\s*$", "", t)                  # dangling bracket
     return t.strip(" -")
+
+
+def tidy_loc(l):
+    l = clean(str(l or ""))
+    l = re.sub(r"\b\d{6}\b", "", l)                       # pin codes
+    l = re.sub(r",\s*IN\b", ", India", l)
+    parts, out = [p.strip(" ,|()") for p in re.split(r"[,|]", l)], []
+    for p in parts:
+        p = re.sub(r"\bIndia(\s+India)+\b", "India", p, flags=re.I)
+        if p and p.lower() not in [o.lower() for o in out]:
+            out.append(p)
+    return ", ".join(out)
 
 
 def in_india(loc, title="", default=None):
@@ -506,7 +519,7 @@ def run_company(co):
             continue
         key = hashlib.sha1(f"{name}|{j.get('id')}".encode()).hexdigest()[:16]
         kept.append({"key": key, "company": name, "title": tidy_title(j.get("title")), "category": cat,
-                     "location": clean(str(j.get("location") or ""))[:120], "url": j.get("url"),
+                     "location": tidy_loc(j.get("location"))[:120], "url": j.get("url"),
                      "posted": j.get("posted"), "platform": rep["platform"], "approx": bool(j.get("approx"))})
     # de-duplicate same title + location within a company
     seen, uniq = set(), []
@@ -538,73 +551,117 @@ def build_page(jobs):
     open(os.path.join(OUT, "site", "index.html"), "w", encoding="utf-8").write(t)
 
 
+TAGS = {"FP&A / Business Finance": "FPandA", "Accounts Payable / P2P": "AccountsPayable", "Accounts Receivable / O2C": "AccountsReceivable",
+        "Record to Report / GL": "R2R", "Controllership / Reporting": "Controllership", "Tax": "Tax", "Audit / Assurance / SOX": "Audit",
+        "Treasury": "Treasury", "Costing": "Costing", "Deals / Valuation / IB": "Valuation", "Risk / Credit": "CreditRisk",
+        "Payroll": "Payroll", "Finance Transformation / Systems": "FinanceSystems", "Accounting / Finance (general)": "Accounting"}
+CITY = [("Mumbai", r"mumbai|navi mumbai|thane"), ("Pune", r"pune"), ("Bengaluru", r"bengaluru|bangalore"), ("Hyderabad", r"hyderabad"),
+        ("Chennai", r"chennai"), ("Gurugram", r"gurgaon|gurugram"), ("Noida", r"noida"), ("Delhi", r"delhi"), ("Kolkata", r"kolkata"),
+        ("Ahmedabad", r"ahmedabad"), ("Vadodara", r"vadodara"), ("Jaipur", r"jaipur"), ("Kochi", r"kochi"), ("Coimbatore", r"coimbatore"),
+        ("Chandigarh", r"chandigarh"), ("Indore", r"indore"), ("Nagpur", r"nagpur"), ("Lucknow", r"lucknow")]
+CITY = [(n, re.compile(p, re.I)) for n, p in CITY]
+
+
+def city_of(loc):
+    hits = [n for n, rx in CITY if rx.search(loc or "")]
+    if not hits:
+        st = re.search(r"gujarat|maharashtra|karnataka|telangana|tamil nadu|haryana|kerala|rajasthan|west bengal|uttar pradesh", loc or "", re.I)
+        return st.group(0).title() if st else "India"
+    return hits[0] if len(hits) == 1 else f"{hits[0]} +{len(hits) - 1} more"
+
+
+def nice_title(t):
+    t = t.strip()
+    if t and t == t.lower():                      # slug titles from sitemaps come in lower case
+        small = {"and", "of", "the", "for", "in", "to", "a", "an", "&"}
+        keep = {"r2r", "a2r", "p2p", "o2c", "gl", "ap", "ar", "fp&a", "sox", "gst", "tds", "ifrs", "hr", "it", "sap", "ca", "cma"}
+        out = []
+        for k, w in enumerate(t.split()):
+            out.append(w.upper() if w in keep else (w if (w in small and k) else w.capitalize()))
+        t = " ".join(out)
+    return t
+
+
+def channel_link():
+    c = os.environ.get("TG_CHANNEL_ID") or ""
+    return f"https://t.me/{c[1:]}" if c.startswith("@") else ""
+
+
+def tg_send(tok, chat, text, button=None):
+    data = {"chat_id": chat, "text": text[:4090], "parse_mode": "HTML", "disable_web_page_preview": "true"}
+    if button:
+        data["reply_markup"] = json.dumps({"inline_keyboard": [[{"text": button[0], "url": button[1]}]]})
+    try:
+        r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T, data=data)
+        print("telegram:", r.status_code, r.text[:100])
+        if r.status_code == 429:
+            time.sleep(int((r.json().get("parameters") or {}).get("retry_after", 20)) + 1)
+            requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T, data=data)
+        return r.ok
+    except Exception as ex:
+        print("telegram error:", ex)
+        return False
+
+
+def job_card(j):
+    e = html.escape
+    tag = TAGS.get(j["category"], "Finance")
+    city = city_of(j["location"])
+    ctag = re.sub(r"[^A-Za-z]", "", city.split(" +")[0])
+    return (f"💼 <b>{e(nice_title(j['title']))}</b>\n\n"
+            f"🏢 {e(j['company'])}\n"
+            f"📍 {e(city)}\n"
+            f"🗂 {e(j['category'])}\n\n"
+            f"#{tag} #{ctag} #FinanceJobs")
+
+
+SINGLE_MAX = 6
+
+
 def post_telegram(new):
     tok, chat = os.environ.get("TG_CHANNEL_TOKEN"), os.environ.get("TG_CHANNEL_ID")
     if not (tok and chat) or not new:
         print("telegram: skipped", "(no secrets)" if not tok else f"({len(new)} new)")
         return
     e = html.escape
-    new = sorted(new, key=lambda j: (j["category"], j["company"]))
-    foot = []
-    if SITE_URL:
-        foot.append(f'All openings with filters: {e(SITE_URL)}/jobs/')
-    if SIM_URL:
-        foot.append(f'Interview soon? Practise ERP finance work: {e(SIM_URL)}')
-    foot = ("\n\n" + "\n".join(foot)) if foot else ""
-    batch_size, max_msgs = 8, 4
-    batches = [new[i:i + batch_size] for i in range(0, len(new), batch_size)][:max_msgs]
-    for bi, b in enumerate(batches):
-        head = f"<b>New finance openings</b> ({len(new)} new)" if bi == 0 else "<b>More new openings</b>"
-        body = "\n\n".join(f'<b>{e(j["title"])}</b>\n{e(j["company"])}, {e(j["location"][:60])}\n{e(j["category"])}\n'
-                            f'<a href="{e(j["url"])}">Apply on company site</a>' for j in b)
-        rest = len(new) - batch_size * max_msgs
-        tail = (f"\n\n+{rest} more on the website" if rest > 0 and bi == len(batches) - 1 else "")
-        text = f"{head}\n\n{body}{tail}{foot if bi == len(batches) - 1 else ''}"
-        try:
-            r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T,
-                              data={"chat_id": chat, "text": text[:4090], "parse_mode": "HTML", "disable_web_page_preview": "true"})
-            print("telegram:", r.status_code, r.text[:120])
-        except Exception as ex:
-            print("telegram error:", ex)
+    # spread across companies and areas so one employer does not fill the channel
+    order, seen_co = [], {}
+    for j in sorted(new, key=lambda x: x["company"]):
+        seen_co[j["company"]] = seen_co.get(j["company"], 0) + 1
+        order.append((seen_co[j["company"]], j))
+    order = [j for _, j in sorted(order, key=lambda x: x[0])]
+    singles, rest = order[:SINGLE_MAX], order[SINGLE_MAX:]
+    for j in singles:
+        tg_send(tok, chat, job_card(j), ("✅ Apply on company site", j["url"]))
         time.sleep(3)
+    if rest:
+        lines = [f"➕ <b>{len(rest)} more new finance jobs</b>\n"]
+        for j in rest[:25]:
+            lines.append(f'▫️ <a href="{e(j["url"])}">{e(nice_title(j["title"]))}</a>\n     {e(j["company"])}, {e(city_of(j["location"]))}')
+        if len(rest) > 25:
+            lines.append(f"\n…and {len(rest) - 25} more" + (f" on {e(SITE_URL)}/jobs/" if SITE_URL else ""))
+        foot = []
+        if SIM_URL:
+            foot.append(f"🎯 Interview soon? Practise real ERP finance work: {e(SIM_URL)}")
+        if channel_link():
+            foot.append(f"📢 Share with a friend who is job hunting: {channel_link()}")
+        tg_send(tok, chat, "\n".join(lines) + ("\n\n" + "\n".join(foot) if foot else ""))
 
 
-def welcome_post(jobs):
-    """One-off: introduce the channel and show a few current openings."""
+def sample_post(jobs):
+    """One-off test: post 3 current openings in the new format."""
     tok, chat = os.environ.get("TG_CHANNEL_TOKEN"), os.environ.get("TG_CHANNEL_ID")
     if not (tok and chat):
         print("telegram test: secrets missing")
         return
-    text = ("<b>Finance Jobs India is live</b>\n\n"
-            "Finance, accounting, tax, audit, FP&amp;A and treasury openings in India, read directly from company career pages "
-            "and posted here as soon as we find them.\n\nApply on the company's own site. We never charge for jobs.")
-    r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T,
-                      data={"chat_id": chat, "text": text, "parse_mode": "HTML"})
-    print("telegram test welcome:", r.status_code, r.text[:200])
-    if not r.ok:
-        try:
-            me = requests.get(f"https://api.telegram.org/bot{tok}/getMe", timeout=T).json().get("result", {})
-            print("diag bot:", me.get("username"))
-            ch = requests.get(f"https://api.telegram.org/bot{tok}/getChat", params={"chat_id": chat}, timeout=T).json()
-            res = ch.get("result") or {}
-            print("diag chat:", ch.get("ok"), "title=", res.get("title"), "username=", res.get("username"),
-                  "type=", res.get("type"), "members=", ch.get("description", ""))
-            cnt = requests.get(f"https://api.telegram.org/bot{tok}/getChatMemberCount", params={"chat_id": chat}, timeout=T).json()
-            print("diag member count:", cnt.get("result"), cnt.get("description", ""))
-            v = str(chat)
-            print("diag id format: starts with @ =", v.startswith("@"), "| has spaces =", " " in v, "| length =", len(v))
-        except Exception as ex:
-            print("diag error:", ex)
-    if r.ok:
-        time.sleep(3)
-        pick, seen = [], set()
-        for j in jobs:
-            if j["company"] not in seen:
-                seen.add(j["company"])
-                pick.append(j)
-            if len(pick) == 5:
-                break
-        post_telegram(pick)
+    pick, seen = [], set()
+    for j in jobs:
+        if j["company"] not in seen and not j.get("approx"):
+            seen.add(j["company"])
+            pick.append(j)
+        if len(pick) == 3:
+            break
+    post_telegram(pick)
 
 
 def main():
@@ -639,7 +696,7 @@ def main():
     json.dump(CACHE, open(cp, "w"), indent=1)
     build_page(jobs)
     if os.environ.get("TG_TEST") == "true":
-        welcome_post(jobs)
+        sample_post(jobs)
     else:
         post_telegram(new)
     json.dump(reports, open(os.path.join(OUT, "companies_report.json"), "w"), indent=1, ensure_ascii=False)

@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       test_post:
-        description: "Post a welcome message and 5 sample jobs to the channel"
+        description: "Post 3 sample jobs to the channel in the current format"
         type: boolean
         default: false
 permissions:
