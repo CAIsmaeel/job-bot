@@ -581,6 +581,20 @@ def welcome_post(jobs):
     r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T,
                       data={"chat_id": chat, "text": text, "parse_mode": "HTML"})
     print("telegram test welcome:", r.status_code, r.text[:200])
+    if not r.ok:
+        try:
+            me = requests.get(f"https://api.telegram.org/bot{tok}/getMe", timeout=T).json().get("result", {})
+            print("diag bot:", me.get("username"))
+            ch = requests.get(f"https://api.telegram.org/bot{tok}/getChat", params={"chat_id": chat}, timeout=T).json()
+            res = ch.get("result") or {}
+            print("diag chat:", ch.get("ok"), "title=", res.get("title"), "username=", res.get("username"),
+                  "type=", res.get("type"), "members=", ch.get("description", ""))
+            cnt = requests.get(f"https://api.telegram.org/bot{tok}/getChatMemberCount", params={"chat_id": chat}, timeout=T).json()
+            print("diag member count:", cnt.get("result"), cnt.get("description", ""))
+            v = str(chat)
+            print("diag id format: starts with @ =", v.startswith("@"), "| has spaces =", " " in v, "| length =", len(v))
+        except Exception as ex:
+            print("diag error:", ex)
     if r.ok:
         time.sleep(3)
         pick, seen = [], set()
