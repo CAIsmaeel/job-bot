@@ -10,7 +10,7 @@
    "found_on": "https://careers.mastercard.com/us/en/",
    "company_domain": "mastercard.com"
   },
-  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -36,8 +36,8 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 255,
-  "kept": 48
+  "raw": 256,
+  "kept": 47
  },
  {
   "company": "Caterpillar",
@@ -84,7 +84,7 @@
    "found_on": "https://www.deloitte.com/global/en/careers/job-search.html",
    "company_domain": "deloitte.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -98,8 +98,8 @@
    "found_on": "https://kpmg.com/in/en/careers.html",
    "company_domain": "kpmg.com"
   },
-  "raw": 378,
-  "kept": 34
+  "raw": 377,
+  "kept": 31
  },
  {
   "company": "Grant Thornton Bharat",
@@ -149,7 +149,7 @@
    "found_on": "https://www.genpact.com/careers",
    "company_domain": "genpact.com"
   },
-  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://genpact.wd108.myworkdayjobs.com/wday/cxs/genpact/External_Careers/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -175,7 +175,7 @@
    "company_domain": "exlservice.com"
   },
   "raw": 532,
-  "kept": 52
+  "kept": 48
  },
  {
   "company": "Barclays",
@@ -227,7 +227,7 @@
    "found_on": "https://jobs.citi.com/",
    "company_domain": "citi.com"
   },
-  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://citi.wd5.myworkdayjobs.com/wday/cxs/citi/2/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -399,7 +399,7 @@
    "found_on": "https://cummins.jobs/",
    "company_domain": "cummins.jobs"
   },
-  "raw": 147,
+  "raw": 148,
   "kept": 4
  },
  {
@@ -411,8 +411,8 @@
    "found_on": "https://jobs.bosch.com/en?pages=1&country=in",
    "company_domain": "bosch.in"
   },
-  "raw": 264,
-  "kept": 19
+  "raw": 265,
+  "kept": 16
  },
  {
   "company": "Schneider Electric",
@@ -447,7 +447,7 @@
    "found_on": "https://www.diageo.com/en/careers",
    "company_domain": "diageo.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://diageo.wd3.myworkdayjobs.com/wday/cxs/diageo/Diageo_Careers/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -559,15 +559,12 @@
  {
   "company": "Northern Trust",
   "careers": "https://careers.northerntrust.com",
-  "platform": "workday",
+  "platform": "sitemap",
   "config": {
-   "tenant": "ntrs",
-   "wd": "wd1",
-   "site": "northerntrust",
-   "found_on": "https://ntrs.wd1.myworkdayjobs.com/northerntrust",
+   "origin": "https://careers.northerntrust.com",
    "company_domain": "northerntrust.com"
   },
-  "raw": 2,
+  "raw": 0,
   "kept": 0
  },
  {
@@ -589,7 +586,7 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 288,
+  "raw": 287,
   "kept": 9
  },
  {
@@ -623,7 +620,7 @@
    "found_on": "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
    "company_domain": "sc.com"
   },
-  "raw": 79,
+  "raw": 78,
   "kept": 0
  },
  {
@@ -696,8 +693,9 @@
    "found_on": "https://corporate.target.com/careers",
    "company_domain": "target.com"
   },
-  "raw": 25,
-  "kept": 6
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/jobs",
+  "raw": 0,
+  "kept": 0
  },
  {
   "company": "Walmart",
@@ -796,7 +794,7 @@
    "found_on": "https://jobs.boeing.com/",
    "company_domain": "boeing.com"
   },
-  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://boeing.wd1.myworkdayjobs.com/wday/cxs/boeing/EXTERNAL_CAREERS/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -1005,8 +1003,8 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 26,
-  "kept": 5
+  "raw": 27,
+  "kept": 2
  },
  {
   "company": "AstraZeneca",
@@ -1043,7 +1041,7 @@
    "found_on": "https://www.pfizer.com/about/careers",
    "company_domain": "pfizer.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://pfizer.wd1.myworkdayjobs.com/wday/cxs/pfizer/PfizerCareers/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -1058,7 +1056,7 @@
    "found_on": "https://www.jobs.abbott/us/en",
    "company_domain": "jobs.abbott"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://abbott.wd5.myworkdayjobs.com/wday/cxs/abbott/abbottcareers/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -1097,7 +1095,7 @@
    "found_on": "https://jobs.baxter.com/en",
    "company_domain": "baxter.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://baxter.wd1.myworkdayjobs.com/wday/cxs/baxter/baxter/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -1231,7 +1229,7 @@
    "company_domain": "kotak.com"
   },
   "raw": 771,
-  "kept": 57
+  "kept": 32
  },
  {
   "company": "Axis Bank",
@@ -1479,7 +1477,7 @@
    "company_domain": "razorpay.com"
   },
   "raw": 25,
-  "kept": 2
+  "kept": 1
  },
  {
   "company": "Paytm",
@@ -1491,7 +1489,7 @@
    "company_domain": "paytm.com"
   },
   "raw": 198,
-  "kept": 39
+  "kept": 17
  },
  {
   "company": "PhonePe",

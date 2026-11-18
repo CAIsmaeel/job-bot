@@ -1,5 +1,41 @@
 [
  {
+  "key": "7174ac241c856813",
+  "company": "Kotak Mahindra Bank",
+  "title": "Team Member - Training_HOUSING FINANCE_0412_4289_1017039",
+  "category": "Accounting / Finance (general)",
+  "location": "Haryana, India India",
+  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790",
+  "posted": "2026-11-18",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:19:13Z"
+ },
+ {
+  "key": "7eaec8782aac730c",
+  "company": "Godrej Industries",
+  "title": "Manager - Finance",
+  "category": "Accounting / Finance (general)",
+  "location": "Mumbai, Maharashtra, India",
+  "url": "https://careers.godrejindustries.com/in/en/job/P-101073",
+  "posted": "2026-08-24T09:11:08.315+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T06:19:13Z"
+ },
+ {
+  "key": "778415101071e64d",
+  "company": "GE HealthCare",
+  "title": "Associate Service Finance Analyst (",
+  "category": "Accounting / Finance (general)",
+  "location": "Bengaluru, Karnātaka, India, 560066",
+  "url": "https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply",
+  "posted": "2026-11-18T00:00:00.000+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T06:19:13Z"
+ },
+ {
   "key": "3a1853fd56b3845c",
   "company": "Volvo Group",
   "title": "Senior Accountant",
@@ -188,78 +224,6 @@
   "url": "https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Bangalore-India/Principal-Finance-Systems-Analyst--Oracle-ERP-_R-01369460/apply",
   "posted": "2026-10-26T00:00:00.000+0000",
   "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "ea8611b438e4c246",
-  "company": "Target",
-  "title": "Sr Analyst Accounting",
-  "category": "Accounting / Finance (general)",
-  "location": "Bangalore,India (India)",
-  "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/BangaloreIndia/Sr-Analyst-Accounting_R0000478019",
-  "posted": "Posted 21 Days Ago",
-  "platform": "workday",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "b7fef31216012cf4",
-  "company": "Target",
-  "title": "Analyst Payroll FinOps",
-  "category": "Payroll",
-  "location": "Bangalore,India (India)",
-  "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/BangaloreIndia/Analyst-Payroll-FinOps_R0000477445",
-  "posted": "Posted 30+ Days Ago",
-  "platform": "workday",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "423fa4d6b0c6a878",
-  "company": "Target",
-  "title": "Sr Auditor",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bangalore,India (India)",
-  "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/BangaloreIndia/Sr-Auditor_R0000443708",
-  "posted": "Posted 30+ Days Ago",
-  "platform": "workday",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "85a6602dd61481c1",
-  "company": "Target",
-  "title": "Auditor",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bangalore,India (India)",
-  "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/BangaloreIndia/Auditor_R0000449741",
-  "posted": "Posted 30+ Days Ago",
-  "platform": "workday",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "d2c0bd40585bba97",
-  "company": "Target",
-  "title": "Sr Manager Internal Audit",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bangalore,India (India)",
-  "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/BangaloreIndia/Sr-Manager-Internal-Audit_R0000479716",
-  "posted": "Posted 13 Days Ago",
-  "platform": "workday",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "a6ab6e9647430ccd",
-  "company": "Target",
-  "title": "Lead Specialist Payroll FinOps",
-  "category": "Payroll",
-  "location": "Bangalore,India (India)",
-  "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/BangaloreIndia/Lead-Specialist-Payroll-FinOps_R0000478624",
-  "posted": "Posted 20 Days Ago",
-  "platform": "workday",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
  },
@@ -552,90 +516,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "61eb79bdb61682f5",
-  "company": "Razorpay",
-  "title": "Senior Manager, Strategic Accounts",
-  "category": "Accounting / Finance (general)",
-  "location": "Bengaluru",
-  "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4748774005",
-  "posted": "2026-10-29T10:16:34-04:00",
-  "platform": "greenhouse",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "7490a03d16343abd",
-  "company": "Paytm",
-  "title": "Area Collection Manager- Manager -Jaipur - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Jaipur, Rajasthan",
-  "url": "https://jobs.lever.co/paytm/536dfd25-8537-4e2c-854a-6ccbfd471983",
-  "posted": 1786017185826,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "d620982291b19e19",
-  "company": "Paytm",
-  "title": "Area Collections Manager - Manager - Guntur - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Guntur, Andhra Pradesh",
-  "url": "https://jobs.lever.co/paytm/a809ac20-1c8b-4d63-a442-181de253a577",
-  "posted": 1788862263395,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "66ce3e33e8a70e05",
-  "company": "Paytm",
-  "title": "Area Collections Manager - Manager - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Vadodara, Gujarat",
-  "url": "https://jobs.lever.co/paytm/0196d8f3-c3dd-40a0-b2d2-ef364c727733",
-  "posted": 1776076633900,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "7374c666e45a48ed",
-  "company": "Paytm",
-  "title": "Area Collections Manager - Manager - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Surat, Gujarat",
-  "url": "https://jobs.lever.co/paytm/5d98a246-ca94-4c4f-bb63-c77e236d047b",
-  "posted": 1776076512350,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "8c2caa06308bffa0",
-  "company": "Paytm",
-  "title": "Area Collections Manager - Manager - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Mumbai, Maharashtra",
-  "url": "https://jobs.lever.co/paytm/6cfdd7f0-f4c0-4cb5-9eee-43fe837cbeca",
-  "posted": 1776770657205,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "abd6355a7f6132b3",
-  "company": "Paytm",
-  "title": "Area Collections Manager - Manager - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Ahmedabad, Gujarat",
-  "url": "https://jobs.lever.co/paytm/8ebc681f-a5c4-4544-a900-f10a5ccafafb",
-  "posted": 1776076737279,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "ac5fff182c759291",
   "company": "Paytm",
   "title": "Business Finance (Lending)",
@@ -643,126 +523,6 @@
   "location": "Noida, Uttar Pradesh",
   "url": "https://jobs.lever.co/paytm/837c89a3-3598-410c-a0a3-3af4927a42ed",
   "posted": 1784707089659,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "863d6fd28ec78adc",
-  "company": "Paytm",
-  "title": "Collection Manager - Chandigarh",
-  "category": "Accounts Receivable / O2C",
-  "location": "Chandigarh, Punjab",
-  "url": "https://jobs.lever.co/paytm/5cd42774-b156-4952-83de-01cb93f22714",
-  "posted": 1776785792757,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "10b0e19ea05cb878",
-  "company": "Paytm",
-  "title": "Collection Manager - Jalandhar",
-  "category": "Accounts Receivable / O2C",
-  "location": "Jalandhar, Punjab",
-  "url": "https://jobs.lever.co/paytm/82c7a74d-b77d-437c-be9a-622246d125fd",
-  "posted": 1776786326259,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "57c56e3ec91fb6ce",
-  "company": "Paytm",
-  "title": "Collection Manager - Lucknow",
-  "category": "Accounts Receivable / O2C",
-  "location": "Lucknow, Uttar Pradesh",
-  "url": "https://jobs.lever.co/paytm/ad949dfe-9f2f-4235-8945-740a0f6b3177",
-  "posted": 1776788250794,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "ef26296bedf66c1b",
-  "company": "Paytm",
-  "title": "Collection Manager - Ludhiana - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Ludhiana, Punjab",
-  "url": "https://jobs.lever.co/paytm/23070e12-22b3-4b77-b24b-0ecb64b9c5b0",
-  "posted": 1788861974689,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "501ed0141a1c1b9d",
-  "company": "Paytm",
-  "title": "Collection Manager - Team Lead- Lending Collections (Vellore)",
-  "category": "Accounts Receivable / O2C",
-  "location": "Vellore, Tamil Nadu",
-  "url": "https://jobs.lever.co/paytm/8f80d61d-6730-43b2-b6e7-3923897093ad",
-  "posted": 1779862846336,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "2b6550cc96687d99",
-  "company": "Paytm",
-  "title": "Collection Manager - TL - Lending Collections (EM Recovery)",
-  "category": "Accounts Receivable / O2C",
-  "location": "Patiala, Haryana",
-  "url": "https://jobs.lever.co/paytm/178369a0-39ff-44f9-beee-dad18b7d0cac",
-  "posted": 1781072916576,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "945d2e2bc870820f",
-  "company": "Paytm",
-  "title": "Collection Manager - TL - Lending Collections (EM Recovery)",
-  "category": "Accounts Receivable / O2C",
-  "location": "Karnal, Haryana",
-  "url": "https://jobs.lever.co/paytm/2482f4b1-847c-4930-9da2-224494b4c4c5",
-  "posted": 1776785288098,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "fc9c4ba6fb154a03",
-  "company": "Paytm",
-  "title": "Collection Manager- Business- Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Sonipat, Haryana",
-  "url": "https://jobs.lever.co/paytm/43fd4d7b-9d83-48c5-ae6b-34e0f5f2a9e4",
-  "posted": 1791495234748,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "3ceaff89cae3c6bd",
-  "company": "Paytm",
-  "title": "Collection Manager- North- Business- Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Aligarh, Uttar Pradesh",
-  "url": "https://jobs.lever.co/paytm/83c26e37-1b54-4c2a-92b2-75551e5bd7b0",
-  "posted": 1794398258312,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "b270f2fe18cefe2e",
-  "company": "Paytm",
-  "title": "Collections Manager - Team Lead - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Ahmedabad, Gujarat",
-  "url": "https://jobs.lever.co/paytm/ea2de02e-b33d-44df-af5f-04867b4a59c6",
-  "posted": 1778567214007,
   "platform": "lever",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -888,18 +648,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "2c6efd2cd27fd031",
-  "company": "Paytm",
-  "title": "National Collection Manager- Delhi",
-  "category": "Accounts Receivable / O2C",
-  "location": "Noida, Uttar Pradesh",
-  "url": "https://jobs.lever.co/paytm/29e9e3b7-9fc2-450a-a13f-1735b3711475",
-  "posted": 1778004932116,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "8b1cb4bb048bfca3",
   "company": "Paytm",
   "title": "Payments Finance & Reconciliation Manager",
@@ -907,42 +655,6 @@
   "location": "Luxembourg",
   "url": "https://jobs.lever.co/paytm/d7af748f-88ea-4d78-a27a-b2290b541c33",
   "posted": 1789033344982,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "89e0fc6235954312",
-  "company": "Paytm",
-  "title": "Program Management - Manager / Senior Manager - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Noida, Uttar Pradesh",
-  "url": "https://jobs.lever.co/paytm/154763a7-3661-41cf-b1d1-3e7c1e12fcc6",
-  "posted": 1787842310720,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "5aabdfe01a4de3a1",
-  "company": "Paytm",
-  "title": "Program Manager - Assistant Manager - Lending Collection",
-  "category": "Accounts Receivable / O2C",
-  "location": "Noida, Uttar Pradesh",
-  "url": "https://jobs.lever.co/paytm/82162dc3-bbd6-4151-af01-d425d44900ef",
-  "posted": 1787647901224,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "1cfea7033b896b0d",
-  "company": "Paytm",
-  "title": "Regional Collections Manager - Senior Manager - Lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Ahmedabad, Gujarat",
-  "url": "https://jobs.lever.co/paytm/e78736f2-8d5a-49bb-88da-4cc5a6561d18",
-  "posted": 1776065260383,
   "platform": "lever",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -1003,30 +715,6 @@
   "location": "Mumbai, Maharashtra",
   "url": "https://jobs.lever.co/paytm/031097bb-4cb9-43cd-af38-5483cbfa6064",
   "posted": 1789628912717,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "16419b5fd0519c83",
-  "company": "Paytm",
-  "title": "Zonal Collection Manager- Bangalore - lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Bangalore, Karnataka",
-  "url": "https://jobs.lever.co/paytm/90880e44-06b6-4fd3-a651-9b4a2616e730",
-  "posted": 1791493368032,
-  "platform": "lever",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "f26bbb59798f51fb",
-  "company": "Paytm",
-  "title": "Zonal Collection Manager- Jaipur- lending Collections",
-  "category": "Accounts Receivable / O2C",
-  "location": "Jaipur, Rajasthan",
-  "url": "https://jobs.lever.co/paytm/b1e79ea6-5f63-46a0-b341-df4105d8807c",
-  "posted": 1792615183971,
   "platform": "lever",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -1152,60 +840,12 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "ec569099e2a7d0c7",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive -TFE-Hard Bucket_Tractors and Farm Equipments (TFE)_0119_3626_1063262",
-  "category": "Accounts Receivable / O2C",
-  "location": "Jodhpur, Rajasthan, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275716",
-  "posted": "2026-11-18",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "6801a6f361978362",
   "company": "Kotak Mahindra Bank",
   "title": "Customer Assistance Manager_HOUSING FINANCE-Hardship Assistance Unit_Maharashtra",
   "category": "Accounting / Finance (general)",
   "location": "Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/265115",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "c845520f1b6c71e3",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)_0223_1876_1042584_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275662",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "9f47ee651f74de1f",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)_0223_8188_1094598_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Dharwad, Karnataka, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/268295",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "6d7a3d387db061c7",
-  "company": "Kotak Mahindra Bank",
-  "title": "Product Manager - Fx_TREASURY-FOREX MERCHANT_0408_1314_1052914",
-  "category": "Treasury",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275720",
   "posted": "2026-11-17",
   "platform": "oracle",
   "approx": false,
@@ -1224,30 +864,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "eb06f5a986d3134f",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0119_5911_1083022_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Piproda Khurd, Madhya Pradesh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275434",
-  "posted": "2026-11-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "9eafb07a2d97f453",
-  "company": "Kotak Mahindra Bank",
-  "title": "Product Manager_TRANSACTION BANKING_0877_1314_1089963",
-  "category": "Deals / Valuation / IB",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275421",
-  "posted": "2026-11-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "0891b8674f9bb211",
   "company": "Kotak Mahindra Bank",
   "title": "Operations Team Member_WBG Operations (Ops)-Trade Finance Operations_Thane",
@@ -1255,18 +871,6 @@
   "location": "Thane, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275383",
   "posted": "2026-11-15",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "e07bcf125d16de94",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)-Recovery-Soft bucket_Dalan",
-  "category": "Accounts Receivable / O2C",
-  "location": "Bihar, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275248",
-  "posted": "2026-11-14",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -1296,30 +900,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "47323459e7dc5823",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0119_5214_1041876_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Uttar Pradesh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275128",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "ba06d749d8bfc948",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0119_5214_1041876_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Lucknow, Uttar Pradesh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275105",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "fddf74fb2949a39f",
   "company": "Kotak Mahindra Bank",
   "title": "Audit Associate_SUPPORT SERVICES_0616_1288_1082296",
@@ -1327,54 +907,6 @@
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275048",
   "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "43069ebd8b2810e5",
-  "company": "Kotak Mahindra Bank",
-  "title": "Area Sales Manager - HF_Housing Finance-Sales_Chhatrapati Sambhajinagar",
-  "category": "Accounting / Finance (general)",
-  "location": "Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274803",
-  "posted": "2026-11-11",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "cb1266abacf3d5a7",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)-Recovery-Soft bucket_Bhopal",
-  "category": "Accounts Receivable / O2C",
-  "location": "Bhopal, Madhya Pradesh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274739",
-  "posted": "2026-11-11",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "c5578f2f744e41f9",
-  "company": "Kotak Mahindra Bank",
-  "title": "Product Manager_HOUSING FINANCE-Product Manager_Mumbai",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274680",
-  "posted": "2026-11-10",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "9b07e126f154fbcd",
-  "company": "Kotak Mahindra Bank",
-  "title": "Lead-Collections Strategy_Comm. Bank HO & Support_0662_1288_1100877_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274608",
-  "posted": "2026-11-09",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -1476,18 +1008,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "10e9c7173a83dec6",
-  "company": "Kotak Mahindra Bank",
-  "title": "HO Product Team - Financial Inclusions_SUPPORT SERVICES_0762_1288_1102070",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275040",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "db6fc6f26158548b",
   "company": "Kotak Mahindra Bank",
   "title": "Accounts Team Member - APPC_SUPPORT SERVICES_0705_1288_1076786",
@@ -1512,78 +1032,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "be53d2bde3ded100",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0223_8188_1094640_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Dharwad, Karnataka, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/268308",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "3d15e2612a70e4f7",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0223_5912_1094679_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Pipliya Mandi, Madhya Pradesh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/268290",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "0521d7c84731a1c8",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Comm. Bank HO & Support_0662_6430_1040294_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Chhattisgarh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275473",
-  "posted": "2026-11-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "0e92b98a67e856f2",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0223_4326_1094672_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Sirsa, Haryana, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/268319",
-  "posted": "2026-11-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "cc6c85a020020699",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Comm. Bank HO & Support-Recovery Common - CV,CE & SA_Gandhidham",
-  "category": "Accounts Receivable / O2C",
-  "location": "Gandhidham, Gujarat, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275255",
-  "posted": "2026-11-14",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "e5ddc6d3ee1db63b",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0223_3718_1094634_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Ganganagar, Rajasthan, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/268297",
-  "posted": "2026-11-13",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "b78673f484f5c647",
   "company": "Kotak Mahindra Bank",
   "title": "Audit Executive_SUPPORT SERVICES_0616_1288_1082315",
@@ -1591,42 +1039,6 @@
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275050",
   "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "69a5885e1f340bd8",
-  "company": "Kotak Mahindra Bank",
-  "title": "Collections Executive_Tractors and Farm Equipments (TFE)_0223_0875_1040612_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Surat, Gujarat, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274836",
-  "posted": "2026-11-11",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "a35234a59af75977",
-  "company": "Kotak Mahindra Bank",
-  "title": "MIS - Co-ordinator_Sales_0892_0261_1008549",
-  "category": "FP&A / Business Finance",
-  "location": "Gurgaon, Haryana, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274109",
-  "posted": "2026-11-06",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "569dce7bbe2d58c5",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)_0223_2618_1058547_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Ahmedabad, Gujarat, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/273834",
-  "posted": "2026-11-04",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -1644,18 +1056,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "6b0252e3848db0f5",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)-Recovery-Soft bucket_Piproda Khurd",
-  "category": "Accounts Receivable / O2C",
-  "location": "Piproda Khurd, Madhya Pradesh, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/273110",
-  "posted": "2026-10-31",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "1b671ff54fbaf71c",
   "company": "Kotak Mahindra Bank",
   "title": "Portfolio Manager_TREASURY-FOREX MERCHANT_0412_8087_1051443",
@@ -1668,42 +1068,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "33e660e42f83d744",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)_0223_4567_1059557_HRR",
-  "category": "Accounts Receivable / O2C",
-  "location": "Delhi, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/270330",
-  "posted": "2026-10-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "8552122e67841026",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)-Recovery-Soft bucket_Jodhpur",
-  "category": "Accounts Receivable / O2C",
-  "location": "Jodhpur, Rajasthan, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/267305",
-  "posted": "2026-09-29",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "9f115038fa592ed8",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Collections Manager_Tractors and Farm Equipments (TFE)-Recovery-Soft bucket_Kota",
-  "category": "Accounts Receivable / O2C",
-  "location": "Kota, Rajasthan, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/267270",
-  "posted": "2026-09-29",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "736e92d25864fb9a",
   "company": "Kotak Mahindra Bank",
   "title": "HR-Partner_SUPPORT SERVICES-HR-Institutional-Pvt-Treasury-ARD Advisory_Mumbai",
@@ -1711,6 +1075,18 @@
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/265933",
   "posted": "2026-09-28",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "a35234a59af75977",
+  "company": "Kotak Mahindra Bank",
+  "title": "MIS - Co-ordinator_Sales_0892_0261_1008549",
+  "category": "FP&A / Business Finance",
+  "location": "Gurgaon, Haryana, India India",
+  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274109",
+  "posted": "2026-11-06",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -1872,30 +1248,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "955478f100a66e1b",
-  "company": "KPMG India",
-  "title": "Associate Consultant IT Due Diligence",
-  "category": "Deals / Valuation / IB",
-  "location": "Gurgaon, Haryana, India India",
-  "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30051884",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "ff32a6e65fe14c3b",
-  "company": "KPMG India",
-  "title": "Assistant Manager IT Due Diligence",
-  "category": "Deals / Valuation / IB",
-  "location": "Gurgaon, Haryana, India India",
-  "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30051885",
-  "posted": "2026-11-17",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "c1b2256e9dafecf0",
   "company": "KPMG India",
   "title": "Germany FS- Audit Associate 2 - NOI",
@@ -1975,18 +1327,6 @@
   "location": "Bangalore, Karnataka, India India",
   "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30051446",
   "posted": "2026-10-29",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "465fecccb0a8ee61",
-  "company": "KPMG India",
-  "title": "Manager - IT Due Diligence",
-  "category": "Deals / Valuation / IB",
-  "location": "Bangalore, Karnataka, India India",
-  "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049219",
-  "posted": "2026-10-28",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -2310,18 +1650,6 @@
   "category": "Accounting / Finance (general)",
   "location": "Bengaluru, Karnataka, India India",
   "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778996",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "f3eb1d85aa8e96f6",
-  "company": "JPMorgan Chase",
-  "title": "Financial Crime Global Governance, Policy and Transformation Program Manager- Vice President",
-  "category": "Accounting / Finance (general)",
-  "location": "Bengaluru, Karnataka, India India",
-  "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807470",
   "posted": "2026-11-12",
   "platform": "oracle",
   "approx": false,
@@ -3084,18 +2412,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "412fcbb700006cd2",
-  "company": "Godrej Industries",
-  "title": "Manager - Finance",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India",
-  "url": "https://careers.godrejindustries.com/in/en/job/P-101655",
-  "posted": "2026-10-09T09:48:41.443+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "7c3c1b3ca07dc62f",
   "company": "Godrej Industries",
   "title": "Executive - Finance",
@@ -3420,42 +2736,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "e463e0594bd3c8a9",
-  "company": "GSK",
-  "title": "Senior Director - Design Assurance & Product Management",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bengaluru, India",
-  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Senior-Director---Design-Assurance---Product-Management_449968-1/apply",
-  "posted": "2026-11-09T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "ea7f24b0c1e7cae9",
-  "company": "GSK",
-  "title": "Senior Principal - Design Assurance & Product Management - Independent Design Assurance",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bengaluru, India",
-  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Senior-Principal---Design-Assurance---Product-Management---Independent-Design-Assurance_449965/apply",
-  "posted": "2026-11-09T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "5f1e921382e5ed9c",
-  "company": "GSK",
-  "title": "Senior Manager - Design Assurance & Product Management",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bengaluru, India",
-  "url": "https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Senior-Manager---Design-Assurance---Product-Management_450125/apply",
-  "posted": "2026-11-09T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "6c48b44c64a0f728",
   "company": "GE HealthCare",
   "title": "Finance Analyst",
@@ -3475,18 +2755,6 @@
   "location": "Bengaluru, Karnātaka, India, 560066",
   "url": "https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Lead-Service-Finance-Analyst_R4046616-1/apply",
   "posted": "2026-09-24T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "6d5f3c33ab69ed03",
-  "company": "GE HealthCare",
-  "title": "Staff Technical Product Manager - Oracle Fusion Supply Chain Finance & Costing",
-  "category": "Costing",
-  "location": "Bengaluru, Karnātaka, India, 560066",
-  "url": "https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Technical-Product-Manager---Oracle-Fusion-Costing---Intercompany_R4047561-2/apply",
-  "posted": "2026-10-14T00:00:00.000+0000",
   "platform": "phenom",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -3744,18 +3012,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "929a6ab1f2456af4",
-  "company": "EXL",
-  "title": "Sr Executive - Collection - Insurance",
-  "category": "Accounts Receivable / O2C",
-  "location": "Noida, Uttar Pradesh, India India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21106",
-  "posted": "2026-10-28",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "589a1ce8116be9b6",
   "company": "EXL",
   "title": "Assistant Manager-General Ledger",
@@ -3852,18 +3108,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "061a2f76fe413036",
-  "company": "EXL",
-  "title": "Senior Executive - Quality Auditor",
-  "category": "Audit / Assurance / SOX",
-  "location": "Chennai, Tamil Nadu, India India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/18703",
-  "posted": "2026-11-10",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "7bc39973db19e52f",
   "company": "EXL",
   "title": "Auditor I",
@@ -3924,18 +3168,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "b66df1233a171bc7",
-  "company": "EXL",
-  "title": "Customer Service Representative-Customer Care Non-Voice-Back-End/Non Voice Transaction Processing Complex",
-  "category": "Deals / Valuation / IB",
-  "location": "Pune, Maharashtra, India India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/6865",
-  "posted": "2025-11-19",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "4325f382ccf770b4",
   "company": "EXL",
   "title": "Senior Executive-Record to Report-Payroll Accounting",
@@ -3991,18 +3223,6 @@
   "location": "Chennai, Tamil Nadu, India India",
   "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15784",
   "posted": "2026-11-02",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "d720215328314f56",
-  "company": "EXL",
-  "title": "Phone & Pivot Audit - India (Voice)",
-  "category": "Audit / Assurance / SOX",
-  "location": "Noida, Uttar Pradesh, India India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/22183",
-  "posted": "2026-10-30",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -4248,18 +3468,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "92a6320a92e24fae",
-  "company": "Bosch",
-  "title": "Product Manager, Embedded Financial Services (F.OS)_MPIN",
-  "category": "Accounting / Finance (general)",
-  "location": "Bengaluru, India",
-  "url": "https://jobs.smartrecruiters.com/BoschGroup/744000160834490",
-  "posted": "2026-11-10T10:00:59.275Z",
-  "platform": "smartrecruiters",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "ea1cb278f2793ae2",
   "company": "Bosch",
   "title": "BGSW_2026_SAP_HCM_Payroll&Time",
@@ -4344,18 +3552,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "fb027397ba2d518d",
-  "company": "Bosch",
-  "title": "IN_Key Accounts Manager_IN",
-  "category": "Accounting / Finance (general)",
-  "location": "Pune, India",
-  "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148779516",
-  "posted": "2026-09-10T13:29:45.083Z",
-  "platform": "smartrecruiters",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "b0b26e502734c8af",
   "company": "Bosch",
   "title": "Process Associate (CA / Semi Qualified )",
@@ -4363,18 +3559,6 @@
   "location": "bangalore, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000136716198",
   "posted": "2026-07-09T04:35:13.644Z",
-  "platform": "smartrecruiters",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "d8243e190e0b02f7",
-  "company": "Bosch",
-  "title": "IN_ETAS_Key Accounts Manager_IN",
-  "category": "Accounting / Finance (general)",
-  "location": "Chennai, India",
-  "url": "https://jobs.smartrecruiters.com/BoschGroup/744000136142049",
-  "posted": "2026-07-07T06:04:39.565Z",
   "platform": "smartrecruiters",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
