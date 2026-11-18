@@ -25,7 +25,7 @@ NOW = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 CATS = [
     ("FP&A / Business Finance", r"fp&a|fpa\b|financial planning|business finance|finance business partner|\bfbp\b|commercial finance|budget|forecast|management reporting|\bmis\b"),
     ("Accounts Payable / P2P", r"accounts payable|\bp2p\b|ptp\b|procure to pay|invoice processing|vendor payment"),
-    ("Accounts Receivable / O2C", r"accounts receivable|\bo2c\b|otc\b|order to cash|collections?\b|credit control|billing|cash application|\bi2c\b"),
+    ("Accounts Receivable / O2C", r"accounts receivable|\bo2c\b|otc\b|order to cash|ar collections?|credit control|billing|cash application|\bi2c\b"),
     ("Record to Report / GL", r"\br2r\b|\brtr\b|record to report|general ledger|\bgl\b|reconciliation|month.end|close\b|intercompany|fixed asset"),
     ("Controllership / Reporting", r"controller|controllership|financial reporting|statutory|consolidation|ifrs|ind ?as|us gaap|technical accounting|financial control|product control"),
     ("Tax", r"\btax|gst|transfer pricing|indirect tax|direct tax"),
@@ -42,7 +42,11 @@ CATS = [(n, re.compile(p, re.I)) for n, p in CATS]
 NOT_FIN = re.compile(r"software|developer|engineer(?!ing finance)|architect|devops|\bqa\b|tester|designer|data scientist|"
                      r"full ?stack|front ?end|back ?end|sales executive|relationship manager|field sales|"
                      r"workday hcm|oracle hcm|successfactors|servicenow|salesforce|cyber|security analyst|"
-                     r"hr business partner|recruiter|talent acquisition|marketing|nurse|driver|technician|mechanic|electrical|mechanical", re.I)
+                     r"hr business partner|recruiter|talent acquisition|marketing|nurse|driver|technician|mechanic|electrical|mechanical|"
+                     r"lending collection|collections? (executive|officer|agent)|area collection|collection manager|recovery|tele ?caller|"
+                     r"quality (auditor|analyst)|\bvoice\b|design assurance|product manag|program manag|product team|"
+                     r"strategic accounts|key accounts?|account (manager|executive|director)|\bit due diligence|"
+                     r"housing finance.*(sales|product)|loan officer", re.I)
 INDIA = re.compile(r"\bindia\b|\bind\b|, ?in\b|mumbai|navi mumbai|thane|pune|bengaluru|bangalore|hyderabad|chennai|gurgaon|gurugram|"
                    r"noida|delhi|kolkata|ahmedabad|vadodara|jaipur|kochi|coimbatore|chandigarh|indore|nagpur|lucknow|bhubaneswar|"
                    r"vizag|visakhapatnam|mysore|mysuru|trivandrum|thiruvananthapuram|goa|surat|jamnagar|bhopal|maharashtra|karnataka|"
@@ -196,9 +200,15 @@ def discover(name, url):
 def a_workday(c):
     base = f"https://{c['tenant']}.{c['wd']}.myworkdayjobs.com"
     api = f"{base}/wday/cxs/{c['tenant']}/{c['site']}/jobs"
+    home = f"{base}/en-US/{c['site']}"
+    try:
+        get(home)
+    except Exception:
+        pass
+    hdr = {"Accept": "application/json", "Content-Type": "application/json", "Origin": base, "Referer": home}
     # find the India facet if the site has one
     facets = {}
-    r = post(api, json={"limit": 1, "offset": 0, "searchText": "", "appliedFacets": {}})
+    r = post(api, json={"limit": 1, "offset": 0, "searchText": "", "appliedFacets": {}}, headers=hdr)
     r.raise_for_status()
 
     def walk(node, param=None):
@@ -218,7 +228,7 @@ def a_workday(c):
     for term in TERMS[:6]:
         for off in range(0, 60, 20):
             body = {"limit": 20, "offset": off, "searchText": term, "appliedFacets": india_facet}
-            j = post(api, json=body).json()
+            j = post(api, json=body, headers=hdr).json()
             posts = j.get("jobPostings", [])
             for p in posts:
                 path = p.get("externalPath", "")
@@ -239,7 +249,7 @@ def a_workday(c):
         elif category(j["title"]) and not INDIA.search(j["location"] or "") and n < 25:
             n += 1
             try:
-                d = get(j["_detail"]).json().get("jobPostingInfo", {})
+                d = get(j["_detail"], headers={"Accept": "application/json", "Referer": home}).json().get("jobPostingInfo", {})
                 j["location"] = " | ".join([d.get("location") or ""] + (d.get("additionalLocations") or []) + [str(d.get("country", {}).get("descriptor", ""))])
             except Exception:
                 pass
