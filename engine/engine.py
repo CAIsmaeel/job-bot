@@ -603,16 +603,139 @@ def tg_send(tok, chat, text, button=None):
         return False
 
 
-def job_card(j):
+# ---------------- job details (read only for jobs we are about to post) ----------------
+SKILLS = ["SAP", "SAP FICO", "S/4HANA", "Oracle", "Tally", "Excel", "Power BI", "SQL", "Python", "Alteryx", "Hyperion", "Blackline",
+          "GST", "TDS", "Income Tax", "Transfer Pricing", "Ind AS", "IFRS", "US GAAP", "Consolidation", "Reconciliation",
+          "Month-end close", "Budgeting", "Forecasting", "Variance analysis", "Financial modelling", "Valuation", "SOX",
+          "Internal controls", "Statutory audit", "Accounts payable", "Accounts receivable", "Fixed assets", "Payroll",
+          "Treasury", "Cash flow", "Costing", "MIS reporting", "Stakeholder management", "Credit analysis"]
+SKILL_RX = [(k, re.compile(r"\b" + re.escape(k).replace(r"\ ", r"[\s-]") + r"\b", re.I)) for k in SKILLS]
+QUALS = [("CA", r"\bCA\b|chartered accountant"), ("CMA", r"\bCMA\b|\bICWA\b|cost accountant"), ("ACCA", r"\bACCA\b"),
+         ("CPA", r"\bCPA\b"), ("CFA", r"\bCFA\b"), ("MBA Finance", r"\bMBA\b|\bPGDM\b"), ("M.Com", r"\bM\.?\s?Com\b"),
+         ("B.Com", r"\bB\.?\s?Com\b"), ("CS", r"company secretary")]
+QUALS = [(n, re.compile(p, re.I)) for n, p in QUALS]
+
+
+def _jsonld_job(t):
+    for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', t, re.S | re.I):
+        try:
+            d = json.loads(m.group(1).strip())
+        except Exception:
+            continue
+        for x in (d if isinstance(d, list) else d.get("@graph", [d]) if isinstance(d, dict) else []):
+            if isinstance(x, dict) and x.get("@type") == "JobPosting":
+                return x
+    return None
+
+
+def fetch_detail(j):
+    """Return dict(text, type, mode, salary) for one job, best effort."""
+    cfg = (CACHE.get(j["company"]) or {}).get("cfg") or {}
+    plat, url, d = j.get("platform", ""), j.get("url") or "", {"text": ""}
+    try:
+        if plat == "oracle" and cfg.get("host"):
+            jid = url.rstrip("/").split("/")[-1]
+            api = (f"https://{cfg['host']}/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true"
+                   f'&finder=ById;Id="{jid}",siteNumber={cfg["site"]}')
+            x = (get(api).json().get("items") or [{}])[0]
+            d["text"] = " ".join(clean(x.get(k) or "") for k in ("ExternalDescriptionStr", "ExternalResponsibilitiesStr", "ExternalQualificationsStr"))
+            d["type"] = x.get("JobSchedule") or x.get("JobType")
+            d["mode"] = x.get("WorkplaceType")
+        elif plat == "smartrecruiters" and cfg.get("company"):
+            jid = url.rstrip("/").split("/")[-1]
+            x = get(f"https://api.smartrecruiters.com/v1/companies/{cfg['company']}/postings/{jid}").json()
+            sec = (x.get("jobAd") or {}).get("sections") or {}
+            d["text"] = " ".join(clean((sec.get(k) or {}).get("text", "")) for k in ("jobDescription", "qualifications"))
+            d["type"] = (x.get("typeOfEmployment") or {}).get("label")
+            d["level"] = (x.get("experienceLevel") or {}).get("label")
+        elif plat == "lever" and cfg.get("name"):
+            jid = url.rstrip("/").split("/")[-1]
+            x = get(f"https://api.lever.co/v0/postings/{cfg['name']}/{jid}").json()
+            d["text"] = clean(x.get("descriptionPlain", "")) + " " + " ".join(clean(l.get("content", "")) for l in x.get("lists", []))
+            d["type"] = (x.get("categories") or {}).get("commitment")
+            d["mode"] = x.get("workplaceType")
+        elif plat == "greenhouse" and cfg.get("token"):
+            jid = re.findall(r"\d{5,}", url)[-1]
+            x = get(f"https://boards-api.greenhouse.io/v1/boards/{cfg['token']}/jobs/{jid}").json()
+            d["text"] = clean(html.unescape(x.get("content", "")))
+        elif plat == "eightfold" and cfg.get("host"):
+            jid = re.findall(r"\d{6,}", url)[-1]
+            x = get(f"https://{cfg['host']}/api/apply/v2/jobs/{jid}?domain={cfg.get('domain') or cfg.get('company_domain', '')}").json()
+            d["text"] = clean(x.get("job_description", ""))
+            d["type"] = x.get("type")
+            d["mode"] = x.get("work_location_option")
+    except Exception as ex:
+        print("detail api failed:", j["company"], str(ex)[:80])
+    if len(d["text"]) < 200 and url:
+        try:
+            t = get(url).text
+            x = _jsonld_job(t)
+            if x:
+                d["text"] = clean(x.get("description", "")) + " " + clean(str(x.get("experienceRequirements", ""))) + " " + clean(str(x.get("educationRequirements", "")))
+                d["type"] = d.get("type") or (x.get("employmentType") if isinstance(x.get("employmentType"), str) else None)
+                bs = x.get("baseSalary") or {}
+                v = (bs.get("value") or {}) if isinstance(bs, dict) else {}
+                if v.get("minValue") or v.get("value"):
+                    d["salary"] = f"{v.get('minValue') or v.get('value')}-{v.get('maxValue') or ''} {bs.get('currency', '')} {v.get('unitText', '')}".strip(" -")
+            else:
+                body = re.sub(r"(?is)<(script|style|nav|header|footer)[^>]*>.*?</\1>", " ", t)
+                d["text"] = clean(body)[:6000]
+        except Exception as ex:
+            print("detail page failed:", j["company"], str(ex)[:80])
+    return d
+
+
+def facts(j, d):
+    t = d.get("text") or ""
+    f = {}
+    m = re.search(r"(\d{1,2})\s*(?:\+|plus)?\s*(?:-|to|–)\s*(\d{1,2})\s*\+?\s*(?:years|yrs)", t, re.I) or \
+        re.search(r"(?:minimum|min\.?|at least|over)\s*(?:of\s*)?(\d{1,2})\s*\+?\s*(?:years|yrs)", t, re.I) or \
+        re.search(r"(\d{1,2})\s*\+\s*(?:years|yrs)", t, re.I) or re.search(r"(\d{1,2})\s*(?:years|yrs)\.?\s*(?:of\s*)?(?:relevant|work|professional|post|experience)", t, re.I)
+    if m:
+        g = [x for x in m.groups() if x]
+        if all(int(x) <= 30 for x in g):
+            f["exp"] = (f"{g[0]}-{g[1]} years" if len(g) == 2 else f"{g[0]}+ years")
+    elif re.search(r"\bfresher|fresh graduate|0\s*-\s*1 year|newly qualified", t, re.I):
+        f["exp"] = "Freshers can apply"
+    elif d.get("level"):
+        f["exp"] = d["level"]
+    q = [n for n, rx in QUALS if rx.search(t)]
+    if q:
+        f["qual"] = " / ".join(q[:3])
+    m = re.search(r"(?:rs\.?|inr|₹)\s?\d[\d,.]*\s*(?:-|to)\s*\d[\d,.]*\s*(?:lpa|lakhs?|l\b|per annum)?|\d{1,2}(?:\.\d)?\s*(?:-|to)\s*\d{1,2}(?:\.\d)?\s*lpa", t, re.I)
+    f["salary"] = d.get("salary") or (clean(m.group(0)).replace("₹", "Rs. ") if m else "Not disclosed")
+    typ = d.get("type") or ("Contract" if re.search(r"\bcontract(ual)?\b|temporary", t, re.I) else "Full-time")
+    mode = d.get("mode") or ("Hybrid" if re.search(r"\bhybrid\b", t, re.I) else "Remote" if re.search(r"\bremote\b|work from home", t, re.I) else "")
+    f["type"] = ", ".join(x for x in (str(typ).replace("_", " ").title(), str(mode).replace("_", " ").title()) if x)
+    f["skills"] = [k for k, rx in SKILL_RX if rx.search(t) or rx.search(j["title"])][:7]
+    # 1-2 sentence summary from the description, never more than 220 characters
+    sents = [x.strip() for x in re.split(r"(?<=[.!?])\s+", t) if 40 <= len(x.strip()) <= 260 and not re.search(r"cookie|javascript|equal opportunity|privacy|©", x, re.I)]
+    f["summary"] = sents[0][:220] if sents else ""
+    return f
+
+
+def job_card(j, f=None):
     e = html.escape
+    f = f or {}
     tag = TAGS.get(j["category"], "Finance")
     city = city_of(j["location"])
     ctag = re.sub(r"[^A-Za-z]", "", city.split(" +")[0])
-    return (f"💼 <b>{e(nice_title(j['title']))}</b>\n\n"
-            f"🏢 {e(j['company'])}\n"
-            f"📍 {e(city)}\n"
-            f"🗂 {e(j['category'])}\n\n"
-            f"#{tag} #{ctag} #FinanceJobs")
+    L = [f"📢 <b>Hiring: {e(nice_title(j['title']))}</b>", "",
+         f"🏢 <b>{e(j['company'])}</b> is hiring in <b>{e(city)}</b>", ""]
+    if f.get("exp"):
+        L.append(f"🔹 Experience: {e(f['exp'])}")
+    if f.get("qual"):
+        L.append(f"🔹 Qualification: {e(f['qual'])}")
+    L.append(f"🔹 Salary: {e(f.get('salary') or 'Not disclosed')}")
+    if f.get("type"):
+        L.append(f"🔹 Job type: {e(f['type'])}")
+    L.append(f"🔹 Area: {e(j['category'])}")
+    if f.get("skills"):
+        L += ["", f"<b>Key skills:</b> {e(', '.join(f['skills']))}"]
+    if f.get("summary"):
+        L += ["", f"📝 {e(f['summary'])}"]
+    L += ["", f"#{tag} #{ctag} #FinanceJobs"]
+    return "\n".join(L)
 
 
 SINGLE_MAX = 6
@@ -632,7 +755,12 @@ def post_telegram(new):
     order = [j for _, j in sorted(order, key=lambda x: x[0])]
     singles, rest = order[:SINGLE_MAX], order[SINGLE_MAX:]
     for j in singles:
-        tg_send(tok, chat, job_card(j), ("✅ Apply on company site", j["url"]))
+        try:
+            f = facts(j, fetch_detail(j))
+        except Exception as ex:
+            print("facts failed:", j["company"], ex)
+            f = {}
+        tg_send(tok, chat, job_card(j, f), ("✅ Apply on company site", j["url"]))
         time.sleep(3)
     if rest:
         lines = [f"➕ <b>{len(rest)} more new finance jobs</b>\n"]
