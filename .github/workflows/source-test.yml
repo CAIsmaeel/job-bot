@@ -1,0 +1,31 @@
+name: source-test
+# One-off feasibility test: reads company career-site job feeds and writes a report.
+# Runs only on pushes to the source-test branch. It does not touch the main job bot.
+on:
+  push:
+    branches: [source-test]
+    paths: ["source_test/probe.py", ".github/workflows/source-test.yml"]
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: source-test
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - run: python source_test/probe.py
+      - name: Save the report to this branch
+        run: |
+          git config user.name "source-test"
+          git config user.email "source-test@users.noreply.github.com"
+          git add source_test/report.md source_test/report.json
+          git diff --cached --quiet || git commit -m "source test report"
+          git push origin HEAD:source-test
