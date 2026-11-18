@@ -1,0 +1,32 @@
+name: engine
+# Finance job engine v0: reads finance jobs from company career sites and writes engine/out/.
+# Runs on pushes to the engine-v0 branch or by hand. It does not touch the main job bot.
+on:
+  push:
+    branches: [engine-v0]
+    paths: ["engine/engine.py", "engine/companies.json", ".github/workflows/engine.yml"]
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: engine
+  cancel-in-progress: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - run: python engine/engine.py
+      - name: Save results to this branch
+        if: always()
+        run: |
+          git config user.name "engine"
+          git config user.email "engine@users.noreply.github.com"
+          git add engine/out
+          git diff --cached --quiet || git commit -m "engine results"
+          git push origin HEAD:engine-v0
