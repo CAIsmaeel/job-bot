@@ -1,73 +1,74 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T07:06:37Z
+Run: 2026-11-18T10:12:10Z
 
 - Companies: 128
-- Companies with finance jobs in India: 23
-- Finance jobs in India (after title filter, de-duplicated): 326
-- New this run: 2
+- Companies with finance jobs in India: 24
+- Finance jobs in India (after title filter, de-duplicated): 325
+- New this run: 12
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| oracle | 7 | 172 |
-| phenom | 9 | 49 |
+| oracle | 7 | 168 |
+| phenom | 9 | 50 |
 | successfactors | 10 | 35 |
 | eightfold | 7 | 23 |
 | lever | 1 | 17 |
 | smartrecruiters | 2 | 16 |
-| sitemap | 70 | 13 |
+| sitemap | 69 | 15 |
 | greenhouse | 1 | 1 |
-| workday | 19 | 0 |
+| workday | 20 | 0 |
 | phenom+sitemap | 2 | 0 |
 
 ## By finance area
 
 | Area | Jobs |
 |---|---|
-| Accounting / Finance (general) | 96 |
-| Audit / Assurance / SOX | 58 |
-| Record to Report / GL | 21 |
-| Tax | 20 |
+| Accounting / Finance (general) | 99 |
+| Audit / Assurance / SOX | 57 |
+| Record to Report / GL | 22 |
+| Tax | 19 |
 | Treasury | 19 |
 | Controllership / Reporting | 19 |
-| FP&A / Business Finance | 17 |
-| Risk / Credit | 17 |
+| FP&A / Business Finance | 18 |
+| Risk / Credit | 16 |
 | Accounts Receivable / O2C | 15 |
-| Deals / Valuation / IB | 15 |
+| Deals / Valuation / IB | 13 |
+| Payroll | 10 |
 | Finance Transformation / Systems | 9 |
-| Payroll | 9 |
-| Accounts Payable / P2P | 7 |
+| Accounts Payable / P2P | 5 |
 | Costing | 4 |
 
 ## By company
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| JPMorgan Chase | oracle | 257 | 48 |  |
-| EXL | oracle | 532 | 47 |  |
-| KPMG India | oracle | 380 | 31 |  |
-| Kotak Mahindra Bank | oracle | 772 | 27 |  |
+| EXL | oracle | 537 | 47 |  |
+| JPMorgan Chase | oracle | 262 | 46 |  |
+| KPMG India | oracle | 387 | 31 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
+| Kotak Mahindra Bank | oracle | 770 | 25 |  |
 | HSBC | eightfold | 41 | 23 |  |
 | Reckitt | successfactors | 51 | 19 |  |
-| Paytm | lever | 198 | 17 |  |
+| Paytm | lever | 195 | 17 |  |
 | Bosch | smartrecruiters | 265 | 16 |  |
-| BNY | oracle | 82 | 11 |  |
-| BlackRock | sitemap | 288 | 9 |  |
-| Mahindra | successfactors | 60 | 9 |  |
+| BNY | oracle | 83 | 11 |  |
+| BlackRock | sitemap | 287 | 9 |  |
+| Mahindra | successfactors | 62 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
 | GE HealthCare | phenom | 29 | 5 |  |
-| Thermo Fisher | phenom | 47 | 5 |  |
-| Cummins | oracle | 149 | 4 |  |
+| Sanofi | sitemap | 1465 | 5 |  |
+| Cummins | oracle | 150 | 4 |  |
 | Emerson | oracle | 176 | 4 |  |
-| Sanofi | sitemap | 1462 | 4 |  |
+| GSK | phenom | 28 | 4 |  |
+| Thermo Fisher | phenom | 48 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
 | Volvo Group | successfactors | 21 | 3 |  |
-| ABB | phenom | 33 | 2 |  |
-| GSK | phenom | 26 | 2 |  |
-| Razorpay | greenhouse | 25 | 1 |  |
+| ABB | phenom | 34 | 2 |  |
+| Synchrony | sitemap | 27 | 1 |  |
+| Razorpay | greenhouse | 27 | 1 |  |
 | Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
@@ -110,12 +111,11 @@ Run: 2026-11-18T07:06:37Z
 | Fidelity Investments | sitemap | 0 | 0 |  |
 | Nomura | sitemap | 0 | 0 |  |
 | UBS | sitemap | 0 | 0 |  |
-| Standard Chartered | successfactors | 79 | 0 |  |
+| Standard Chartered | successfactors | 78 | 0 |  |
 | Societe Generale | sitemap | 0 | 0 |  |
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
 | Lloyds Banking Group | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
-| Synchrony | sitemap | 31 | 0 |  |
 | Target | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Walmart | sitemap | 0 | 0 |  |
 | Lowe's | phenom | 31 | 0 |  |
@@ -132,10 +132,10 @@ Run: 2026-11-18T07:06:37Z
 | Carrier | sitemap | 0 | 0 |  |
 | Otis | sitemap | 0 | 0 |  |
 | 3M | sitemap | 0 | 0 |  |
-| Coca-Cola | sitemap | 0 | 0 |  |
+| Coca-Cola | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | PepsiCo | sitemap | 0 | 0 |  |
 | Mondelez | phenom+sitemap | 0 | 0 |  |
-| Colgate-Palmolive | successfactors | 71 | 0 |  |
+| Colgate-Palmolive | successfactors | 74 | 0 |  |
 | AstraZeneca | eightfold | 0 | 0 |  |
 | Pfizer | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Abbott | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
@@ -163,8 +163,8 @@ Run: 2026-11-18T07:06:37Z
 | Pidilite | sitemap | 0 | 0 |  |
 | Larsen & Toubro | sitemap | 0 | 0 |  |
 | Infosys | sitemap | 0 | 0 |  |
-| Wipro | successfactors | 106 | 0 |  |
-| HCLTech | successfactors | 103 | 0 |  |
+| Wipro | successfactors | 105 | 0 |  |
+| HCLTech | successfactors | 99 | 0 |  |
 | Tech Mahindra | sitemap | 0 | 0 |  |
 | Airtel | sitemap | 0 | 0 |  |
 | Flipkart | sitemap | 0 | 0 |  |
@@ -178,9 +178,22 @@ Run: 2026-11-18T07:06:37Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
+| Synchrony | [identity governance user reconciliation senior analyst](https://www.synchronycareers.com/job/hyderabad/identity-governance-user-reconciliation-senior-analyst/49398/102489446976) | Record to Report / GL | hyderabad |
+| Sanofi | [sr accounting analyst a2r balance sheet review](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-balance-sheet-review/2649/47009821824) | Accounting / Finance (general) | hyderabad |
+| Kotak Mahindra Bank | [Area Sales Manager - HF - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275807) | Accounting / Finance (general) | Gujarat, India India |
+| Kotak Mahindra Bank | [Team Sales Manager - Tractor and Crop Finance - Tractors and Farm Equi](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275809) | Accounting / Finance (general) | Sumerpur, Rajasthan, India India |
+| KPMG India | [Assistant Manager - Credit Risk](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049726) | Risk / Credit | Bangalore, Karnataka, India India |
+| KPMG India | [Senior Associate 1 - Canada Audit](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049948) | Audit / Assurance / SOX | Bangalore, Karnataka, India India |
+| HSBC | [Manager Operations - Fund Accounting - Yardi](https://portal.careers.hsbc.com/careers/job/563774612613279) | Accounting / Finance (general) | Bangalore, Karnataka, India |
+| GSK | [Principal - Tech Finance Analyst](https://jobs.gsk.com/us/en/job/449029) | Accounting / Finance (general) | Hyderabad, India |
+| GSK | [Associate Director, Product Owner - SAP HR S4, Strada and Mercans Payr](https://jobs.gsk.com/us/en/job/448824) | Payroll | Hyderabad, India |
+| EXL | [Senior Executive - Clinical Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/18171) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India India |
+| EXL | [Senior Executive-MIS](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/20932) | FP&A / Business Finance | Chennai, Tamil Nadu, India India |
+| EXL | [Senior Executive - Coding Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/16344) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India India |
 | JPMorgan Chase | [Asset and Wealth Management Audit - AVP](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210802422) | Audit / Assurance / SOX | Mumbai, Maharashtra, India India |
 | HSBC | [Assistant Vice President - Management Reporting](https://portal.careers.hsbc.com/careers/job/563774612464089) | FP&A / Business Finance | Chennai, Tamil Nadu, India |
 | Kotak Mahindra Bank | [Team Member - Training - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790) | Accounting / Finance (general) | Haryana, India India |
+| Godrej Industries | [Manager - Finance](https://careers.godrejindustries.com/in/en/job/P-101073) | Accounting / Finance (general) | Mumbai, Maharashtra, India |
 | GE HealthCare | [Associate Service Finance Analyst](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India, 560066 |
 | Volvo Group | [Senior Accountant](https://jobs.volvogroup.com/job/Bangalore-Senior-Accountant-562122/1375785155/) | Accounting / Finance (general) | Bangalore, IN, 562122 |
 | Volvo Group | [OTC Global Process Solution Key User](https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/) | Accounts Receivable / O2C | Bangalore, IN, 562122 |
@@ -195,7 +208,6 @@ Run: 2026-11-18T07:06:37Z
 | Titan | [Internal Auditor](https://careers.titan.in/in/en/job/P-106419) | Audit / Assurance / SOX | Bengaluru, Karnataka, India |
 | Thermo Fisher | [Manager, Finance](https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Mumbai-India/Manager--Finance_R-01372385/apply) | Accounting / Finance (general) | Mumbai, Mahārāshtra, India |
 | Thermo Fisher | [Operations Finance Analyst](https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Bangalore-India/Operations-Finance-Analyst_R-01364214/apply) | Accounting / Finance (general) | Bangalore, Karnātaka, India |
-| Thermo Fisher | [Deputy Manager - Finance](https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Mumbai-India/Deputy-Manager---Finance_R-01371190/apply) | Accounting / Finance (general) | Mumbai, Mahārāshtra, India |
 | Thermo Fisher | [Sr Finance Systems Analyst (Oracle ERP)](https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Bangalore-India/Sr-Finance-Systems-Analyst--Oracle-ERP-_R-01369457/apply) | Finance Transformation / Systems | Bangalore, Karnātaka, India |
 | Thermo Fisher | [Principal Finance Systems Analyst (Oracle ERP)](https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Bangalore-India/Principal-Finance-Systems-Analyst--Oracle-ERP-_R-01369460/apply) | Finance Transformation / Systems | Bangalore, Karnātaka, India |
 | Sanofi | [accounting analyst](https://jobs.sanofi.com/en/job/hyderabad/accounting-analyst/2649/45337492736) | Accounting / Finance (general) | hyderabad |
@@ -226,15 +238,3 @@ Run: 2026-11-18T07:06:37Z
 | Paytm | [Credit Risk - Manager](https://jobs.lever.co/paytm/0395d0aa-517e-472f-8989-b377895220b7) | Risk / Credit | Noida, Uttar Pradesh |
 | Paytm | [Credit Risk Analyst](https://jobs.lever.co/paytm/ad781ae8-cd4a-44c1-a74b-2822118b7c3d) | Risk / Credit | Noida, Uttar Pradesh |
 | Paytm | [Field Facilitator - Digital & Financial Literacy - 6 months Contractua](https://jobs.lever.co/paytm/8b2f5989-2a41-436c-a01c-78468652ac31) | Accounting / Finance (general) | Noida, Uttar Pradesh |
-| Paytm | [Finance & Reporting Manager](https://jobs.lever.co/paytm/da08f565-bb69-4489-a7d5-ffe79fd452cd) | Accounting / Finance (general) | Luxembourg |
-| Paytm | [Finance Control & Governance Manager](https://jobs.lever.co/paytm/4ffffb7c-7034-4de4-bc87-35bbe9e41438) | Accounting / Finance (general) | Mumbai, Maharashtra |
-| Paytm | [Finance Controls & Governance](https://jobs.lever.co/paytm/5a817d1c-0cae-4d72-bac2-2daf6c296a02) | Accounting / Finance (general) | Mumbai, Maharashtra |
-| Paytm | [General Manager - Corporate Development - (VC Experienced)](https://jobs.lever.co/paytm/405b278f-a8f4-4b73-91ad-465da86466db) | Deals / Valuation / IB | Noida, Uttar Pradesh |
-| Paytm | [Head of Financial Crime & MLRO Paytm Europe](https://jobs.lever.co/paytm/80765e94-9cc8-493e-99c4-23a5df5e24d1) | Accounting / Finance (general) | Luxembourg |
-| Paytm | [IT Audit](https://jobs.lever.co/paytm/8f344c23-43a8-492b-99e9-e9735e2d07a8) | Audit / Assurance / SOX | Noida, Uttar Pradesh |
-| Paytm | [Manager - Market Risk ( Broking industry preferred)](https://jobs.lever.co/paytm/77434aa9-51b5-49ac-b8a8-bf27add66336) | Risk / Credit | Mumbai, Maharashtra |
-| Paytm | [Payments Finance & Reconciliation Manager](https://jobs.lever.co/paytm/d7af748f-88ea-4d78-a27a-b2290b541c33) | Record to Report / GL | Luxembourg |
-| Paytm | [Senior Corporate Development](https://jobs.lever.co/paytm/388c0e5a-48ba-4a3c-bc44-9356ea7f2db9) | Deals / Valuation / IB | Noida, Uttar Pradesh |
-| Paytm | [Senior Manager - Taxation](https://jobs.lever.co/paytm/09849b71-38a1-4f20-b35b-393ab05ae18d) | Tax | Mumbai, Maharashtra |
-| Paytm | [Taxation](https://jobs.lever.co/paytm/3d3ee995-ba39-4d3a-95fd-ef391b7f3b58) | Tax | Mumbai, Maharashtra |
-| Paytm | [Treasury](https://jobs.lever.co/paytm/0ad9b153-778e-4ce2-ba6e-6991f8019a28) | Treasury | Mumbai, Maharashtra |

@@ -36,8 +36,8 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 257,
-  "kept": 48
+  "raw": 262,
+  "kept": 46
  },
  {
   "company": "Caterpillar",
@@ -98,7 +98,7 @@
    "found_on": "https://kpmg.com/in/en/careers.html",
    "company_domain": "kpmg.com"
   },
-  "raw": 380,
+  "raw": 387,
   "kept": 31
  },
  {
@@ -174,7 +174,7 @@
    "found_on": "https://www.exlservice.com/careers",
    "company_domain": "exlservice.com"
   },
-  "raw": 532,
+  "raw": 537,
   "kept": 47
  },
  {
@@ -399,7 +399,7 @@
    "found_on": "https://cummins.jobs/",
    "company_domain": "cummins.jobs"
   },
-  "raw": 149,
+  "raw": 150,
   "kept": 4
  },
  {
@@ -538,7 +538,7 @@
    "found_on": "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
    "company_domain": "bny.com"
   },
-  "raw": 82,
+  "raw": 83,
   "kept": 11
  },
  {
@@ -590,7 +590,7 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 288,
+  "raw": 287,
   "kept": 9
  },
  {
@@ -624,7 +624,7 @@
    "found_on": "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
    "company_domain": "sc.com"
   },
-  "raw": 79,
+  "raw": 78,
   "kept": 0
  },
  {
@@ -683,8 +683,8 @@
    "origin": "https://www.synchronycareers.com",
    "company_domain": "synchronycareers.com"
   },
-  "raw": 31,
-  "kept": 0
+  "raw": 27,
+  "kept": 1
  },
  {
   "company": "Target",
@@ -861,7 +861,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 33,
+  "raw": 34,
   "kept": 2
  },
  {
@@ -941,11 +941,15 @@
  {
   "company": "Coca-Cola",
   "careers": "https://careers.coca-colacompany.com",
-  "platform": "sitemap",
+  "platform": "workday",
   "config": {
-   "origin": "https://careers.coca-colacompany.com",
+   "tenant": "coke",
+   "wd": "wd1",
+   "site": "coca-cola-careers",
+   "found_on": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
    "company_domain": "coca-colacompany.com"
   },
+  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -982,7 +986,7 @@
    "found_on": "https://jobs.colgate.com/",
    "company_domain": "colgate.com"
   },
-  "raw": 71,
+  "raw": 74,
   "kept": 0
  },
  {
@@ -1007,8 +1011,8 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 26,
-  "kept": 2
+  "raw": 28,
+  "kept": 4
  },
  {
   "company": "AstraZeneca",
@@ -1031,8 +1035,8 @@
    "origin": "https://jobs.sanofi.com",
    "company_domain": "sanofi.com"
   },
-  "raw": 1462,
-  "kept": 4
+  "raw": 1465,
+  "kept": 5
  },
  {
   "company": "Pfizer",
@@ -1085,8 +1089,8 @@
    "found_on": "https://jobs.thermofisher.com/global/en",
    "company_domain": "thermofisher.com"
   },
-  "raw": 47,
-  "kept": 5
+  "raw": 48,
+  "kept": 4
  },
  {
   "company": "Baxter",
@@ -1197,7 +1201,7 @@
    "found_on": "https://jobs.mahindracareers.com/",
    "company_domain": "mahindra.com"
   },
-  "raw": 60,
+  "raw": 62,
   "kept": 9
  },
  {
@@ -1232,8 +1236,8 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 772,
-  "kept": 27
+  "raw": 770,
+  "kept": 25
  },
  {
   "company": "Axis Bank",
@@ -1423,7 +1427,7 @@
    "found_on": "https://careers.wipro.com/",
    "company_domain": "wipro.com"
   },
-  "raw": 106,
+  "raw": 105,
   "kept": 0
  },
  {
@@ -1435,7 +1439,7 @@
    "found_on": "https://careers.hcltech.com/",
    "company_domain": "hcltech.com"
   },
-  "raw": 103,
+  "raw": 99,
   "kept": 0
  },
  {
@@ -1480,7 +1484,7 @@
    "found_on": "https://razorpay.com/careers/",
    "company_domain": "razorpay.com"
   },
-  "raw": 25,
+  "raw": 27,
   "kept": 1
  },
  {
@@ -1492,7 +1496,7 @@
    "found_on": "https://paytm.com/careers",
    "company_domain": "paytm.com"
   },
-  "raw": 198,
+  "raw": 195,
   "kept": 17
  },
  {
