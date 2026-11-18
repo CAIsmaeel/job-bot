@@ -2,7 +2,7 @@
  {
   "company": "Mastercard",
   "careers": "https://careers.mastercard.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "mastercard",
    "wd": "wd1",
@@ -10,7 +10,6 @@
    "found_on": "https://careers.mastercard.com/us/en/",
    "company_domain": "mastercard.com"
   },
-  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -78,7 +77,7 @@
  {
   "company": "Deloitte USI",
   "careers": "https://usijobs.deloitte.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "deloitteie",
    "wd": "wd3",
@@ -86,7 +85,6 @@
    "found_on": "https://www.deloitte.com/global/en/careers/job-search.html",
    "company_domain": "deloitte.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -130,7 +128,7 @@
  {
   "company": "Accenture",
   "careers": "https://www.accenture.com/in-en/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "accenture",
    "wd": "wd103",
@@ -138,14 +136,13 @@
    "found_on": "https://www.accenture.com/in-en/careers",
    "company_domain": "accenture.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "Genpact",
   "careers": "https://www.genpact.com/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "genpact",
    "wd": "wd108",
@@ -153,7 +150,6 @@
    "found_on": "https://www.genpact.com/careers",
    "company_domain": "genpact.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -185,7 +181,7 @@
  {
   "company": "Barclays",
   "careers": "https://search.jobs.barclays",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "barclays",
    "wd": "wd3",
@@ -193,9 +189,8 @@
    "found_on": "https://search.jobs.barclays/",
    "company_domain": "jobs.barclays"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
-  "raw": 0,
-  "kept": 0
+  "raw": 670,
+  "kept": 42
  },
  {
   "company": "HSBC",
@@ -225,7 +220,7 @@
  {
   "company": "Citi",
   "careers": "https://jobs.citi.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "citi",
    "wd": "wd5",
@@ -233,9 +228,8 @@
    "found_on": "https://jobs.citi.com/",
    "company_domain": "citi.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
-  "raw": 0,
-  "kept": 0
+  "raw": 3090,
+  "kept": 59
  },
  {
   "company": "Goldman Sachs",
@@ -326,7 +320,7 @@
  {
   "company": "BP",
   "careers": "https://www.bp.com/en/global/corporate/careers.html",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "bpinternational",
    "wd": "wd3",
@@ -334,14 +328,13 @@
    "found_on": "https://careers.bp.com/",
    "company_domain": "bp.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "Unilever",
   "careers": "https://careers.unilever.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "unilever",
    "wd": "wd3",
@@ -349,9 +342,8 @@
    "found_on": "https://careers.unilever.com/en",
    "company_domain": "unilever.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
-  "raw": 0,
-  "kept": 0
+  "raw": 250,
+  "kept": 1
  },
  {
   "company": "Nestle",
@@ -455,7 +447,7 @@
  {
   "company": "Diageo",
   "careers": "https://www.diageo.com/en/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "diageo",
    "wd": "wd3",
@@ -463,7 +455,6 @@
    "found_on": "https://www.diageo.com/en/careers",
    "company_domain": "diageo.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -567,7 +558,7 @@
  {
   "company": "State Street",
   "careers": "https://careers.statestreet.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "statestreet",
    "wd": "wd1",
@@ -575,14 +566,13 @@
    "found_on": "https://careers.statestreet.com/global/en",
    "company_domain": "statestreet.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "Northern Trust",
   "careers": "https://careers.northerntrust.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "ntrs",
    "wd": "wd1",
@@ -590,7 +580,6 @@
    "found_on": "https://ntrs.wd1.myworkdayjobs.com/northerntrust",
    "company_domain": "northerntrust.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -693,7 +682,7 @@
  {
   "company": "Lloyds Banking Group",
   "careers": "https://www.lloydsbankinggroup.com/careers.html",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "lbg",
    "wd": "wd3",
@@ -701,7 +690,6 @@
    "found_on": "https://www.lloydsbankinggroup.com/careers.html",
    "company_domain": "lloydsbankinggroup.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -720,7 +708,7 @@
  {
   "company": "Target",
   "careers": "https://corporate.target.com/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "target",
    "wd": "wd5",
@@ -728,7 +716,6 @@
    "found_on": "https://corporate.target.com/careers",
    "company_domain": "target.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -810,7 +797,7 @@
  {
   "company": "Airbus",
   "careers": "https://www.airbus.com/en/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "ag",
    "wd": "wd3",
@@ -818,14 +805,13 @@
    "found_on": "https://www.airbus.com/en/careers",
    "company_domain": "airbus.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "Boeing",
   "careers": "https://jobs.boeing.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "boeing",
    "wd": "wd1",
@@ -833,8 +819,7 @@
    "found_on": "https://jobs.boeing.com/",
    "company_domain": "boeing.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
-  "raw": 0,
+  "raw": 1179,
   "kept": 0
  },
  {
@@ -860,7 +845,7 @@
    "found_on": "https://www.careers.philips.com/na/en",
    "company_domain": "philips.com"
   },
-  "raw": 19,
+  "raw": 18,
   "kept": 0
  },
  {
@@ -897,7 +882,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 34,
+  "raw": 33,
   "kept": 2
  },
  {
@@ -929,7 +914,7 @@
  {
   "company": "Johnson Controls",
   "careers": "https://jobs.johnsoncontrols.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "jci",
    "wd": "wd5",
@@ -937,7 +922,6 @@
    "found_on": "https://jobs.johnsoncontrols.com/",
    "company_domain": "johnsoncontrols.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -980,7 +964,7 @@
  {
   "company": "Coca-Cola",
   "careers": "https://careers.coca-colacompany.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "coke",
    "wd": "wd1",
@@ -988,7 +972,6 @@
    "found_on": "https://coke.wd1.myworkdayjobs.com/coca-cola-careers",
    "company_domain": "coca-colacompany.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -1082,7 +1065,7 @@
  {
   "company": "Pfizer",
   "careers": "https://www.pfizer.com/about/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "pfizer",
    "wd": "wd1",
@@ -1090,14 +1073,13 @@
    "found_on": "https://www.pfizer.com/about/careers",
    "company_domain": "pfizer.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "Abbott",
   "careers": "https://www.jobs.abbott",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "abbott",
    "wd": "wd5",
@@ -1105,7 +1087,6 @@
    "found_on": "https://www.jobs.abbott/us/en",
    "company_domain": "jobs.abbott"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -1137,7 +1118,7 @@
  {
   "company": "Baxter",
   "careers": "https://jobs.baxter.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "baxter",
    "wd": "wd1",
@@ -1145,9 +1126,8 @@
    "found_on": "https://jobs.baxter.com/en",
    "company_domain": "baxter.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
-  "raw": 0,
-  "kept": 0
+  "raw": 515,
+  "kept": 3
  },
  {
   "company": "Ericsson",
@@ -2036,7 +2016,7 @@
  {
   "company": "Hindustan Unilever",
   "careers": "https://careers.unilever.com/india",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "unilever",
    "wd": "wd3",
@@ -2044,9 +2024,8 @@
    "found_on": "https://careers.unilever.com/en/india",
    "company_domain": "unilever.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
-  "raw": 0,
-  "kept": 0
+  "raw": 250,
+  "kept": 22
  },
  {
   "company": "Britannia",
@@ -2412,14 +2391,14 @@
  {
   "company": "IndiGo",
   "careers": "https://www.goindigo.in/careers.html",
-  "platform": "greenhouse",
+  "platform": "sitemap",
   "config": {
-   "found_on": "https://boards-api.greenhouse.io/v1/boards/indigo/jobs",
-   "token": "indigo",
+   "origin": "https://www.goindigo.in",
+   "probed": true,
    "company_domain": "goindigo.in"
   },
-  "raw": 3,
-  "kept": 1
+  "raw": 0,
+  "kept": 0
  },
  {
   "company": "Air India",
@@ -2502,8 +2481,9 @@
    "name": "meesho",
    "company_domain": "meesho.io"
   },
-  "raw": 47,
-  "kept": 6
+  "error": "ReadTimeout: HTTPSConnectionPool(host='api.lever.co', port=443): Read timed out. (read timeout=25)",
+  "raw": 0,
+  "kept": 0
  },
  {
   "company": "Zepto",
@@ -2785,7 +2765,7 @@
  {
   "company": "Concentrix",
   "careers": "https://jobs.concentrix.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "cnx",
    "wd": "wd1",
@@ -2793,7 +2773,6 @@
    "found_on": "https://jobs.concentrix.com/",
    "company_domain": "concentrix.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -2879,7 +2858,7 @@
    "probed": true,
    "company_domain": "unitedhealthgroup.com"
   },
-  "raw": 6492,
+  "raw": 6477,
   "kept": 5
  },
  {
@@ -2963,7 +2942,7 @@
    "token": "stripe",
    "company_domain": "stripe.com"
   },
-  "raw": 791,
+  "raw": 792,
   "kept": 8
  },
  {
@@ -2993,7 +2972,7 @@
  {
   "company": "S&P Global",
   "careers": "https://careers.spglobal.com",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "spgi",
    "wd": "wd5",
@@ -3001,7 +2980,6 @@
    "found_on": "https://careers.spglobal.com/jobs",
    "company_domain": "spglobal.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -3014,8 +2992,8 @@
    "found_on": "https://careers.moodys.com/en",
    "company_domain": "moodys.com"
   },
-  "raw": 335,
-  "kept": 5
+  "raw": 334,
+  "kept": 4
  },
  {
   "company": "MSCI",
@@ -3032,7 +3010,7 @@
  {
   "company": "LSEG",
   "careers": "https://www.lseg.com/en/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "lseg",
    "wd": "wd3",
@@ -3040,7 +3018,6 @@
    "found_on": "https://www.lseg.com/en/careers",
    "company_domain": "lseg.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -3053,7 +3030,8 @@
    "found_on": "https://careers.fitch.group/",
    "company_domain": "fitch.group"
   },
-  "raw": 68,
+  "error": "ReadTimeout: HTTPSConnectionPool(host='careers.fitch.group', port=443): Read timed out. (read timeout=25)",
+  "raw": 0,
   "kept": 0
  },
  {
@@ -3084,7 +3062,7 @@
  {
   "company": "Ameriprise Financial",
   "careers": "https://www.ameriprise.com/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "ameriprise",
    "wd": "wd5",
@@ -3092,7 +3070,6 @@
    "found_on": "https://www.ameriprise.com/careers",
    "company_domain": "ameriprise.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -3111,7 +3088,7 @@
  {
   "company": "Prudential plc",
   "careers": "https://www.prudentialplc.com/en/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "prudential",
    "wd": "wd3",
@@ -3119,7 +3096,6 @@
    "found_on": "https://www.prudentialplc.com/en/careers/overview/",
    "company_domain": "prudentialplc.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -3248,7 +3224,7 @@
  {
   "company": "DBS Bank India",
   "careers": "https://www.dbs.com/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "dbs",
    "wd": "wd3",
@@ -3256,14 +3232,13 @@
    "found_on": "https://www.dbs.com/careers/default.page",
    "company_domain": "dbs.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "Mizuho",
   "careers": "https://www.mizuhogroup.com/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "mizuho",
    "wd": "wd1",
@@ -3271,14 +3246,13 @@
    "found_on": "https://www.mizuhogroup.com/americas/careers",
    "company_domain": "mizuhogroup.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
  {
   "company": "MUFG",
   "careers": "https://www.mufgamericas.com/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "mufgub",
    "wd": "wd3",
@@ -3286,7 +3260,6 @@
    "found_on": "https://careers.mufgamericas.com/",
    "company_domain": "mufgamericas.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -3300,7 +3273,7 @@
    "found_on": "https://careers.fiserv.com/us/en",
    "company_domain": "fiserv.com"
   },
-  "raw": 25,
+  "raw": 20,
   "kept": 1
  },
  {
@@ -3313,7 +3286,7 @@
    "found_on": "https://careers.fisglobal.com/us/en",
    "company_domain": "fisglobal.com"
   },
-  "raw": 29,
+  "raw": 31,
   "kept": 0
  },
  {
@@ -3343,7 +3316,7 @@
  {
   "company": "Apex Group",
   "careers": "https://www.apexgroup.com/careers/",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "theapexgroup",
    "wd": "wd3",
@@ -3351,7 +3324,6 @@
    "found_on": "https://www.apexgroup.com/careers/",
    "company_domain": "apexgroup.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
@@ -3462,8 +3434,8 @@
    "found_on": "https://southasiacareers.deloitte.com/",
    "company_domain": "deloitte.com"
   },
-  "raw": 411,
-  "kept": 226
+  "raw": 412,
+  "kept": 227
  },
  {
   "company": "Nexdigm",
@@ -3516,7 +3488,7 @@
  {
   "company": "Protiviti India",
   "careers": "https://www.protiviti.com/in-en/careers",
-  "platform": "workday",
+  "platform": "workday+site",
   "config": {
    "tenant": "roberthalf",
    "wd": "wd1",
@@ -3524,7 +3496,6 @@
    "found_on": "https://www.protiviti.com/in-en/students-graduates",
    "company_domain": "protiviti.com"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
   "raw": 0,
   "kept": 0
  },
