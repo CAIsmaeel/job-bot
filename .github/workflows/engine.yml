@@ -5,7 +5,12 @@ name: engine
 on:
   schedule:
     - cron: "23 1-17/2 * * *"   # every 2 hours, about 6:53 AM to 10:53 PM India time
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_post:
+        description: "Post a welcome message and 5 sample jobs to the channel"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -28,6 +33,7 @@ jobs:
           BRAND_NAME: ${{ vars.BRAND_NAME }}
           SITE_URL: ${{ vars.SITE_URL }}
           SIMULATOR_URL: ${{ vars.SIMULATOR_URL }}
+          TG_TEST: ${{ inputs.test_post }}
         run: python engine/engine.py
       - name: Save results
         if: always()

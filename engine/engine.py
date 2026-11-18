@@ -569,6 +569,30 @@ def post_telegram(new):
         time.sleep(3)
 
 
+def welcome_post(jobs):
+    """One-off: introduce the channel and show a few current openings."""
+    tok, chat = os.environ.get("TG_CHANNEL_TOKEN"), os.environ.get("TG_CHANNEL_ID")
+    if not (tok and chat):
+        print("telegram test: secrets missing")
+        return
+    text = ("<b>Finance Jobs India is live</b>\n\n"
+            "Finance, accounting, tax, audit, FP&amp;A and treasury openings in India, read directly from company career pages "
+            "and posted here as soon as we find them.\n\nApply on the company's own site. We never charge for jobs.")
+    r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T,
+                      data={"chat_id": chat, "text": text, "parse_mode": "HTML"})
+    print("telegram test welcome:", r.status_code, r.text[:200])
+    if r.ok:
+        time.sleep(3)
+        pick, seen = [], set()
+        for j in jobs:
+            if j["company"] not in seen:
+                seen.add(j["company"])
+                pick.append(j)
+            if len(pick) == 5:
+                break
+        post_telegram(pick)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     companies = json.load(open(os.path.join(HERE, "companies.json")))
@@ -600,7 +624,10 @@ def main():
     json.dump(state, open(sp, "w"))
     json.dump(CACHE, open(cp, "w"), indent=1)
     build_page(jobs)
-    post_telegram(new)
+    if os.environ.get("TG_TEST") == "true":
+        welcome_post(jobs)
+    else:
+        post_telegram(new)
     json.dump(reports, open(os.path.join(OUT, "companies_report.json"), "w"), indent=1, ensure_ascii=False)
     # markdown report
     working = [r for r in reports if r.get("kept")]
