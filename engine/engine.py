@@ -65,6 +65,14 @@ def category(title):
     return None
 
 
+def tidy_title(t):
+    t = clean(str(t or "")).rstrip("_ ")
+    t = re.sub(r"(_[0-9]{2,})+$", "", t)                 # internal codes like _0412_4289_1017039
+    t = re.sub(r"\s*_\s*", " - ", t)
+    t = re.sub(r"\s*[(\[]\s*$", "", t)                  # dangling bracket
+    return t.strip(" -")
+
+
 def in_india(loc, title="", default=None):
     s = f"{loc or ''} {title or ''}"
     if INDIA.search(s):
@@ -443,11 +451,29 @@ ADAPTERS = {"workday": a_workday, "oracle": a_oracle, "smartrecruiters": a_smart
 
 
 # ---------------- run ----------------
+CACHE = {}
+CACHE_DAYS = 7
+
+
+def cached_cfg(name):
+    c = CACHE.get(name)
+    if not c or c["cfg"].get("platform") == "sitemap":
+        return None
+    try:
+        age = (datetime.now(timezone.utc) - datetime.strptime(c["at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)).days
+    except Exception:
+        return None
+    return c["cfg"] if age < CACHE_DAYS else None
+
+
 def run_company(co):
     name, url = co["name"], co["careers"]
     rep = {"company": name, "careers": url}
     try:
-        cfg = co.get("ats") or discover(name, url)[0]
+        cfg = co.get("ats") or cached_cfg(name)
+        if not cfg:
+            cfg = discover(name, url)[0]
+            CACHE[name] = {"cfg": cfg, "at": NOW}
         host = urlparse(url).netloc.split(".")
         cfg.setdefault("company_domain", ".".join(host[-3:] if host[-2] in ("co", "com") and len(host[-1]) == 2 else host[-2:]))
         rep["platform"] = cfg["platform"]
@@ -468,7 +494,7 @@ def run_company(co):
         if not india:
             continue
         key = hashlib.sha1(f"{name}|{j.get('id')}".encode()).hexdigest()[:16]
-        kept.append({"key": key, "company": name, "title": clean(str(j.get("title"))), "category": cat,
+        kept.append({"key": key, "company": name, "title": tidy_title(j.get("title")), "category": cat,
                      "location": clean(str(j.get("location") or ""))[:120], "url": j.get("url"),
                      "posted": j.get("posted"), "platform": rep["platform"], "approx": bool(j.get("approx"))})
     # de-duplicate same title + location within a company
@@ -482,6 +508,56 @@ def run_company(co):
     return rep, uniq
 
 
+BRAND = os.environ.get("BRAND_NAME") or "Finance Jobs India"
+SITE_URL = (os.environ.get("SITE_URL") or "").rstrip("/")
+SIM_URL = os.environ.get("SIMULATOR_URL") or (SITE_URL + "/app/" if SITE_URL else "")
+
+
+def build_page(jobs):
+    t = open(os.path.join(HERE, "page_template.html"), encoding="utf-8").read()
+    ist = datetime.now(timezone.utc).timestamp() + 5.5 * 3600
+    upd = datetime.utcfromtimestamp(ist).strftime("%-I:%M %p, %-d %b") + " IST"
+    practice = (f'<div class="practice"><p>Interview coming up? <a href="{html.escape(SIM_URL)}">Practise real ERP finance work</a> '
+                f'in our simulator: postings, GR/IR, bank reconciliation, month-end close. Free demo, no sign-up.</p></div>') if SIM_URL else ""
+    slim = [{k: j[k] for k in ("title", "company", "category", "location", "url", "first_seen")} for j in jobs]
+    data = json.dumps(slim, ensure_ascii=False).replace("</", "<\\/")
+    t = (t.replace("__JOBS__", data).replace("__UPDATED_ISO__", NOW).replace("__UPDATED__", upd)
+          .replace("__PRACTICE__", practice).replace("__BRAND__", html.escape(BRAND)))
+    os.makedirs(os.path.join(OUT, "site"), exist_ok=True)
+    open(os.path.join(OUT, "site", "index.html"), "w", encoding="utf-8").write(t)
+
+
+def post_telegram(new):
+    tok, chat = os.environ.get("TG_CHANNEL_TOKEN"), os.environ.get("TG_CHANNEL_ID")
+    if not (tok and chat) or not new:
+        print("telegram: skipped", "(no secrets)" if not tok else f"({len(new)} new)")
+        return
+    e = html.escape
+    new = sorted(new, key=lambda j: (j["category"], j["company"]))
+    foot = []
+    if SITE_URL:
+        foot.append(f'All openings with filters: {e(SITE_URL)}/jobs/')
+    if SIM_URL:
+        foot.append(f'Interview soon? Practise ERP finance work: {e(SIM_URL)}')
+    foot = ("\n\n" + "\n".join(foot)) if foot else ""
+    batch_size, max_msgs = 8, 4
+    batches = [new[i:i + batch_size] for i in range(0, len(new), batch_size)][:max_msgs]
+    for bi, b in enumerate(batches):
+        head = f"<b>New finance openings</b> ({len(new)} new)" if bi == 0 else "<b>More new openings</b>"
+        body = "\n\n".join(f'<b>{e(j["title"])}</b>\n{e(j["company"])}, {e(j["location"][:60])}\n{e(j["category"])}\n'
+                            f'<a href="{e(j["url"])}">Apply on company site</a>' for j in b)
+        rest = len(new) - batch_size * max_msgs
+        tail = (f"\n\n+{rest} more on the website" if rest > 0 and bi == len(batches) - 1 else "")
+        text = f"{head}\n\n{body}{tail}{foot if bi == len(batches) - 1 else ''}"
+        try:
+            r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T,
+                              data={"chat_id": chat, "text": text[:4090], "parse_mode": "HTML", "disable_web_page_preview": "true"})
+            print("telegram:", r.status_code, r.text[:120])
+        except Exception as ex:
+            print("telegram error:", ex)
+        time.sleep(3)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     companies = json.load(open(os.path.join(HERE, "companies.json")))
@@ -490,6 +566,9 @@ def main():
         companies = [c for c in companies if c["name"] in only]
     sp = os.path.join(OUT, "state.json")
     state = json.load(open(sp)) if os.path.exists(sp) else {"seen": {}}
+    cp = os.path.join(OUT, "configs.json")
+    if os.path.exists(cp):
+        CACHE.update(json.load(open(cp)))
     reports, jobs = [], []
     with ThreadPoolExecutor(max_workers=6) as ex:
         for rep, js in ex.map(run_company, companies):
@@ -508,6 +587,9 @@ def main():
     json.dump(jobs, open(os.path.join(OUT, "jobs.json"), "w"), indent=1, ensure_ascii=False)
     json.dump(new, open(os.path.join(OUT, "new.json"), "w"), indent=1, ensure_ascii=False)
     json.dump(state, open(sp, "w"))
+    json.dump(CACHE, open(cp, "w"), indent=1)
+    build_page(jobs)
+    post_telegram(new)
     json.dump(reports, open(os.path.join(OUT, "companies_report.json"), "w"), indent=1, ensure_ascii=False)
     # markdown report
     working = [r for r in reports if r.get("kept")]
