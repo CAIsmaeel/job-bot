@@ -1,0 +1,812 @@
+[
+ {
+  "company": "Mastercard",
+  "start_url": "https://careers.mastercard.com",
+  "status": 200,
+  "final_url": "https://careers.mastercard.com/us/en/",
+  "ats": [
+   "workday",
+   "phenom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCaree"
+  ],
+  "sitemap": {
+   "sitemap_urls": 2,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Visa",
+  "start_url": "https://jobs.smartrecruiters.com/Visa",
+  "status": 200,
+  "final_url": "https://careers.smartrecruiters.com/Visa",
+  "ats": [
+   "smartrecruiters"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://api.smartrecruiters.com/v1/companies/fantastic/postings?country=in&limit=100",
+   "india_total": 0,
+   "finance_india_in_first_100": 0,
+   "sample": []
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "JPMorgan Chase",
+  "start_url": "https://careers.jpmorgan.com/in/en/home",
+  "status": 200,
+  "final_url": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
+  "ats": [
+   "oracle"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://jpmc.fa.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList&finder=findReqs;siteNumber=CX_1001,keyword=finance,location=India,limit=25",
+   "finance_india_total": 112,
+   "sample": [
+    [
+     "Financial Analysis-Associate",
+     "Bengaluru, Karnataka, India"
+    ],
+    [
+     "Financial Analysis-Associate",
+     "Bengaluru, Karnataka, India"
+    ],
+    [
+     "Associate-Financial Analysis-Central Allocations",
+     "Bengaluru, Karnataka, India"
+    ]
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Caterpillar",
+  "start_url": "https://careers.caterpillar.com",
+  "status": 200,
+  "final_url": "https://careers.caterpillar.com/en/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 13224,
+   "job_like_urls": 3178
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "PwC India",
+  "start_url": "https://www.pwc.in/careers.html",
+  "status": 403,
+  "final_url": "https://www.pwc.in/careers.html",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "BLOCKED for bots"
+ },
+ {
+  "company": "EY",
+  "start_url": "https://careers.ey.com",
+  "status": 200,
+  "final_url": "https://careers.ey.com/",
+  "ats": [
+   "successfactors"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://careers.ey.com/services/rss/job/?locale=en_US&keywords=finance",
+   "rss_items": 20,
+   "finance_india": 0,
+   "sample": [
+    "<![CDATA[Consultor/a Senior Microsoft Dynamics 365 Finance (Madrid, M, ES, 28020)]]>",
+    "<![CDATA[Data, Reporting & Automation Analyst (Payroll) | French Speaker - Viseu (Viseu, Lisbon, PT, 3500-631)]]>",
+    "<![CDATA[SAP - IS-U FI-CA - Manager - Consulting - Location OPEN (Chicago, IL, US, 60606)]]>"
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Deloitte USI",
+  "start_url": "https://usijobs.deloitte.com",
+  "status": 200,
+  "final_url": "https://usijobs.deloitte.com/en_US/careersUSI",
+  "ats": [
+   "avature"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "KPMG India",
+  "start_url": "https://kpmg.com/in/en/home/careers.html",
+  "status": 200,
+  "final_url": "https://kpmg.com/in/en/careers.html",
+  "ats": [
+   "oracle"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://ejgk.fa.em2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList&finder=findReqs;siteNumber=CX_3,keyword=finance,location=India,limit=25",
+   "finance_india_total": 146,
+   "sample": [
+    [
+     "Consultant-Finance Transformation Pune",
+     "Pune, Maharashtra, India"
+    ],
+    [
+     "Associate Consultant-Finance Transformation - Gurgaon",
+     "Gurgaon, Haryana, India"
+    ],
+    [
+     "Director Finance and EPM - Oracle - Gurgaon",
+     "Bangalore, Karnataka, India"
+    ]
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Grant Thornton Bharat",
+  "start_url": "https://www.grantthornton.in/careers/",
+  "status": 200,
+  "final_url": "https://www.grantthornton.in/careers/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1424,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "BDO India",
+  "start_url": "https://www.bdo.in/en-gb/careers",
+  "status": 200,
+  "final_url": "https://www.bdo.in/en-gb/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 2097,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Accenture",
+  "start_url": "https://www.accenture.com/in-en/careers",
+  "status": 200,
+  "final_url": "https://www.accenture.com/in-en/careers",
+  "ats": [
+   "workday"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs",
+   "finance_total_global": 2000,
+   "sample_20_finance_india": 0,
+   "sample": [
+    [
+     null,
+     null
+    ],
+    [
+     "Finance Reinvention – Financial Services Manager, EPM",
+     null
+    ],
+    [
+     "Finance Reinvention – Financial Services Consultant, EPM",
+     null
+    ]
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Genpact",
+  "start_url": "https://www.genpact.com/careers",
+  "status": 200,
+  "final_url": "https://www.genpact.com/careers",
+  "ats": [
+   "workday"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://genpact.wd108.myworkdayjobs.com/wday/cxs/genpact/External_Careers/j"
+  ],
+  "sitemap": {
+   "sitemap_urls": 943,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "WNS",
+  "start_url": "https://www.wns.com/careers",
+  "status": 200,
+  "final_url": "https://www.wns.com/about-us/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "EXL",
+  "start_url": "https://www.exlservice.com/careers",
+  "status": 200,
+  "final_url": "https://www.exlservice.com/careers",
+  "ats": [
+   "oracle"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList&finder=findReqs;siteNumber=CX_2,keyword=finance,location=India,limit=25",
+   "finance_india_total": 569,
+   "sample": [
+    [
+     "Manager - Finance",
+     "Bengaluru, Karnataka, India"
+    ],
+    [
+     "Manager",
+     "Noida, Uttar Pradesh, India"
+    ],
+    [
+     "Senior Assistant Vice President",
+     "Kochi, Kerala, India"
+    ]
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Barclays",
+  "start_url": "https://search.jobs.barclays",
+  "status": 200,
+  "final_url": "https://search.jobs.barclays/",
+  "ats": [
+   "workday",
+   "radancy"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://barclays.wd3.myworkdayjobs.com/wday/cxs/barclays/External_Career_Si"
+  ],
+  "sitemap": {
+   "sitemap_urls": 2112,
+   "job_like_urls": 674
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "HSBC",
+  "start_url": "https://www.hsbc.com/careers",
+  "status": 200,
+  "final_url": "https://www.hsbc.com/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Deutsche Bank",
+  "start_url": "https://careers.db.com",
+  "status": 200,
+  "final_url": "https://careers.db.com/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Citi",
+  "start_url": "https://jobs.citi.com",
+  "status": 200,
+  "final_url": "https://jobs.citi.com/",
+  "ats": [
+   "workday",
+   "eightfold",
+   "radancy"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://citi.wd5.myworkdayjobs.com/wday/cxs/citi/2/jobs"
+  ],
+  "sitemap": {
+   "sitemap_urls": 6934,
+   "job_like_urls": 6934
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "Goldman Sachs",
+  "start_url": "https://higher.gs.com",
+  "status": 200,
+  "final_url": "https://higher.gs.com/results",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Morgan Stanley",
+  "start_url": "https://www.morganstanley.com/careers",
+  "status": 200,
+  "final_url": "https://www.morganstanley.com/people",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 4569,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Wells Fargo",
+  "start_url": "https://www.wellsfargojobs.com",
+  "status": 200,
+  "final_url": "https://www.wellsfargojobs.com/en/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 4424,
+   "job_like_urls": 4305
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "American Express",
+  "start_url": "https://www.americanexpress.com/en-us/careers/",
+  "status": 200,
+  "final_url": "https://www.americanexpress.com/en-us/careers/",
+  "ats": [
+   "eightfold"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Maersk",
+  "start_url": "https://www.maersk.com/careers",
+  "status": 200,
+  "final_url": "https://www.maersk.com/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 5895,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Michelin",
+  "start_url": "https://jobs.michelin.com",
+  "status": "error",
+  "error": "HTTPSConnectionPool(host='jobs.michelin.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='jobs.m",
+  "verdict": "unreachable"
+ },
+ {
+  "company": "Shell",
+  "start_url": "https://www.shell.in/careers.html",
+  "status": 200,
+  "final_url": "https://www.shell.in/about-us/careers.html#vanity-aHR0cHM6Ly93d3cuc2hlbGwuaW4vY2FyZWVycy5odG1s",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 278,
+   "job_like_urls": 1
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "BP",
+  "start_url": "https://www.bp.com/en/global/corporate/careers.html",
+  "status": 200,
+  "final_url": "https://careers.bp.com/",
+  "ats": [
+   "workday"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://bpinternational.wd3.myworkdayjobs.com/wday/cxs/bpinternational/bpCa"
+  ],
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Unilever / HUL",
+  "start_url": "https://careers.unilever.com",
+  "status": 200,
+  "final_url": "https://careers.unilever.com/en",
+  "ats": [
+   "workday",
+   "radancy"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://unilever.wd3.myworkdayjobs.com/wday/cxs/unilever/Unilever_Experienc"
+  ],
+  "sitemap": {
+   "sitemap_urls": 757,
+   "job_like_urls": 237
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "Nestle India",
+  "start_url": "https://www.nestle.in/jobs",
+  "status": 403,
+  "final_url": "https://www.nestle.in/jobs",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1707,
+   "job_like_urls": 23
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "P&G",
+  "start_url": "https://www.pgcareers.com",
+  "status": 200,
+  "final_url": "https://www.pgcareers.com/us/en",
+  "ats": [
+   "phenom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 2,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Siemens",
+  "start_url": "https://jobs.siemens.com",
+  "status": 200,
+  "final_url": "https://jobs.siemens.com/en_US/externaljobs",
+  "ats": [
+   "avature"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Honeywell",
+  "start_url": "https://careers.honeywell.com",
+  "status": 200,
+  "final_url": "https://careers.honeywell.com/en/sites/Honeywell",
+  "ats": [
+   "oracle",
+   "phenom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Cummins",
+  "start_url": "https://cummins.jobs",
+  "status": 200,
+  "final_url": "https://cummins.jobs/",
+  "ats": [
+   "oracle"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList&finder=findReqs;siteNumber=CX_1,keyword=finance,location=India,limit=25",
+   "finance_india_total": 25,
+   "sample": [
+    [
+     "Financial Analyst - Senior",
+     "Pune, Maharashtra, India"
+    ],
+    [
+     "Financial Analyst",
+     "Phaltan, Maharashtra, India"
+    ],
+    [
+     "Accounts Receivables  - Junior Manager II",
+     "Pune, Maharashtra, India"
+    ]
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Bosch India",
+  "start_url": "https://www.bosch.in/careers/",
+  "status": 200,
+  "final_url": "https://www.bosch.in/careers/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Schneider Electric",
+  "start_url": "https://careers.se.com",
+  "status": 200,
+  "final_url": "https://careers.se.com/life-at-schneider",
+  "ats": [
+   "taleo",
+   "icims"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 2,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "AB InBev",
+  "start_url": "https://www.ab-inbev.com/careers/",
+  "status": 200,
+  "final_url": "https://www.ab-inbev.com/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Diageo",
+  "start_url": "https://www.diageo.com/en/careers",
+  "status": 200,
+  "final_url": "https://www.diageo.com/en/careers",
+  "ats": [
+   "workday"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed_errors": [
+   "try_workday: 429 Client Error: Too Many Requests for url: https://diageo.wd3.myworkdayjobs.com/wday/cxs/diageo/Diageo_Careers/jobs"
+  ],
+  "sitemap": {
+   "sitemap_urls": 1493,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Novartis",
+  "start_url": "https://www.novartis.com/careers",
+  "status": 200,
+  "final_url": "https://www.novartis.com/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 4562,
+   "job_like_urls": 1507
+  },
+  "verdict": "MEDIUM: readable via sitemap / structured data"
+ },
+ {
+  "company": "Reliance Industries",
+  "start_url": "https://careers.ril.com",
+  "status": 200,
+  "final_url": "https://careers.ril.com/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Tata Steel",
+  "start_url": "https://www.tatasteel.com/careers/",
+  "status": 200,
+  "final_url": "https://www.tatasteel.com/careers/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1000,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Mahindra",
+  "start_url": "https://www.mahindra.com/careers",
+  "status": 200,
+  "final_url": "https://www.mahindra.com/career",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 2,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "HDFC Bank",
+  "start_url": "https://www.hdfc.bank.in/careers",
+  "status": 200,
+  "final_url": "https://www.hdfc.bank.in/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 3937,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "ICICI Bank",
+  "start_url": "https://www.icicicareers.com",
+  "status": 200,
+  "final_url": "https://careers.icici.bank.in/CareerApplicant/Career/Home/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Bajaj Finance",
+  "start_url": "https://bflcareers.peoplestrong.com",
+  "status": 200,
+  "final_url": "https://bflcareers.peoplestrong.com/",
+  "ats": [
+   "peoplestrong"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Godrej Industries",
+  "start_url": "https://www.godrejindustries.com/careers",
+  "status": 200,
+  "final_url": "https://www.godrejindustries.com/careers",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 76,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Aditya Birla Group",
+  "start_url": "https://careers.adityabirla.com",
+  "status": 406,
+  "final_url": "https://careers.adityabirla.com/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Larsen & Toubro",
+  "start_url": "https://www.larsentoubro.com/corporate/careers/",
+  "status": 200,
+  "final_url": "https://www.larsentoubro.com/corporate/careers",
+  "ats": [
+   "peoplestrong"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "sitemap": {
+   "sitemap_urls": 1725,
+   "job_like_urls": 0
+  },
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Asian Paints",
+  "start_url": "https://careers.asianpaints.com",
+  "status": 200,
+  "final_url": "https://careers.asianpaints.com/",
+  "ats": [
+   "successfactors"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://careers.asianpaints.com/services/rss/job/?locale=en_US&keywords=finance",
+   "rss_items": 10,
+   "finance_india": 1,
+   "sample": [
+    "<![CDATA[EXECUTIVE N - FIELD READINESS (Mumbai, MH, IN)]]>",
+    "<![CDATA[EXECUTIVE N - SALES COMMERCIAL - SHAMSHABAD (Shamshabad, TG, IN)]]>",
+    "<![CDATA[EXECUTIVE N - SALES COMMERCIAL (Rajkot, GJ, IN)]]>"
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ },
+ {
+  "company": "Infosys",
+  "start_url": "https://www.infosys.com/careers/",
+  "status": 403,
+  "final_url": "https://www.infosys.com/careers/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "BLOCKED for bots"
+ },
+ {
+  "company": "Flipkart",
+  "start_url": "https://www.flipkartcareers.com",
+  "status": 200,
+  "final_url": "https://www.flipkartcareers.com/",
+  "ats": [
+   "unknown/custom"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "verdict": "HARD: custom page, needs its own adapter"
+ },
+ {
+  "company": "Razorpay",
+  "start_url": "https://razorpay.com/jobs/",
+  "status": 200,
+  "final_url": "https://razorpay.com/careers/",
+  "ats": [
+   "greenhouse"
+  ],
+  "jsonld_jobposting_on_page": 0,
+  "feed": {
+   "feed": "https://boards-api.greenhouse.io/v1/boards/razorpaysoftwareprivatelimited/jobs",
+   "total": 25,
+   "finance_india": 2,
+   "sample": [
+    [
+     "AI Builder (Senior Product Designer)",
+     "Bengaluru"
+    ],
+    [
+     "Analyst, Banking Alliances",
+     "Chennai"
+    ],
+    [
+     "Associate Manager, AEO",
+     "Bengaluru"
+    ]
+   ]
+  },
+  "verdict": "EASY: public feed works"
+ }
+]
