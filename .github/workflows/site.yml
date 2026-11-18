@@ -1,0 +1,24 @@
+name: site
+# Puts the website online whenever site/ changes (the engine also does this every 2 hours).
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "engine/deploy.sh", ".github/workflows/site.yml"]
+  workflow_dispatch: {}
+concurrency:
+  group: site
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Put website online
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bash engine/deploy.sh

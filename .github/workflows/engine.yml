@@ -31,10 +31,16 @@ jobs:
           TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
           TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
           BRAND_NAME: ${{ vars.BRAND_NAME }}
-          SITE_URL: ${{ vars.SITE_URL }}
-          SIMULATOR_URL: ${{ vars.SIMULATOR_URL }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://ledgerlab.pages.dev' }}
+          SIMULATOR_URL: ${{ vars.SIMULATOR_URL || 'https://ledgerlab.pages.dev/app/' }}
           TG_TEST: ${{ inputs.test_post }}
         run: python engine/engine.py
+      - name: Put website online
+        if: always()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bash engine/deploy.sh
       - name: Save results
         if: always()
         run: |
