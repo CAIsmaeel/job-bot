@@ -98,11 +98,18 @@ def sess():
 
 import threading
 WD_LOCK = threading.Lock()   # Workday sites share one backend: talk to them one request at a time
+WD_BLOCKS = [0]              # consecutive refusals; after 3 the rest of Workday is skipped this run
+
+
+class Skipped(Exception):
+    pass
 
 
 def _call(method, url, **kw):
     slow = "myworkdayjobs.com" in url
-    for wait in (0, 8, 20, 45):
+    if slow and WD_BLOCKS[0] >= 3:
+        raise Skipped("Workday is refusing this server today, skipped")
+    for wait in ((0, 10) if slow else (0, 8, 20)):
         if wait:
             time.sleep(wait)
         if slow:
@@ -113,7 +120,11 @@ def _call(method, url, **kw):
             time.sleep(0.6)
             r = sess().request(method, url, timeout=T, allow_redirects=True, **kw)
         if r.status_code != 429:
+            if slow and r.ok and "json" in r.headers.get("Content-Type", ""):
+                WD_BLOCKS[0] = 0
             return r
+    if slow:
+        WD_BLOCKS[0] += 1
     return r
 
 
