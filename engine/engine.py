@@ -537,7 +537,19 @@ def run_company(co):
         cfg.setdefault("company_domain", ".".join(host[-3:] if host[-2] in ("co", "com") and len(host[-1]) == 2 else host[-2:]))
         rep["platform"] = cfg["platform"]
         rep["config"] = {k: v for k, v in cfg.items() if k != "platform"}
-        raw = ADAPTERS[cfg["platform"]](cfg)
+        try:
+            raw = ADAPTERS[cfg["platform"]](cfg)
+        except Exception:
+            if cfg["platform"] != "workday":
+                raise
+            raw = []
+        if cfg["platform"] == "workday" and not raw:
+            # Workday turned us away: read the company's own public careers site list instead
+            origins = {"{0.scheme}://{0.netloc}".format(urlparse(u)) for u in (url, cfg.get("found_on") or "") if u}
+            for o in origins:
+                if "myworkdayjobs.com" not in o:
+                    raw += a_sitemap({"origin": o})
+            rep["platform"] = "workday+site"
         if cfg["platform"] == "phenom" and not raw:
             raw = a_sitemap({"origin": cfg["origin"]})
             rep["platform"] = "phenom+sitemap"
