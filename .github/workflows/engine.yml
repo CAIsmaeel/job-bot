@@ -1,16 +1,16 @@
 name: engine
-# Finance job engine v0: reads finance jobs from company career sites and writes engine/out/.
-# Runs on pushes to the engine-v0 branch or by hand. It does not touch the main job bot.
+# Finance job engine: reads finance jobs in India from company career sites,
+# builds the jobs page (engine/out/site/index.html) and posts new jobs to the Telegram channel.
+# Separate from the personal job bot (bot.py / run.yml), which it does not touch.
 on:
-  push:
-    branches: [engine-v0]
-    paths: ["engine/engine.py", "engine/companies.json", ".github/workflows/engine.yml"]
+  schedule:
+    - cron: "23 1-17/2 * * *"   # every 2 hours, about 6:53 AM to 10:53 PM India time
   workflow_dispatch: {}
 permissions:
   contents: write
 concurrency:
   group: engine
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -21,12 +21,21 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests
-      - run: python engine/engine.py
-      - name: Save results to this branch
+      - name: Run engine
+        env:
+          TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
+          TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
+          BRAND_NAME: ${{ vars.BRAND_NAME }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          SIMULATOR_URL: ${{ vars.SIMULATOR_URL }}
+        run: python engine/engine.py
+      - name: Save results
         if: always()
         run: |
           git config user.name "engine"
           git config user.email "engine@users.noreply.github.com"
           git add -f engine/out
-          git diff --cached --quiet || git commit -m "engine results"
-          git push origin HEAD:engine-v0
+          git diff --cached --quiet && exit 0
+          git commit -q -m "engine results"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && exit 0; sleep 5; done
+          exit 1
