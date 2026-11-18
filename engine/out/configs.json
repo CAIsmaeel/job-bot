@@ -1,0 +1,1147 @@
+{
+ "PwC India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pwc.in",
+   "company_domain": "pwc.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "JPMorgan Chase": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "jpmc.fa.oraclecloud.com",
+   "site": "CX_1001",
+   "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
+   "company_domain": "jpmorgan.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Visa": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "company": "Visa",
+   "found_on": "https://careers.smartrecruiters.com/Visa",
+   "company_domain": "smartrecruiters.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "EY": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.ey.com",
+   "found_on": "https://careers.ey.com/",
+   "company_domain": "ey.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Mastercard": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "mastercard",
+   "wd": "wd1",
+   "site": "CorporateCareers",
+   "found_on": "https://careers.mastercard.com/us/en/",
+   "company_domain": "mastercard.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Deloitte USI": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "deloitteie",
+   "wd": "wd3",
+   "site": "Experienced_Professionals",
+   "found_on": "https://www.deloitte.com/global/en/careers/job-search.html",
+   "company_domain": "deloitte.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Caterpillar": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.caterpillar.com",
+   "company_domain": "caterpillar.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "KPMG India": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "ejgk.fa.em2.oraclecloud.com",
+   "site": "CX_3",
+   "found_on": "https://kpmg.com/in/en/careers.html",
+   "company_domain": "kpmg.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Grant Thornton Bharat": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.grantthornton.in",
+   "company_domain": "grantthornton.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Accenture": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "accenture",
+   "wd": "wd103",
+   "site": "AccentureCareers",
+   "found_on": "https://www.accenture.com/in-en/careers",
+   "company_domain": "accenture.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "BDO India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bdo.in",
+   "company_domain": "bdo.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Genpact": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "genpact",
+   "wd": "wd108",
+   "site": "External_Careers",
+   "found_on": "https://www.genpact.com/careers",
+   "company_domain": "genpact.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "EXL": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_2",
+   "found_on": "https://www.exlservice.com/careers",
+   "company_domain": "exlservice.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Barclays": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "barclays",
+   "wd": "wd3",
+   "site": "External_Career_Site_Barclays",
+   "found_on": "https://search.jobs.barclays/",
+   "company_domain": "jobs.barclays"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "WNS": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.wns.com",
+   "company_domain": "wns.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "HSBC": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "hsbc.eightfold.ai",
+   "domain": "",
+   "found_on": "https://portal.careers.hsbc.com/careers?location=any&pid=563774612287498&domain=hsbc.com&sort_by=relevance&triggerGoButton=false&triggerGoButton=true",
+   "company_domain": "hsbc.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Citi": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "citi",
+   "wd": "wd5",
+   "site": "2",
+   "found_on": "https://jobs.citi.com/",
+   "company_domain": "citi.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Goldman Sachs": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://higher.gs.com",
+   "company_domain": "gs.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Deutsche Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.db.com",
+   "company_domain": "db.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Wells Fargo": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.wellsfargojobs.com",
+   "company_domain": "wellsfargojobs.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "American Express": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "aexp.eightfold.ai",
+   "domain": "",
+   "found_on": "https://www.americanexpress.com/en-us/careers/",
+   "company_domain": "americanexpress.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Michelin": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.michelin.com",
+   "company_domain": "michelin.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Shell": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.shell.in",
+   "company_domain": "shell.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "BP": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "bpinternational",
+   "wd": "wd3",
+   "site": "bpCareers",
+   "found_on": "https://careers.bp.com/",
+   "company_domain": "bp.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Maersk": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.maersk.com",
+   "company_domain": "maersk.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Nestle": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.nestle.in",
+   "company_domain": "nestle.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Unilever": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "unilever",
+   "wd": "wd3",
+   "site": "Unilever_Experienced_Professionals",
+   "found_on": "https://careers.unilever.com/en",
+   "company_domain": "unilever.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "P&G": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://www.pgcareers.com",
+   "prefix": "/us/en",
+   "found_on": "https://www.pgcareers.com/us/en",
+   "company_domain": "pgcareers.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Honeywell": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.honeywell.com",
+   "prefix": "",
+   "found_on": "https://careers.honeywell.com/en/sites/Honeywell",
+   "company_domain": "honeywell.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Cummins": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "fa-espx-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://cummins.jobs/",
+   "company_domain": "cummins.jobs"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Siemens": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.siemens.com",
+   "company_domain": "siemens.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Bosch": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "company": "BoschGroup",
+   "found_on": "https://jobs.bosch.com/en?pages=1&country=in",
+   "company_domain": "bosch.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Schneider Electric": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.se.com",
+   "company_domain": "se.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "AB InBev": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ab-inbev.com",
+   "company_domain": "ab-inbev.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Diageo": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "diageo",
+   "wd": "wd3",
+   "site": "Diageo_Careers",
+   "found_on": "https://www.diageo.com/en/careers",
+   "company_domain": "diageo.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Novartis": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.novartis.com",
+   "company_domain": "novartis.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Cognizant": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.cognizant.com",
+   "company_domain": "cognizant.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Capgemini": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.capgemini.com",
+   "company_domain": "capgemini.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Kroll": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.kroll.com",
+   "company_domain": "kroll.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "IBM": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ibm.com",
+   "company_domain": "ibm.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Alvarez & Marsal": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.alvarezandmarsal.com",
+   "company_domain": "alvarezandmarsal.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "BNY": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "eofe.fa.us2.oraclecloud.com",
+   "site": "BNY-Careers",
+   "found_on": "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
+   "company_domain": "bny.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Northern Trust": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "ntrs",
+   "wd": "wd1",
+   "site": "northerntrust",
+   "found_on": "https://ntrs.wd1.myworkdayjobs.com/northerntrust",
+   "company_domain": "northerntrust.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "State Street": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "statestreet",
+   "wd": "wd1",
+   "site": "Global",
+   "found_on": "https://careers.statestreet.com/global/en",
+   "company_domain": "statestreet.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Fidelity Investments": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.fidelity.com",
+   "company_domain": "fidelity.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Morgan Stanley": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.morganstanley.com",
+   "company_domain": "morganstanley.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "BlackRock": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.blackrock.com",
+   "company_domain": "blackrock.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "TresVista": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.tresvista.com",
+   "company_domain": "tresvista.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "UBS": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ubs.com",
+   "company_domain": "ubs.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "BNP Paribas": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://group.bnpparibas",
+   "company_domain": "group.bnpparibas"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Nomura": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.nomura.com",
+   "company_domain": "nomura.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Standard Chartered": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.standardchartered.com",
+   "found_on": "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
+   "company_domain": "sc.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "NatWest": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.natwestgroup.com",
+   "company_domain": "natwestgroup.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Lloyds Banking Group": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "lbg",
+   "wd": "wd3",
+   "site": "lbg_Careers",
+   "found_on": "https://www.lloydsbankinggroup.com/careers.html",
+   "company_domain": "lloydsbankinggroup.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Target": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "target",
+   "wd": "wd5",
+   "site": "targetcareers",
+   "found_on": "https://corporate.target.com/careers",
+   "company_domain": "target.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Societe Generale": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.societegenerale.com",
+   "company_domain": "societegenerale.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Synchrony": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.synchronycareers.com",
+   "company_domain": "synchronycareers.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "HP": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "hp-sandbox.eightfold.ai",
+   "domain": "",
+   "found_on": "https://jobs.hp.com/",
+   "company_domain": "hp.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Lowe's": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://talent.lowes.com",
+   "prefix": "/us/en",
+   "found_on": "https://talent.lowes.com/us/en",
+   "company_domain": "lowes.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Intel": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.intel.com",
+   "company_domain": "intel.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Uber": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.uber.com",
+   "company_domain": "uber.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Walmart": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.walmart.com",
+   "company_domain": "walmart.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Airbus": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "ag",
+   "wd": "wd3",
+   "site": "Airbus",
+   "found_on": "https://www.airbus.com/en/careers",
+   "company_domain": "airbus.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Boeing": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "boeing",
+   "wd": "wd1",
+   "site": "EXTERNAL_CAREERS",
+   "found_on": "https://jobs.boeing.com/",
+   "company_domain": "boeing.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Philips": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://www.careers.philips.com",
+   "prefix": "/na/en",
+   "found_on": "https://www.careers.philips.com/na/en",
+   "company_domain": "philips.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Dell": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.dell.com",
+   "company_domain": "dell.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "GE HealthCare": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.gehealthcare.com",
+   "prefix": "/global/en",
+   "found_on": "https://careers.gehealthcare.com/global/en",
+   "company_domain": "gehealthcare.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Volvo Group": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.volvogroup.com",
+   "found_on": "https://jobs.volvogroup.com/",
+   "company_domain": "volvogroup.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "ABB": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.abb",
+   "prefix": "/us/en",
+   "found_on": "https://careers.abb/us/en",
+   "company_domain": "careers.abb"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Eaton": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "eaton.eightfold.ai",
+   "domain": "",
+   "found_on": "https://eaton.eightfold.ai/careers",
+   "company_domain": "eaton.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Emerson": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "hdjq.fa.us2.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://www.emerson.com/en/corporate/careers",
+   "company_domain": "emerson.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Continental": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.continental.com",
+   "company_domain": "continental.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Carrier": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.carrier.com",
+   "company_domain": "carrier.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Johnson Controls": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "jci",
+   "wd": "wd5",
+   "site": "JCI",
+   "found_on": "https://jobs.johnsoncontrols.com/",
+   "company_domain": "johnsoncontrols.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Otis": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.otis.com",
+   "company_domain": "otis.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "3M": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.3m.com",
+   "company_domain": "3m.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Colgate-Palmolive": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.colgate.com",
+   "found_on": "https://jobs.colgate.com/",
+   "company_domain": "colgate.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Reckitt": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.reckitt.com",
+   "found_on": "https://careers.reckitt.com/",
+   "company_domain": "reckitt.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Mondelez": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://recruiting.mdlz.com",
+   "prefix": "/global/en",
+   "found_on": "https://recruiting.mdlz.com/global/en/jointalentcommunity",
+   "company_domain": "mondelezinternational.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "PepsiCo": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pepsicojobs.com",
+   "company_domain": "pepsicojobs.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "GSK": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://jobs.gsk.com",
+   "prefix": "/us/en",
+   "found_on": "https://jobs.gsk.com/us/en",
+   "company_domain": "gsk.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "AstraZeneca": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "astrazeneca.eightfold.ai",
+   "domain": "",
+   "found_on": "https://careers.astrazeneca.com/",
+   "company_domain": "astrazeneca.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Pfizer": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "pfizer",
+   "wd": "wd1",
+   "site": "PfizerCareers",
+   "found_on": "https://www.pfizer.com/about/careers",
+   "company_domain": "pfizer.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Abbott": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "abbott",
+   "wd": "wd5",
+   "site": "abbottcareers",
+   "found_on": "https://www.jobs.abbott/us/en",
+   "company_domain": "jobs.abbott"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Medtronic": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.medtronic.com",
+   "company_domain": "medtronic.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Baxter": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "baxter",
+   "wd": "wd1",
+   "site": "baxter",
+   "found_on": "https://jobs.baxter.com/en",
+   "company_domain": "baxter.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Thermo Fisher": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://jobs.thermofisher.com",
+   "prefix": "/global/en",
+   "found_on": "https://jobs.thermofisher.com/global/en",
+   "company_domain": "thermofisher.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Ericsson": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "app.eightfold.ai",
+   "domain": "",
+   "found_on": "https://jobs.ericsson.com/careers",
+   "company_domain": "ericsson.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Sanofi": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.sanofi.com",
+   "company_domain": "sanofi.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Nokia": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.nokia.com",
+   "company_domain": "nokia.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Vodafone (VOIS)": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "vodafone-qa-sandbox.eightfold.ai",
+   "domain": "",
+   "found_on": "https://jobs.vodafone.com/careers",
+   "company_domain": "vodafone.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Reliance Industries": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.ril.com",
+   "company_domain": "ril.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Tata Motors": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.tatamotors.com",
+   "found_on": "https://careers.tatamotors.com/",
+   "company_domain": "tatamotors.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Titan": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.titan.in",
+   "prefix": "/in/en",
+   "found_on": "https://careers.titan.in/in/en/search-results",
+   "company_domain": "titancompany.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Mahindra": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.mahindracareers.com",
+   "found_on": "https://jobs.mahindracareers.com/",
+   "company_domain": "mahindra.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Coca-Cola": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.coca-colacompany.com",
+   "company_domain": "coca-colacompany.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "HDFC Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hdfc.bank.in",
+   "company_domain": "bank.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Kotak Mahindra Bank": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "hcbt.fa.em2.oraclecloud.com",
+   "site": "CX",
+   "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
+   "company_domain": "kotak.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "ICICI Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.icicicareers.com",
+   "company_domain": "icicicareers.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Axis Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.axisbank.com",
+   "company_domain": "axisbank.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "IDFC FIRST Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.idfcfirstbank.com",
+   "company_domain": "idfcfirstbank.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Bajaj Finance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://bflcareers.peoplestrong.com",
+   "company_domain": "peoplestrong.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Aditya Birla Group": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.adityabirla.com",
+   "company_domain": "adityabirla.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Godrej Industries": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.godrejindustries.com",
+   "prefix": "/in/en",
+   "found_on": "https://careers.godrejindustries.com/in/en/job/GGXGGZINP101186ENIN/Senior-Officer-Secretarial?utm_source=linkedin&utm_medium=phenom-feeds",
+   "company_domain": "godrejindustries.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Vedanta": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.vedantalimited.com",
+   "company_domain": "vedantalimited.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Hindalco": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hindalco.com",
+   "company_domain": "hindalco.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Adani Group": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.adani.com",
+   "company_domain": "adani.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Dabur": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.dabur.com",
+   "company_domain": "dabur.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "JSW": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.jsw.in",
+   "company_domain": "jsw.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Tata Steel": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.tatasteel.com",
+   "company_domain": "tatasteel.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Marico": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://marico.com",
+   "company_domain": "marico.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Larsen & Toubro": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.larsentoubro.com",
+   "company_domain": "larsentoubro.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Pidilite": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pidilite.com",
+   "company_domain": "pidilite.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Infosys": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.infosys.com",
+   "company_domain": "infosys.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Asian Paints": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.asianpaints.com",
+   "found_on": "https://careers.asianpaints.com/",
+   "company_domain": "asianpaints.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "ITC": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.itcportal.com",
+   "company_domain": "itcportal.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Wipro": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.wipro.com",
+   "found_on": "https://careers.wipro.com/",
+   "company_domain": "wipro.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "HCLTech": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.hcltech.com",
+   "found_on": "https://careers.hcltech.com/",
+   "company_domain": "hcltech.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Tech Mahindra": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.techmahindra.com",
+   "company_domain": "techmahindra.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Flipkart": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.flipkartcareers.com",
+   "company_domain": "flipkartcareers.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Razorpay": {
+  "cfg": {
+   "platform": "greenhouse",
+   "token": "razorpaysoftwareprivatelimited",
+   "found_on": "https://razorpay.com/careers/",
+   "company_domain": "razorpay.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Paytm": {
+  "cfg": {
+   "platform": "lever",
+   "name": "paytm",
+   "found_on": "https://paytm.com/careers",
+   "company_domain": "paytm.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Nykaa": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.nykaa.com",
+   "company_domain": "nykaa.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Swiggy": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.swiggy.com",
+   "company_domain": "swiggy.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Zomato (Eternal)": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.zomato.com",
+   "company_domain": "zomato.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Groww": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://groww.in",
+   "company_domain": "groww.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "PhonePe": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.phonepe.com",
+   "company_domain": "phonepe.com"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ },
+ "Airtel": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.airtel.in",
+   "company_domain": "airtel.in"
+  },
+  "at": "2026-11-18T07:06:37Z"
+ }
+}

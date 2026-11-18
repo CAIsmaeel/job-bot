@@ -1,25 +1,25 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T06:19:13Z
+Run: 2026-11-18T07:06:37Z
 
 - Companies: 128
 - Companies with finance jobs in India: 23
-- Finance jobs in India (after title filter, de-duplicated): 330
-- New this run: 3
+- Finance jobs in India (after title filter, de-duplicated): 326
+- New this run: 2
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| oracle | 7 | 177 |
+| oracle | 7 | 172 |
 | phenom | 9 | 49 |
 | successfactors | 10 | 35 |
-| eightfold | 7 | 22 |
+| eightfold | 7 | 23 |
 | lever | 1 | 17 |
 | smartrecruiters | 2 | 16 |
-| sitemap | 71 | 13 |
+| sitemap | 70 | 13 |
 | greenhouse | 1 | 1 |
-| workday | 18 | 0 |
+| workday | 19 | 0 |
 | phenom+sitemap | 2 | 0 |
 
 ## By finance area
@@ -28,14 +28,14 @@ Run: 2026-11-18T06:19:13Z
 |---|---|
 | Accounting / Finance (general) | 96 |
 | Audit / Assurance / SOX | 58 |
-| Record to Report / GL | 22 |
+| Record to Report / GL | 21 |
 | Tax | 20 |
-| Deals / Valuation / IB | 19 |
 | Treasury | 19 |
 | Controllership / Reporting | 19 |
+| FP&A / Business Finance | 17 |
 | Risk / Credit | 17 |
-| FP&A / Business Finance | 16 |
 | Accounts Receivable / O2C | 15 |
+| Deals / Valuation / IB | 15 |
 | Finance Transformation / Systems | 9 |
 | Payroll | 9 |
 | Accounts Payable / P2P | 7 |
@@ -45,43 +45,43 @@ Run: 2026-11-18T06:19:13Z
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| EXL | oracle | 532 | 48 |  |
-| JPMorgan Chase | oracle | 256 | 47 |  |
-| Kotak Mahindra Bank | oracle | 771 | 32 |  |
-| KPMG India | oracle | 377 | 31 |  |
+| JPMorgan Chase | oracle | 257 | 48 |  |
+| EXL | oracle | 532 | 47 |  |
+| KPMG India | oracle | 380 | 31 |  |
+| Kotak Mahindra Bank | oracle | 772 | 27 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
-| HSBC | eightfold | 40 | 22 |  |
+| HSBC | eightfold | 41 | 23 |  |
 | Reckitt | successfactors | 51 | 19 |  |
 | Paytm | lever | 198 | 17 |  |
 | Bosch | smartrecruiters | 265 | 16 |  |
 | BNY | oracle | 82 | 11 |  |
-| BlackRock | sitemap | 287 | 9 |  |
+| BlackRock | sitemap | 288 | 9 |  |
 | Mahindra | successfactors | 60 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
 | GE HealthCare | phenom | 29 | 5 |  |
 | Thermo Fisher | phenom | 47 | 5 |  |
-| Cummins | oracle | 148 | 4 |  |
+| Cummins | oracle | 149 | 4 |  |
 | Emerson | oracle | 176 | 4 |  |
 | Sanofi | sitemap | 1462 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
 | Volvo Group | successfactors | 21 | 3 |  |
 | ABB | phenom | 33 | 2 |  |
-| GSK | phenom | 27 | 2 |  |
+| GSK | phenom | 26 | 2 |  |
 | Razorpay | greenhouse | 25 | 1 |  |
 | Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
 | PwC India | sitemap | 0 | 0 |  |
 | EY | successfactors | 70 | 0 |  |
-| Deloitte USI | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
+| Deloitte USI | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs |
 | Grant Thornton Bharat | sitemap | 0 | 0 |  |
 | BDO India | sitemap | 0 | 0 |  |
-| Accenture | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs |
-| Genpact | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://genpact.wd108.myworkdayjobs.com/wday/cxs/genpact/External_Careers/jobs |
+| Accenture | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Genpact | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | WNS | sitemap | 0 | 0 |  |
-| Barclays | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://barclays.wd3.myworkdayjobs.com/wday/cxs/barclays/External_Career_Site_Barclays/jobs |
+| Barclays | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Deutsche Bank | sitemap | 0 | 0 |  |
-| Citi | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://citi.wd5.myworkdayjobs.com/wday/cxs/citi/2/jobs |
+| Citi | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Goldman Sachs | sitemap | 0 | 0 |  |
 | Morgan Stanley | sitemap | 0 | 0 |  |
 | Wells Fargo | sitemap | 0 | 0 |  |
@@ -89,15 +89,15 @@ Run: 2026-11-18T06:19:13Z
 | Maersk | sitemap | 0 | 0 |  |
 | Michelin | sitemap | 0 | 0 |  |
 | Shell | sitemap | 0 | 0 |  |
-| BP | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://bpinternational.wd3.myworkdayjobs.com/wday/cxs/bpinternational/bpCareers/jobs |
-| Unilever | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://unilever.wd3.myworkdayjobs.com/wday/cxs/unilever/Unilever_Experienced_Professionals/jobs |
+| BP | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Unilever | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Nestle | sitemap | 0 | 0 |  |
 | P&G | phenom | 19 | 0 |  |
 | Siemens | sitemap | 0 | 0 |  |
 | Honeywell | phenom+sitemap | 0 | 0 |  |
 | Schneider Electric | sitemap | 0 | 0 |  |
 | AB InBev | sitemap | 0 | 0 |  |
-| Diageo | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
+| Diageo | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Novartis | sitemap | 0 | 0 |  |
 | Capgemini | sitemap | 0 | 0 |  |
 | Cognizant | sitemap | 0 | 0 |  |
@@ -105,30 +105,30 @@ Run: 2026-11-18T06:19:13Z
 | Kroll | sitemap | 0 | 0 |  |
 | TresVista | sitemap | 0 | 0 |  |
 | Alvarez & Marsal | sitemap | 0 | 0 |  |
-| State Street | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://statestreet.wd1.myworkdayjobs.com/wday/cxs/statestreet/Global/jobs |
-| Northern Trust | sitemap | 0 | 0 |  |
+| State Street | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Northern Trust | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Fidelity Investments | sitemap | 0 | 0 |  |
 | Nomura | sitemap | 0 | 0 |  |
 | UBS | sitemap | 0 | 0 |  |
-| Standard Chartered | successfactors | 78 | 0 |  |
+| Standard Chartered | successfactors | 79 | 0 |  |
 | Societe Generale | sitemap | 0 | 0 |  |
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
-| Lloyds Banking Group | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://lbg.wd3.myworkdayjobs.com/wday/cxs/lbg/lbg_Careers/jobs |
+| Lloyds Banking Group | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Synchrony | sitemap | 31 | 0 |  |
-| Target | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/jobs |
+| Target | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Walmart | sitemap | 0 | 0 |  |
 | Lowe's | phenom | 31 | 0 |  |
 | Dell | sitemap | 0 | 0 |  |
 | HP | eightfold | 0 | 0 | JSONDecodeError: Expecting value: line 2 column 1 (char 1) |
 | Intel | sitemap | 0 | 0 |  |
 | Uber | sitemap | 0 | 0 |  |
-| Airbus | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://ag.wd3.myworkdayjobs.com/wday/cxs/ag/Airbus/jobs |
-| Boeing | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://boeing.wd1.myworkdayjobs.com/wday/cxs/boeing/EXTERNAL_CAREERS/jobs |
+| Airbus | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Boeing | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Philips | phenom | 19 | 0 |  |
 | Continental | sitemap | 0 | 0 |  |
 | Eaton | eightfold | 0 | 0 |  |
-| Johnson Controls | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://jci.wd5.myworkdayjobs.com/wday/cxs/jci/JCI/jobs |
+| Johnson Controls | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Carrier | sitemap | 0 | 0 |  |
 | Otis | sitemap | 0 | 0 |  |
 | 3M | sitemap | 0 | 0 |  |
@@ -137,10 +137,10 @@ Run: 2026-11-18T06:19:13Z
 | Mondelez | phenom+sitemap | 0 | 0 |  |
 | Colgate-Palmolive | successfactors | 71 | 0 |  |
 | AstraZeneca | eightfold | 0 | 0 |  |
-| Pfizer | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
-| Abbott | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
+| Pfizer | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Abbott | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Medtronic | sitemap | 0 | 0 |  |
-| Baxter | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
+| Baxter | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Ericsson | eightfold | 0 | 0 |  |
 | Nokia | sitemap | 0 | 0 |  |
 | Vodafone (VOIS) | eightfold | 0 | 0 | JSONDecodeError: Expecting value: line 2 column 1 (char 1) |
@@ -178,9 +178,10 @@ Run: 2026-11-18T06:19:13Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
-| Kotak Mahindra Bank | [Team Member - Training_HOUSING FINANCE_0412_4289_1017039](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790) | Accounting / Finance (general) | Haryana, India India |
-| Godrej Industries | [Manager - Finance](https://careers.godrejindustries.com/in/en/job/P-101073) | Accounting / Finance (general) | Mumbai, Maharashtra, India |
-| GE HealthCare | [Associate Service Finance Analyst (](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India, 560066 |
+| JPMorgan Chase | [Asset and Wealth Management Audit - AVP](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210802422) | Audit / Assurance / SOX | Mumbai, Maharashtra, India India |
+| HSBC | [Assistant Vice President - Management Reporting](https://portal.careers.hsbc.com/careers/job/563774612464089) | FP&A / Business Finance | Chennai, Tamil Nadu, India |
+| Kotak Mahindra Bank | [Team Member - Training - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790) | Accounting / Finance (general) | Haryana, India India |
+| GE HealthCare | [Associate Service Finance Analyst](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India, 560066 |
 | Volvo Group | [Senior Accountant](https://jobs.volvogroup.com/job/Bangalore-Senior-Accountant-562122/1375785155/) | Accounting / Finance (general) | Bangalore, IN, 562122 |
 | Volvo Group | [OTC Global Process Solution Key User](https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/) | Accounts Receivable / O2C | Bangalore, IN, 562122 |
 | Volvo Group | [Product Quality Assurance Lead](https://jobs.volvogroup.com/job/Bangalore-Product-Quality-Assurance-Lead-560058/1377141555/) | Audit / Assurance / SOX | Bangalore, IN, 560058 |
@@ -237,4 +238,3 @@ Run: 2026-11-18T06:19:13Z
 | Paytm | [Senior Manager - Taxation](https://jobs.lever.co/paytm/09849b71-38a1-4f20-b35b-393ab05ae18d) | Tax | Mumbai, Maharashtra |
 | Paytm | [Taxation](https://jobs.lever.co/paytm/3d3ee995-ba39-4d3a-95fd-ef391b7f3b58) | Tax | Mumbai, Maharashtra |
 | Paytm | [Treasury](https://jobs.lever.co/paytm/0ad9b153-778e-4ce2-ba6e-6991f8019a28) | Treasury | Mumbai, Maharashtra |
-| Paytm | [Treasury & Capital Markets - Paytm Money](https://jobs.lever.co/paytm/031097bb-4cb9-43cd-af38-5483cbfa6064) | Treasury | Mumbai, Maharashtra |

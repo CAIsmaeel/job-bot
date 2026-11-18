@@ -1,8 +1,32 @@
 [
  {
+  "key": "7b3043f73ff1c7bd",
+  "company": "JPMorgan Chase",
+  "title": "Asset and Wealth Management Audit - AVP",
+  "category": "Audit / Assurance / SOX",
+  "location": "Mumbai, Maharashtra, India India",
+  "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210802422",
+  "posted": "2026-11-18",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T07:06:37Z"
+ },
+ {
+  "key": "63d93719ecab3082",
+  "company": "HSBC",
+  "title": "Assistant Vice President - Management Reporting",
+  "category": "FP&A / Business Finance",
+  "location": "Chennai, Tamil Nadu, India",
+  "url": "https://portal.careers.hsbc.com/careers/job/563774612464089",
+  "posted": 1791977475,
+  "platform": "eightfold",
+  "approx": false,
+  "first_seen": "2026-11-18T07:06:37Z"
+ },
+ {
   "key": "7174ac241c856813",
   "company": "Kotak Mahindra Bank",
-  "title": "Team Member - Training_HOUSING FINANCE_0412_4289_1017039",
+  "title": "Team Member - Training - HOUSING FINANCE",
   "category": "Accounting / Finance (general)",
   "location": "Haryana, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275790",
@@ -12,21 +36,9 @@
   "first_seen": "2026-11-18T06:19:13Z"
  },
  {
-  "key": "7eaec8782aac730c",
-  "company": "Godrej Industries",
-  "title": "Manager - Finance",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India",
-  "url": "https://careers.godrejindustries.com/in/en/job/P-101073",
-  "posted": "2026-08-24T09:11:08.315+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T06:19:13Z"
- },
- {
   "key": "778415101071e64d",
   "company": "GE HealthCare",
-  "title": "Associate Service Finance Analyst (",
+  "title": "Associate Service Finance Analyst",
   "category": "Accounting / Finance (general)",
   "location": "Bengaluru, Karnātaka, India, 560066",
   "url": "https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply",
@@ -830,7 +842,7 @@
  {
   "key": "4ddfefdfa9a5b6eb",
   "company": "Kotak Mahindra Bank",
-  "title": "Operations Team Member_WBG Operations (Ops)-Trade Finance Operations_Chennai",
+  "title": "Operations Team Member - WBG Operations (Ops)-Trade Finance Operations - Chennai",
   "category": "Accounting / Finance (general)",
   "location": "Chennai, Tamil Nadu, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275733",
@@ -842,7 +854,7 @@
  {
   "key": "6801a6f361978362",
   "company": "Kotak Mahindra Bank",
-  "title": "Customer Assistance Manager_HOUSING FINANCE-Hardship Assistance Unit_Maharashtra",
+  "title": "Customer Assistance Manager - HOUSING FINANCE-Hardship Assistance Unit - Maharashtra",
   "category": "Accounting / Finance (general)",
   "location": "Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/265115",
@@ -854,7 +866,7 @@
  {
   "key": "78253afdb0ff24e5",
   "company": "Kotak Mahindra Bank",
-  "title": "Team Member_TREASURY INVESTMENTS/SUPPORT_0607_1314_1062455_HRR",
+  "title": "Team Member - TREASURY INVESTMENTS/SUPPORT - 0607 - 1314 - 1062455 - HRR",
   "category": "Treasury",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275452",
@@ -866,7 +878,7 @@
  {
   "key": "0891b8674f9bb211",
   "company": "Kotak Mahindra Bank",
-  "title": "Operations Team Member_WBG Operations (Ops)-Trade Finance Operations_Thane",
+  "title": "Operations Team Member - WBG Operations (Ops)-Trade Finance Operations - Thane",
   "category": "Accounting / Finance (general)",
   "location": "Thane, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275383",
@@ -878,7 +890,7 @@
  {
   "key": "4acadc56f3d69624",
   "company": "Kotak Mahindra Bank",
-  "title": "Operations Team Member_WBG Operations (Ops)-Trade Finance Operations_Mumbai",
+  "title": "Operations Team Member - WBG Operations (Ops)-Trade Finance Operations - Mumbai",
   "category": "Accounting / Finance (general)",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274980",
@@ -890,7 +902,7 @@
  {
   "key": "4dffac7257c83417",
   "company": "Kotak Mahindra Bank",
-  "title": "Area Sales Manager - HF_HOUSING FINANCE_0412_8087_1077905",
+  "title": "Area Sales Manager - HF - HOUSING FINANCE",
   "category": "Accounting / Finance (general)",
   "location": "Bangalore, Karnataka, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275097",
@@ -900,21 +912,9 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "fddf74fb2949a39f",
-  "company": "Kotak Mahindra Bank",
-  "title": "Audit Associate_SUPPORT SERVICES_0616_1288_1082296",
-  "category": "Audit / Assurance / SOX",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275048",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "6cad474f1e93e24a",
   "company": "Kotak Mahindra Bank",
-  "title": "Location Credit Manager_HOUSING FINANCE_0140_0491_1016196_HRR",
+  "title": "Location Credit Manager - HOUSING FINANCE - 0140 - 0491 - 1016196 - HRR",
   "category": "Accounting / Finance (general)",
   "location": "Pune, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274601",
@@ -926,7 +926,7 @@
  {
   "key": "b613cc0db7150209",
   "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening_Digital Banking Kotak 811_0177_1288_1103266",
+  "title": "Team Member-Transaction screening - Digital Banking Kotak 811",
   "category": "Deals / Valuation / IB",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275779",
@@ -936,45 +936,9 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "d3ba4a1af2286b39",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening_Digital Banking Kotak 811_0177_1288_1103267",
-  "category": "Deals / Valuation / IB",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275781",
-  "posted": "2026-11-18",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "86edd637c33cc33e",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening_Digital Banking Kotak 811_0177_1288_1103268",
-  "category": "Deals / Valuation / IB",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275782",
-  "posted": "2026-11-18",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "3c8c283225e2693d",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening_Digital Banking Kotak 811_0177_1288_1103269",
-  "category": "Deals / Valuation / IB",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275783",
-  "posted": "2026-11-18",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "01fd14bcc9391e76",
   "company": "Kotak Mahindra Bank",
-  "title": "Transaction Banking Specialist-Affluent_AFFLUENT_0411_1459_1007824",
+  "title": "Transaction Banking Specialist-Affluent - AFFLUENT",
   "category": "Deals / Valuation / IB",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/271334",
@@ -986,7 +950,7 @@
  {
   "key": "398237080f0eaf55",
   "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening_HO & SUPPORT_0177_1288_1086794",
+  "title": "Team Member-Transaction screening - HO & SUPPORT",
   "category": "Deals / Valuation / IB",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275063",
@@ -996,21 +960,9 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "b3f64aa31e1c2451",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening_HO & SUPPORT_0177_1288_1089874",
-  "category": "Deals / Valuation / IB",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275124",
-  "posted": "2026-11-12",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "db6fc6f26158548b",
   "company": "Kotak Mahindra Bank",
-  "title": "Accounts Team Member - APPC_SUPPORT SERVICES_0705_1288_1076786",
+  "title": "Accounts Team Member - APPC - SUPPORT SERVICES",
   "category": "Accounting / Finance (general)",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/272719",
@@ -1034,7 +986,7 @@
  {
   "key": "b78673f484f5c647",
   "company": "Kotak Mahindra Bank",
-  "title": "Audit Executive_SUPPORT SERVICES_0616_1288_1082315",
+  "title": "Audit Executive - SUPPORT SERVICES",
   "category": "Audit / Assurance / SOX",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275050",
@@ -1044,9 +996,21 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
+  "key": "a35234a59af75977",
+  "company": "Kotak Mahindra Bank",
+  "title": "MIS - Co-ordinator - Sales",
+  "category": "FP&A / Business Finance",
+  "location": "Gurgaon, Haryana, India India",
+  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274109",
+  "posted": "2026-11-06",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
   "key": "dad408e610f8c370",
   "company": "Kotak Mahindra Bank",
-  "title": "Regional Lead, BFIG_TREASURY-FOREX MERCHANT_0412_1314_1027031",
+  "title": "Regional Lead, BFIG - TREASURY-FOREX MERCHANT",
   "category": "Treasury",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/273764",
@@ -1058,7 +1022,7 @@
  {
   "key": "1b671ff54fbaf71c",
   "company": "Kotak Mahindra Bank",
-  "title": "Portfolio Manager_TREASURY-FOREX MERCHANT_0412_8087_1051443",
+  "title": "Portfolio Manager - TREASURY-FOREX MERCHANT",
   "category": "Treasury",
   "location": "Bangalore, Karnataka, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/271246",
@@ -1070,7 +1034,7 @@
  {
   "key": "736e92d25864fb9a",
   "company": "Kotak Mahindra Bank",
-  "title": "HR-Partner_SUPPORT SERVICES-HR-Institutional-Pvt-Treasury-ARD Advisory_Mumbai",
+  "title": "HR-Partner - SUPPORT SERVICES-HR-Institutional-Pvt-Treasury-ARD Advisory - Mumbai",
   "category": "Treasury",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/265933",
@@ -1080,21 +1044,9 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "a35234a59af75977",
-  "company": "Kotak Mahindra Bank",
-  "title": "MIS - Co-ordinator_Sales_0892_0261_1008549",
-  "category": "FP&A / Business Finance",
-  "location": "Gurgaon, Haryana, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/274109",
-  "posted": "2026-11-06",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "33bcadf36841c87e",
   "company": "Kotak Mahindra Bank",
-  "title": "Team Member-CRCU_SUPPORT SERVICES-Centralised Reconciliation and Controls Unit_Bangalore",
+  "title": "Team Member-CRCU - SUPPORT SERVICES-Centralised Reconciliation and Controls Unit - Bangalore",
   "category": "Record to Report / GL",
   "location": "Bangalore, Karnataka, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/267787",
@@ -1106,7 +1058,7 @@
  {
   "key": "31cef655538cc23a",
   "company": "Kotak Mahindra Bank",
-  "title": "RCU Trxn Monitoring Team Member_HO & SUPPORT-Internal Control_Mumbai",
+  "title": "RCU Trxn Monitoring Team Member - HO & SUPPORT-Internal Control - Mumbai",
   "category": "Audit / Assurance / SOX",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/268027",
@@ -1118,7 +1070,7 @@
  {
   "key": "c622aac7ec60c2c8",
   "company": "Kotak Mahindra Bank",
-  "title": "RCU Trxn Monitoring Team Member_HO & SUPPORT-Internal Control_Maharashtra",
+  "title": "RCU Trxn Monitoring Team Member - HO & SUPPORT-Internal Control - Maharashtra",
   "category": "Audit / Assurance / SOX",
   "location": "Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/266847",
@@ -1526,7 +1478,7 @@
  {
   "key": "5866048b8cfed427",
   "company": "KPMG India",
-  "title": "Assistant Manager_Resource Manangement_Transfer Pricing",
+  "title": "Assistant Manager - Resource Manangement - Transfer Pricing",
   "category": "Tax",
   "location": "Bangalore, Karnataka, India India",
   "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30051175",
@@ -1562,7 +1514,7 @@
  {
   "key": "75bf9c2d7da45c37",
   "company": "KPMG India",
-  "title": "GTA_IT Audit SA1",
+  "title": "GTA - IT Audit SA1",
   "category": "Audit / Assurance / SOX",
   "location": "Bangalore, Karnataka, India India",
   "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30040914",
@@ -1742,7 +1694,7 @@
  {
   "key": "cabcf282b2bfdb84",
   "company": "JPMorgan Chase",
-  "title": "Global Finance and Business Management_Business Support Management – Expense Management (Invoicing) - Team Member",
+  "title": "Global Finance and Business Management - Business Support Management – Expense Management (Invoicing) - Team Member",
   "category": "Accounting / Finance (general)",
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805783",
@@ -2292,18 +2244,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "8d979ba65c942c9f",
-  "company": "HSBC",
-  "title": "Assistant Vice President - Management Reporting.",
-  "category": "FP&A / Business Finance",
-  "location": "Gurugram, Haryana, India",
-  "url": "https://portal.careers.hsbc.com/careers/job/563774612584504",
-  "posted": 1793702070,
-  "platform": "eightfold",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "4a3c3d69714dc1a0",
   "company": "HSBC",
   "title": "CA Intern",
@@ -2388,6 +2328,18 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
+  "key": "8d979ba65c942c9f",
+  "company": "HSBC",
+  "title": "Assistant Vice President - Management Reporting.",
+  "category": "FP&A / Business Finance",
+  "location": "Gurugram, Haryana, India",
+  "url": "https://portal.careers.hsbc.com/careers/job/563774612584504",
+  "posted": 1793702070,
+  "platform": "eightfold",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
   "key": "6f267f5438bd68fd",
   "company": "HSBC",
   "title": "Manager, Management Reporting",
@@ -2407,6 +2359,18 @@
   "location": "Mumbai, Maharashtra, India",
   "url": "https://careers.godrejindustries.com/in/en/job/P-101861",
   "posted": "2026-10-19T09:44:56.011+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "412fcbb700006cd2",
+  "company": "Godrej Industries",
+  "title": "Manager - Finance",
+  "category": "Accounting / Finance (general)",
+  "location": "Mumbai, Maharashtra, India",
+  "url": "https://careers.godrejindustries.com/in/en/job/P-101655",
+  "posted": "2026-10-09T09:48:41.443+0000",
   "platform": "phenom",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
@@ -3158,7 +3122,7 @@
  {
   "key": "a5628593b408e078",
   "company": "EXL",
-  "title": "Lead Assistant Manager_Treasury Accounting_Uber",
+  "title": "Lead Assistant Manager - Treasury Accounting - Uber",
   "category": "Treasury",
   "location": "Hyderabad, Telangana, India India",
   "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/10314",
@@ -3312,18 +3276,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "209ea9f2f6f639be",
-  "company": "EXL",
-  "title": "Assistant Manager _ R2R",
-  "category": "Record to Report / GL",
-  "location": "Noida, Uttar Pradesh, India India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19779",
-  "posted": "2026-09-08",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "d6a89247717016e9",
   "company": "EXL",
   "title": "Manager - R2R",
@@ -3470,7 +3422,7 @@
  {
   "key": "ea1cb278f2793ae2",
   "company": "Bosch",
-  "title": "BGSW_2026_SAP_HCM_Payroll&Time",
+  "title": "BGSW - 2026 - SAP - HCM - Payroll&Time",
   "category": "Payroll",
   "location": "bangalore, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000160601968",
@@ -3482,7 +3434,7 @@
  {
   "key": "514c215c9cef2eb1",
   "company": "Bosch",
-  "title": "IN_Bosch Rexroth India_ Assistant Manager / Deputy Manager – Finance Controlling",
+  "title": "IN - Bosch Rexroth India - Assistant Manager / Deputy Manager – Finance Controlling",
   "category": "Accounting / Finance (general)",
   "location": "Sanand, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000158703739",
@@ -3506,7 +3458,7 @@
  {
   "key": "f623dae9ec728466",
   "company": "Bosch",
-  "title": "IN_MIVIN_ Asst Manager / Deputy Manager _ Finance and Accounts _IN",
+  "title": "IN - MIVIN - Asst Manager / Deputy Manager - Finance and Accounts - IN",
   "category": "Accounting / Finance (general)",
   "location": "Hejjala, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000157968151",
@@ -3518,7 +3470,7 @@
  {
   "key": "7e7772886b301c19",
   "company": "Bosch",
-  "title": "Business Analyst - Finance_MPIN",
+  "title": "Business Analyst - Finance - MPIN",
   "category": "Accounting / Finance (general)",
   "location": "Bengaluru, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000157037059",
@@ -3530,7 +3482,7 @@
  {
   "key": "2d4556ea74a4758d",
   "company": "Bosch",
-  "title": "Finance Business Partner _SO/TCR-IN",
+  "title": "Finance Business Partner - SO/TCR-IN",
   "category": "FP&A / Business Finance",
   "location": "bengaluru, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000155542414",
@@ -3614,7 +3566,7 @@
  {
   "key": "52502c6ea6510768",
   "company": "Bosch",
-  "title": "IN_Bosch Rexroth India_Assistant Manager / Deputy Manager – In coming Quality assurance / control",
+  "title": "IN - Bosch Rexroth India - Assistant Manager / Deputy Manager – In coming Quality assurance / control",
   "category": "Audit / Assurance / SOX",
   "location": "Sanand, India",
   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000151757009",
