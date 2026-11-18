@@ -1,19 +1,19 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T11:09:45Z
+Run: 2026-11-18T11:56:53Z
 
 - Companies: 128
 - Companies with finance jobs in India: 23
-- Finance jobs in India (after title filter, de-duplicated): 316
-- New this run: 0
+- Finance jobs in India (after title filter, de-duplicated): 320
+- New this run: 1
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| oracle | 7 | 163 |
-| phenom | 9 | 50 |
-| successfactors | 10 | 34 |
+| oracle | 7 | 165 |
+| phenom | 9 | 51 |
+| successfactors | 10 | 35 |
 | eightfold | 7 | 23 |
 | lever | 1 | 17 |
 | smartrecruiters | 2 | 14 |
@@ -27,16 +27,16 @@ Run: 2026-11-18T11:09:45Z
 | Area | Jobs |
 |---|---|
 | Accounting / Finance (general) | 93 |
-| Audit / Assurance / SOX | 57 |
+| Audit / Assurance / SOX | 58 |
 | Record to Report / GL | 21 |
 | Tax | 19 |
 | Treasury | 19 |
 | Controllership / Reporting | 19 |
+| Risk / Credit | 17 |
 | FP&A / Business Finance | 17 |
-| Risk / Credit | 16 |
-| Accounts Receivable / O2C | 15 |
+| Accounts Receivable / O2C | 16 |
 | Deals / Valuation / IB | 12 |
-| Payroll | 10 |
+| Payroll | 11 |
 | Finance Transformation / Systems | 9 |
 | Accounts Payable / P2P | 5 |
 | Costing | 4 |
@@ -45,34 +45,34 @@ Run: 2026-11-18T11:09:45Z
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| JPMorgan Chase | oracle | 266 | 46 |  |
-| EXL | oracle | 539 | 45 |  |
+| JPMorgan Chase | oracle | 268 | 47 |  |
+| EXL | oracle | 537 | 46 |  |
 | KPMG India | oracle | 386 | 32 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
 | HSBC | eightfold | 41 | 23 |  |
 | Kotak Mahindra Bank | oracle | 754 | 21 |  |
-| Reckitt | successfactors | 25 | 18 |  |
+| Reckitt | successfactors | 51 | 18 |  |
 | Paytm | lever | 194 | 17 |  |
 | Bosch | smartrecruiters | 264 | 14 |  |
 | BNY | oracle | 83 | 11 |  |
-| BlackRock | sitemap | 288 | 9 |  |
+| BlackRock | sitemap | 287 | 9 |  |
 | Mahindra | successfactors | 62 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
 | GE HealthCare | phenom | 29 | 5 |  |
 | Sanofi | sitemap | 1462 | 5 |  |
 | Cummins | oracle | 150 | 4 |  |
+| Volvo Group | successfactors | 22 | 4 |  |
 | Emerson | oracle | 177 | 4 |  |
 | GSK | phenom | 28 | 4 |  |
 | Thermo Fisher | phenom | 48 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
-| Volvo Group | successfactors | 8 | 3 |  |
-| ABB | phenom | 32 | 2 |  |
+| ABB | phenom | 34 | 3 |  |
 | Razorpay | greenhouse | 27 | 1 |  |
 | Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
 | PwC India | sitemap | 0 | 0 |  |
-| EY | successfactors | 73 | 0 |  |
+| EY | successfactors | 72 | 0 |  |
 | Deloitte USI | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs |
 | Grant Thornton Bharat | sitemap | 0 | 0 |  |
 | BDO India | sitemap | 0 | 0 |  |
@@ -146,7 +146,7 @@ Run: 2026-11-18T11:09:45Z
 | Vodafone (VOIS) | eightfold | 0 | 0 | JSONDecodeError: Expecting value: line 2 column 1 (char 1) |
 | Reliance Industries | sitemap | 0 | 0 |  |
 | Tata Steel | sitemap | 0 | 0 |  |
-| Tata Motors | successfactors | 8 | 0 |  |
+| Tata Motors | successfactors | 57 | 0 |  |
 | HDFC Bank | sitemap | 0 | 0 |  |
 | ICICI Bank | sitemap | 0 | 0 |  |
 | Axis Bank | sitemap | 0 | 0 |  |
@@ -178,10 +178,12 @@ Run: 2026-11-18T11:09:45Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
+| EXL | [Assistant Manager Credit Control-German Language Expert](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15316) | Accounts Receivable / O2C | Noida, Uttar Pradesh, India |
 | KPMG India | [Audit Associate 2 - FS- Private Equity - GGN](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30052066) | Audit / Assurance / SOX | Gurgaon, Haryana, India |
 | EXL | [Assistant Manager - Coding Auditors](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19173) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
 | EXL | [Senior Executive - Coding Auditor](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/14804) | Audit / Assurance / SOX | Chennai, Tamil Nadu, India |
 | Volvo Group | [Tax Analyst](https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/) | Tax | Bangalore, India |
+| ABB | [HR Operation- Team lead (India Payroll with Factory Payroll)](https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply) | Payroll | Bangalore, Karnātaka, India |
 | Sanofi | [sr accounting analyst a2r balance sheet review](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-balance-sheet-review/2649/47009821824) | Accounting / Finance (general) | hyderabad |
 | KPMG India | [Assistant Manager - Credit Risk](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049726) | Risk / Credit | Bangalore, Karnataka, India |
 | KPMG India | [Senior Associate 1 - Canada Audit](https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30049948) | Audit / Assurance / SOX | Bangalore, Karnataka, India |
@@ -195,6 +197,7 @@ Run: 2026-11-18T11:09:45Z
 | GE HealthCare | [Associate Service Finance Analyst](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND36-01-Bengaluru-Kalyani-Platina-Magnolia/Associate-Service-Finance-Analyst--_R4047269-1/apply) | Accounting / Finance (general) | Bengaluru, Karnātaka, India |
 | Volvo Group | [Senior Accountant](https://jobs.volvogroup.com/job/Bangalore-Senior-Accountant-562122/1375785155/) | Accounting / Finance (general) | Bangalore, India |
 | Volvo Group | [OTC Global Process Solution Key User](https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/) | Accounts Receivable / O2C | Bangalore, India |
+| Volvo Group | [Product Quality Assurance Lead](https://jobs.volvogroup.com/job/Bangalore-Product-Quality-Assurance-Lead-560058/1377141555/) | Audit / Assurance / SOX | Bangalore, India |
 | Titan | [Accounting Executive- Asset Management](https://careers.titan.in/in/en/job/P-104471) | Accounting / Finance (general) | Bengaluru, Karnataka, India |
 | Titan | [Manager-Indirect Taxation](https://careers.titan.in/in/en/job/P-105941) | Tax | Bengaluru, Karnataka, India |
 | Titan | [Manager-Mergers and Acquisition](https://careers.titan.in/in/en/job/P-107784) | Deals / Valuation / IB | Bengaluru, Karnataka, India |
@@ -235,6 +238,3 @@ Run: 2026-11-18T11:09:45Z
 | Paytm | [Credit Risk Analyst](https://jobs.lever.co/paytm/ad781ae8-cd4a-44c1-a74b-2822118b7c3d) | Risk / Credit | Noida, Uttar Pradesh |
 | Paytm | [Field Facilitator - Digital & Financial Literacy - 6 months Contractua](https://jobs.lever.co/paytm/8b2f5989-2a41-436c-a01c-78468652ac31) | Accounting / Finance (general) | Noida, Uttar Pradesh |
 | Paytm | [Finance & Reporting Manager](https://jobs.lever.co/paytm/da08f565-bb69-4489-a7d5-ffe79fd452cd) | Accounting / Finance (general) | Luxembourg |
-| Paytm | [Finance Control & Governance Manager](https://jobs.lever.co/paytm/4ffffb7c-7034-4de4-bc87-35bbe9e41438) | Accounting / Finance (general) | Mumbai, Maharashtra |
-| Paytm | [Finance Controls & Governance](https://jobs.lever.co/paytm/5a817d1c-0cae-4d72-bac2-2daf6c296a02) | Accounting / Finance (general) | Mumbai, Maharashtra |
-| Paytm | [General Manager - Corporate Development - (VC Experienced)](https://jobs.lever.co/paytm/405b278f-a8f4-4b73-91ad-465da86466db) | Deals / Valuation / IB | Noida, Uttar Pradesh |

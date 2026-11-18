@@ -36,8 +36,8 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 266,
-  "kept": 46
+  "raw": 268,
+  "kept": 47
  },
  {
   "company": "Caterpillar",
@@ -70,7 +70,7 @@
    "found_on": "https://careers.ey.com/",
    "company_domain": "ey.com"
   },
-  "raw": 73,
+  "raw": 72,
   "kept": 0
  },
  {
@@ -174,8 +174,8 @@
    "found_on": "https://www.exlservice.com/careers",
    "company_domain": "exlservice.com"
   },
-  "raw": 539,
-  "kept": 45
+  "raw": 537,
+  "kept": 46
  },
  {
   "company": "Barclays",
@@ -590,7 +590,7 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 288,
+  "raw": 287,
   "kept": 9
  },
  {
@@ -837,8 +837,8 @@
    "found_on": "https://jobs.volvogroup.com/",
    "company_domain": "volvogroup.com"
   },
-  "raw": 8,
-  "kept": 3
+  "raw": 22,
+  "kept": 4
  },
  {
   "company": "Continental",
@@ -861,8 +861,8 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 32,
-  "kept": 2
+  "raw": 34,
+  "kept": 3
  },
  {
   "company": "Eaton",
@@ -998,7 +998,7 @@
    "found_on": "https://careers.reckitt.com/",
    "company_domain": "reckitt.com"
   },
-  "raw": 25,
+  "raw": 51,
   "kept": 18
  },
  {
@@ -1176,7 +1176,7 @@
    "found_on": "https://careers.tatamotors.com/",
    "company_domain": "tatamotors.com"
   },
-  "raw": 8,
+  "raw": 57,
   "kept": 0
  },
  {

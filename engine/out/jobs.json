@@ -1,5 +1,17 @@
 [
  {
+  "key": "08bd2aff7cced0dd",
+  "company": "EXL",
+  "title": "Assistant Manager Credit Control-German Language Expert",
+  "category": "Accounts Receivable / O2C",
+  "location": "Noida, Uttar Pradesh, India",
+  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15316",
+  "posted": "2026-11-18",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T11:56:53Z"
+ },
+ {
   "key": "5c09427e2f44c4a7",
   "company": "KPMG India",
   "title": "Audit Associate 2 - FS- Private Equity - GGN",
@@ -46,6 +58,18 @@
   "platform": "successfactors",
   "approx": false,
   "first_seen": "2026-11-18T10:28:24Z"
+ },
+ {
+  "key": "c24fced5ad16bba9",
+  "company": "ABB",
+  "title": "HR Operation- Team lead (India Payroll with Factory Payroll)",
+  "category": "Payroll",
+  "location": "Bangalore, Karnātaka, India",
+  "url": "https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply",
+  "posted": "2026-11-17T00:00:00.000+0000",
+  "platform": "phenom",
+  "approx": false,
+  "first_seen": "2026-11-18T10:21:37Z"
  },
  {
   "key": "6af6758b1d78e245",
@@ -198,6 +222,18 @@
   "category": "Accounts Receivable / O2C",
   "location": "Bangalore, India",
   "url": "https://jobs.volvogroup.com/job/Bangalore-OTC-Global-Process-Solution-Key-User-562122/1375487155/",
+  "posted": null,
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "7b23b98d8bbbdbf3",
+  "company": "Volvo Group",
+  "title": "Product Quality Assurance Lead",
+  "category": "Audit / Assurance / SOX",
+  "location": "Bangalore, India",
+  "url": "https://jobs.volvogroup.com/job/Bangalore-Product-Quality-Assurance-Lead-560058/1377141555/",
   "posted": null,
   "platform": "successfactors",
   "approx": false,
@@ -1519,6 +1555,18 @@
   "location": "Bangalore, Karnataka, India",
   "url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30040914",
   "posted": "2026-04-07",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "b53139ac2c7ae999",
+  "company": "JPMorgan Chase",
+  "title": "Wholesale Credit Risk APAC/EMEA – Real Estate – Analyst",
+  "category": "Risk / Credit",
+  "location": "Mumbai, Maharashtra, India",
+  "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210806803",
+  "posted": "2026-11-18",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
