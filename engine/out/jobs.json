@@ -1,15 +1,27 @@
 [
  {
-  "key": "c24fced5ad16bba9",
-  "company": "ABB",
-  "title": "HR Operation- Team lead (India Payroll with Factory Payroll)",
-  "category": "Payroll",
-  "location": "Bangalore, Karnātaka, India",
-  "url": "https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply",
-  "posted": "2026-11-17T00:00:00.000+0000",
-  "platform": "phenom",
+  "key": "d8075729a9b1a464",
+  "company": "Volvo Group",
+  "title": "Tax Analyst",
+  "category": "Tax",
+  "location": "Bangalore, IN, 560058",
+  "url": "https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/",
+  "posted": null,
+  "platform": "successfactors",
   "approx": false,
-  "first_seen": "2026-11-18T10:21:37Z"
+  "first_seen": "2026-11-18T10:28:24Z"
+ },
+ {
+  "key": "42954c53d8a88cef",
+  "company": "Synchrony",
+  "title": "identity governance user reconciliation senior analyst",
+  "category": "Record to Report / GL",
+  "location": "hyderabad",
+  "url": "https://www.synchronycareers.com/job/hyderabad/identity-governance-user-reconciliation-senior-analyst/49398/102489446976",
+  "posted": null,
+  "platform": "sitemap",
+  "approx": true,
+  "first_seen": "2026-11-18T10:12:10Z"
  },
  {
   "key": "6af6758b1d78e245",
@@ -1087,18 +1099,6 @@
   "location": "Mumbai, Maharashtra, India India",
   "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/271334",
   "posted": "2026-11-16",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
-  "key": "398237080f0eaf55",
-  "company": "Kotak Mahindra Bank",
-  "title": "Team Member-Transaction screening - HO & SUPPORT",
-  "category": "Deals / Valuation / IB",
-  "location": "Mumbai, Maharashtra, India India",
-  "url": "https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275063",
-  "posted": "2026-11-12",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"

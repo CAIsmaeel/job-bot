@@ -1,9 +1,9 @@
 # Finance job engine v0 report
 
-Run: 2026-11-18T10:21:37Z
+Run: 2026-11-18T10:28:24Z
 
 - Companies: 128
-- Companies with finance jobs in India: 23
+- Companies with finance jobs in India: 24
 - Finance jobs in India (after title filter, de-duplicated): 325
 - New this run: 1
 
@@ -11,13 +11,13 @@ Run: 2026-11-18T10:21:37Z
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| oracle | 7 | 168 |
-| phenom | 9 | 51 |
-| successfactors | 10 | 35 |
+| oracle | 7 | 167 |
+| phenom | 9 | 50 |
+| successfactors | 10 | 36 |
 | eightfold | 7 | 23 |
 | lever | 1 | 17 |
 | smartrecruiters | 2 | 16 |
-| sitemap | 69 | 14 |
+| sitemap | 69 | 15 |
 | greenhouse | 1 | 1 |
 | workday | 20 | 0 |
 | phenom+sitemap | 2 | 0 |
@@ -28,15 +28,15 @@ Run: 2026-11-18T10:21:37Z
 |---|---|
 | Accounting / Finance (general) | 99 |
 | Audit / Assurance / SOX | 57 |
-| Record to Report / GL | 21 |
-| Tax | 19 |
+| Record to Report / GL | 22 |
+| Tax | 20 |
 | Treasury | 19 |
 | Controllership / Reporting | 19 |
 | FP&A / Business Finance | 18 |
 | Risk / Credit | 16 |
 | Accounts Receivable / O2C | 15 |
-| Deals / Valuation / IB | 13 |
-| Payroll | 11 |
+| Deals / Valuation / IB | 12 |
+| Payroll | 10 |
 | Finance Transformation / Systems | 9 |
 | Accounts Payable / P2P | 5 |
 | Costing | 4 |
@@ -49,37 +49,38 @@ Run: 2026-11-18T10:21:37Z
 | JPMorgan Chase | oracle | 262 | 46 |  |
 | KPMG India | oracle | 387 | 31 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
-| Kotak Mahindra Bank | oracle | 770 | 25 |  |
+| Kotak Mahindra Bank | oracle | 765 | 24 |  |
 | HSBC | eightfold | 41 | 23 |  |
 | Reckitt | successfactors | 51 | 19 |  |
 | Paytm | lever | 195 | 17 |  |
-| Bosch | smartrecruiters | 265 | 16 |  |
+| Bosch | smartrecruiters | 264 | 16 |  |
 | BNY | oracle | 83 | 11 |  |
-| BlackRock | sitemap | 287 | 9 |  |
+| BlackRock | sitemap | 288 | 9 |  |
 | Mahindra | successfactors | 62 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
 | GE HealthCare | phenom | 29 | 5 |  |
 | Sanofi | sitemap | 1465 | 5 |  |
 | Cummins | oracle | 150 | 4 |  |
+| Volvo Group | successfactors | 22 | 4 |  |
 | Emerson | oracle | 177 | 4 |  |
-| GSK | phenom | 27 | 4 |  |
+| GSK | phenom | 28 | 4 |  |
 | Thermo Fisher | phenom | 48 | 4 |  |
 | Asian Paints | successfactors | 166 | 4 |  |
-| Volvo Group | successfactors | 21 | 3 |  |
-| ABB | phenom | 34 | 3 |  |
+| ABB | phenom | 32 | 2 |  |
+| Synchrony | sitemap | 27 | 1 |  |
 | Razorpay | greenhouse | 27 | 1 |  |
 | Mastercard | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
 | PwC India | sitemap | 0 | 0 |  |
 | EY | successfactors | 70 | 0 |  |
-| Deloitte USI | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs |
+| Deloitte USI | workday | 0 | 0 | JSONDecodeError: Expecting value: line 1 column 1 (char 0) |
 | Grant Thornton Bharat | sitemap | 0 | 0 |  |
 | BDO India | sitemap | 0 | 0 |  |
 | Accenture | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Genpact | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | WNS | sitemap | 0 | 0 |  |
-| Barclays | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
+| Barclays | workday | 0 | 0 | HTTPError: 429 Client Error: Too Many Requests for url: https://barclays.wd3.myworkdayjobs.com/wday/cxs/barclays/External_Career_Site_Barclays/jobs |
 | Deutsche Bank | sitemap | 0 | 0 |  |
 | Citi | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Goldman Sachs | sitemap | 0 | 0 |  |
@@ -115,7 +116,6 @@ Run: 2026-11-18T10:21:37Z
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
 | Lloyds Banking Group | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
-| Synchrony | sitemap | 29 | 0 |  |
 | Target | workday | 0 | 0 | Skipped: Workday is refusing this server today, skipped |
 | Walmart | sitemap | 0 | 0 |  |
 | Lowe's | phenom | 31 | 0 |  |
@@ -178,7 +178,8 @@ Run: 2026-11-18T10:21:37Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
-| ABB | [HR Operation- Team lead (India Payroll with Factory Payroll)](https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/HR-Operation--Team-lead--India-Payroll-_JR00050365/apply) | Payroll | Bangalore, Karnātaka, India |
+| Volvo Group | [Tax Analyst](https://jobs.volvogroup.com/job/Bangalore-Tax-Analyst-560058/1367896555/) | Tax | Bangalore, IN, 560058 |
+| Synchrony | [identity governance user reconciliation senior analyst](https://www.synchronycareers.com/job/hyderabad/identity-governance-user-reconciliation-senior-analyst/49398/102489446976) | Record to Report / GL | hyderabad |
 | Sanofi | [sr accounting analyst a2r balance sheet review](https://jobs.sanofi.com/en/job/hyderabad/sr-accounting-analyst-a2r-balance-sheet-review/2649/47009821824) | Accounting / Finance (general) | hyderabad |
 | Kotak Mahindra Bank | [Area Sales Manager - HF - HOUSING FINANCE](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275807) | Accounting / Finance (general) | Gujarat, India India |
 | Kotak Mahindra Bank | [Team Sales Manager - Tractor and Crop Finance - Tractors and Farm Equi](https://hcbt.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/275809) | Accounting / Finance (general) | Sumerpur, Rajasthan, India India |
@@ -237,4 +238,3 @@ Run: 2026-11-18T10:21:37Z
 | Paytm | [Business Finance (Lending)](https://jobs.lever.co/paytm/837c89a3-3598-410c-a0a3-3af4927a42ed) | FP&A / Business Finance | Noida, Uttar Pradesh |
 | Paytm | [Credit Risk - Manager](https://jobs.lever.co/paytm/0395d0aa-517e-472f-8989-b377895220b7) | Risk / Credit | Noida, Uttar Pradesh |
 | Paytm | [Credit Risk Analyst](https://jobs.lever.co/paytm/ad781ae8-cd4a-44c1-a74b-2822118b7c3d) | Risk / Credit | Noida, Uttar Pradesh |
-| Paytm | [Field Facilitator - Digital & Financial Literacy - 6 months Contractua](https://jobs.lever.co/paytm/8b2f5989-2a41-436c-a01c-78468652ac31) | Accounting / Finance (general) | Noida, Uttar Pradesh |

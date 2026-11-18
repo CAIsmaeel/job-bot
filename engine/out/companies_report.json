@@ -84,7 +84,7 @@
    "found_on": "https://www.deloitte.com/global/en/careers/job-search.html",
    "company_domain": "deloitte.com"
   },
-  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://deloitteie.wd3.myworkdayjobs.com/wday/cxs/deloitteie/Experienced_Professionals/jobs",
+  "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
   "raw": 0,
   "kept": 0
  },
@@ -188,7 +188,7 @@
    "found_on": "https://search.jobs.barclays/",
    "company_domain": "jobs.barclays"
   },
-  "error": "Skipped: Workday is refusing this server today, skipped",
+  "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://barclays.wd3.myworkdayjobs.com/wday/cxs/barclays/External_Career_Site_Barclays/jobs",
   "raw": 0,
   "kept": 0
  },
@@ -411,7 +411,7 @@
    "found_on": "https://jobs.bosch.com/en?pages=1&country=in",
    "company_domain": "bosch.in"
   },
-  "raw": 265,
+  "raw": 264,
   "kept": 16
  },
  {
@@ -590,7 +590,7 @@
    "origin": "https://careers.blackrock.com",
    "company_domain": "blackrock.com"
   },
-  "raw": 287,
+  "raw": 288,
   "kept": 9
  },
  {
@@ -683,8 +683,8 @@
    "origin": "https://www.synchronycareers.com",
    "company_domain": "synchronycareers.com"
   },
-  "raw": 29,
-  "kept": 0
+  "raw": 27,
+  "kept": 1
  },
  {
   "company": "Target",
@@ -837,8 +837,8 @@
    "found_on": "https://jobs.volvogroup.com/",
    "company_domain": "volvogroup.com"
   },
-  "raw": 21,
-  "kept": 3
+  "raw": 22,
+  "kept": 4
  },
  {
   "company": "Continental",
@@ -861,8 +861,8 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 34,
-  "kept": 3
+  "raw": 32,
+  "kept": 2
  },
  {
   "company": "Eaton",
@@ -1011,7 +1011,7 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 27,
+  "raw": 28,
   "kept": 4
  },
  {
@@ -1236,8 +1236,8 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 770,
-  "kept": 25
+  "raw": 765,
+  "kept": 24
  },
  {
   "company": "Axis Bank",
