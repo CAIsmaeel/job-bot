@@ -1851,15 +1851,6 @@
   },
   "at": "2026-11-18T17:10:19Z"
  },
- "IndiGo": {
-  "cfg": {
-   "platform": "greenhouse",
-   "found_on": "https://boards-api.greenhouse.io/v1/boards/indigo/jobs",
-   "token": "indigo",
-   "company_domain": "goindigo.in"
-  },
-  "at": "2026-11-18T17:10:19Z"
- },
  "Zepto": {
   "cfg": {
    "platform": "sitemap",

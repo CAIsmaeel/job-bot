@@ -244,12 +244,13 @@ def slugs(name):
 
 
 def probe_boards(name):
-    """Careers page did not reveal the hiring system: ask the public job-board APIs by company slug."""
+    """Careers page did not reveal the hiring system: ask the public job-board APIs by company slug.
+    A board counts only if it has jobs in India, so a same-named foreign company is not picked up."""
     for s in slugs(name):
         tests = [
-            ("greenhouse", f"https://boards-api.greenhouse.io/v1/boards/{s}/jobs", lambda j: j.get("jobs"), {"token": s}),
-            ("lever", f"https://api.lever.co/v0/postings/{s}?mode=json&limit=1", lambda j: isinstance(j, list) and j, {"name": s}),
-            ("smartrecruiters", f"https://api.smartrecruiters.com/v1/companies/{s}/postings?limit=1",
+            ("greenhouse", f"https://boards-api.greenhouse.io/v1/boards/{s}/jobs", lambda j: any(INDIA.search((x.get("location") or {}).get("name") or "") for x in j.get("jobs") or []), {"token": s}),
+            ("lever", f"https://api.lever.co/v0/postings/{s}?mode=json", lambda j: isinstance(j, list) and any(INDIA.search(str(x.get("categories", {}).get("location") or "")) for x in j), {"name": s}),
+            ("smartrecruiters", f"https://api.smartrecruiters.com/v1/companies/{s}/postings?limit=1&country=in",
              lambda j: j.get("totalFound"), {"company": s}),
         ]
         for plat, u, ok, cfg in tests:
