@@ -2735,5 +2735,2919 @@
    "company_domain": "goindigo.in"
   },
   "at": "2026-11-18T17:35:57Z"
+ },
+ "PNB Housing Finance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pnbhousing.com",
+   "probed": true,
+   "company_domain": "pnbhousing.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "LIC Housing Finance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.lichousing.com",
+   "probed": true,
+   "company_domain": "lichousing.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Aavas Financiers": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.aavas.in",
+   "probed": true,
+   "company_domain": "aavas.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bajaj Housing Finance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bajajhousingfinance.in",
+   "probed": true,
+   "company_domain": "bajajhousingfinance.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bajaj Finserv": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bajajfinserv.in",
+   "probed": true,
+   "company_domain": "bajajfinserv.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Equitas Small Finance Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.equitasbank.com",
+   "probed": true,
+   "company_domain": "equitasbank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "CSB Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.csb.co.in",
+   "probed": true,
+   "company_domain": "csb.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Jana Small Finance Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.janabank.com",
+   "probed": true,
+   "company_domain": "janabank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "South Indian Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.southindianbank.com",
+   "probed": true,
+   "company_domain": "southindianbank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Karur Vysya Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kvb.co.in",
+   "probed": true,
+   "company_domain": "kvb.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ujjivan Small Finance Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ujjivansfb.in",
+   "probed": true,
+   "company_domain": "ujjivansfb.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Nuvama Wealth": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.nuvama.com",
+   "probed": true,
+   "company_domain": "nuvama.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "DCB Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.dcbbank.com",
+   "probed": true,
+   "company_domain": "dcbbank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "IIFL Finance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.iifl.com",
+   "probed": true,
+   "company_domain": "iifl.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "360 ONE Wealth": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.360.one",
+   "probed": true,
+   "company_domain": "360.one"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "City Union Bank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.cityunionbank.com",
+   "probed": true,
+   "company_domain": "cityunionbank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Five Star Business Finance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://fivestargroup.in",
+   "probed": true,
+   "company_domain": "fivestargroup.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Angel One": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.angelone.in",
+   "probed": true,
+   "company_domain": "angelone.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kotak Securities": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kotaksecurities.com",
+   "probed": true,
+   "company_domain": "kotaksecurities.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "HDFC Securities": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hdfcsec.com",
+   "probed": true,
+   "company_domain": "hdfcsec.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Anand Rathi": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.anandrathi.com",
+   "probed": true,
+   "company_domain": "anandrathi.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Avendus": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.avendus.com",
+   "probed": true,
+   "company_domain": "avendus.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ambit": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ambit.co",
+   "probed": true,
+   "company_domain": "ambit.co"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Axis Capital": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.axiscapital.co.in",
+   "probed": true,
+   "company_domain": "axiscapital.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "SBI Mutual Fund": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.sbimf.com",
+   "probed": true,
+   "company_domain": "sbimf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kotak Mutual Fund": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kotakmf.com",
+   "probed": true,
+   "company_domain": "kotakmf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mirae Asset India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.miraeassetmf.co.in",
+   "probed": true,
+   "company_domain": "miraeassetmf.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "UTI AMC": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.utimf.com",
+   "probed": true,
+   "company_domain": "utimf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Go Digit Insurance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.godigit.com",
+   "probed": true,
+   "company_domain": "godigit.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "ICICI Prudential AMC": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.icicipruamc.com",
+   "probed": true,
+   "company_domain": "icicipruamc.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Star Health Insurance": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/starhealthinsurance/postings?limit=1&country=in",
+   "company": "starhealthinsurance",
+   "company_domain": "starhealth.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Acko": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.acko.com",
+   "probed": true,
+   "company_domain": "acko.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Niva Bupa": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.nivabupa.com",
+   "probed": true,
+   "company_domain": "nivabupa.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Care Health Insurance": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.careinsurance.com",
+   "probed": true,
+   "company_domain": "careinsurance.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Axis Mutual Fund": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.axismf.com",
+   "probed": true,
+   "company_domain": "axismf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "HDFC ERGO": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hdfcergo.com",
+   "probed": true,
+   "company_domain": "hdfcergo.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kotak Life": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kotaklife.com",
+   "probed": true,
+   "company_domain": "kotaklife.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "PB Fintech (Paisabazaar)": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pbfintech.in",
+   "probed": true,
+   "company_domain": "pbfintech.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Khatabook": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://khatabook.com",
+   "probed": true,
+   "company_domain": "khatabook.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "MobiKwik": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.mobikwik.com",
+   "probed": true,
+   "company_domain": "mobikwik.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Open Financial": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://open.money",
+   "probed": true,
+   "company_domain": "open.money"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "M2P Fintech": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://m2pfintech.com",
+   "probed": true,
+   "company_domain": "m2pfintech.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "KreditBee": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kreditbee.in",
+   "probed": true,
+   "company_domain": "kreditbee.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Perfios": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.perfios.com",
+   "probed": true,
+   "company_domain": "perfios.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Lendingkart": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/lendingkart/postings?limit=1&country=in",
+   "company": "lendingkart",
+   "company_domain": "lendingkart.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Cashfree Payments": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.cashfree.com",
+   "probed": true,
+   "company_domain": "cashfree.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Money View": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://moneyview.in",
+   "probed": true,
+   "company_domain": "moneyview.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Fibe": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.fibe.in",
+   "probed": true,
+   "company_domain": "fibe.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "OneCard": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.getonecard.app",
+   "probed": true,
+   "company_domain": "getonecard.app"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Fi Money": {
+  "cfg": {
+   "platform": "lever",
+   "name": "epifi",
+   "found_on": "https://fi.money/careers",
+   "company_domain": "fi.money"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "INDmoney": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.indmoney.com",
+   "probed": true,
+   "company_domain": "indmoney.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Yubi": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.go-yubi.com",
+   "probed": true,
+   "company_domain": "go-yubi.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Smallcase": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.smallcase.com",
+   "probed": true,
+   "company_domain": "smallcase.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Rupeek": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://rupeek.com",
+   "probed": true,
+   "company_domain": "rupeek.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Dhan": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://dhan.co",
+   "probed": true,
+   "company_domain": "dhan.co"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "OfBusiness": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ofbusiness.com",
+   "probed": true,
+   "company_domain": "ofbusiness.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Jar": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.myjar.app",
+   "probed": true,
+   "company_domain": "myjar.app"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Infra.Market": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.infra.market",
+   "probed": true,
+   "company_domain": "infra.market"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Porter": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://porter.in",
+   "probed": true,
+   "company_domain": "porter.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Moglix": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.moglix.com",
+   "probed": true,
+   "company_domain": "moglix.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Zetwerk": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.zetwerk.com",
+   "probed": true,
+   "company_domain": "zetwerk.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Shadowfax": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.shadowfax.in",
+   "probed": true,
+   "company_domain": "shadowfax.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Xpressbees": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.xpressbees.com",
+   "probed": true,
+   "company_domain": "xpressbees.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Shiprocket": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.shiprocket.in",
+   "probed": true,
+   "company_domain": "shiprocket.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "BigBasket": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bigbasket.com",
+   "probed": true,
+   "company_domain": "bigbasket.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "boAt": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.boat-lifestyle.com",
+   "probed": true,
+   "company_domain": "boat-lifestyle.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Purplle": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.purplle.com",
+   "probed": true,
+   "company_domain": "purplle.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Honasa Consumer (Mamaearth)": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://honasa.in",
+   "probed": true,
+   "company_domain": "honasa.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Myntra": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.myntra.com",
+   "probed": true,
+   "company_domain": "myntra.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Licious": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.licious.in",
+   "probed": true,
+   "company_domain": "licious.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "PharmEasy": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://pharmeasy.in",
+   "probed": true,
+   "company_domain": "pharmeasy.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Tata 1mg": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.1mg.com",
+   "probed": true,
+   "company_domain": "1mg.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Spinny": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.spinny.com",
+   "probed": true,
+   "company_domain": "spinny.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "CarDekho": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.cardekho.com",
+   "probed": true,
+   "company_domain": "cardekho.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ixigo": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/ixigo/postings?limit=1&country=in",
+   "company": "ixigo",
+   "company_domain": "ixigo.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "FirstCry": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.firstcry.com",
+   "probed": true,
+   "company_domain": "firstcry.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "MakeMyTrip": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.makemytrip.com",
+   "probed": true,
+   "company_domain": "makemytrip.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "OYO": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.oyorooms.com",
+   "probed": true,
+   "company_domain": "oyorooms.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Eruditus": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://eruditus.com",
+   "probed": true,
+   "company_domain": "eruditus.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "upGrad": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.upgrad.com",
+   "probed": true,
+   "company_domain": "upgrad.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Info Edge": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.infoedge.in",
+   "probed": true,
+   "company_domain": "infoedge.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "PhysicsWallah": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pw.live",
+   "probed": true,
+   "company_domain": "pw.live"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Rebel Foods": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.rebelfoods.com",
+   "probed": true,
+   "company_domain": "rebelfoods.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Innovaccer": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://innovaccer.com",
+   "probed": true,
+   "company_domain": "innovaccer.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Cult.fit": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.cult.fit",
+   "probed": true,
+   "company_domain": "cult.fit"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Chargebee": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.chargebee.com",
+   "probed": true,
+   "company_domain": "chargebee.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Postman": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.postman.com",
+   "probed": true,
+   "company_domain": "postman.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "BrowserStack": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "browserstack",
+   "wd": "wd3",
+   "site": "External",
+   "found_on": "https://www.browserstack.com/careers",
+   "company_domain": "browserstack.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Icertis": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "iaaviz.fa.ocs.oraclecloud.com",
+   "site": "Jobs-at-Icertis",
+   "found_on": "https://www.icertis.com/company/careers/",
+   "company_domain": "icertis.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Darwinbox": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://darwinbox.com",
+   "probed": true,
+   "company_domain": "darwinbox.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Whatfix": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/whatfix/postings?limit=1&country=in",
+   "company": "whatfix",
+   "company_domain": "whatfix.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "LTIMindtree": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.ltm.com",
+   "found_on": "https://careers.ltm.com/search/",
+   "company_domain": "ltimindtree.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "CleverTap": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://clevertap.com",
+   "probed": true,
+   "company_domain": "clevertap.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Coforge": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.coforge.com",
+   "probed": true,
+   "company_domain": "coforge.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "L&T Technology Services": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ltts.com",
+   "probed": true,
+   "company_domain": "ltts.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Hexaware": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://hexaware.com",
+   "probed": true,
+   "company_domain": "hexaware.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Persistent Systems": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.persistent.com",
+   "probed": true,
+   "company_domain": "persistent.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Zensar": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://www.zensar.com/careers",
+   "company_domain": "zensar.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Birlasoft": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.birlasoft.com",
+   "found_on": "https://jobs.birlasoft.com/",
+   "company_domain": "birlasoft.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mphasis": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.mphasis.com",
+   "probed": true,
+   "company_domain": "mphasis.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Cyient": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.cyient.com",
+   "probed": true,
+   "company_domain": "cyient.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "eClerx": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://eclerx.com",
+   "probed": true,
+   "company_domain": "eclerx.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "KPIT": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kpit.com",
+   "probed": true,
+   "company_domain": "kpit.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Aranca": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.aranca.com",
+   "probed": true,
+   "company_domain": "aranca.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mu Sigma": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.mu-sigma.com",
+   "probed": true,
+   "company_domain": "mu-sigma.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Tiger Analytics": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.tigeranalytics.com",
+   "probed": true,
+   "company_domain": "tigeranalytics.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Quatrro": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.quatrro.com",
+   "probed": true,
+   "company_domain": "quatrro.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Royal Enfield": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.royalenfield.com",
+   "probed": true,
+   "company_domain": "royalenfield.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Fractal Analytics": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://fractal.ai",
+   "probed": true,
+   "company_domain": "fractal.ai"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "The Smart Cube": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.thesmartcube.com",
+   "probed": true,
+   "company_domain": "thesmartcube.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Escorts Kubota": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.escortskubota.com",
+   "probed": true,
+   "company_domain": "escortskubota.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Eicher Motors": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.eicher.in",
+   "probed": true,
+   "company_domain": "eicher.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "MRF": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.mrftyres.com",
+   "probed": true,
+   "company_domain": "mrftyres.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Motherson": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.motherson.com",
+   "probed": true,
+   "company_domain": "motherson.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "CEAT": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ceat.com",
+   "probed": true,
+   "company_domain": "ceat.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Tata Technologies": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.tatatechnologies.com",
+   "probed": true,
+   "company_domain": "tatatechnologies.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Apollo Tyres": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.apollotyres.com",
+   "probed": true,
+   "company_domain": "apollotyres.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Uno Minda": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.unominda.com",
+   "probed": true,
+   "company_domain": "unominda.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Amara Raja": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.amararaja.com",
+   "probed": true,
+   "company_domain": "amararaja.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kia India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kia.com",
+   "probed": true,
+   "company_domain": "kia.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Exide Industries": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.exideindustries.com",
+   "probed": true,
+   "company_domain": "exideindustries.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Toyota Kirloskar Motor": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.toyotabharat.com",
+   "probed": true,
+   "company_domain": "toyotabharat.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Hyundai Motor India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hyundai.com",
+   "probed": true,
+   "company_domain": "hyundai.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mercedes-Benz India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.mercedes-benz.co.in",
+   "probed": true,
+   "company_domain": "mercedes-benz.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Berger Paints": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bergerpaints.com",
+   "probed": true,
+   "company_domain": "bergerpaints.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Honda Cars India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hondacarindia.com",
+   "probed": true,
+   "company_domain": "hondacarindia.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Emami": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.emamiltd.in",
+   "probed": true,
+   "company_domain": "emamiltd.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Raymond": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.raymond.in",
+   "probed": true,
+   "company_domain": "raymond.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kansai Nerolac": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.nerolac.com",
+   "probed": true,
+   "company_domain": "nerolac.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Wipro Consumer Care": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.wiproconsumercare.com",
+   "probed": true,
+   "company_domain": "wiproconsumercare.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Shoppers Stop": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://corporate.shoppersstop.com",
+   "probed": true,
+   "company_domain": "shoppersstop.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Aditya Birla Fashion": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.abfrl.com",
+   "probed": true,
+   "company_domain": "abfrl.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Jubilant FoodWorks": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.jubilantfoodworks.com",
+   "probed": true,
+   "company_domain": "jubilantfoodworks.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Page Industries": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pageind.com",
+   "probed": true,
+   "company_domain": "pageind.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Devyani International": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.dil-rjcorp.com",
+   "probed": true,
+   "company_domain": "dil-rjcorp.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Westlife Foodworld": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.westlife.co.in",
+   "probed": true,
+   "company_domain": "westlife.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Haldiram's": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.haldirams.com",
+   "probed": true,
+   "company_domain": "haldirams.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Varun Beverages": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.varunbeverages.com",
+   "probed": true,
+   "company_domain": "varunbeverages.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bata India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bata.com",
+   "probed": true,
+   "company_domain": "bata.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "United Breweries": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.unitedbreweries.com",
+   "probed": true,
+   "company_domain": "unitedbreweries.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Torrent Pharma": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.torrentpharma.com",
+   "probed": true,
+   "company_domain": "torrentpharma.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Alkem Laboratories": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.alkemlabs.com",
+   "probed": true,
+   "company_domain": "alkemlabs.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Glenmark": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.glenmarkpharma.com",
+   "probed": true,
+   "company_domain": "glenmarkpharma.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Abbott India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.abbott.co.in",
+   "probed": true,
+   "company_domain": "abbott.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mankind Pharma": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.mankindpharma.com",
+   "probed": true,
+   "company_domain": "mankindpharma.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Zeta": {
+  "cfg": {
+   "platform": "lever",
+   "found_on": "https://api.lever.co/v0/postings/zeta?mode=json",
+   "name": "zeta",
+   "company_domain": "zeta.tech"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Intas Pharmaceuticals": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://www.intasaccordcareers.com",
+   "found_on": "https://www.intasaccordcareers.com/intas/",
+   "company_domain": "intaspharma.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Fortis Healthcare": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.fortishealthcare.com",
+   "probed": true,
+   "company_domain": "fortishealthcare.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Max Healthcare": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.maxhealthcare.in",
+   "probed": true,
+   "company_domain": "maxhealthcare.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Narayana Health": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/narayanahealth/postings?limit=1&country=in",
+   "company": "narayanahealth",
+   "company_domain": "narayanahealth.org"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Aurobindo Pharma": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.aurobindo.com",
+   "probed": true,
+   "company_domain": "aurobindo.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Manipal Hospitals": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.manipalhospitals.com",
+   "probed": true,
+   "company_domain": "manipalhospitals.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Dr Lal PathLabs": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.lalpathlabs.com",
+   "probed": true,
+   "company_domain": "lalpathlabs.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "GMR Group": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.gmrgroup.in",
+   "probed": true,
+   "company_domain": "gmrgroup.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Metropolis Healthcare": {
+  "cfg": {
+   "platform": "greenhouse",
+   "found_on": "https://boards-api.greenhouse.io/v1/boards/metropolis/jobs",
+   "token": "metropolis",
+   "company_domain": "metropolisindia.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Prestige Group": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.prestigeconstructions.com",
+   "probed": true,
+   "company_domain": "prestigeconstructions.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Adani Ports": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.adaniports.com",
+   "probed": true,
+   "company_domain": "adaniports.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Brigade Group": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.brigadegroup.com",
+   "probed": true,
+   "company_domain": "brigadegroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Sobha": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.sobha.com",
+   "probed": true,
+   "company_domain": "sobha.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Oberoi Realty": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.oberoirealty.com",
+   "probed": true,
+   "company_domain": "oberoirealty.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "JioStar": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.jiostar.com",
+   "probed": true,
+   "company_domain": "jiostar.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Zee Entertainment": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.zee.com",
+   "probed": true,
+   "company_domain": "zee.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Blue Dart": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.dhl.com",
+   "prefix": "/global/en",
+   "found_on": "https://careers.dhl.com/global/en/blue-dart-jobs",
+   "company_domain": "bluedart.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Allcargo": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.allcargologistics.com",
+   "probed": true,
+   "company_domain": "allcargologistics.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Coal India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.coalindia.in",
+   "probed": true,
+   "company_domain": "coalindia.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mahindra Logistics": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://mahindralogistics.com",
+   "probed": true,
+   "company_domain": "mahindralogistics.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Embassy REIT": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.embassyofficeparks.com",
+   "probed": true,
+   "company_domain": "embassyofficeparks.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ford (Global Business Services)": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://corporate.ford.com",
+   "probed": true,
+   "company_domain": "ford.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "SIDBI": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.sidbi.in",
+   "probed": true,
+   "company_domain": "sidbi.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Hindustan Zinc": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hzlindia.com",
+   "probed": true,
+   "company_domain": "hzlindia.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Stellantis": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.stellantis.com",
+   "probed": true,
+   "company_domain": "stellantis.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "ZF": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.zf.com",
+   "found_on": "https://jobs.zf.com/",
+   "company_domain": "zf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "AM/NS India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.amns.in",
+   "probed": true,
+   "company_domain": "amns.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Schaeffler": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.schaeffler.com",
+   "probed": true,
+   "company_domain": "schaeffler.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "SKF": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.skf.com",
+   "probed": true,
+   "company_domain": "skf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Hitachi": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hitachi.com",
+   "probed": true,
+   "company_domain": "hitachi.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Panasonic": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.panasonic.com",
+   "probed": true,
+   "company_domain": "panasonic.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Samsung": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "sec",
+   "wd": "wd3",
+   "site": "Samsung_Careers",
+   "found_on": "https://www.samsung.com/in/about-us/careers/working-at-samsung/",
+   "company_domain": "samsung.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "General Motors": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://search-careers.gm.com",
+   "probed": true,
+   "company_domain": "gm.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Cisco": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.cisco.com",
+   "prefix": "/global/en",
+   "found_on": "https://careers.cisco.com/global/en",
+   "company_domain": "cisco.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Qualcomm": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "app.eightfold.ai",
+   "domain": "",
+   "found_on": "https://careers.qualcomm.com/careers",
+   "company_domain": "qualcomm.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "LG Electronics": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.lg.com",
+   "probed": true,
+   "company_domain": "lg.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Lenovo": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.lenovo.com",
+   "probed": true,
+   "company_domain": "lenovo.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Power Finance Corporation": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pfcindia.com",
+   "probed": true,
+   "company_domain": "pfcindia.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "NVIDIA": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "nvidia",
+   "wd": "wd5",
+   "site": "NVIDIAExternalCareerSite",
+   "found_on": "https://jobs.nvidia.com/careers",
+   "company_domain": "nvidia.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Micron": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "micron",
+   "wd": "wd1",
+   "site": "External",
+   "found_on": "https://careers.micron.com/careers",
+   "company_domain": "micron.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Applied Materials": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "app.eightfold.ai",
+   "domain": "",
+   "found_on": "https://careers.appliedmaterials.com/careers",
+   "company_domain": "appliedmaterials.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "NetApp": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "netapp.eightfold.ai",
+   "domain": "",
+   "found_on": "https://careers.netapp.com/",
+   "company_domain": "netapp.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Texas Instruments": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.ti.com",
+   "probed": true,
+   "company_domain": "ti.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Western Digital": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "company": "WesternDigital",
+   "found_on": "https://careers.smartrecruiters.com/WesternDigital",
+   "company_domain": "westerndigital.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "AMD": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.amd.com",
+   "probed": true,
+   "company_domain": "amd.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Adobe": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.adobe.com",
+   "prefix": "/us/en",
+   "found_on": "https://careers.adobe.com/us/en",
+   "company_domain": "adobe.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "PayPal": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "paypal.eightfold.ai",
+   "domain": "",
+   "found_on": "https://careers.pypl.com/home/default.aspx",
+   "company_domain": "pypl.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Expedia": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "expedia",
+   "wd": "wd108",
+   "site": "search",
+   "found_on": "https://careers.expediagroup.com/",
+   "company_domain": "expediagroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "eBay": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://jobs.ebayinc.com",
+   "prefix": "/us/en",
+   "found_on": "https://jobs.ebayinc.com/us/en/recommended-jobs",
+   "company_domain": "ebayinc.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Tesco": {
+  "cfg": {
+   "platform": "avature",
+   "base": "https://careers.tesco.com/careers",
+   "found_on": "https://www.tesco.com/careers/en-GB",
+   "company_domain": "tesco-careers.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Sainsbury's": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "hdhe.fa.em3.oraclecloud.com",
+   "site": "CX",
+   "found_on": "https://www.sainsburys.jobs/working-for-us/",
+   "company_domain": "sainsburys.jobs"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Marks & Spencer": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "fa-eqid-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://jobs.marksandspencer.com/",
+   "company_domain": "marksandspencer.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Intuit": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.intuit.com",
+   "probed": true,
+   "company_domain": "intuit.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "IKEA": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.ikea.com",
+   "probed": true,
+   "company_domain": "ikea.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Nike": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "nike",
+   "wd": "wd1",
+   "site": "nke",
+   "found_on": "https://careers.nike.com/",
+   "company_domain": "nike.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Adidas": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.adidas-group.com",
+   "found_on": "https://careers.adidas-group.com/",
+   "company_domain": "adidas-group.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Decathlon": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.decathlon.in",
+   "probed": true,
+   "company_domain": "decathlon.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "H&M": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://career.hm.com",
+   "probed": true,
+   "company_domain": "hm.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "General Mills": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "genmills",
+   "wd": "wd1",
+   "site": "GMI_External_Careers",
+   "found_on": "https://www.careers.generalmills.com/",
+   "company_domain": "generalmills.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kellanova": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.kellanova.com",
+   "probed": true,
+   "company_domain": "kellanova.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Mars": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.mars.com",
+   "prefix": "/us/en",
+   "found_on": "https://careers.mars.com/us/en",
+   "company_domain": "mars.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "McDonald's": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.mcdonalds.com",
+   "probed": true,
+   "company_domain": "mcdonalds.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Carlsberg": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.carlsberg.com",
+   "found_on": "https://careers.carlsberg.com/",
+   "company_domain": "carlsberggroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Pernod Ricard": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "pernodricard",
+   "wd": "wd3",
+   "site": "pernod-ricard",
+   "found_on": "https://www.pernod-ricard.com/en/careers",
+   "company_domain": "pernod-ricard.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Heineken": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.theheinekencompany.com",
+   "found_on": "https://careers.theheinekencompany.com/",
+   "company_domain": "theheinekencompany.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ferrero": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://www.ferrerocareers.com",
+   "found_on": "https://www.ferrerocareers.com/us/en/",
+   "company_domain": "ferrerocareers.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Kraft Heinz": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.kraftheinz.com",
+   "probed": true,
+   "company_domain": "kraftheinz.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Danone": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.danone.com",
+   "probed": true,
+   "company_domain": "danone.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Cargill": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.cargill.com",
+   "found_on": "https://careers.cargill.com/en",
+   "company_domain": "cargill.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bunge": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://jobs.bunge.com",
+   "found_on": "https://jobs.bunge.com/",
+   "company_domain": "bunge.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "ADM": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.adm.com",
+   "probed": true,
+   "company_domain": "adm.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Olam": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.olamgroup.com",
+   "probed": true,
+   "company_domain": "olamgroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Glencore": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.glencore.com",
+   "probed": true,
+   "company_domain": "glencore.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Louis Dreyfus Company": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/louisdreyfuscompany/postings?limit=1&country=in",
+   "company": "louisdreyfuscompany",
+   "company_domain": "ldc.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "ArcelorMittal": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://corporate.arcelormittal.com",
+   "probed": true,
+   "company_domain": "arcelormittal.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Holcim": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.holcimgroup.com",
+   "found_on": "https://careers.holcimgroup.com/?locale=en_US",
+   "company_domain": "holcim.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Linde": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.linde.com",
+   "probed": true,
+   "company_domain": "linde.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Saint-Gobain": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.saint-gobain.co.in",
+   "probed": true,
+   "company_domain": "saint-gobain.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "BASF": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://basf.jobs",
+   "found_on": "https://basf.jobs/search?locale=en_US&markerViewed=&carouselIndex=&facetFilters=%7B%7D&pageNumber=0&utm_source=careersite&utm_medium=global_en&utm_campaign=general",
+   "company_domain": "basf.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Air Liquide": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.airliquide.com",
+   "probed": true,
+   "company_domain": "airliquide.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "MSD (Merck & Co)": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "msd",
+   "wd": "wd5",
+   "site": "SearchJobs",
+   "found_on": "https://jobs.msd.com/gb/en",
+   "company_domain": "msd.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Rio Tinto": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.riotinto.com",
+   "probed": true,
+   "company_domain": "riotinto.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bayer": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://career.bayer.com",
+   "probed": true,
+   "company_domain": "bayer.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Roche": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.roche.com",
+   "prefix": "/global/en",
+   "found_on": "https://careers.roche.com/global/en",
+   "company_domain": "roche.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Merck KGaA": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.emdgroup.com",
+   "prefix": "/us/en",
+   "found_on": "https://careers.emdgroup.com/us/en",
+   "company_domain": "merckgroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Novo Nordisk": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://www.novonordisk.com",
+   "found_on": "https://www.novonordisk.com/careers/find-a-job.html",
+   "company_domain": "novonordisk.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bristol Myers Squibb": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "bristolmyerssquibb",
+   "wd": "wd5",
+   "site": "BMS",
+   "found_on": "https://careers.bms.com/",
+   "company_domain": "bms.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Johnson & Johnson": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "jj",
+   "wd": "wd5",
+   "site": "JJ",
+   "found_on": "https://www.careers.jnj.com/en/",
+   "company_domain": "jnj.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Eli Lilly": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.lilly.com",
+   "probed": true,
+   "company_domain": "lilly.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "AbbVie": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/abbvie/postings?limit=1&country=in",
+   "company": "abbvie",
+   "company_domain": "abbvie.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Amgen": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "amgen",
+   "wd": "wd1",
+   "site": "Careers",
+   "found_on": "https://careers.amgen.com/en",
+   "company_domain": "amgen.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Boston Scientific": {
+  "cfg": {
+   "platform": "eightfold",
+   "host": "bostonscientific.eightfold.ai",
+   "domain": "",
+   "found_on": "https://jobs.bostonscientific.com/",
+   "company_domain": "bostonscientific.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Takeda": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "takeda",
+   "wd": "wd502",
+   "site": "External",
+   "found_on": "https://jobs.biolifeplasma.com/?utm_source=jobs.takeda.com&utm_medium=referral&utm_campaign=direct-traffic",
+   "company_domain": "takeda.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Stryker": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "stryker",
+   "wd": "wd1",
+   "site": "StrykerCareers",
+   "found_on": "https://careers.stryker.com/",
+   "company_domain": "stryker.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "BD": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "bdx",
+   "wd": "wd1",
+   "site": "EXTERNAL_CAREER_SITE_USA",
+   "found_on": "https://jobs.bd.com/en",
+   "company_domain": "bd.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Siemens Healthineers": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "onehealthineers",
+   "wd": "wd3",
+   "site": "SHSJB",
+   "found_on": "https://www.siemens-healthineers.com/careers",
+   "company_domain": "siemens-healthineers.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Capital One": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "capitalone",
+   "wd": "wd12",
+   "site": "Capital_One",
+   "found_on": "https://www.capitalonecareers.com/",
+   "company_domain": "capitalonecareers.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Fresenius": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.fresenius.com",
+   "probed": true,
+   "company_domain": "fresenius.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Vanguard": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.vanguardjobs.com",
+   "probed": true,
+   "company_domain": "vanguardjobs.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "KKR": {
+  "cfg": {
+   "platform": "greenhouse",
+   "token": "stage",
+   "found_on": "https://www.kkr.com/careers/career-opportunities",
+   "company_domain": "kkr.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Blackstone": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.blackstone.com",
+   "probed": true,
+   "company_domain": "blackstone.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Carlyle": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.carlyle.com",
+   "probed": true,
+   "company_domain": "carlyle.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Apollo Global": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "athene",
+   "wd": "wd5",
+   "site": "Apollo_Careers",
+   "found_on": "https://www.apollo.com/careers",
+   "company_domain": "apollo.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Western Union": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.westernunion.com",
+   "probed": true,
+   "company_domain": "westernunion.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Brookfield": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "brookfield",
+   "wd": "wd5",
+   "site": "brookfield",
+   "found_on": "https://www.brookfield.com/careers/career-opportunities",
+   "company_domain": "brookfield.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "T. Rowe Price": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.troweprice.com",
+   "probed": true,
+   "company_domain": "troweprice.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Allstate": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "allstate",
+   "wd": "wd5",
+   "site": "allstate_careers",
+   "found_on": "https://www.allstate.jobs/",
+   "company_domain": "allstate.jobs"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "PIMCO": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.pimco.com",
+   "probed": true,
+   "company_domain": "pimco.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Charles Schwab": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.schwabjobs.com",
+   "probed": true,
+   "company_domain": "schwabjobs.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Zurich Insurance": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://www.careers.zurich.com",
+   "found_on": "https://www.careers.zurich.com/?utm_source=careersite",
+   "company_domain": "zurich.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Travelers": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.travelers.com",
+   "probed": true,
+   "company_domain": "travelers.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Munich Re": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.munichre.com",
+   "found_on": "https://careers.munichre.com/en/job/madrid/broker-relationship-manager/3342/45689345024",
+   "company_domain": "munichre.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Liberty Mutual": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.libertymutualgroup.com",
+   "probed": true,
+   "company_domain": "libertymutualgroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Generali": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.generali.com",
+   "probed": true,
+   "company_domain": "generali.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ares Management": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.aresmgmt.com",
+   "probed": true,
+   "company_domain": "aresmgmt.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Hannover Re": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.hannover-re.com",
+   "probed": true,
+   "company_domain": "hannover-re.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Manulife": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "manulife",
+   "wd": "wd3",
+   "site": "MFCJH_Jobs",
+   "found_on": "https://careers.manulife.com/global/en",
+   "company_domain": "manulife.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Sun Life": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "sunlife",
+   "wd": "wd3",
+   "site": "Experienced-Jobs",
+   "found_on": "https://www.sunlife.ca/en/careers/",
+   "company_domain": "sunlife.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "AIG": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "aig",
+   "wd": "wd1",
+   "site": "aig",
+   "found_on": "https://www.aig.com/careers",
+   "company_domain": "aig.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Legal & General": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.legalandgeneralgroup.com",
+   "probed": true,
+   "company_domain": "legalandgeneralgroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "The Hartford": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "thehartford",
+   "wd": "wd5",
+   "site": "Careers_External",
+   "found_on": "https://www.thehartford.com/careers",
+   "company_domain": "thehartford.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Verisk": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://www.verisk.com/company/careers/",
+   "company_domain": "verisk.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Aviva": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.aviva.co.uk",
+   "probed": true,
+   "company_domain": "aviva.co.uk"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Equifax": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.equifax.com",
+   "probed": true,
+   "company_domain": "equifax.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "TransUnion CIBIL": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.transunioncibil.com",
+   "probed": true,
+   "company_domain": "transunioncibil.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Experian": {
+  "cfg": {
+   "platform": "smartrecruiters",
+   "found_on": "https://api.smartrecruiters.com/v1/companies/experian/postings?limit=1&country=in",
+   "company": "experian",
+   "company_domain": "experian.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Morningstar": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.morningstar.com",
+   "probed": true,
+   "company_domain": "morningstar.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Dun & Bradstreet": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.dnb.com",
+   "probed": true,
+   "company_domain": "dnb.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "FactSet": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.factset.com",
+   "probed": true,
+   "company_domain": "factset.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Bloomberg": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.bloomberg.com",
+   "probed": true,
+   "company_domain": "bloomberg.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Wolters Kluwer": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "wk",
+   "wd": "wd3",
+   "site": "External",
+   "found_on": "https://careers.wolterskluwer.com/",
+   "company_domain": "wolterskluwer.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "RELX": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "relx",
+   "wd": "wd3",
+   "site": "relx",
+   "found_on": "https://www.relx.com/careers/why-relx",
+   "company_domain": "relx.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Nasdaq": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "nasdaq",
+   "wd": "wd1",
+   "site": "Global_External_Site",
+   "found_on": "https://www.nasdaq.com/about/careers",
+   "company_domain": "nasdaq.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Euroclear": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.euroclear.com",
+   "probed": true,
+   "company_domain": "euroclear.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Santander": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "santander",
+   "wd": "wd3",
+   "site": "SantanderCareers",
+   "found_on": "https://www.santander.com/en/careers",
+   "company_domain": "santander.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "CME Group": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.cmegroup.com",
+   "probed": true,
+   "company_domain": "cmegroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Commonwealth Bank (CBA India)": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "cba",
+   "wd": "wd3",
+   "site": "CommBank_Careers",
+   "found_on": "https://www.commbank.com.au/about-us/careers.html",
+   "company_domain": "commbank.com.au"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "BBVA": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "bbva",
+   "wd": "wd3",
+   "site": "es",
+   "found_on": "https://www.bbva.com/es/empleo/",
+   "company_domain": "bbva.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Westpac": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "ebuu.fa.ap1.oraclecloud.com",
+   "site": "CX",
+   "found_on": "https://www.westpac.com.au/about-westpac/careers/",
+   "company_domain": "westpac.com.au"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "ANZ": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.anz.com",
+   "found_on": "https://careers.anz.com/go/ANZ-Jobs-List/4739210/",
+   "company_domain": "anz.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Intercontinental Exchange": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.ice.com",
+   "probed": true,
+   "company_domain": "ice.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "SMBC": {
+  "cfg": {
+   "platform": "successfactors",
+   "origin": "https://careers.smbcgroup.com",
+   "found_on": "https://careers.smbcgroup.com/smbc?utm_source=careersite&utm_campaign=smbc",
+   "company_domain": "smbcgroup.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Natixis": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.natixis.com",
+   "probed": true,
+   "company_domain": "natixis.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Commerzbank": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.commerzbank.com",
+   "probed": true,
+   "company_domain": "commerzbank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Emirates NBD": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "fa-evlo-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://www.emiratesnbd.com/en/careers",
+   "company_domain": "emiratesnbd.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "First Abu Dhabi Bank": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "ehjd.fa.em2.oraclecloud.com",
+   "site": "fabCareers",
+   "found_on": "https://www.bankfab.com/en-ae/about-fab/careers",
+   "company_domain": "bankfab.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Credit Agricole CIB": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jobs.ca-cib.com",
+   "probed": true,
+   "company_domain": "ca-cib.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "US Bank": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.usbank.com",
+   "prefix": "/global/en",
+   "found_on": "https://careers.usbank.com/global/en",
+   "company_domain": "usbank.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Thomson Reuters": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.thomsonreuters.com",
+   "probed": true,
+   "company_domain": "thomsonreuters.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Ally": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "ally",
+   "wd": "wd1",
+   "site": "Ally",
+   "found_on": "https://www.ally.com/about/careers/",
+   "company_domain": "ally.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Truist": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.truist.com",
+   "prefix": "/us/en",
+   "found_on": "https://careers.truist.com/us/en",
+   "company_domain": "truist.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "PNC": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.pnc.com",
+   "prefix": "/global/en",
+   "found_on": "https://careers.pnc.com/global/en",
+   "company_domain": "pnc.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Houlihan Lokey": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "hl",
+   "wd": "wd1",
+   "site": "Campus",
+   "found_on": "https://hl.com/careers/",
+   "company_domain": "hl.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Lazard": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "icbpjb.fa.ocs.oraclecloud.com",
+   "site": "LazardProfessionalCareers",
+   "found_on": "https://www.lazard.com/careers/",
+   "company_domain": "lazard.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Rothschild & Co": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "rothschildandco",
+   "wd": "wd3",
+   "site": "RothschildAndCo_Lateral",
+   "found_on": "https://www.rothschildandco.com/en/careers/colleague-stories/",
+   "company_domain": "rothschildandco.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Evercore": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.evercore.com",
+   "probed": true,
+   "company_domain": "evercore.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Jefferies": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.jefferies.com",
+   "probed": true,
+   "company_domain": "jefferies.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "JLL": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.jll.com",
+   "probed": true,
+   "company_domain": "jll.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Cushman & Wakefield": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "cw",
+   "wd": "wd1",
+   "site": "External",
+   "found_on": "https://careers.cushmanwakefield.com/en/",
+   "company_domain": "cushmanwakefield.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Colliers": {
+  "cfg": {
+   "platform": "workday",
+   "tenant": "colliers",
+   "wd": "wd3",
+   "site": "Colliers-External-Career-Site",
+   "found_on": "https://www.colliers.com/en/careers",
+   "company_domain": "colliers.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "DHL": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://careers.dhl.com",
+   "prefix": "/amer/en",
+   "found_on": "https://careers.dhl.com/amer/en",
+   "company_domain": "dhl.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "CBRE": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.cbre.com",
+   "probed": true,
+   "company_domain": "cbre.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "UPS": {
+  "cfg": {
+   "platform": "phenom",
+   "origin": "https://www.jobs-ups.com",
+   "prefix": "/us/en",
+   "found_on": "https://www.jobs-ups.com/us/en",
+   "company_domain": "jobs-ups.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "FTI Consulting": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.fticonsulting.com",
+   "probed": true,
+   "company_domain": "fticonsulting.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "Knight Frank India": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://www.knightfrank.co.in",
+   "probed": true,
+   "company_domain": "knightfrank.co.in"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "FedEx": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://careers.fedex.com",
+   "probed": true,
+   "company_domain": "fedex.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
+ },
+ "DP World": {
+  "cfg": {
+   "platform": "oracle",
+   "host": "ehpv.fa.em2.oraclecloud.com",
+   "site": "CX_1",
+   "found_on": "https://www.dpworld.com/en/careers/commercial",
+   "company_domain": "dpworld.com"
+  },
+  "at": "2026-11-19T17:39:22Z"
  }
 }
