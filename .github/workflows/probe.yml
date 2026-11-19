@@ -1,5 +1,8 @@
 name: probe
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      script: {default: probe_ats}
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -9,6 +12,4 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: pip install requests
-      - run: python engine/tools/probe_ats.py
-      - uses: actions/upload-artifact@v4
-        with: {name: probe_out, path: probe_out}
+      - run: python engine/tools/${{ inputs.script }}.py
