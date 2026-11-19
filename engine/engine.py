@@ -40,7 +40,7 @@ CATS = [
 ]
 CATS = [(n, re.compile(p, re.I)) for n, p in CATS]
 NOT_FIN = re.compile(r"software|developer|engineer(?!ing finance)|architect|devops|\bqa\b|tester|designer|data scientist|"
-                     r"full ?stack|front ?end|back ?end|sales executive|relationship manager|field sales|"
+                     r"full ?stack|front ?end|back ?end|sales executive|relationship manager|^rm\b|^rm[- ]|\brm-|field sales|"
                      r"workday hcm|oracle hcm|successfactors|servicenow|salesforce|cyber|security analyst|"
                      r"hr business partner|recruiter|talent acquisition|marketing|nurse|driver|technician|mechanic|electrical|mechanical|"
                      r"lending collection|collections? (executive|officer|agent)|area collection|collection manager|recovery|tele ?caller|"
