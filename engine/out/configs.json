@@ -926,15 +926,6 @@
   },
   "at": "2026-11-18T10:12:10Z"
  },
- "HDFC Bank": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://www.hdfc.bank.in",
-   "probed": true,
-   "company_domain": "bank.in"
-  },
-  "at": "2026-11-18T17:10:19Z"
- },
  "Kotak Mahindra Bank": {
   "cfg": {
    "platform": "oracle",
@@ -951,15 +942,6 @@
    "origin": "https://www.icicicareers.com",
    "probed": true,
    "company_domain": "icicicareers.com"
-  },
-  "at": "2026-11-18T17:10:19Z"
- },
- "Axis Bank": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://www.axisbank.com",
-   "probed": true,
-   "company_domain": "axisbank.com"
   },
   "at": "2026-11-18T17:10:19Z"
  },
@@ -1042,15 +1024,6 @@
    "origin": "https://www.jsw.in",
    "probed": true,
    "company_domain": "jsw.in"
-  },
-  "at": "2026-11-18T17:10:19Z"
- },
- "Tata Steel": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://www.tatasteel.com",
-   "probed": true,
-   "company_domain": "tatasteel.com"
   },
   "at": "2026-11-18T17:10:19Z"
  },
@@ -1330,15 +1303,6 @@
    "origin": "https://www.muthootfinance.com",
    "probed": true,
    "company_domain": "muthootfinance.com"
-  },
-  "at": "2026-11-18T17:10:19Z"
- },
- "Tata AIA Life": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://www.tataaia.com",
-   "probed": true,
-   "company_domain": "tataaia.com"
   },
   "at": "2026-11-18T17:10:19Z"
  },
@@ -3042,15 +3006,6 @@
   },
   "at": "2026-11-19T17:39:22Z"
  },
- "Axis Mutual Fund": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://www.axismf.com",
-   "probed": true,
-   "company_domain": "axismf.com"
-  },
-  "at": "2026-11-19T17:39:22Z"
- },
  "HDFC ERGO": {
   "cfg": {
    "platform": "sitemap",
@@ -3631,15 +3586,6 @@
   },
   "at": "2026-11-19T17:39:22Z"
  },
- "Mphasis": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://careers.mphasis.com",
-   "probed": true,
-   "company_domain": "mphasis.com"
-  },
-  "at": "2026-11-19T17:39:22Z"
- },
  "Cyient": {
   "cfg": {
    "platform": "sitemap",
@@ -3772,15 +3718,6 @@
    "origin": "https://www.ceat.com",
    "probed": true,
    "company_domain": "ceat.com"
-  },
-  "at": "2026-11-19T17:39:22Z"
- },
- "Tata Technologies": {
-  "cfg": {
-   "platform": "sitemap",
-   "origin": "https://www.tatatechnologies.com",
-   "probed": true,
-   "company_domain": "tatatechnologies.com"
   },
   "at": "2026-11-19T17:39:22Z"
  },

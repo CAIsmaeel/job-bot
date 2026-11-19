@@ -170,6 +170,9 @@ def identify(blob, url):
     m = re.search(r"(?:boards|job-boards)\.greenhouse\.io/(?:embed/job_board(?:/js)?\?for=)?([A-Za-z0-9_-]+)", blob)
     if m and m.group(1) not in ("embed",):
         return {"platform": "greenhouse", "token": m.group(1)}
+    m = re.search(r"([a-z0-9-]+)\.ripplehire\.com", blob, re.I)
+    if m and m.group(1).lower() not in ("www", "cdn", "static"):
+        return {"platform": "ripplehire", "host": m.group(1).lower() + ".ripplehire.com"}
     m = re.search(r"jobs\.lever\.co/([A-Za-z0-9_-]+)", blob)
     if m:
         return {"platform": "lever", "name": m.group(1)}
@@ -370,6 +373,34 @@ def a_lever(c):
              "url": p.get("hostedUrl"), "posted": p.get("createdAt")} for p in j]
 
 
+def a_ripplehire(c):
+    """RippleHire career sites (HDFC Bank, Axis Bank, Tata Steel ...): the page's own job search call."""
+    host = c["host"]
+    page = None
+    for start in ("/candidate/careers", "/candidate/", "/ripplehire/careers"):
+        r = get(f"https://{host}{start}")
+        m = re.search(r'id="token"\s+value="([^"]+)"', r.text) or re.search(r"token=(\w+)", r.url)
+        if r.ok and m:
+            page = m.group(1)
+            break
+    if not page:
+        return []
+    out = []
+    for n in range(12):
+        prm = {"page": n, "search": "*:*", "token": page, "source": "CAREERSITE", "pagesize": 100}
+        j = post(f"https://{host}/candidate/candidatejobsearch", data={"careerSiteUrlParams": json.dumps(prm), "lang": "en"},
+                 headers={"X-Requested-With": "XMLHttpRequest", "Accept": "application/json"}).json()
+        jobs = j.get("jobVoList") or []
+        for p in jobs:
+            seq = p.get("jobSeq") or p.get("jobId")
+            out.append({"id": seq, "title": p.get("jobTitle"), "location": p.get("locations") or p.get("jobLocation") or "India",
+                        "url": f"https://{host}/candidate/?token={page}&source=CAREERSITE#detail/job/{seq}",
+                        "posted": p.get("jobPostingDate") or p.get("careerSiteDate")})
+        if len(jobs) < 100 or len(out) >= (j.get("totalJobCount") or 0):
+            break
+    return out
+
+
 def a_eightfold(c):
     out, ids = [], set()
     dom = c.get("domain") or c.get("company_domain") or ""
@@ -506,7 +537,7 @@ def a_sitemap(c):
 
 ADAPTERS = {"workday": a_workday, "oracle": a_oracle, "smartrecruiters": a_smartrecruiters, "greenhouse": a_greenhouse,
             "lever": a_lever, "eightfold": a_eightfold, "phenom": a_phenom, "avature": a_avature,
-            "successfactors": a_successfactors, "sitemap": a_sitemap}
+            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "sitemap": a_sitemap}
 
 
 # ---------------- run ----------------
@@ -680,7 +711,15 @@ def fetch_detail(j):
     cfg = (CACHE.get(j["company"]) or {}).get("cfg") or {}
     plat, url, d = j.get("platform", ""), j.get("url") or "", {"text": ""}
     try:
-        if plat == "oracle" and cfg.get("host"):
+        if plat == "ripplehire" and cfg.get("host"):
+            m = re.search(r"token=(\w+).*#detail/job/(\w+)", url)
+            if m:
+                x = get(f"https://{cfg['host']}/candidate/candidatejobdetail",
+                        params={"token": m.group(1), "jobSeq": m.group(2), "source": "CAREERSITE", "lang": "en"},
+                        headers={"X-Requested-With": "XMLHttpRequest", "Accept": "application/json"}).json()
+                d["text"] = clean(x.get("jobDesc") or x.get("jobDescription") or "")
+                d["type"] = x.get("jobType")
+        elif plat == "oracle" and cfg.get("host"):
             jid = url.rstrip("/").split("/")[-1]
             api = (f"https://{cfg['host']}/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true"
                    f'&finder=ById;Id="{jid}",siteNumber={cfg["site"]}')
