@@ -624,7 +624,7 @@ def build_page(jobs):
     slim = [{k: j[k] for k in ("title", "company", "category", "location", "url", "first_seen")} for j in jobs]
     data = json.dumps(slim, ensure_ascii=False).replace("</", "<\\/")
     t = (t.replace("__JOBS__", data).replace("__UPDATED_ISO__", NOW).replace("__UPDATED__", upd)
-          .replace("__PRACTICE__", practice).replace("__BRAND__", html.escape(BRAND)))
+          .replace("__PRACTICE__", practice + '<p class="browse"><a href="/jobs/browse/">Browse finance jobs by city, company or area</a></p>').replace("__BRAND__", html.escape(BRAND)))
     os.makedirs(os.path.join(OUT, "site"), exist_ok=True)
     open(os.path.join(OUT, "site", "index.html"), "w", encoding="utf-8").write(t)
 
@@ -909,6 +909,12 @@ def main():
     json.dump(state, open(sp, "w"))
     json.dump(CACHE, open(cp, "w"), indent=1)
     build_page(jobs)
+    try:
+        import seo
+        n = seo.build(jobs, os.path.join(OUT, "seo"), SITE_URL or "https://ledgerlab-a4g.pages.dev", city_of, channel_link(), SIM_URL)
+        print(f"seo pages: {n}")
+    except Exception as e:
+        print("seo pages failed:", e)
     if os.environ.get("TG_TEST") == "true":
         sample_post(jobs)
     else:

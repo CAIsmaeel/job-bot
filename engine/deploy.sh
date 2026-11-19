@@ -6,5 +6,6 @@ if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then echo 
 PROJECT="${PAGES_PROJECT:-ledgerlab}"
 rm -rf /tmp/deploy && cp -r site /tmp/deploy && mkdir -p /tmp/deploy/jobs
 [ -f engine/out/site/index.html ] && cp engine/out/site/index.html /tmp/deploy/jobs/index.html
+[ -d engine/out/seo ] && cp -r engine/out/seo/. /tmp/deploy/
 npx --yes wrangler@3 pages project create "$PROJECT" --production-branch main >/dev/null 2>&1 || true
 npx --yes wrangler@3 pages deploy /tmp/deploy --project-name "$PROJECT" --branch main --commit-dirty=true 2>&1 | tee /tmp/deploy.log | tail -5
