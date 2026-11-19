@@ -1,35 +1,35 @@
 # Finance job engine v0 report
 
-Run: 2026-11-19T19:50:42Z
+Run: 2026-11-19T20:06:00Z
 
 - Companies: 606
 - Companies with finance jobs in India: 83
-- Finance jobs in India (after title filter, de-duplicated): 1146
-- New this run: 65
+- Finance jobs in India (after title filter, de-duplicated): 1136
+- New this run: 0
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| successfactors | 36 | 335 |
+| successfactors | 36 | 334 |
 | oracle | 22 | 316 |
 | workday+site | 66 | 179 |
-| phenom | 26 | 130 |
-| ripplehire | 7 | 62 |
+| phenom | 27 | 131 |
+| ripplehire | 7 | 52 |
 | smartrecruiters | 22 | 30 |
 | lever | 6 | 25 |
 | sitemap | 393 | 24 |
 | greenhouse | 10 | 23 |
 | eightfold | 13 | 22 |
-| phenom+sitemap | 4 | 0 |
+| phenom+sitemap | 3 | 0 |
 | avature | 1 | 0 |
 
 ## By finance area
 
 | Area | Jobs |
 |---|---|
-| Accounting / Finance (general) | 380 |
-| Audit / Assurance / SOX | 173 |
+| Accounting / Finance (general) | 369 |
+| Audit / Assurance / SOX | 174 |
 | Tax | 75 |
 | Record to Report / GL | 73 |
 | Finance Transformation / Systems | 71 |
@@ -47,38 +47,38 @@ Run: 2026-11-19T19:50:42Z
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| Deloitte India | successfactors | 407 | 227 |  |
+| Deloitte India | successfactors | 407 | 226 |  |
 | Tata Capital | oracle | 613 | 79 |  |
 | Citi | workday+site | 3142 | 64 |  |
 | JPMorgan Chase | oracle | 272 | 46 |  |
 | EXL | oracle | 541 | 46 |  |
 | Barclays | workday+site | 708 | 45 |  |
 | Citco | oracle | 86 | 41 |  |
-| HDFC Bank | ripplehire | 542 | 32 |  |
 | Amgen | workday+site | 1670 | 32 |  |
 | KPMG India | oracle | 373 | 30 |  |
 | Hindustan Unilever | workday+site | 283 | 28 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
 | Godrej Consumer Products | phenom | 44 | 27 |  |
 | Bunge | successfactors | 148 | 26 |  |
+| HDFC Bank | ripplehire | 541 | 22 |  |
 | Kotak Mahindra Bank | oracle | 737 | 22 |  |
 | DP World | oracle | 105 | 22 |  |
 | HSBC | eightfold | 39 | 19 |  |
 | Reckitt | successfactors | 51 | 18 |  |
 | Paytm | lever | 197 | 17 |  |
+| eBay | phenom | 33 | 17 |  |
 | Birlasoft | successfactors | 108 | 16 |  |
-| eBay | phenom | 31 | 16 |  |
 | Bosch | smartrecruiters | 268 | 14 |  |
 | Tata AIA Life | ripplehire | 1169 | 13 |  |
 | BNY | oracle | 85 | 12 |  |
-| Blue Dart | phenom | 47 | 11 |  |
+| Blue Dart | phenom | 46 | 11 |  |
 | KKR | greenhouse | 141 | 10 |  |
 | BlackRock | sitemap | 294 | 9 |  |
 | Mahindra | successfactors | 62 | 9 |  |
 | Sun Pharma | successfactors | 110 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
 | Axis Bank | ripplehire | 1200 | 8 |  |
-| Stripe | greenhouse | 770 | 7 |  |
+| Stripe | greenhouse | 771 | 7 |  |
 | ZF | successfactors | 56 | 7 |  |
 | GE HealthCare | phenom | 30 | 6 |  |
 | Meesho | lever | 48 | 6 |  |
@@ -100,7 +100,7 @@ Run: 2026-11-19T19:50:42Z
 | Mphasis | ripplehire | 263 | 4 |  |
 | Intuit | sitemap | 609 | 4 |  |
 | Takeda | workday+site | 1880 | 4 |  |
-| ABB | phenom | 32 | 3 |  |
+| ABB | phenom | 34 | 3 |  |
 | Baxter | workday+site | 516 | 3 |  |
 | Swiggy | smartrecruiters | 154 | 3 |  |
 | ServiceNow | smartrecruiters | 81 | 3 |  |
@@ -115,13 +115,13 @@ Run: 2026-11-19T19:50:42Z
 | InMobi | greenhouse | 27 | 2 |  |
 | Sutherland | smartrecruiters | 45 | 2 |  |
 | Munich Re | successfactors | 1673 | 2 |  |
-| US Bank | phenom | 155 | 2 |  |
+| US Bank | phenom | 156 | 2 |  |
 | DHL | phenom | 46 | 2 |  |
 | Synchrony | sitemap | 29 | 1 |  |
 | CRED | lever | 12 | 1 |  |
 | Freshworks | smartrecruiters | 30 | 1 |  |
 | Swiss Re | successfactors | 211 | 1 |  |
-| Fiserv | phenom | 22 | 1 |  |
+| Fiserv | phenom | 21 | 1 |  |
 | Marsh McLennan | phenom | 46 | 1 |  |
 | Zeta | lever | 32 | 1 |  |
 | Icertis | oracle | 4 | 1 |  |
@@ -182,7 +182,7 @@ Run: 2026-11-19T19:50:42Z
 | Intel | sitemap | 0 | 0 |  |
 | Uber | smartrecruiters | 0 | 0 |  |
 | Airbus | workday+site | 0 | 0 |  |
-| Boeing | workday+site | 1176 | 0 |  |
+| Boeing | workday+site | 1146 | 0 |  |
 | Philips | phenom | 19 | 0 |  |
 | Continental | smartrecruiters | 9 | 0 |  |
 | Eaton | eightfold | 0 | 0 |  |
@@ -193,7 +193,7 @@ Run: 2026-11-19T19:50:42Z
 | Coca-Cola | workday+site | 0 | 0 |  |
 | PepsiCo | sitemap | 0 | 0 |  |
 | Mondelez | phenom+sitemap | 0 | 0 |  |
-| Colgate-Palmolive | successfactors | 65 | 0 |  |
+| Colgate-Palmolive | successfactors | 66 | 0 |  |
 | AstraZeneca | eightfold | 0 | 0 |  |
 | Pfizer | workday+site | 0 | 0 |  |
 | Abbott | workday+site | 0 | 0 |  |
@@ -343,7 +343,7 @@ Run: 2026-11-19T19:50:42Z
 | DBS Bank India | workday+site | 0 | 0 |  |
 | Mizuho | workday+site | 0 | 0 |  |
 | MUFG | workday+site | 0 | 0 |  |
-| FIS | phenom | 32 | 0 |  |
+| FIS | phenom | 31 | 0 |  |
 | Broadridge | sitemap | 0 | 0 |  |
 | SS&C | sitemap | 0 | 0 |  |
 | Apex Group | workday+site | 0 | 0 |  |
@@ -652,7 +652,7 @@ Run: 2026-11-19T19:50:42Z
 | Colliers | workday+site | 0 | 0 |  |
 | Knight Frank India | sitemap | 0 | 0 |  |
 | FedEx | sitemap | 0 | 0 |  |
-| UPS | phenom+sitemap | 0 | 0 |  |
+| UPS | phenom | 2 | 0 |  |
 
 ## Sample of jobs
 
@@ -680,23 +680,14 @@ Run: 2026-11-19T19:50:42Z
 | Mphasis | [Underwriter](https://mphasis.ripplehire.com/candidate/?token=ty4DfyWddnOrtpclQeia&source=CAREERSITE#detail/job/658744) | Risk / Credit | Chennai |
 | HSBC | [Assistant Vice President - Management Reporting](https://portal.careers.hsbc.com/careers/job/563774612612881) | FP&A / Business Finance | Chennai, Tamil Nadu, India |
 | HDFC Bank | [Team Member-RBI Reporting-Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/93964) | Accounting / Finance (general) | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/92885) | Accounting / Finance (general) | Mumbai |
 | HDFC Bank | [Associate - Corporate Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/82835) | Accounting / Finance (general) | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/82568) | Accounting / Finance (general) | Kota |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/81865) | Accounting / Finance (general) | Pune |
 | HDFC Bank | [Audit-Sr. Unit Head-Centralized & Assurance Dept Audit](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/80912) | Audit / Assurance / SOX | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/80652) | Accounting / Finance (general) | Nanded |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/80537) | Accounting / Finance (general) | Agra |
 | HDFC Bank | [AVP-Project Finance-IB](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/79387) | Accounting / Finance (general) | Mumbai |
 | HDFC Bank | [Associate-Project Finance-IB](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/79384) | Accounting / Finance (general) | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/78194) | Accounting / Finance (general) | Raipur |
 | HDFC Bank | [IRM-Senior Risk Assurance-Analysts](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/77990) | Audit / Assurance / SOX | Bangalore |
 | HDFC Bank | [Sr.Analyst-Bank Credit Risk](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/69662) | Risk / Credit | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/68636) | Accounting / Finance (general) | Guwahati |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/68634) | Accounting / Finance (general) | Guwahati, Kolkata |
 | HDFC Bank | [Risk Analyst-Treasury Mid Office](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/67488) | Treasury | Mumbai |
 | HDFC Bank | [Analyst-Business Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/60617) | FP&A / Business Finance | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/56371) | Accounting / Finance (general) | Rajkot |
 | HDFC Bank | [Relationship Mgr-Reality Business Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/55585) | FP&A / Business Finance | Hyderabad |
 | HDFC Bank | [Relationship Mgr-Reality Business Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/55581) | FP&A / Business Finance | Delhi |
 | HDFC Bank | [Realty Business Finance-Analyst](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/55579) | FP&A / Business Finance | Chennai |
@@ -709,7 +700,6 @@ Run: 2026-11-19T19:50:42Z
 | HDFC Bank | [Team Member-MIS Monitoring-IBG](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/46051) | FP&A / Business Finance | Mumbai |
 | HDFC Bank | [Relationship Mgr-Reality Business Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/46045) | FP&A / Business Finance | Mumbai |
 | HDFC Bank | [Audit-Sr. Auditor-Retail Asset Audit](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/24607) | Audit / Assurance / SOX | Mumbai |
-| HDFC Bank | [RM-Healthcare Finance](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/22450) | Accounting / Finance (general) | Surat |
 | HDFC Bank | [IRM-Model Risk Mgmt-Analyst-Treasury & MR](https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#detail/job/14350) | Treasury | Mumbai |
 | Deloitte India | [Associate Director | Fusion Financials | Delhi | Oracle](https://southasiacareers.deloitte.com/job/Delhi-Associate-Director-Fusion-Financials-Delhi-Oracle/59454944/) | Accounting / Finance (general) | Delhi, India |
 | Axis Mutual Fund | [Lead Auditor- IT](https://axismf.ripplehire.com/candidate/?token=gGtjuEsWfCb0FxsKXRNG&source=CAREERSITE#detail/job/375689) | Audit / Assurance / SOX | Corporate Office Worli |
@@ -718,3 +708,13 @@ Run: 2026-11-19T19:50:42Z
 | Axis Bank | [Compliance:Transaction Monitoring Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/785276) | Deals / Valuation / IB | Mumbai |
 | Axis Bank | [Finance & Accounts:Financial Reporting Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783794) | Controllership / Reporting | Mumbai |
 | Axis Bank | [RC & WC - Underwriting:CPC Credit Officer - SBB Credit](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783574) | Risk / Credit | Noida |
+| Axis Bank | [Compliance:Transaction Monitoring Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783571) | Deals / Valuation / IB | Bidhan Nagar |
+| Axis Bank | [Treasury & Markets: FMSG - Alpha & Prime Desk Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783290) | Treasury | BANGALORE |
+| Axis Bank | [Risk:Market Risk Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/782772) | Risk / Credit | Mumbai |
+| Axis Bank | [Internal Audit:Auditor - Retail Lending Audit (Process Audit)](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/782734) | Audit / Assurance / SOX | Mumbai |
+| Axis Bank | [CBG:Credit Analyst - CAMPU](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/782715) | Risk / Credit | Surat |
+| Zensar | [ESaaS - Oracle - Functional - Cloud Financials](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/153090_2) | Accounting / Finance (general) | Pune, Maharashtra, India |
+| Tata Capital | [Customer Service Executive - PV Finance - Car Finance - New Car - PV -](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57568) | Accounting / Finance (general) | Ernakulam, Kerala, India |
+| Tata Capital | [Customer Service Executive - Car Finance - New Car - PV - Davanagere -](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57570) | Accounting / Finance (general) | Davanagere, Karnataka, India |
+| EXL | [Senior Executive-P2P-Invoice Processing](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21000) | Accounts Payable / P2P | Kochi, Kerala, India |
+| Deloitte India | [Assistant Manager | IFRS | Mumbai | Accounting & Reporting Assurance](https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-IFRS-Mumbai-Accounting-&amp;-Reporting-Assurance/55426244/) | Controllership / Reporting | Mumbai, India |

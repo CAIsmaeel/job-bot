@@ -819,7 +819,7 @@
    "found_on": "https://jobs.boeing.com/",
    "company_domain": "boeing.com"
   },
-  "raw": 1176,
+  "raw": 1146,
   "kept": 0
  },
  {
@@ -882,7 +882,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 32,
+  "raw": 34,
   "kept": 3
  },
  {
@@ -1009,7 +1009,7 @@
    "found_on": "https://jobs.colgate.com/",
    "company_domain": "colgate.com"
   },
-  "raw": 65,
+  "raw": 66,
   "kept": 0
  },
  {
@@ -1238,8 +1238,8 @@
    "found_on": "https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#list",
    "company_domain": "ripplehire.com"
   },
-  "raw": 542,
-  "kept": 32
+  "raw": 541,
+  "kept": 22
  },
  {
   "company": "ICICI Bank",
@@ -2941,7 +2941,7 @@
    "token": "stripe",
    "company_domain": "stripe.com"
   },
-  "raw": 770,
+  "raw": 771,
   "kept": 7
  },
  {
@@ -3271,7 +3271,7 @@
    "found_on": "https://careers.fiserv.com/us/en",
    "company_domain": "fiserv.com"
   },
-  "raw": 22,
+  "raw": 21,
   "kept": 1
  },
  {
@@ -3284,7 +3284,7 @@
    "found_on": "https://careers.fisglobal.com/us/en",
    "company_domain": "fisglobal.com"
   },
-  "raw": 32,
+  "raw": 31,
   "kept": 0
  },
  {
@@ -3433,7 +3433,7 @@
    "company_domain": "deloitte.com"
   },
   "raw": 407,
-  "kept": 227
+  "kept": 226
  },
  {
   "company": "Nexdigm",
@@ -5589,7 +5589,7 @@
    "found_on": "https://careers.dhl.com/global/en/blue-dart-jobs",
    "company_domain": "bluedart.com"
   },
-  "raw": 47,
+  "raw": 46,
   "kept": 11
  },
  {
@@ -5975,8 +5975,8 @@
    "found_on": "https://jobs.ebayinc.com/us/en/recommended-jobs",
    "company_domain": "ebayinc.com"
   },
-  "raw": 31,
-  "kept": 16
+  "raw": 33,
+  "kept": 17
  },
  {
   "company": "Expedia",
@@ -7238,7 +7238,7 @@
    "found_on": "https://careers.usbank.com/global/en",
    "company_domain": "usbank.com"
   },
-  "raw": 155,
+  "raw": 156,
   "kept": 2
  },
  {
@@ -7450,14 +7450,14 @@
  {
   "company": "UPS",
   "careers": "https://www.jobs-ups.com",
-  "platform": "phenom+sitemap",
+  "platform": "phenom",
   "config": {
    "origin": "https://www.jobs-ups.com",
    "prefix": "/us/en",
    "found_on": "https://www.jobs-ups.com/us/en",
    "company_domain": "jobs-ups.com"
   },
-  "raw": 0,
+  "raw": 2,
   "kept": 0
  },
  {
