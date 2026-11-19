@@ -1,20 +1,20 @@
 # Finance job engine v0 report
 
-Run: 2026-11-19T17:39:22Z
+Run: 2026-11-19T18:25:22Z
 
 - Companies: 606
 - Companies with finance jobs in India: 77
-- Finance jobs in India (after title filter, de-duplicated): 1106
-- New this run: 220
+- Finance jobs in India (after title filter, de-duplicated): 1101
+- New this run: 9
 
 ## By hiring system
 
 | Platform | Companies | Finance jobs |
 |---|---|---|
-| successfactors | 36 | 346 |
-| oracle | 22 | 317 |
+| successfactors | 36 | 345 |
+| oracle | 22 | 318 |
 | workday+site | 66 | 181 |
-| phenom | 26 | 135 |
+| phenom | 26 | 130 |
 | smartrecruiters | 22 | 30 |
 | eightfold | 13 | 25 |
 | lever | 6 | 25 |
@@ -27,18 +27,18 @@ Run: 2026-11-19T17:39:22Z
 
 | Area | Jobs |
 |---|---|
-| Accounting / Finance (general) | 361 |
-| Audit / Assurance / SOX | 169 |
+| Accounting / Finance (general) | 358 |
+| Audit / Assurance / SOX | 166 |
 | Record to Report / GL | 77 |
 | Tax | 77 |
 | Finance Transformation / Systems | 71 |
-| Controllership / Reporting | 58 |
+| Controllership / Reporting | 59 |
 | Deals / Valuation / IB | 57 |
 | Risk / Credit | 56 |
-| FP&A / Business Finance | 54 |
 | Treasury | 54 |
+| FP&A / Business Finance | 53 |
 | Accounts Receivable / O2C | 30 |
-| Accounts Payable / P2P | 19 |
+| Accounts Payable / P2P | 20 |
 | Payroll | 16 |
 | Costing | 7 |
 
@@ -46,11 +46,11 @@ Run: 2026-11-19T17:39:22Z
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| Deloitte India | successfactors | 411 | 237 |  |
-| Tata Capital | oracle | 591 | 76 |  |
-| Citi | workday+site | 3129 | 64 |  |
+| Deloitte India | successfactors | 411 | 236 |  |
+| Tata Capital | oracle | 590 | 77 |  |
+| Citi | workday+site | 3142 | 64 |  |
 | JPMorgan Chase | oracle | 272 | 46 |  |
-| EXL | oracle | 540 | 45 |  |
+| EXL | oracle | 541 | 46 |  |
 | Barclays | workday+site | 708 | 45 |  |
 | Citco | oracle | 91 | 43 |  |
 | KPMG India | oracle | 395 | 32 |  |
@@ -59,44 +59,43 @@ Run: 2026-11-19T17:39:22Z
 | Godrej Industries | phenom | 44 | 27 |  |
 | Godrej Consumer Products | phenom | 44 | 27 |  |
 | Bunge | successfactors | 148 | 26 |  |
-| DP World | oracle | 107 | 23 |  |
-| HSBC | eightfold | 41 | 22 |  |
+| HSBC | eightfold | 42 | 22 |  |
 | Kotak Mahindra Bank | oracle | 737 | 22 |  |
+| DP World | oracle | 105 | 22 |  |
 | Reckitt | successfactors | 53 | 18 |  |
 | Paytm | lever | 197 | 17 |  |
-| eBay | phenom | 35 | 17 |  |
 | Birlasoft | successfactors | 108 | 16 |  |
+| eBay | phenom | 33 | 16 |  |
 | Bosch | smartrecruiters | 268 | 14 |  |
 | BNY | oracle | 85 | 12 |  |
-| Blue Dart | phenom | 46 | 11 |  |
+| Blue Dart | phenom | 49 | 11 |  |
 | Mahindra | successfactors | 61 | 10 |  |
 | KKR | greenhouse | 141 | 10 |  |
 | BlackRock | sitemap | 294 | 9 |  |
 | Sun Pharma | successfactors | 110 | 9 |  |
 | Titan | phenom | 24 | 8 |  |
-| Stripe | greenhouse | 781 | 7 |  |
+| Stripe | greenhouse | 782 | 7 |  |
 | ZF | successfactors | 56 | 7 |  |
 | GE HealthCare | phenom | 30 | 6 |  |
 | Meesho | lever | 48 | 6 |  |
 | Franklin Templeton | phenom | 35 | 6 |  |
 | Cargill | successfactors | 1345 | 6 |  |
-| GSK | phenom | 27 | 5 |  |
+| GSK | phenom | 28 | 5 |  |
 | Sanofi | sitemap | 1451 | 5 |  |
 | Asian Paints | successfactors | 166 | 5 |  |
 | Optum (UnitedHealth) | sitemap | 6508 | 5 |  |
-| Zensar | oracle | 111 | 5 |  |
+| Zensar | oracle | 101 | 5 |  |
 | Merck KGaA | phenom | 38 | 5 |  |
 | Cummins | oracle | 149 | 4 |  |
 | Volvo Group | successfactors | 24 | 4 |  |
-| ABB | phenom | 35 | 4 |  |
 | Emerson | oracle | 180 | 4 |  |
-| Thermo Fisher | phenom | 47 | 4 |  |
+| Thermo Fisher | phenom | 46 | 4 |  |
 | Moody's | successfactors | 335 | 4 |  |
 | Allianz | phenom | 45 | 4 |  |
 | Chubb | oracle | 53 | 4 |  |
-| Cisco | phenom | 28 | 4 |  |
 | Intuit | sitemap | 602 | 4 |  |
 | Takeda | workday+site | 1880 | 4 |  |
+| ABB | phenom | 33 | 3 |  |
 | Baxter | workday+site | 520 | 3 |  |
 | Swiggy | smartrecruiters | 154 | 3 |  |
 | ServiceNow | smartrecruiters | 82 | 3 |  |
@@ -108,19 +107,20 @@ Run: 2026-11-19T17:39:22Z
 | Groww | greenhouse | 9 | 2 |  |
 | InMobi | greenhouse | 27 | 2 |  |
 | Sutherland | smartrecruiters | 45 | 2 |  |
-| Munich Re | successfactors | 1674 | 2 |  |
+| Munich Re | successfactors | 1673 | 2 |  |
 | US Bank | phenom | 155 | 2 |  |
-| DHL | phenom | 46 | 2 |  |
+| DHL | phenom | 49 | 2 |  |
 | Synchrony | sitemap | 29 | 1 |  |
 | CRED | lever | 12 | 1 |  |
 | Freshworks | smartrecruiters | 30 | 1 |  |
 | Swiss Re | successfactors | 211 | 1 |  |
-| Fiserv | phenom | 24 | 1 |  |
+| Fiserv | phenom | 23 | 1 |  |
 | Marsh McLennan | phenom | 46 | 1 |  |
 | Zeta | lever | 32 | 1 |  |
 | Icertis | oracle | 4 | 1 |  |
+| Cisco | phenom | 31 | 1 |  |
 | Adobe | phenom | 30 | 1 |  |
-| Capital One | workday+site | 1941 | 1 |  |
+| Capital One | workday+site | 1936 | 1 |  |
 | Experian | smartrecruiters | 37 | 1 |  |
 | ANZ | successfactors | 23 | 1 |  |
 | Mastercard | workday+site | 0 | 0 |  |
@@ -175,7 +175,7 @@ Run: 2026-11-19T17:39:22Z
 | Intel | sitemap | 0 | 0 |  |
 | Uber | smartrecruiters | 0 | 0 |  |
 | Airbus | workday+site | 0 | 0 |  |
-| Boeing | workday+site | 1146 | 0 |  |
+| Boeing | workday+site | 1176 | 0 |  |
 | Philips | phenom | 19 | 0 |  |
 | Continental | smartrecruiters | 9 | 0 |  |
 | Eaton | eightfold | 0 | 0 |  |
@@ -296,7 +296,7 @@ Run: 2026-11-19T17:39:22Z
 | Juspay | sitemap | 0 | 0 |  |
 | Upstox | smartrecruiters | 1 | 0 |  |
 | Navi | sitemap | 0 | 0 |  |
-| Slice | greenhouse | 21 | 0 |  |
+| Slice | greenhouse | 23 | 0 |  |
 | Jupiter | sitemap | 0 | 0 |  |
 | PolicyBazaar | sitemap | 0 | 0 |  |
 | Lenskart | sitemap | 0 | 0 |  |
@@ -325,7 +325,7 @@ Run: 2026-11-19T17:39:22Z
 | S&P Global | workday+site | 0 | 0 |  |
 | MSCI | sitemap | 0 | 0 |  |
 | LSEG | workday+site | 0 | 0 |  |
-| Fitch Group | successfactors | 69 | 0 |  |
+| Fitch Group | successfactors | 65 | 0 |  |
 | Invesco | sitemap | 0 | 0 |  |
 | Ameriprise Financial | workday+site | 0 | 0 |  |
 | Principal Financial | sitemap | 0 | 0 |  |
@@ -334,13 +334,13 @@ Run: 2026-11-19T17:39:22Z
 | MetLife | sitemap | 0 | 0 |  |
 | Bank of America | sitemap | 0 | 0 |  |
 | Macquarie | sitemap | 0 | 0 |  |
-| ING | sitemap | 625 | 0 |  |
+| ING | sitemap | 632 | 0 |  |
 | ABN AMRO | sitemap | 0 | 0 |  |
 | Rabobank | sitemap | 0 | 0 |  |
 | DBS Bank India | workday+site | 0 | 0 |  |
 | Mizuho | workday+site | 0 | 0 |  |
 | MUFG | workday+site | 0 | 0 |  |
-| FIS | phenom | 28 | 0 |  |
+| FIS | phenom | 32 | 0 |  |
 | Broadridge | sitemap | 0 | 0 |  |
 | SS&C | sitemap | 0 | 0 |  |
 | Apex Group | workday+site | 0 | 0 |  |
@@ -615,7 +615,7 @@ Run: 2026-11-19T17:39:22Z
 | Equifax | sitemap | 0 | 0 |  |
 | TransUnion CIBIL | sitemap | 0 | 0 |  |
 | Dun & Bradstreet | sitemap | 0 | 0 |  |
-| Verisk | oracle | 9 | 0 |  |
+| Verisk | oracle | 7 | 0 |  |
 | Morningstar | sitemap | 0 | 0 |  |
 | FactSet | sitemap | 0 | 0 |  |
 | Bloomberg | sitemap | 0 | 0 |  |
@@ -633,7 +633,7 @@ Run: 2026-11-19T17:39:22Z
 | Credit Agricole CIB | sitemap | 0 | 0 |  |
 | Natixis | sitemap | 0 | 0 |  |
 | Commerzbank | sitemap | 0 | 0 |  |
-| SMBC | successfactors | 57 | 0 |  |
+| SMBC | successfactors | 58 | 0 |  |
 | First Abu Dhabi Bank | oracle | 1 | 0 |  |
 | Emirates NBD | oracle | 3 | 0 |  |
 | PNC | phenom | 33 | 0 |  |
@@ -657,6 +657,15 @@ Run: 2026-11-19T17:39:22Z
 
 | Company | Title | Area | Location |
 |---|---|---|---|
+| Zensar | [ESaaS - Oracle - Functional - Cloud Financials](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/153090_2) | Accounting / Finance (general) | Pune, Maharashtra, India |
+| Tata Capital | [Customer Service Executive - PV Finance - Car Finance - New Car - PV -](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57568) | Accounting / Finance (general) | Ernakulam, Kerala, India |
+| Tata Capital | [Customer Service Executive - Car Finance - New Car - PV - Davanagere -](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57570) | Accounting / Finance (general) | Davanagere, Karnataka, India |
+| EXL | [Senior Executive-P2P-Invoice Processing](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21000) | Accounts Payable / P2P | Kochi, Kerala, India |
+| Deloitte India | [Assistant Manager | IFRS | Mumbai | Accounting & Reporting Assurance](https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-IFRS-Mumbai-Accounting-&amp;-Reporting-Assurance/55426244/) | Controllership / Reporting | Mumbai, India |
+| Deloitte India | [Consultant | Audit - IT, Data & Analytics | Mumbai | Controls | IT Con](https://southasiacareers.deloitte.com/job/Mumbai-Consultant-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytics/59410344/) | Audit / Assurance / SOX | Mumbai, India |
+| Deloitte India | [Deputy Manager | Accounting & Reporting | Mumbai - Commerz III | Accou](https://southasiacareers.deloitte.com/job/Mumbai-Commerz-III-Deputy-Manager-Accounting-&amp;-Reporting-Mumbai-Commerz-III-Accounting-&amp;-Reporting-Assurance/59995044/) | Audit / Assurance / SOX | Mumbai - Commerz III, India |
+| Deloitte India | [Assistant Manager | Audit - IT, Data & Analytics | Mumbai | Controls |](https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytic/58604844/) | Audit / Assurance / SOX | Mumbai, India |
+| Deloitte India | [Deputy Manager | Audit - IT, Data & Analytics | Mumbai | Controls | IT](https://southasiacareers.deloitte.com/job/Mumbai-Deputy-Manager-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytics/59307444/) | Audit / Assurance / SOX | Mumbai, India |
 | eBay | [Finance Business Analyst](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Finance-Business-Systems-Analyst_R0075155/apply) | Accounting / Finance (general) | Bengaluru, India |
 | eBay | [FP&A COE Finance Analyst](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/FP-A-COE-Finance-Analyst_R0077261/apply) | FP&A / Business Finance | Bengaluru, India |
 | eBay | [FP&A COE Finance Manager](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/FP-A-COE-Finance-Manager_R0077264/apply) | FP&A / Business Finance | Bengaluru, India |
@@ -673,13 +682,11 @@ Run: 2026-11-19T17:39:22Z
 | eBay | [P2P Analyst](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/P2P-Analyst_R0077415/apply) | Accounts Payable / P2P | Bengaluru, India |
 | eBay | [Indirect Tax Analyst](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Indirect-Tax-Analyst_R0076276/apply) | Tax | Bengaluru, India |
 | eBay | [Senior IT Auditor](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Senior-IT-Auditor_R0073045/apply) | Audit / Assurance / SOX | Bengaluru, India |
-| eBay | [Senior Regulatory Auditor](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Senior-Regulatory-Auditor_R0077330/apply) | Audit / Assurance / SOX | Bengaluru, India |
 | Zeta | [Manager - Accounts](https://jobs.lever.co/zeta/2d533970-99a7-444b-b410-39921d0c96f7) | Accounting / Finance (general) | Mumbai |
 | Zensar | [ACCOUNTS RECEIVABLE](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/153436) | Accounts Receivable / O2C | Pune, Maharashtra, India |
 | Zensar | [SAP FICO Consultant](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/152718) | Finance Transformation / Systems | Hyderabad, Telangana, India |
 | Zensar | [ESaaS - Oracle - Functional - Cloud Financials](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/151342) | Accounting / Finance (general) | India |
 | Zensar | [TREASURY](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/147928) | Treasury | India |
-| Zensar | [ESaaS - Oracle - Functional - Cloud Financials](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/152832) | Accounting / Finance (general) | Pune, Maharashtra, India |
 | ZF | [Assistant General Manager- Accounts Payable Lead](https://jobs.zf.com/job/Chennai-Assistant-General-Manager-Accounts-Payable-Lead-TN-600116/1418507933/) | Accounts Payable / P2P | Chennai, TN, India |
 | ZF | [Senior Executive - Finance](https://jobs.zf.com/job/Coimbatore-Senior-Executive-Finance-TN-641659/1457575433/) | Accounting / Finance (general) | Coimbatore, TN, India |
 | ZF | [Assistant/Deputy General Manager - Plant Controller](https://jobs.zf.com/job/Pune-AssistantDeputy-General-Manager-Plant-Controller-MH-410501/1445955533/) | Controllership / Reporting | Pune, MH, India |
@@ -710,10 +717,3 @@ Run: 2026-11-19T17:39:22Z
 | Merck KGaA | [FP&A Lead Analyst](https://careers.emdgroup.com/us/en/job/305567) | FP&A / Business Finance | Bangalore, Karnataka, India |
 | Merck KGaA | [Senior Expert - Group Accounting](https://careers.emdgroup.com/us/en/job/303146) | Accounting / Finance (general) | Bangalore, Karnataka, India |
 | Merck KGaA | [Specialist Taxation](https://careers.emdgroup.com/us/en/job/305387) | Tax | Mumbai, Maharashtra, India |
-| Louis Dreyfus Company | [Senior Analyst - Record to Report](https://jobs.smartrecruiters.com/louisdreyfuscompany/744000132118019) | Record to Report / GL | Gurgaon, India |
-| Louis Dreyfus Company | [SAP Senior Solution Specialist – FICO](https://jobs.smartrecruiters.com/louisdreyfuscompany/744000112992383) | Finance Transformation / Systems | Gurugram, India |
-| Louis Dreyfus Company | [Market Risk Specialist](https://jobs.smartrecruiters.com/louisdreyfuscompany/744000152356039) | Risk / Credit | Gurugram, India |
-| KKR | [Finance - Credit Fund Controllership (Open Ended Funds) - Assistant Vi](https://www.kkr.com/careers/career-opportunities/post?gh_jid=6093457004) | Controllership / Reporting | Gurugram |
-| KKR | [Finance - Credit Fund Controllership - Senior Analyst](https://www.kkr.com/careers/career-opportunities/post?gh_jid=6264951004) | Controllership / Reporting | Gurugram |
-| KKR | [Finance - Operating Company Controllership - Assistant Vice President](https://www.kkr.com/careers/career-opportunities/post?gh_jid=6263843004) | Controllership / Reporting | Gurugram |
-| KKR | [Finance - Operating Company Controllership - Associate](https://www.kkr.com/careers/career-opportunities/post?gh_jid=6263975004) | Controllership / Reporting | Gurugram |

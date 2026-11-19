@@ -175,8 +175,8 @@
    "found_on": "https://www.exlservice.com/careers",
    "company_domain": "exlservice.com"
   },
-  "raw": 540,
-  "kept": 45
+  "raw": 541,
+  "kept": 46
  },
  {
   "company": "Barclays",
@@ -202,7 +202,7 @@
    "found_on": "https://portal.careers.hsbc.com/careers?location=any&pid=563774612287498&domain=hsbc.com&sort_by=relevance&triggerGoButton=false&triggerGoButton=true",
    "company_domain": "hsbc.com"
   },
-  "raw": 41,
+  "raw": 42,
   "kept": 22
  },
  {
@@ -228,7 +228,7 @@
    "found_on": "https://jobs.citi.com/",
    "company_domain": "citi.com"
   },
-  "raw": 3129,
+  "raw": 3142,
   "kept": 64
  },
  {
@@ -819,7 +819,7 @@
    "found_on": "https://jobs.boeing.com/",
    "company_domain": "boeing.com"
   },
-  "raw": 1146,
+  "raw": 1176,
   "kept": 0
  },
  {
@@ -882,8 +882,8 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 35,
-  "kept": 4
+  "raw": 33,
+  "kept": 3
  },
  {
   "company": "Eaton",
@@ -1034,7 +1034,7 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 27,
+  "raw": 28,
   "kept": 5
  },
  {
@@ -1112,7 +1112,7 @@
    "found_on": "https://jobs.thermofisher.com/global/en",
    "company_domain": "thermofisher.com"
   },
-  "raw": 47,
+  "raw": 46,
   "kept": 4
  },
  {
@@ -1793,8 +1793,8 @@
    "found_on": "https://www.tatacapital.com/careers.html",
    "company_domain": "tatacapital.com"
   },
-  "raw": 591,
-  "kept": 76
+  "raw": 590,
+  "kept": 77
  },
  {
   "company": "L&T Finance",
@@ -2590,7 +2590,7 @@
    "token": "slice",
    "company_domain": "sliceit.com"
   },
-  "raw": 21,
+  "raw": 23,
   "kept": 0
  },
  {
@@ -2941,7 +2941,7 @@
    "token": "stripe",
    "company_domain": "stripe.com"
   },
-  "raw": 781,
+  "raw": 782,
   "kept": 7
  },
  {
@@ -3029,7 +3029,7 @@
    "found_on": "https://careers.fitch.group/",
    "company_domain": "fitch.group"
   },
-  "raw": 69,
+  "raw": 65,
   "kept": 0
  },
  {
@@ -3192,7 +3192,7 @@
    "probed": true,
    "company_domain": "ing.jobs"
   },
-  "raw": 625,
+  "raw": 632,
   "kept": 0
  },
  {
@@ -3271,7 +3271,7 @@
    "found_on": "https://careers.fiserv.com/us/en",
    "company_domain": "fiserv.com"
   },
-  "raw": 24,
+  "raw": 23,
   "kept": 1
  },
  {
@@ -3284,7 +3284,7 @@
    "found_on": "https://careers.fisglobal.com/us/en",
    "company_domain": "fisglobal.com"
   },
-  "raw": 28,
+  "raw": 32,
   "kept": 0
  },
  {
@@ -3433,7 +3433,7 @@
    "company_domain": "deloitte.com"
   },
   "raw": 411,
-  "kept": 237
+  "kept": 236
  },
  {
   "company": "Nexdigm",
@@ -4832,7 +4832,7 @@
    "found_on": "https://www.zensar.com/careers",
    "company_domain": "zensar.com"
   },
-  "raw": 111,
+  "raw": 101,
   "kept": 5
  },
  {
@@ -5589,7 +5589,7 @@
    "found_on": "https://careers.dhl.com/global/en/blue-dart-jobs",
    "company_domain": "bluedart.com"
   },
-  "raw": 46,
+  "raw": 49,
   "kept": 11
  },
  {
@@ -5820,8 +5820,8 @@
    "found_on": "https://careers.cisco.com/global/en",
    "company_domain": "cisco.com"
   },
-  "raw": 28,
-  "kept": 4
+  "raw": 31,
+  "kept": 1
  },
  {
   "company": "Qualcomm",
@@ -5975,8 +5975,8 @@
    "found_on": "https://jobs.ebayinc.com/us/en/recommended-jobs",
    "company_domain": "ebayinc.com"
   },
-  "raw": 35,
-  "kept": 17
+  "raw": 33,
+  "kept": 16
  },
  {
   "company": "Expedia",
@@ -6607,7 +6607,7 @@
    "found_on": "https://www.capitalonecareers.com/",
    "company_domain": "capitalonecareers.com"
   },
-  "raw": 1941,
+  "raw": 1936,
   "kept": 1
  },
  {
@@ -6793,7 +6793,7 @@
    "found_on": "https://careers.munichre.com/en/job/madrid/broker-relationship-manager/3342/45689345024",
    "company_domain": "munichre.com"
   },
-  "raw": 1674,
+  "raw": 1673,
   "kept": 2
  },
  {
@@ -6958,7 +6958,7 @@
    "found_on": "https://www.verisk.com/company/careers/",
    "company_domain": "verisk.com"
   },
-  "raw": 9,
+  "raw": 7,
   "kept": 0
  },
  {
@@ -7199,7 +7199,7 @@
    "found_on": "https://careers.smbcgroup.com/smbc?utm_source=careersite&utm_campaign=smbc",
    "company_domain": "smbcgroup.com"
   },
-  "raw": 57,
+  "raw": 58,
   "kept": 0
  },
  {
@@ -7432,7 +7432,7 @@
    "found_on": "https://careers.dhl.com/amer/en",
    "company_domain": "dhl.com"
   },
-  "raw": 46,
+  "raw": 49,
   "kept": 2
  },
  {
@@ -7470,7 +7470,7 @@
    "found_on": "https://www.dpworld.com/en/careers/commercial",
    "company_domain": "dpworld.com"
   },
-  "raw": 107,
-  "kept": 23
+  "raw": 105,
+  "kept": 22
  }
 ]

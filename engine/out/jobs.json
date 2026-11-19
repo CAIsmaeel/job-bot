@@ -1,5 +1,113 @@
 [
  {
+  "key": "beed399446dd2001",
+  "company": "Zensar",
+  "title": "ESaaS - Oracle - Functional - Cloud Financials",
+  "category": "Accounting / Finance (general)",
+  "location": "Pune, Maharashtra, India",
+  "url": "https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/153090_2",
+  "posted": "2026-10-29",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "40427666a06c4fa8",
+  "company": "Tata Capital",
+  "title": "Customer Service Executive - PV Finance - Car Finance - New Car - PV - Cochin - Josh Centre - CSE",
+  "category": "Accounting / Finance (general)",
+  "location": "Ernakulam, Kerala, India",
+  "url": "https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57568",
+  "posted": "2026-11-19",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "fe8ff3d2185dd0a3",
+  "company": "Tata Capital",
+  "title": "Customer Service Executive - Car Finance - New Car - PV - Davanagere - Savanur Babu Arcade - CSE",
+  "category": "Accounting / Finance (general)",
+  "location": "Davanagere, Karnataka, India",
+  "url": "https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57570",
+  "posted": "2026-11-19",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "c6de17c6d07a8281",
+  "company": "EXL",
+  "title": "Senior Executive-P2P-Invoice Processing",
+  "category": "Accounts Payable / P2P",
+  "location": "Kochi, Kerala, India",
+  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21000",
+  "posted": "2026-11-19",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "6c01a1b907b35205",
+  "company": "Deloitte India",
+  "title": "Assistant Manager | IFRS | Mumbai | Accounting & Reporting Assurance",
+  "category": "Controllership / Reporting",
+  "location": "Mumbai, India",
+  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-IFRS-Mumbai-Accounting-&amp;-Reporting-Assurance/55426244/",
+  "posted": "Aug 5, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "1d9e0e4ce3478d70",
+  "company": "Deloitte India",
+  "title": "Consultant | Audit - IT, Data & Analytics | Mumbai | Controls | IT Controls,AI, Data Analytics",
+  "category": "Audit / Assurance / SOX",
+  "location": "Mumbai, India",
+  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Consultant-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytics/59410344/",
+  "posted": "Sep 2, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "596a657221dd6937",
+  "company": "Deloitte India",
+  "title": "Deputy Manager | Accounting & Reporting | Mumbai - Commerz III | Accounting & Reporting Assurance",
+  "category": "Audit / Assurance / SOX",
+  "location": "Mumbai - Commerz III, India",
+  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Commerz-III-Deputy-Manager-Accounting-&amp;-Reporting-Mumbai-Commerz-III-Accounting-&amp;-Reporting-Assurance/59995044/",
+  "posted": "Sep 22, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "bed06d576752afd9",
+  "company": "Deloitte India",
+  "title": "Assistant Manager | Audit - IT, Data & Analytics | Mumbai | Controls | IT Controls,AI, Data Analytic",
+  "category": "Audit / Assurance / SOX",
+  "location": "Mumbai, India",
+  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytic/58604844/",
+  "posted": "Sep 4, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
+  "key": "81a2e9cd7cae839b",
+  "company": "Deloitte India",
+  "title": "Deputy Manager | Audit - IT, Data & Analytics | Mumbai | Controls | IT Controls,AI, Data Analytics",
+  "category": "Audit / Assurance / SOX",
+  "location": "Mumbai, India",
+  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Deputy-Manager-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytics/59307444/",
+  "posted": "Sep 26, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-19T18:25:22Z"
+ },
+ {
   "key": "c0765b25eedc6975",
   "company": "eBay",
   "title": "Finance Business Analyst",
@@ -192,18 +300,6 @@
   "first_seen": "2026-11-19T17:39:22Z"
  },
  {
-  "key": "86a5caefa3b43293",
-  "company": "eBay",
-  "title": "Senior Regulatory Auditor",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bengaluru, India",
-  "url": "https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Senior-Regulatory-Auditor_R0077330/apply",
-  "posted": "2026-11-05T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
   "key": "20b45f3453a9af57",
   "company": "Zeta",
   "title": "Manager - Accounts",
@@ -259,18 +355,6 @@
   "location": "India",
   "url": "https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/147928",
   "posted": "2026-10-10",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
-  "key": "b997373239ddbf7f",
-  "company": "Zensar",
-  "title": "ESaaS - Oracle - Functional - Cloud Financials",
-  "category": "Accounting / Finance (general)",
-  "location": "Pune, Maharashtra, India",
-  "url": "https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/152832",
-  "posted": "2026-10-26",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-19T17:39:22Z"
@@ -1044,18 +1128,6 @@
   "first_seen": "2026-11-19T17:39:22Z"
  },
  {
-  "key": "29cc2f634c864b67",
-  "company": "Deloitte India",
-  "title": "Assistant Manager | Audit - IT, Data & Analytics | Mumbai | Controls | IT Controls,AI, Data Analytic",
-  "category": "Audit / Assurance / SOX",
-  "location": "Mumbai, India",
-  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytic/61676244/",
-  "posted": "Nov 19, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
   "key": "72e5c05491b79d3f",
   "company": "DP World",
   "title": "Specialist - Forwarding Finance - Global Service Centre",
@@ -1110,18 +1182,6 @@
   "category": "Accounting / Finance (general)",
   "location": "Meerut, Uttar Pradesh, India",
   "url": "https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26241",
-  "posted": "2026-11-10",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
-  "key": "bebaa1b17463ee47",
-  "company": "DP World",
-  "title": "Senior Manager - Forwarding Finance - Global Service Centre",
-  "category": "Accounting / Finance (general)",
-  "location": "Maharashtra, India",
-  "url": "https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/27942",
   "posted": "2026-11-10",
   "platform": "oracle",
   "approx": false,
@@ -1404,42 +1464,6 @@
   "first_seen": "2026-11-19T17:39:22Z"
  },
  {
-  "key": "4346403c5d11f86f",
-  "company": "Cisco",
-  "title": "Finance Analyst-Techno-Functional Financial Analyst – Finance, AI & Advanced Analytics - 6+yrs exp",
-  "category": "Accounting / Finance (general)",
-  "location": "Bangalore, India",
-  "url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Finance-Analyst-Techno-Functional-Financial-Analyst---Finance--AI---Advanced-Analytics---6-yrs-exp_2025845/apply",
-  "posted": "2026-09-28T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
-  "key": "d536b17986de3349",
-  "company": "Cisco",
-  "title": "Supply Chain Product FP&A Analyst",
-  "category": "FP&A / Business Finance",
-  "location": "Bangalore, India",
-  "url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Supply-Chain-Product-FP-A-Analyst_2025450-1/apply",
-  "posted": "2026-11-01T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
-  "key": "5ad3c08c01c92737",
-  "company": "Cisco",
-  "title": "Finance Analyst",
-  "category": "Accounting / Finance (general)",
-  "location": "Bangalore, India",
-  "url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Finance-Analyst_2028517-1/apply",
-  "posted": "2026-11-01T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
   "key": "077853620b84de96",
   "company": "Cargill",
   "title": "specialist accounting",
@@ -1704,18 +1728,6 @@
   "first_seen": "2026-11-19T17:39:22Z"
  },
  {
-  "key": "75934d48a2052527",
-  "company": "Bunge",
-  "title": "Associate Team Lead - SOX Compliance",
-  "category": "Audit / Assurance / SOX",
-  "location": "PB, India",
-  "url": "https://jobs.bunge.com/job/Bhurai-In-Associate-Team-Lead-SOX-Compliance-PB-160059/1425136933/",
-  "posted": "Nov 6, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
   "key": "037e8e056fc07fbf",
   "company": "Bunge",
   "title": "Team Lead - Credit Risk",
@@ -1723,6 +1735,18 @@
   "location": "PB, India",
   "url": "https://jobs.bunge.com/job/Bhurai-In-Team-Lead-Credit-Risk-PB-160059/1390832433/",
   "posted": "Oct 27, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-19T17:39:22Z"
+ },
+ {
+  "key": "75934d48a2052527",
+  "company": "Bunge",
+  "title": "Associate Team Lead - SOX Compliance",
+  "category": "Audit / Assurance / SOX",
+  "location": "PB, India",
+  "url": "https://jobs.bunge.com/job/Bhurai-In-Associate-Team-Lead-SOX-Compliance-PB-160059/1425136933/",
+  "posted": "Nov 6, 2026",
   "platform": "successfactors",
   "approx": false,
   "first_seen": "2026-11-19T17:39:22Z"
@@ -2628,18 +2652,6 @@
   "first_seen": "2026-11-19T17:39:22Z"
  },
  {
-  "key": "12eff239ceff5117",
-  "company": "ABB",
-  "title": "Accounting & reporting Analyst- General Accounting",
-  "category": "Accounting / Finance (general)",
-  "location": "Bangalore, Karnātaka, India",
-  "url": "https://abb.wd3.myworkdayjobs.com/External_Career_Page/job/Bangalore-Karnataka-India/Accounting---reporting-Analyst--General-Accounting_JR00052117/apply",
-  "posted": "2026-11-04T00:00:00.000+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-19T17:39:22Z"
- },
- {
   "key": "de2d23650a0155a3",
   "company": "Tata Capital",
   "title": "Customer Service Executive - Car Finance - Used Car Loans - Bengaluru - Krishna Tower - CSE*",
@@ -2994,18 +3006,6 @@
   "category": "Audit / Assurance / SOX",
   "location": "Mumbai, India",
   "url": "https://southasiacareers.deloitte.com/job/Mumbai-Deputy-Manager-Internal-Audit-Mumbai-Internal-audit/61667944/",
-  "posted": "Nov 19, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-19T08:54:52Z"
- },
- {
-  "key": "5791f2e35acd72d6",
-  "company": "Deloitte India",
-  "title": "Consultant | Audit - IT, Data & Analytics | Mumbai | Controls | IT Controls,AI, Data Analytics",
-  "category": "Audit / Assurance / SOX",
-  "location": "Mumbai, India",
-  "url": "https://southasiacareers.deloitte.com/job/Mumbai-Consultant-Audit-IT%2C-Data-&amp;-Analytics-Mumbai-Controls-IT-Controls%2CAI%2C-Data-Analytics/61670144/",
   "posted": "Nov 19, 2026",
   "platform": "successfactors",
   "approx": false,
@@ -3525,6 +3525,18 @@
   "posted": null,
   "platform": "workday+site",
   "approx": true,
+  "first_seen": "2026-11-18T17:35:57Z"
+ },
+ {
+  "key": "ed11b9e8a4abca24",
+  "company": "Godrej Consumer Products",
+  "title": "Manager - Finance",
+  "category": "Accounting / Finance (general)",
+  "location": "Mumbai, Maharashtra, India",
+  "url": "https://careers.godrejindustries.com/in/en/job/P-101655",
+  "posted": "2026-10-09T09:48:41.443+0000",
+  "platform": "phenom",
+  "approx": false,
   "first_seen": "2026-11-18T17:35:57Z"
  },
  {
@@ -5004,18 +5016,6 @@
   "first_seen": "2026-11-18T17:10:19Z"
  },
  {
-  "key": "be529ec9965da60f",
-  "company": "Tata Capital",
-  "title": "Customer Service Executive - Car Finance - Used Car Loans - Erode - Brough Road - CSE*",
-  "category": "Accounting / Finance (general)",
-  "location": "India",
-  "url": "https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57233",
-  "posted": "2026-11-13",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
   "key": "e99fd6aa521ba5ea",
   "company": "Tata Capital",
   "title": "Sr Officer - MIS - Wealth - Mumbai - Vikhroli - JM",
@@ -6084,18 +6084,6 @@
   "first_seen": "2026-11-18T17:10:19Z"
  },
  {
-  "key": "5aea164bd04776a0",
-  "company": "Godrej Consumer Products",
-  "title": "Manager - Finance",
-  "category": "Accounting / Finance (general)",
-  "location": "Mumbai, Maharashtra, India",
-  "url": "https://careers.godrejindustries.com/in/en/job/P-101073",
-  "posted": "2026-08-24T09:11:08.315+0000",
-  "platform": "phenom",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
   "key": "e395b3736fde8593",
   "company": "Godrej Consumer Products",
   "title": "Executive - Finance",
@@ -6516,18 +6504,6 @@
   "first_seen": "2026-11-18T17:10:19Z"
  },
  {
-  "key": "c4835eb20760e25e",
-  "company": "Deloitte India",
-  "title": "Consultant | Finance AI Implementation | Bengaluru | Finance Transformation | Finance Strategy",
-  "category": "Finance Transformation / Systems",
-  "location": "Bengaluru, India",
-  "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Consultant-Finance-AI-Implementation-Bengaluru-Finance-Transformation-Finance-Strategy/61613544/",
-  "posted": "Nov 17, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
   "key": "11583b0132b3a6b8",
   "company": "Deloitte India",
   "title": "T&T - OIDS - Project Finance and Bankability Expert (UCF) - Senior Consultant - Delhi",
@@ -6535,6 +6511,18 @@
   "location": "Delhi, India",
   "url": "https://southasiacareers.deloitte.com/job/Delhi-T&amp;T-OIDS-Project-Finance-and-Bankability-Expert-%28UCF%29-Senior-Consultant-Delhi/61389344/",
   "posted": "Nov 10, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-18T17:10:19Z"
+ },
+ {
+  "key": "c4835eb20760e25e",
+  "company": "Deloitte India",
+  "title": "Consultant | Finance AI Implementation | Bengaluru | Finance Transformation | Finance Strategy",
+  "category": "Finance Transformation / Systems",
+  "location": "Bengaluru, India",
+  "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Consultant-Finance-AI-Implementation-Bengaluru-Finance-Transformation-Finance-Strategy/61613544/",
+  "posted": "Nov 17, 2026",
   "platform": "successfactors",
   "approx": false,
   "first_seen": "2026-11-18T17:10:19Z"
@@ -6744,6 +6732,18 @@
   "first_seen": "2026-11-18T17:10:19Z"
  },
  {
+  "key": "c2ed59441c0304af",
+  "company": "Deloitte India",
+  "title": "Associate Director | Oracle EPM: All | Ahmedabad | Finance Transformation | Business Finance",
+  "category": "FP&A / Business Finance",
+  "location": "Ahmedabad, India",
+  "url": "https://southasiacareers.deloitte.com/job/Ahmedabad-Associate-Director-Oracle-EPM-All-Ahmedabad-Finance-Transformation-Business-Finance/60511544/",
+  "posted": "Nov 6, 2026",
+  "platform": "successfactors",
+  "approx": false,
+  "first_seen": "2026-11-18T17:10:19Z"
+ },
+ {
   "key": "ff9165c9552a450f",
   "company": "Deloitte India",
   "title": "Senior Consultant | FT: Strategy & Ops | Bengaluru | Finance Transformation | Finance Strategy",
@@ -6763,18 +6763,6 @@
   "location": "Ahmedabad, India",
   "url": "https://southasiacareers.deloitte.com/job/Ahmedabad-Senior-Consultant-Oracle-EPM-All-Ahmedabad-Finance-Transformation-Business-Finance/61003344/",
   "posted": "Oct 27, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
-  "key": "c2ed59441c0304af",
-  "company": "Deloitte India",
-  "title": "Associate Director | Oracle EPM: All | Ahmedabad | Finance Transformation | Business Finance",
-  "category": "FP&A / Business Finance",
-  "location": "Ahmedabad, India",
-  "url": "https://southasiacareers.deloitte.com/job/Ahmedabad-Associate-Director-Oracle-EPM-All-Ahmedabad-Finance-Transformation-Business-Finance/60511544/",
-  "posted": "Nov 6, 2026",
   "platform": "successfactors",
   "approx": false,
   "first_seen": "2026-11-18T17:10:19Z"
@@ -8424,30 +8412,6 @@
   "first_seen": "2026-11-18T17:10:19Z"
  },
  {
-  "key": "3738f25fe1f2e2fb",
-  "company": "Deloitte India",
-  "title": "Assistant Manager | Internal Audit | Kolkata | Internal audit",
-  "category": "Audit / Assurance / SOX",
-  "location": "Kolkata, India",
-  "url": "https://southasiacareers.deloitte.com/job/Kolkata-Assistant-Manager-Internal-Audit-Kolkata-Internal-audit/61288944/",
-  "posted": "Nov 4, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
-  "key": "abc4905840373a9d",
-  "company": "Deloitte India",
-  "title": "Deputy Manager | Internal Audit | Delhi | Internal Audit",
-  "category": "Audit / Assurance / SOX",
-  "location": "Delhi, India",
-  "url": "https://southasiacareers.deloitte.com/job/Delhi-Deputy-Manager-Internal-Audit-Delhi-Internal-Audit/61564744/",
-  "posted": "Nov 16, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
   "key": "1a5fb85bee02d26d",
   "company": "Deloitte India",
   "title": "Manager | Internal Audit | Bengaluru | Internal audit",
@@ -8455,30 +8419,6 @@
   "location": "Bengaluru, India",
   "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Manager-Internal-Audit-Bengaluru-Internal-audit/60981644/",
   "posted": "Oct 26, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
-  "key": "adf7bc721e548240",
-  "company": "Deloitte India",
-  "title": "Assistant Manager | IT Audit | Bengaluru | Internal audit",
-  "category": "Audit / Assurance / SOX",
-  "location": "Bengaluru, India",
-  "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Assistant-Manager-IT-Audit-Bengaluru-Internal-audit/61062244/",
-  "posted": "Oct 28, 2026",
-  "platform": "successfactors",
-  "approx": false,
-  "first_seen": "2026-11-18T17:10:19Z"
- },
- {
-  "key": "f6902fd1ac5c2624",
-  "company": "Deloitte India",
-  "title": "Assistant Manager | Internal Audit | Delhi | Controls | IT Controls,AI, Data Analytics",
-  "category": "Audit / Assurance / SOX",
-  "location": "Delhi, India",
-  "url": "https://southasiacareers.deloitte.com/job/Delhi-Assistant-Manager-Internal-Audit-Delhi-Controls-IT-Controls%2CAI%2C-Data-Analytics/61480844/",
-  "posted": "Nov 12, 2026",
   "platform": "successfactors",
   "approx": false,
   "first_seen": "2026-11-18T17:10:19Z"
@@ -12456,18 +12396,6 @@
   "first_seen": "2026-11-18T06:08:09Z"
  },
  {
-  "key": "e1e4dfca00171b9c",
-  "company": "EXL",
-  "title": "AVP - EPM",
-  "category": "Finance Transformation / Systems",
-  "location": "Noida, Uttar Pradesh, India",
-  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19497",
-  "posted": "2026-10-19",
-  "platform": "oracle",
-  "approx": false,
-  "first_seen": "2026-11-18T06:08:09Z"
- },
- {
   "key": "afdefc4559c306db",
   "company": "EXL",
   "title": "Lead Assistant Manager-Coding Auditor",
@@ -12595,6 +12523,18 @@
   "location": "Chennai, Tamil Nadu, India",
   "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21397",
   "posted": "2026-10-26",
+  "platform": "oracle",
+  "approx": false,
+  "first_seen": "2026-11-18T06:08:09Z"
+ },
+ {
+  "key": "e1e4dfca00171b9c",
+  "company": "EXL",
+  "title": "AVP - EPM",
+  "category": "Finance Transformation / Systems",
+  "location": "Noida, Uttar Pradesh, India",
+  "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/19497",
+  "posted": "2026-10-19",
   "platform": "oracle",
   "approx": false,
   "first_seen": "2026-11-18T06:08:09Z"
