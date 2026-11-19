@@ -5586,5 +5586,68 @@
    "company_domain": "dpworld.com"
   },
   "at": "2026-11-19T17:39:22Z"
+ },
+ "Tata Steel": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "tatasteel.ripplehire.com",
+   "found_on": "https://tatasteel.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
+ },
+ "HDFC Bank": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "hdfcbank.ripplehire.com",
+   "found_on": "https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#list",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
+ },
+ "Axis Bank": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "axisbank.ripplehire.com",
+   "found_on": "https://axisbank.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
+ },
+ "Tata AIA Life": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "tataaia.ripplehire.com",
+   "found_on": "https://tataaia.ripplehire.com/candidate/?token=sHL2jO0rtOvpftwOGDCp&source=CAREERSITE#list",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
+ },
+ "Axis Mutual Fund": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "axismf.ripplehire.com",
+   "found_on": "https://axismf.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
+ },
+ "Mphasis": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "mphasis.ripplehire.com",
+   "found_on": "https://mphasis.ripplehire.com/candidate/?token=ty4DfyWddnOrtpclQeia&source=CAREERSITE#list",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
+ },
+ "Tata Technologies": {
+  "cfg": {
+   "platform": "ripplehire",
+   "host": "tatatechnologies.ripplehire.com",
+   "found_on": "https://tatatechnologies.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
+  },
+  "at": "2026-11-19T19:50:42Z"
  }
 }

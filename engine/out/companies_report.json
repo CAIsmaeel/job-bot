@@ -71,7 +71,7 @@
    "found_on": "https://careers.ey.com/",
    "company_domain": "ey.com"
   },
-  "raw": 88,
+  "raw": 87,
   "kept": 0
  },
  {
@@ -98,8 +98,8 @@
    "found_on": "https://kpmg.com/in/en/careers.html",
    "company_domain": "kpmg.com"
   },
-  "raw": 395,
-  "kept": 32
+  "raw": 373,
+  "kept": 30
  },
  {
   "company": "Grant Thornton Bharat",
@@ -202,8 +202,8 @@
    "found_on": "https://portal.careers.hsbc.com/careers?location=any&pid=563774612287498&domain=hsbc.com&sort_by=relevance&triggerGoButton=false&triggerGoButton=true",
    "company_domain": "hsbc.com"
   },
-  "raw": 42,
-  "kept": 22
+  "raw": 39,
+  "kept": 19
  },
  {
   "company": "Deutsche Bank",
@@ -342,7 +342,7 @@
    "found_on": "https://careers.unilever.com/en",
    "company_domain": "unilever.com"
   },
-  "raw": 286,
+  "raw": 283,
   "kept": 2
  },
  {
@@ -405,7 +405,7 @@
    "found_on": "https://cummins.jobs/",
    "company_domain": "cummins.jobs"
   },
-  "raw": 149,
+  "raw": 148,
   "kept": 4
  },
  {
@@ -441,7 +441,7 @@
    "token": "abinbev",
    "company_domain": "ab-inbev.com"
   },
-  "raw": 58,
+  "raw": 57,
   "kept": 0
  },
  {
@@ -741,7 +741,7 @@
    "found_on": "https://talent.lowes.com/us/en",
    "company_domain": "lowes.com"
   },
-  "raw": 31,
+  "raw": 32,
   "kept": 0
  },
  {
@@ -857,7 +857,7 @@
    "found_on": "https://jobs.volvogroup.com/",
    "company_domain": "volvogroup.com"
   },
-  "raw": 24,
+  "raw": 23,
   "kept": 4
  },
  {
@@ -882,7 +882,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 33,
+  "raw": 32,
   "kept": 3
  },
  {
@@ -1009,7 +1009,7 @@
    "found_on": "https://jobs.colgate.com/",
    "company_domain": "colgate.com"
   },
-  "raw": 64,
+  "raw": 65,
   "kept": 0
  },
  {
@@ -1021,7 +1021,7 @@
    "found_on": "https://careers.reckitt.com/",
    "company_domain": "reckitt.com"
   },
-  "raw": 53,
+  "raw": 51,
   "kept": 18
  },
  {
@@ -1126,7 +1126,7 @@
    "found_on": "https://jobs.baxter.com/en",
    "company_domain": "baxter.com"
   },
-  "raw": 520,
+  "raw": 516,
   "kept": 3
  },
  {
@@ -1182,15 +1182,15 @@
  },
  {
   "company": "Tata Steel",
-  "careers": "https://www.tatasteel.com/careers/",
-  "platform": "sitemap",
+  "careers": "https://tatasteel.ripplehire.com/candidate/",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://www.tatasteel.com",
-   "probed": true,
-   "company_domain": "tatasteel.com"
+   "host": "tatasteel.ripplehire.com",
+   "found_on": "https://tatasteel.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
-  "kept": 0
+  "raw": 56,
+  "kept": 2
  },
  {
   "company": "Tata Motors",
@@ -1226,20 +1226,20 @@
    "found_on": "https://jobs.mahindracareers.com/",
    "company_domain": "mahindra.com"
   },
-  "raw": 61,
-  "kept": 10
+  "raw": 62,
+  "kept": 9
  },
  {
   "company": "HDFC Bank",
-  "careers": "https://www.hdfc.bank.in/careers",
-  "platform": "sitemap",
+  "careers": "https://hdfcbank.ripplehire.com/candidate/careers",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://www.hdfc.bank.in",
-   "probed": true,
-   "company_domain": "bank.in"
+   "host": "hdfcbank.ripplehire.com",
+   "found_on": "https://hdfcbank.ripplehire.com/candidate/?token=pvB5iAMcmu4ydUh2IW2O&source=CAREERSITE#list",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
-  "kept": 0
+  "raw": 542,
+  "kept": 32
  },
  {
   "company": "ICICI Bank",
@@ -1268,15 +1268,15 @@
  },
  {
   "company": "Axis Bank",
-  "careers": "https://www.axisbank.com/careers",
-  "platform": "sitemap",
+  "careers": "https://axisbank.ripplehire.com/candidate/",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://www.axisbank.com",
-   "probed": true,
-   "company_domain": "axisbank.com"
+   "host": "axisbank.ripplehire.com",
+   "found_on": "https://axisbank.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
-  "kept": 0
+  "raw": 1200,
+  "kept": 8
  },
  {
   "company": "IDFC FIRST Bank",
@@ -1468,7 +1468,7 @@
    "found_on": "https://careers.wipro.com/",
    "company_domain": "wipro.com"
   },
-  "raw": 106,
+  "raw": 102,
   "kept": 0
  },
  {
@@ -1612,7 +1612,7 @@
    "token": "yes",
    "company_domain": "yesbank.in"
   },
-  "raw": 1,
+  "raw": 2,
   "kept": 0
  },
  {
@@ -1737,15 +1737,15 @@
  },
  {
   "company": "Tata AIA Life",
-  "careers": "https://www.tataaia.com/careers.html",
-  "platform": "sitemap",
+  "careers": "https://tataaia.ripplehire.com/ripplehire/careers",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://www.tataaia.com",
-   "probed": true,
-   "company_domain": "tataaia.com"
+   "host": "tataaia.ripplehire.com",
+   "found_on": "https://tataaia.ripplehire.com/candidate/?token=sHL2jO0rtOvpftwOGDCp&source=CAREERSITE#list",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
-  "kept": 0
+  "raw": 1169,
+  "kept": 13
  },
  {
   "company": "Max Life (Axis Max Life)",
@@ -1793,8 +1793,8 @@
    "found_on": "https://www.tatacapital.com/careers.html",
    "company_domain": "tatacapital.com"
   },
-  "raw": 590,
-  "kept": 77
+  "raw": 613,
+  "kept": 79
  },
  {
   "company": "L&T Finance",
@@ -2024,8 +2024,8 @@
    "found_on": "https://careers.unilever.com/en/india",
    "company_domain": "unilever.com"
   },
-  "raw": 286,
-  "kept": 30
+  "raw": 283,
+  "kept": 28
  },
  {
   "company": "Britannia",
@@ -2120,7 +2120,7 @@
    "found_on": "https://jobs.heromotocorp.com/search/?createNewAlert=false&q=&optionsFacetsDD_department=&locationsearch=",
    "company_domain": "heromotocorp.com"
   },
-  "raw": 39,
+  "raw": 38,
   "kept": 0
  },
  {
@@ -2857,7 +2857,7 @@
    "probed": true,
    "company_domain": "unitedhealthgroup.com"
   },
-  "raw": 6508,
+  "raw": 6531,
   "kept": 5
  },
  {
@@ -2929,7 +2929,7 @@
    "company": "servicenow",
    "company_domain": "servicenow.com"
   },
-  "raw": 82,
+  "raw": 81,
   "kept": 3
  },
  {
@@ -2941,7 +2941,7 @@
    "token": "stripe",
    "company_domain": "stripe.com"
   },
-  "raw": 782,
+  "raw": 770,
   "kept": 7
  },
  {
@@ -3271,7 +3271,7 @@
    "found_on": "https://careers.fiserv.com/us/en",
    "company_domain": "fiserv.com"
   },
-  "raw": 23,
+  "raw": 22,
   "kept": 1
  },
  {
@@ -3384,8 +3384,8 @@
    "found_on": "https://www.citco.com/careers",
    "company_domain": "citco.com"
   },
-  "raw": 91,
-  "kept": 43
+  "raw": 86,
+  "kept": 41
  },
  {
   "company": "Infosys BPM",
@@ -3420,7 +3420,7 @@
    "found_on": "https://careers.ey.com/ey/search/?createNewAlert=false&q=&locationsearch=&optionsFacetsDD_country=&optionsFacetsDD_customfield1=Strategy%20and%20Transactions",
    "company_domain": "ey.com"
   },
-  "raw": 88,
+  "raw": 87,
   "kept": 0
  },
  {
@@ -3432,8 +3432,8 @@
    "found_on": "https://southasiacareers.deloitte.com/",
    "company_domain": "deloitte.com"
   },
-  "raw": 411,
-  "kept": 236
+  "raw": 407,
+  "kept": 227
  },
  {
   "company": "Nexdigm",
@@ -3909,15 +3909,15 @@
  },
  {
   "company": "Axis Mutual Fund",
-  "careers": "https://www.axismf.com/careers",
-  "platform": "sitemap",
+  "careers": "https://axismf.ripplehire.com/candidate/",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://www.axismf.com",
-   "probed": true,
-   "company_domain": "axismf.com"
+   "host": "axismf.ripplehire.com",
+   "found_on": "https://axismf.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
-  "kept": 0
+  "raw": 181,
+  "kept": 3
  },
  {
   "company": "SBI Mutual Fund",
@@ -4776,15 +4776,15 @@
  },
  {
   "company": "Mphasis",
-  "careers": "https://careers.mphasis.com",
-  "platform": "sitemap",
+  "careers": "https://mphasis.ripplehire.com/ripplehire/careers",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://careers.mphasis.com",
-   "probed": true,
-   "company_domain": "mphasis.com"
+   "host": "mphasis.ripplehire.com",
+   "found_on": "https://mphasis.ripplehire.com/candidate/?token=ty4DfyWddnOrtpclQeia&source=CAREERSITE#list",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
-  "kept": 0
+  "raw": 263,
+  "kept": 4
  },
  {
   "company": "Coforge",
@@ -4861,14 +4861,14 @@
  },
  {
   "company": "Tata Technologies",
-  "careers": "https://www.tatatechnologies.com/careers/",
-  "platform": "sitemap",
+  "careers": "https://tatatechnologies.ripplehire.com/candidate/",
+  "platform": "ripplehire",
   "config": {
-   "origin": "https://www.tatatechnologies.com",
-   "probed": true,
-   "company_domain": "tatatechnologies.com"
+   "host": "tatatechnologies.ripplehire.com",
+   "found_on": "https://tatatechnologies.ripplehire.com/candidate/",
+   "company_domain": "ripplehire.com"
   },
-  "raw": 0,
+  "raw": 335,
   "kept": 0
  },
  {
@@ -5589,7 +5589,7 @@
    "found_on": "https://careers.dhl.com/global/en/blue-dart-jobs",
    "company_domain": "bluedart.com"
   },
-  "raw": 49,
+  "raw": 47,
   "kept": 11
  },
  {
@@ -5820,7 +5820,7 @@
    "found_on": "https://careers.cisco.com/global/en",
    "company_domain": "cisco.com"
   },
-  "raw": 31,
+  "raw": 29,
   "kept": 1
  },
  {
@@ -5948,7 +5948,7 @@
    "probed": true,
    "company_domain": "intuit.com"
   },
-  "raw": 602,
+  "raw": 609,
   "kept": 4
  },
  {
@@ -5975,7 +5975,7 @@
    "found_on": "https://jobs.ebayinc.com/us/en/recommended-jobs",
    "company_domain": "ebayinc.com"
   },
-  "raw": 33,
+  "raw": 31,
   "kept": 16
  },
  {
@@ -6226,7 +6226,7 @@
    "found_on": "https://careers.cargill.com/en",
    "company_domain": "cargill.com"
   },
-  "raw": 1345,
+  "raw": 1349,
   "kept": 6
  },
  {
@@ -6555,7 +6555,7 @@
    "found_on": "https://jobs.bd.com/en",
    "company_domain": "bd.com"
   },
-  "raw": 1076,
+  "raw": 1079,
   "kept": 0
  },
  {
@@ -6607,7 +6607,7 @@
    "found_on": "https://www.capitalonecareers.com/",
    "company_domain": "capitalonecareers.com"
   },
-  "raw": 1936,
+  "raw": 1934,
   "kept": 1
  },
  {
@@ -6643,7 +6643,7 @@
    "probed": true,
    "company_domain": "schwabjobs.com"
   },
-  "raw": 341,
+  "raw": 347,
   "kept": 0
  },
  {
@@ -7432,7 +7432,7 @@
    "found_on": "https://careers.dhl.com/amer/en",
    "company_domain": "dhl.com"
   },
-  "raw": 49,
+  "raw": 46,
   "kept": 2
  },
  {
