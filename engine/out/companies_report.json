@@ -35,7 +35,7 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 273,
+  "raw": 266,
   "kept": 47
  },
  {
@@ -71,7 +71,7 @@
    "found_on": "https://careers.ey.com/",
    "company_domain": "ey.com"
   },
-  "raw": 90,
+  "raw": 66,
   "kept": 0
  },
  {
@@ -98,8 +98,8 @@
    "found_on": "https://kpmg.com/in/en/careers.html",
    "company_domain": "kpmg.com"
   },
-  "raw": 366,
-  "kept": 28
+  "raw": 387,
+  "kept": 33
  },
  {
   "company": "Grant Thornton Bharat",
@@ -189,8 +189,8 @@
    "found_on": "https://search.jobs.barclays/",
    "company_domain": "jobs.barclays"
   },
-  "raw": 687,
-  "kept": 45
+  "raw": 679,
+  "kept": 44
  },
  {
   "company": "HSBC",
@@ -202,8 +202,8 @@
    "found_on": "https://portal.careers.hsbc.com/careers?location=any&pid=563774612287498&domain=hsbc.com&sort_by=relevance&triggerGoButton=false&triggerGoButton=true",
    "company_domain": "hsbc.com"
   },
-  "raw": 34,
-  "kept": 19
+  "raw": 42,
+  "kept": 22
  },
  {
   "company": "Deutsche Bank",
@@ -228,7 +228,7 @@
    "found_on": "https://jobs.citi.com/",
    "company_domain": "citi.com"
   },
-  "raw": 3091,
+  "raw": 3087,
   "kept": 63
  },
  {
@@ -342,7 +342,7 @@
    "found_on": "https://careers.unilever.com/en",
    "company_domain": "unilever.com"
   },
-  "raw": 266,
+  "raw": 255,
   "kept": 1
  },
  {
@@ -405,7 +405,7 @@
    "found_on": "https://cummins.jobs/",
    "company_domain": "cummins.jobs"
   },
-  "raw": 150,
+  "raw": 145,
   "kept": 4
  },
  {
@@ -417,7 +417,7 @@
    "found_on": "https://jobs.bosch.com/en?pages=1&country=in",
    "company_domain": "bosch.in"
   },
-  "raw": 264,
+  "raw": 269,
   "kept": 14
  },
  {
@@ -552,7 +552,7 @@
    "found_on": "https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html",
    "company_domain": "bny.com"
   },
-  "raw": 83,
+  "raw": 81,
   "kept": 11
  },
  {
@@ -604,7 +604,7 @@
    "probed": true,
    "company_domain": "blackrock.com"
   },
-  "raw": 290,
+  "raw": 289,
   "kept": 8
  },
  {
@@ -640,7 +640,7 @@
    "found_on": "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
    "company_domain": "sc.com"
   },
-  "raw": 79,
+  "raw": 74,
   "kept": 0
  },
  {
@@ -702,8 +702,8 @@
    "probed": true,
    "company_domain": "synchronycareers.com"
   },
-  "raw": 27,
-  "kept": 0
+  "raw": 29,
+  "kept": 1
  },
  {
   "company": "Target",
@@ -741,7 +741,7 @@
    "found_on": "https://talent.lowes.com/us/en",
    "company_domain": "lowes.com"
   },
-  "raw": 32,
+  "raw": 31,
   "kept": 0
  },
  {
@@ -819,7 +819,7 @@
    "found_on": "https://jobs.boeing.com/",
    "company_domain": "boeing.com"
   },
-  "raw": 1159,
+  "raw": 1146,
   "kept": 0
  },
  {
@@ -857,7 +857,7 @@
    "found_on": "https://jobs.volvogroup.com/",
    "company_domain": "volvogroup.com"
   },
-  "raw": 22,
+  "raw": 23,
   "kept": 4
  },
  {
@@ -882,7 +882,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 34,
+  "raw": 35,
   "kept": 3
  },
  {
@@ -1009,7 +1009,7 @@
    "found_on": "https://jobs.colgate.com/",
    "company_domain": "colgate.com"
   },
-  "raw": 68,
+  "raw": 64,
   "kept": 0
  },
  {
@@ -1021,7 +1021,7 @@
    "found_on": "https://careers.reckitt.com/",
    "company_domain": "reckitt.com"
   },
-  "raw": 50,
+  "raw": 53,
   "kept": 18
  },
  {
@@ -1034,7 +1034,7 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 27,
+  "raw": 26,
   "kept": 5
  },
  {
@@ -1059,7 +1059,7 @@
    "probed": true,
    "company_domain": "sanofi.com"
   },
-  "raw": 1464,
+  "raw": 1443,
   "kept": 5
  },
  {
@@ -1126,7 +1126,7 @@
    "found_on": "https://jobs.baxter.com/en",
    "company_domain": "baxter.com"
   },
-  "raw": 517,
+  "raw": 516,
   "kept": 3
  },
  {
@@ -1227,7 +1227,7 @@
    "company_domain": "mahindra.com"
   },
   "raw": 62,
-  "kept": 9
+  "kept": 10
  },
  {
   "company": "HDFC Bank",
@@ -1263,8 +1263,8 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 748,
-  "kept": 21
+  "raw": 746,
+  "kept": 22
  },
  {
   "company": "Axis Bank",
@@ -1445,7 +1445,7 @@
    "company_domain": "asianpaints.com"
   },
   "raw": 166,
-  "kept": 4
+  "kept": 5
  },
  {
   "company": "Infosys",
@@ -1468,7 +1468,7 @@
    "found_on": "https://careers.wipro.com/",
    "company_domain": "wipro.com"
   },
-  "raw": 107,
+  "raw": 102,
   "kept": 0
  },
  {
@@ -1480,7 +1480,7 @@
    "found_on": "https://careers.hcltech.com/",
    "company_domain": "hcltech.com"
   },
-  "raw": 108,
+  "raw": 96,
   "kept": 0
  },
  {
@@ -1528,7 +1528,7 @@
    "found_on": "https://razorpay.com/careers/",
    "company_domain": "razorpay.com"
   },
-  "raw": 28,
+  "raw": 29,
   "kept": 2
  },
  {
@@ -1540,7 +1540,7 @@
    "found_on": "https://paytm.com/careers",
    "company_domain": "paytm.com"
   },
-  "raw": 194,
+  "raw": 195,
   "kept": 17
  },
  {
@@ -1576,7 +1576,7 @@
    "company": "swiggy",
    "company_domain": "swiggy.com"
   },
-  "raw": 154,
+  "raw": 153,
   "kept": 3
  },
  {
@@ -1793,8 +1793,8 @@
    "found_on": "https://www.tatacapital.com/careers.html",
    "company_domain": "tatacapital.com"
   },
-  "raw": 647,
-  "kept": 83
+  "raw": 591,
+  "kept": 72
  },
  {
   "company": "L&T Finance",
@@ -1866,7 +1866,7 @@
    "found_on": "https://mf.nipponindiaim.com/careers",
    "company_domain": "nipponindiaim.com"
   },
-  "raw": 23,
+  "raw": 24,
   "kept": 0
  },
  {
@@ -2024,8 +2024,8 @@
    "found_on": "https://careers.unilever.com/en/india",
    "company_domain": "unilever.com"
   },
-  "raw": 266,
-  "kept": 23
+  "raw": 255,
+  "kept": 25
  },
  {
   "company": "Britannia",
@@ -2481,7 +2481,7 @@
    "name": "meesho",
    "company_domain": "meesho.io"
   },
-  "raw": 47,
+  "raw": 48,
   "kept": 6
  },
  {
@@ -2686,7 +2686,7 @@
    "found_on": "https://www.freshworks.com/company/careers/",
    "company_domain": "freshworks.com"
   },
-  "raw": 25,
+  "raw": 29,
   "kept": 1
  },
  {
@@ -2857,7 +2857,7 @@
    "probed": true,
    "company_domain": "unitedhealthgroup.com"
   },
-  "raw": 6505,
+  "raw": 6506,
   "kept": 5
  },
  {
@@ -2941,8 +2941,8 @@
    "token": "stripe",
    "company_domain": "stripe.com"
   },
-  "raw": 785,
-  "kept": 8
+  "raw": 783,
+  "kept": 7
  },
  {
   "company": "Atlassian",
@@ -2991,7 +2991,7 @@
    "found_on": "https://careers.moodys.com/en",
    "company_domain": "moodys.com"
   },
-  "raw": 330,
+  "raw": 332,
   "kept": 4
  },
  {
@@ -3029,7 +3029,7 @@
    "found_on": "https://careers.fitch.group/",
    "company_domain": "fitch.group"
   },
-  "raw": 68,
+  "raw": 67,
   "kept": 0
  },
  {
@@ -3192,7 +3192,7 @@
    "probed": true,
    "company_domain": "ing.jobs"
   },
-  "raw": 631,
+  "raw": 633,
   "kept": 0
  },
  {
@@ -3271,7 +3271,7 @@
    "found_on": "https://careers.fiserv.com/us/en",
    "company_domain": "fiserv.com"
   },
-  "raw": 24,
+  "raw": 25,
   "kept": 1
  },
  {
@@ -3284,7 +3284,7 @@
    "found_on": "https://careers.fisglobal.com/us/en",
    "company_domain": "fisglobal.com"
   },
-  "raw": 26,
+  "raw": 29,
   "kept": 0
  },
  {
@@ -3347,7 +3347,7 @@
    "found_on": "https://careers.vistra.com/",
    "company_domain": "vistra.com"
   },
-  "raw": 167,
+  "raw": 169,
   "kept": 0
  },
  {
@@ -3384,8 +3384,8 @@
    "found_on": "https://www.citco.com/careers",
    "company_domain": "citco.com"
   },
-  "raw": 93,
-  "kept": 44
+  "raw": 92,
+  "kept": 43
  },
  {
   "company": "Infosys BPM",
@@ -3420,7 +3420,7 @@
    "found_on": "https://careers.ey.com/ey/search/?createNewAlert=false&q=&locationsearch=&optionsFacetsDD_country=&optionsFacetsDD_customfield1=Strategy%20and%20Transactions",
    "company_domain": "ey.com"
   },
-  "raw": 76,
+  "raw": 66,
   "kept": 0
  },
  {
@@ -3432,8 +3432,8 @@
    "found_on": "https://southasiacareers.deloitte.com/",
    "company_domain": "deloitte.com"
   },
-  "raw": 409,
-  "kept": 231
+  "raw": 410,
+  "kept": 235
  },
  {
   "company": "Nexdigm",
