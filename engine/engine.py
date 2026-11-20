@@ -170,9 +170,9 @@ def identify(blob, url):
     m = re.search(r"(?:boards|job-boards)\.greenhouse\.io/(?:embed/job_board(?:/js)?\?for=)?([A-Za-z0-9_-]+)", blob)
     if m and m.group(1) not in ("embed",):
         return {"platform": "greenhouse", "token": m.group(1)}
-    m = re.search(r"([a-z0-9-]+)\.keka\.com", blob, re.I)
-    if m and m.group(1).lower() not in ("www", "cdn", "app", "help"):
-        return {"platform": "keka", "host": m.group(1).lower() + ".keka.com"}
+    for m in re.finditer(r"([a-z0-9-]+)\.keka\.com", blob, re.I):
+        if m.group(1).lower() not in ("www", "cdn", "app", "help", "stkekastaticdev"):
+            return {"platform": "keka", "host": m.group(1).lower() + ".keka.com"}
     m = re.search(r"([a-z0-9-]+)\.ripplehire\.com", blob, re.I)
     if m and m.group(1).lower() not in ("www", "cdn", "static"):
         return {"platform": "ripplehire", "host": m.group(1).lower() + ".ripplehire.com"}
