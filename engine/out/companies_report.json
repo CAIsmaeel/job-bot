@@ -35,7 +35,7 @@
    "found_on": "https://www.jpmorganchase.com/careers?redirect=careers_jpm",
    "company_domain": "jpmorgan.com"
   },
-  "raw": 272,
+  "raw": 273,
   "kept": 46
  },
  {
@@ -71,7 +71,7 @@
    "found_on": "https://careers.ey.com/",
    "company_domain": "ey.com"
   },
-  "raw": 87,
+  "raw": 96,
   "kept": 0
  },
  {
@@ -175,7 +175,7 @@
    "found_on": "https://www.exlservice.com/careers",
    "company_domain": "exlservice.com"
   },
-  "raw": 541,
+  "raw": 539,
   "kept": 46
  },
  {
@@ -189,8 +189,8 @@
    "found_on": "https://search.jobs.barclays/",
    "company_domain": "jobs.barclays"
   },
-  "raw": 708,
-  "kept": 45
+  "raw": 669,
+  "kept": 31
  },
  {
   "company": "HSBC",
@@ -228,7 +228,7 @@
    "found_on": "https://jobs.citi.com/",
    "company_domain": "citi.com"
   },
-  "raw": 3142,
+  "raw": 3134,
   "kept": 64
  },
  {
@@ -342,7 +342,7 @@
    "found_on": "https://careers.unilever.com/en",
    "company_domain": "unilever.com"
   },
-  "raw": 283,
+  "raw": 278,
   "kept": 2
  },
  {
@@ -405,7 +405,7 @@
    "found_on": "https://cummins.jobs/",
    "company_domain": "cummins.jobs"
   },
-  "raw": 148,
+  "raw": 147,
   "kept": 4
  },
  {
@@ -441,7 +441,7 @@
    "token": "abinbev",
    "company_domain": "ab-inbev.com"
   },
-  "raw": 57,
+  "raw": 58,
   "kept": 0
  },
  {
@@ -604,8 +604,8 @@
    "probed": true,
    "company_domain": "blackrock.com"
   },
-  "raw": 294,
-  "kept": 9
+  "raw": 297,
+  "kept": 8
  },
  {
   "company": "Nomura",
@@ -640,7 +640,7 @@
    "found_on": "https://jobs.standardchartered.com/content/Search-Result-Page/?employment_type=early_careers&utm_source=careersite",
    "company_domain": "sc.com"
   },
-  "raw": 75,
+  "raw": 73,
   "kept": 0
  },
  {
@@ -741,7 +741,7 @@
    "found_on": "https://talent.lowes.com/us/en",
    "company_domain": "lowes.com"
   },
-  "raw": 32,
+  "raw": 33,
   "kept": 0
  },
  {
@@ -819,7 +819,7 @@
    "found_on": "https://jobs.boeing.com/",
    "company_domain": "boeing.com"
   },
-  "raw": 1146,
+  "raw": 1176,
   "kept": 0
  },
  {
@@ -832,8 +832,8 @@
    "found_on": "https://careers.gehealthcare.com/global/en",
    "company_domain": "gehealthcare.com"
   },
-  "raw": 30,
-  "kept": 6
+  "raw": 29,
+  "kept": 3
  },
  {
   "company": "Philips",
@@ -845,7 +845,7 @@
    "found_on": "https://www.careers.philips.com/na/en",
    "company_domain": "philips.com"
   },
-  "raw": 19,
+  "raw": 21,
   "kept": 0
  },
  {
@@ -882,7 +882,7 @@
    "found_on": "https://careers.abb/us/en",
    "company_domain": "careers.abb"
   },
-  "raw": 34,
+  "raw": 35,
   "kept": 3
  },
  {
@@ -908,7 +908,7 @@
    "found_on": "https://www.emerson.com/en/corporate/careers",
    "company_domain": "emerson.com"
   },
-  "raw": 180,
+  "raw": 179,
   "kept": 4
  },
  {
@@ -1009,7 +1009,7 @@
    "found_on": "https://jobs.colgate.com/",
    "company_domain": "colgate.com"
   },
-  "raw": 66,
+  "raw": 64,
   "kept": 0
  },
  {
@@ -1034,8 +1034,8 @@
    "found_on": "https://jobs.gsk.com/us/en",
    "company_domain": "gsk.com"
   },
-  "raw": 28,
-  "kept": 5
+  "raw": 25,
+  "kept": 4
  },
  {
   "company": "AstraZeneca",
@@ -1059,8 +1059,8 @@
    "probed": true,
    "company_domain": "sanofi.com"
   },
-  "raw": 1451,
-  "kept": 5
+  "raw": 1455,
+  "kept": 3
  },
  {
   "company": "Pfizer",
@@ -1126,7 +1126,7 @@
    "found_on": "https://jobs.baxter.com/en",
    "company_domain": "baxter.com"
   },
-  "raw": 516,
+  "raw": 514,
   "kept": 3
  },
  {
@@ -1263,7 +1263,7 @@
    "found_on": "https://www.kotak.bank.in/en/about-us/careers.html",
    "company_domain": "kotak.com"
   },
-  "raw": 737,
+  "raw": 735,
   "kept": 22
  },
  {
@@ -1276,7 +1276,7 @@
    "company_domain": "ripplehire.com"
   },
   "raw": 1200,
-  "kept": 8
+  "kept": 9
  },
  {
   "company": "IDFC FIRST Bank",
@@ -1468,7 +1468,7 @@
    "found_on": "https://careers.wipro.com/",
    "company_domain": "wipro.com"
   },
-  "raw": 102,
+  "raw": 93,
   "kept": 0
  },
  {
@@ -1480,7 +1480,7 @@
    "found_on": "https://careers.hcltech.com/",
    "company_domain": "hcltech.com"
   },
-  "raw": 95,
+  "raw": 92,
   "kept": 0
  },
  {
@@ -2024,8 +2024,8 @@
    "found_on": "https://careers.unilever.com/en/india",
    "company_domain": "unilever.com"
   },
-  "raw": 283,
-  "kept": 28
+  "raw": 278,
+  "kept": 26
  },
  {
   "company": "Britannia",
@@ -2595,12 +2595,12 @@
  },
  {
   "company": "Jupiter",
-  "careers": "https://jupiter.money/careers/",
+  "careers": "https://jupiter.keka.com/careers",
   "platform": "sitemap",
   "config": {
-   "origin": "https://jupiter.money",
+   "origin": "https://jupiter.keka.com",
    "probed": true,
-   "company_domain": "jupiter.money"
+   "company_domain": "keka.com"
   },
   "raw": 0,
   "kept": 0
@@ -2833,7 +2833,7 @@
    "found_on": "https://www.startek.com/careers/",
    "company_domain": "startek.com"
   },
-  "raw": 192,
+  "raw": 191,
   "kept": 0
  },
  {
@@ -2857,7 +2857,7 @@
    "probed": true,
    "company_domain": "unitedhealthgroup.com"
   },
-  "raw": 6531,
+  "raw": 6539,
   "kept": 5
  },
  {
@@ -2941,7 +2941,7 @@
    "token": "stripe",
    "company_domain": "stripe.com"
   },
-  "raw": 771,
+  "raw": 772,
   "kept": 7
  },
  {
@@ -2991,7 +2991,7 @@
    "found_on": "https://careers.moodys.com/en",
    "company_domain": "moodys.com"
   },
-  "raw": 335,
+  "raw": 337,
   "kept": 4
  },
  {
@@ -3029,7 +3029,7 @@
    "found_on": "https://careers.fitch.group/",
    "company_domain": "fitch.group"
   },
-  "raw": 65,
+  "raw": 64,
   "kept": 0
  },
  {
@@ -3054,7 +3054,7 @@
    "found_on": "https://careers.franklintempleton.com/us/en",
    "company_domain": "franklintempletoncareers.com"
   },
-  "raw": 35,
+  "raw": 36,
   "kept": 6
  },
  {
@@ -3144,7 +3144,7 @@
    "found_on": "https://fa-ewgu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001",
    "company_domain": "chubb.com"
   },
-  "raw": 53,
+  "raw": 52,
   "kept": 4
  },
  {
@@ -3192,7 +3192,7 @@
    "probed": true,
    "company_domain": "ing.jobs"
   },
-  "raw": 632,
+  "raw": 634,
   "kept": 0
  },
  {
@@ -3271,8 +3271,8 @@
    "found_on": "https://careers.fiserv.com/us/en",
    "company_domain": "fiserv.com"
   },
-  "raw": 21,
-  "kept": 1
+  "raw": 23,
+  "kept": 0
  },
  {
   "company": "FIS",
@@ -3284,7 +3284,7 @@
    "found_on": "https://careers.fisglobal.com/us/en",
    "company_domain": "fisglobal.com"
   },
-  "raw": 31,
+  "raw": 28,
   "kept": 0
  },
  {
@@ -3347,7 +3347,7 @@
    "found_on": "https://careers.vistra.com/",
    "company_domain": "vistra.com"
   },
-  "raw": 176,
+  "raw": 177,
   "kept": 0
  },
  {
@@ -3420,7 +3420,7 @@
    "found_on": "https://careers.ey.com/ey/search/?createNewAlert=false&q=&locationsearch=&optionsFacetsDD_country=&optionsFacetsDD_customfield1=Strategy%20and%20Transactions",
    "company_domain": "ey.com"
   },
-  "raw": 87,
+  "raw": 96,
   "kept": 0
  },
  {
@@ -3432,7 +3432,7 @@
    "found_on": "https://southasiacareers.deloitte.com/",
    "company_domain": "deloitte.com"
   },
-  "raw": 407,
+  "raw": 406,
   "kept": 226
  },
  {
@@ -4102,10 +4102,10 @@
  {
   "company": "Open Financial",
   "careers": "https://open.money/careers",
-  "platform": "sitemap",
+  "platform": "keka",
   "config": {
-   "origin": "https://open.money",
-   "probed": true,
+   "host": "openfinancial.keka.com",
+   "found_on": "https://open.money/company/careers",
    "company_domain": "open.money"
   },
   "raw": 0,
@@ -5820,8 +5820,8 @@
    "found_on": "https://careers.cisco.com/global/en",
    "company_domain": "cisco.com"
   },
-  "raw": 29,
-  "kept": 1
+  "raw": 28,
+  "kept": 4
  },
  {
   "company": "Qualcomm",
@@ -5936,7 +5936,7 @@
    "found_on": "https://careers.adobe.com/us/en",
    "company_domain": "adobe.com"
   },
-  "raw": 30,
+  "raw": 29,
   "kept": 1
  },
  {
@@ -5948,7 +5948,7 @@
    "probed": true,
    "company_domain": "intuit.com"
   },
-  "raw": 609,
+  "raw": 608,
   "kept": 4
  },
  {
@@ -5975,8 +5975,8 @@
    "found_on": "https://jobs.ebayinc.com/us/en/recommended-jobs",
    "company_domain": "ebayinc.com"
   },
-  "raw": 33,
-  "kept": 17
+  "raw": 35,
+  "kept": 16
  },
  {
   "company": "Expedia",
@@ -6164,7 +6164,7 @@
    "found_on": "https://careers.carlsberg.com/",
    "company_domain": "carlsberggroup.com"
   },
-  "raw": 46,
+  "raw": 47,
   "kept": 0
  },
  {
@@ -6226,7 +6226,7 @@
    "found_on": "https://careers.cargill.com/en",
    "company_domain": "cargill.com"
   },
-  "raw": 1349,
+  "raw": 1351,
   "kept": 6
  },
  {
@@ -6334,7 +6334,7 @@
    "found_on": "https://careers.holcimgroup.com/?locale=en_US",
    "company_domain": "holcim.com"
   },
-  "raw": 54,
+  "raw": 52,
   "kept": 0
  },
  {
@@ -6370,7 +6370,7 @@
    "found_on": "https://basf.jobs/search?locale=en_US&markerViewed=&carouselIndex=&facetFilters=%7B%7D&pageNumber=0&utm_source=careersite&utm_medium=global_en&utm_campaign=general",
    "company_domain": "basf.com"
   },
-  "raw": 74,
+  "raw": 75,
   "kept": 0
  },
  {
@@ -6500,7 +6500,7 @@
    "found_on": "https://careers.amgen.com/en",
    "company_domain": "amgen.com"
   },
-  "raw": 1670,
+  "raw": 1673,
   "kept": 32
  },
  {
@@ -6607,7 +6607,7 @@
    "found_on": "https://www.capitalonecareers.com/",
    "company_domain": "capitalonecareers.com"
   },
-  "raw": 1934,
+  "raw": 1940,
   "kept": 1
  },
  {
@@ -6643,7 +6643,7 @@
    "probed": true,
    "company_domain": "schwabjobs.com"
   },
-  "raw": 347,
+  "raw": 358,
   "kept": 0
  },
  {
@@ -6655,7 +6655,7 @@
    "found_on": "https://www.kkr.com/careers/career-opportunities",
    "company_domain": "kkr.com"
   },
-  "raw": 141,
+  "raw": 140,
   "kept": 10
  },
  {
@@ -6793,7 +6793,7 @@
    "found_on": "https://careers.munichre.com/en/job/madrid/broker-relationship-manager/3342/45689345024",
    "company_domain": "munichre.com"
   },
-  "raw": 1673,
+  "raw": 1674,
   "kept": 2
  },
  {
@@ -7199,7 +7199,7 @@
    "found_on": "https://careers.smbcgroup.com/smbc?utm_source=careersite&utm_campaign=smbc",
    "company_domain": "smbcgroup.com"
   },
-  "raw": 58,
+  "raw": 57,
   "kept": 0
  },
  {
@@ -7225,7 +7225,7 @@
    "found_on": "https://www.emiratesnbd.com/en/careers",
    "company_domain": "emiratesnbd.com"
   },
-  "raw": 3,
+  "raw": 2,
   "kept": 0
  },
  {
@@ -7238,7 +7238,7 @@
    "found_on": "https://careers.usbank.com/global/en",
    "company_domain": "usbank.com"
   },
-  "raw": 156,
+  "raw": 157,
   "kept": 2
  },
  {
@@ -7251,7 +7251,7 @@
    "found_on": "https://careers.pnc.com/global/en",
    "company_domain": "pnc.com"
   },
-  "raw": 33,
+  "raw": 32,
   "kept": 0
  },
  {
@@ -7450,14 +7450,14 @@
  {
   "company": "UPS",
   "careers": "https://www.jobs-ups.com",
-  "platform": "phenom",
+  "platform": "phenom+sitemap",
   "config": {
    "origin": "https://www.jobs-ups.com",
    "prefix": "/us/en",
    "found_on": "https://www.jobs-ups.com/us/en",
    "company_domain": "jobs-ups.com"
   },
-  "raw": 2,
+  "raw": 0,
   "kept": 0
  },
  {
@@ -7470,7 +7470,7 @@
    "found_on": "https://www.dpworld.com/en/careers/commercial",
    "company_domain": "dpworld.com"
   },
-  "raw": 105,
+  "raw": 101,
   "kept": 22
  }
 ]

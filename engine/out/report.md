@@ -1,11 +1,11 @@
 # Finance job engine v0 report
 
-Run: 2026-11-19T20:06:00Z
+Run: 2026-11-20T02:39:49Z
 
 - Companies: 606
-- Companies with finance jobs in India: 83
-- Finance jobs in India (after title filter, de-duplicated): 1136
-- New this run: 0
+- Companies with finance jobs in India: 82
+- Finance jobs in India (after title filter, de-duplicated): 1115
+- New this run: 11
 
 ## By hiring system
 
@@ -13,128 +13,128 @@ Run: 2026-11-19T20:06:00Z
 |---|---|---|
 | successfactors | 36 | 334 |
 | oracle | 22 | 316 |
-| workday+site | 66 | 179 |
-| phenom | 27 | 131 |
-| ripplehire | 7 | 52 |
+| workday+site | 66 | 163 |
+| phenom | 26 | 128 |
+| ripplehire | 7 | 53 |
 | smartrecruiters | 22 | 30 |
 | lever | 6 | 25 |
-| sitemap | 393 | 24 |
 | greenhouse | 10 | 23 |
 | eightfold | 13 | 22 |
-| phenom+sitemap | 3 | 0 |
+| sitemap | 392 | 21 |
+| phenom+sitemap | 4 | 0 |
+| keka | 1 | 0 |
 | avature | 1 | 0 |
 
 ## By finance area
 
 | Area | Jobs |
 |---|---|
-| Accounting / Finance (general) | 369 |
-| Audit / Assurance / SOX | 174 |
-| Tax | 75 |
-| Record to Report / GL | 73 |
+| Accounting / Finance (general) | 365 |
+| Audit / Assurance / SOX | 171 |
+| Tax | 74 |
+| Record to Report / GL | 74 |
 | Finance Transformation / Systems | 71 |
-| Controllership / Reporting | 63 |
-| Risk / Credit | 62 |
-| Deals / Valuation / IB | 60 |
+| Deals / Valuation / IB | 61 |
 | FP&A / Business Finance | 60 |
-| Treasury | 56 |
+| Risk / Credit | 60 |
+| Controllership / Reporting | 55 |
+| Treasury | 53 |
 | Accounts Receivable / O2C | 30 |
-| Accounts Payable / P2P | 20 |
+| Accounts Payable / P2P | 19 |
 | Payroll | 16 |
-| Costing | 7 |
+| Costing | 6 |
 
 ## By company
 
 | Company | Platform | Raw jobs read | Finance India kept | Note |
 |---|---|---|---|---|
-| Deloitte India | successfactors | 407 | 226 |  |
+| Deloitte India | successfactors | 406 | 226 |  |
 | Tata Capital | oracle | 613 | 79 |  |
-| Citi | workday+site | 3142 | 64 |  |
-| JPMorgan Chase | oracle | 272 | 46 |  |
-| EXL | oracle | 541 | 46 |  |
-| Barclays | workday+site | 708 | 45 |  |
+| Citi | workday+site | 3134 | 64 |  |
+| JPMorgan Chase | oracle | 273 | 46 |  |
+| EXL | oracle | 539 | 46 |  |
 | Citco | oracle | 86 | 41 |  |
-| Amgen | workday+site | 1670 | 32 |  |
+| Amgen | workday+site | 1673 | 32 |  |
+| Barclays | workday+site | 669 | 31 |  |
 | KPMG India | oracle | 373 | 30 |  |
-| Hindustan Unilever | workday+site | 283 | 28 |  |
 | Godrej Industries | phenom | 44 | 27 |  |
 | Godrej Consumer Products | phenom | 44 | 27 |  |
+| Hindustan Unilever | workday+site | 278 | 26 |  |
 | Bunge | successfactors | 148 | 26 |  |
 | HDFC Bank | ripplehire | 541 | 22 |  |
-| Kotak Mahindra Bank | oracle | 737 | 22 |  |
-| DP World | oracle | 105 | 22 |  |
+| Kotak Mahindra Bank | oracle | 735 | 22 |  |
+| DP World | oracle | 101 | 22 |  |
 | HSBC | eightfold | 39 | 19 |  |
 | Reckitt | successfactors | 51 | 18 |  |
 | Paytm | lever | 197 | 17 |  |
-| eBay | phenom | 33 | 17 |  |
 | Birlasoft | successfactors | 108 | 16 |  |
+| eBay | phenom | 35 | 16 |  |
 | Bosch | smartrecruiters | 268 | 14 |  |
 | Tata AIA Life | ripplehire | 1169 | 13 |  |
 | BNY | oracle | 85 | 12 |  |
 | Blue Dart | phenom | 46 | 11 |  |
-| KKR | greenhouse | 141 | 10 |  |
-| BlackRock | sitemap | 294 | 9 |  |
+| KKR | greenhouse | 140 | 10 |  |
 | Mahindra | successfactors | 62 | 9 |  |
+| Axis Bank | ripplehire | 1200 | 9 |  |
 | Sun Pharma | successfactors | 110 | 9 |  |
+| BlackRock | sitemap | 297 | 8 |  |
 | Titan | phenom | 24 | 8 |  |
-| Axis Bank | ripplehire | 1200 | 8 |  |
-| Stripe | greenhouse | 771 | 7 |  |
+| Stripe | greenhouse | 772 | 7 |  |
 | ZF | successfactors | 56 | 7 |  |
-| GE HealthCare | phenom | 30 | 6 |  |
 | Meesho | lever | 48 | 6 |  |
-| Franklin Templeton | phenom | 35 | 6 |  |
-| Cargill | successfactors | 1349 | 6 |  |
-| GSK | phenom | 28 | 5 |  |
-| Sanofi | sitemap | 1451 | 5 |  |
+| Franklin Templeton | phenom | 36 | 6 |  |
+| Cargill | successfactors | 1351 | 6 |  |
 | Asian Paints | successfactors | 166 | 5 |  |
-| Optum (UnitedHealth) | sitemap | 6531 | 5 |  |
+| Optum (UnitedHealth) | sitemap | 6539 | 5 |  |
 | Zensar | oracle | 101 | 5 |  |
 | Merck KGaA | phenom | 38 | 5 |  |
-| Cummins | oracle | 148 | 4 |  |
+| Cummins | oracle | 147 | 4 |  |
 | Volvo Group | successfactors | 23 | 4 |  |
-| Emerson | oracle | 180 | 4 |  |
+| Emerson | oracle | 179 | 4 |  |
+| GSK | phenom | 25 | 4 |  |
 | Thermo Fisher | phenom | 46 | 4 |  |
-| Moody's | successfactors | 335 | 4 |  |
+| Moody's | successfactors | 337 | 4 |  |
 | Allianz | phenom | 45 | 4 |  |
-| Chubb | oracle | 53 | 4 |  |
+| Chubb | oracle | 52 | 4 |  |
 | Mphasis | ripplehire | 263 | 4 |  |
-| Intuit | sitemap | 609 | 4 |  |
+| Cisco | phenom | 28 | 4 |  |
+| Intuit | sitemap | 608 | 4 |  |
 | Takeda | workday+site | 1880 | 4 |  |
-| ABB | phenom | 34 | 3 |  |
-| Baxter | workday+site | 516 | 3 |  |
+| GE HealthCare | phenom | 29 | 3 |  |
+| ABB | phenom | 35 | 3 |  |
+| Sanofi | sitemap | 1455 | 3 |  |
+| Baxter | workday+site | 514 | 3 |  |
 | Swiggy | smartrecruiters | 154 | 3 |  |
 | ServiceNow | smartrecruiters | 81 | 3 |  |
 | IQ-EQ | smartrecruiters | 6 | 3 |  |
 | Axis Mutual Fund | ripplehire | 181 | 3 |  |
 | NetApp | eightfold | 17 | 3 |  |
 | Louis Dreyfus Company | smartrecruiters | 19 | 3 |  |
-| Unilever | workday+site | 283 | 2 |  |
+| Unilever | workday+site | 278 | 2 |  |
 | Tata Steel | ripplehire | 56 | 2 |  |
 | Razorpay | greenhouse | 30 | 2 |  |
 | Groww | greenhouse | 9 | 2 |  |
 | InMobi | greenhouse | 27 | 2 |  |
 | Sutherland | smartrecruiters | 45 | 2 |  |
-| Munich Re | successfactors | 1673 | 2 |  |
-| US Bank | phenom | 156 | 2 |  |
+| Munich Re | successfactors | 1674 | 2 |  |
+| US Bank | phenom | 157 | 2 |  |
 | DHL | phenom | 46 | 2 |  |
 | Synchrony | sitemap | 29 | 1 |  |
 | CRED | lever | 12 | 1 |  |
 | Freshworks | smartrecruiters | 30 | 1 |  |
 | Swiss Re | successfactors | 211 | 1 |  |
-| Fiserv | phenom | 21 | 1 |  |
 | Marsh McLennan | phenom | 46 | 1 |  |
 | Zeta | lever | 32 | 1 |  |
 | Icertis | oracle | 4 | 1 |  |
-| Cisco | phenom | 29 | 1 |  |
-| Adobe | phenom | 30 | 1 |  |
-| Capital One | workday+site | 1934 | 1 |  |
+| Adobe | phenom | 29 | 1 |  |
+| Capital One | workday+site | 1940 | 1 |  |
 | Experian | smartrecruiters | 37 | 1 |  |
 | ANZ | successfactors | 23 | 1 |  |
 | Mastercard | workday+site | 0 | 0 |  |
 | Visa | smartrecruiters | 0 | 0 |  |
 | Caterpillar | sitemap | 0 | 0 |  |
 | PwC India | sitemap | 0 | 0 |  |
-| EY | successfactors | 87 | 0 |  |
+| EY | successfactors | 96 | 0 |  |
 | Deloitte USI | workday+site | 0 | 0 |  |
 | Grant Thornton Bharat | sitemap | 0 | 0 |  |
 | BDO India | sitemap | 0 | 0 |  |
@@ -155,7 +155,7 @@ Run: 2026-11-19T20:06:00Z
 | Siemens | sitemap | 0 | 0 |  |
 | Honeywell | phenom+sitemap | 0 | 0 |  |
 | Schneider Electric | sitemap | 0 | 0 |  |
-| AB InBev | greenhouse | 57 | 0 |  |
+| AB InBev | greenhouse | 58 | 0 |  |
 | Diageo | workday+site | 0 | 0 |  |
 | Novartis | sitemap | 0 | 0 |  |
 | Capgemini | sitemap | 0 | 0 |  |
@@ -169,21 +169,21 @@ Run: 2026-11-19T20:06:00Z
 | Fidelity Investments | sitemap | 0 | 0 |  |
 | Nomura | sitemap | 0 | 0 |  |
 | UBS | sitemap | 0 | 0 |  |
-| Standard Chartered | successfactors | 75 | 0 |  |
+| Standard Chartered | successfactors | 73 | 0 |  |
 | Societe Generale | sitemap | 0 | 0 |  |
 | BNP Paribas | sitemap | 0 | 0 |  |
 | NatWest | sitemap | 0 | 0 |  |
 | Lloyds Banking Group | workday+site | 0 | 0 |  |
 | Target | workday+site | 0 | 0 |  |
 | Walmart | sitemap | 0 | 0 |  |
-| Lowe's | phenom | 32 | 0 |  |
+| Lowe's | phenom | 33 | 0 |  |
 | Dell | sitemap | 0 | 0 |  |
 | HP | eightfold | 0 | 0 | JSONDecodeError: Expecting value: line 2 column 1 (char 1) |
 | Intel | sitemap | 0 | 0 |  |
 | Uber | smartrecruiters | 0 | 0 |  |
 | Airbus | workday+site | 0 | 0 |  |
-| Boeing | workday+site | 1146 | 0 |  |
-| Philips | phenom | 19 | 0 |  |
+| Boeing | workday+site | 1176 | 0 |  |
+| Philips | phenom | 21 | 0 |  |
 | Continental | smartrecruiters | 9 | 0 |  |
 | Eaton | eightfold | 0 | 0 |  |
 | Johnson Controls | workday+site | 0 | 0 |  |
@@ -193,7 +193,7 @@ Run: 2026-11-19T20:06:00Z
 | Coca-Cola | workday+site | 0 | 0 |  |
 | PepsiCo | sitemap | 0 | 0 |  |
 | Mondelez | phenom+sitemap | 0 | 0 |  |
-| Colgate-Palmolive | successfactors | 66 | 0 |  |
+| Colgate-Palmolive | successfactors | 64 | 0 |  |
 | AstraZeneca | eightfold | 0 | 0 |  |
 | Pfizer | workday+site | 0 | 0 |  |
 | Abbott | workday+site | 0 | 0 |  |
@@ -217,8 +217,8 @@ Run: 2026-11-19T20:06:00Z
 | Pidilite | sitemap | 0 | 0 |  |
 | Larsen & Toubro | sitemap | 0 | 0 |  |
 | Infosys | sitemap | 0 | 0 |  |
-| Wipro | successfactors | 102 | 0 |  |
-| HCLTech | successfactors | 95 | 0 |  |
+| Wipro | successfactors | 93 | 0 |  |
+| HCLTech | successfactors | 92 | 0 |  |
 | Tech Mahindra | sitemap | 0 | 0 |  |
 | Airtel | sitemap | 0 | 0 |  |
 | Flipkart | sitemap | 0 | 0 |  |
@@ -316,7 +316,7 @@ Run: 2026-11-19T20:06:00Z
 | Teleperformance | sitemap | 0 | 0 |  |
 | Firstsource | sitemap | 0 | 0 |  |
 | Hinduja Global Solutions | sitemap | 0 | 0 |  |
-| Startek | oracle | 192 | 0 |  |
+| Startek | oracle | 191 | 0 |  |
 | ADP | sitemap | 0 | 0 |  |
 | Amazon | sitemap | 0 | 0 |  |
 | Microsoft | sitemap | 0 | 0 |  |
@@ -328,7 +328,7 @@ Run: 2026-11-19T20:06:00Z
 | S&P Global | workday+site | 0 | 0 |  |
 | MSCI | sitemap | 0 | 0 |  |
 | LSEG | workday+site | 0 | 0 |  |
-| Fitch Group | successfactors | 65 | 0 |  |
+| Fitch Group | successfactors | 64 | 0 |  |
 | Invesco | sitemap | 0 | 0 |  |
 | Ameriprise Financial | workday+site | 0 | 0 |  |
 | Principal Financial | sitemap | 0 | 0 |  |
@@ -337,22 +337,23 @@ Run: 2026-11-19T20:06:00Z
 | MetLife | sitemap | 0 | 0 |  |
 | Bank of America | sitemap | 0 | 0 |  |
 | Macquarie | sitemap | 0 | 0 |  |
-| ING | sitemap | 632 | 0 |  |
+| ING | sitemap | 634 | 0 |  |
 | ABN AMRO | sitemap | 0 | 0 |  |
 | Rabobank | sitemap | 0 | 0 |  |
 | DBS Bank India | workday+site | 0 | 0 |  |
 | Mizuho | workday+site | 0 | 0 |  |
 | MUFG | workday+site | 0 | 0 |  |
-| FIS | phenom | 31 | 0 |  |
+| Fiserv | phenom | 23 | 0 |  |
+| FIS | phenom | 28 | 0 |  |
 | Broadridge | sitemap | 0 | 0 |  |
 | SS&C | sitemap | 0 | 0 |  |
 | Apex Group | workday+site | 0 | 0 |  |
 | Ocorian | smartrecruiters | 0 | 0 |  |
-| Vistra | phenom+sitemap | 176 | 0 |  |
+| Vistra | phenom+sitemap | 177 | 0 |  |
 | TMF Group | sitemap | 0 | 0 |  |
 | Infosys BPM | sitemap | 0 | 0 |  |
 | Cognizant BPS | sitemap | 0 | 0 |  |
-| Ernst & Young GDS | successfactors | 87 | 0 |  |
+| Ernst & Young GDS | successfactors | 96 | 0 |  |
 | Nexdigm | sitemap | 0 | 0 |  |
 | Mazars (Forvis Mazars) India | smartrecruiters | 0 | 0 |  |
 | RSM India | sitemap | 0 | 0 |  |
@@ -406,7 +407,7 @@ Run: 2026-11-19T20:06:00Z
 | PB Fintech (Paisabazaar) | sitemap | 0 | 0 |  |
 | MobiKwik | sitemap | 0 | 0 |  |
 | Cashfree Payments | sitemap | 0 | 0 |  |
-| Open Financial | sitemap | 0 | 0 |  |
+| Open Financial | keka | 0 | 0 |  |
 | Khatabook | sitemap | 0 | 0 |  |
 | M2P Fintech | sitemap | 0 | 0 |  |
 | Perfios | sitemap | 0 | 0 |  |
@@ -563,7 +564,7 @@ Run: 2026-11-19T20:06:00Z
 | General Mills | workday+site | 0 | 0 |  |
 | Mars | phenom | 25 | 0 |  |
 | Heineken | successfactors | 0 | 0 |  |
-| Carlsberg | successfactors | 46 | 0 |  |
+| Carlsberg | successfactors | 47 | 0 |  |
 | Pernod Ricard | workday+site | 0 | 0 |  |
 | Kraft Heinz | sitemap | 0 | 0 |  |
 | Danone | sitemap | 0 | 0 |  |
@@ -574,10 +575,10 @@ Run: 2026-11-19T20:06:00Z
 | Rio Tinto | sitemap | 0 | 0 |  |
 | ArcelorMittal | sitemap | 0 | 0 |  |
 | Saint-Gobain | sitemap | 0 | 0 |  |
-| Holcim | successfactors | 54 | 0 |  |
+| Holcim | successfactors | 52 | 0 |  |
 | Linde | sitemap | 0 | 0 |  |
 | Air Liquide | sitemap | 0 | 0 |  |
-| BASF | successfactors | 74 | 0 |  |
+| BASF | successfactors | 75 | 0 |  |
 | Bayer | sitemap | 0 | 0 |  |
 | MSD (Merck & Co) | workday+site | 2 | 0 |  |
 | Novo Nordisk | successfactors | 0 | 0 |  |
@@ -594,7 +595,7 @@ Run: 2026-11-19T20:06:00Z
 | Western Union | sitemap | 0 | 0 |  |
 | Vanguard | sitemap | 0 | 0 |  |
 | T. Rowe Price | sitemap | 0 | 0 |  |
-| Charles Schwab | sitemap | 347 | 0 |  |
+| Charles Schwab | sitemap | 358 | 0 |  |
 | Blackstone | sitemap | 0 | 0 |  |
 | Carlyle | sitemap | 0 | 0 |  |
 | Apollo Global | workday+site | 0 | 0 |  |
@@ -634,10 +635,10 @@ Run: 2026-11-19T20:06:00Z
 | Credit Agricole CIB | sitemap | 0 | 0 |  |
 | Natixis | sitemap | 0 | 0 |  |
 | Commerzbank | sitemap | 0 | 0 |  |
-| SMBC | successfactors | 58 | 0 |  |
+| SMBC | successfactors | 57 | 0 |  |
 | First Abu Dhabi Bank | oracle | 1 | 0 |  |
-| Emirates NBD | oracle | 3 | 0 |  |
-| PNC | phenom | 33 | 0 |  |
+| Emirates NBD | oracle | 2 | 0 |  |
+| PNC | phenom | 32 | 0 |  |
 | Truist | phenom | 43 | 0 |  |
 | Ally | workday+site | 0 | 0 |  |
 | FTI Consulting | sitemap | 0 | 0 |  |
@@ -652,12 +653,23 @@ Run: 2026-11-19T20:06:00Z
 | Colliers | workday+site | 0 | 0 |  |
 | Knight Frank India | sitemap | 0 | 0 |  |
 | FedEx | sitemap | 0 | 0 |  |
-| UPS | phenom | 2 | 0 |  |
+| UPS | phenom+sitemap | 0 | 0 |  |
 
 ## Sample of jobs
 
 | Company | Title | Area | Location |
 |---|---|---|---|
+| Deloitte India | [Senior Consultant | Anaplan | Mumbai | Finance Transformation | Busine](https://southasiacareers.deloitte.com/job/Mumbai-Senior-Consultant-Anaplan-Mumbai-Finance-Transformation-Business-Finance/60420444/) | FP&A / Business Finance | Mumbai, India |
+| Deloitte India | [Deputy Manager | TP Advisory, Compliance, APA and Controversy manageme](https://southasiacareers.deloitte.com/job/Delhi-Deputy-Manager-TP-Advisory%2C-Compliance%2C-APA-and-Controversy-management-Delhi-Transfer-Pricing/60605944/) | Tax | Delhi, India |
+| Deloitte India | [Senior Consultant | Fusion Financials - (AP, AR, GL, CM, FA, i-Expense](https://southasiacareers.deloitte.com/job/Ahmedabad-Senior-Consultant-Fusion-Financials-%28AP%2C-AR%2C-GL%2C-CM%2C-FA%2C-i-Expense%29-Ahmedabad-Oracle/59464244/) | Record to Report / GL | Ahmedabad, India |
+| DP World | [Specialist - Forwarding Finance - Global Service Centre](https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/27869) | Accounting / Finance (general) | Maharashtra, India |
+| DP World | [Senior Associate - Accounts Receivable - Global Service Centre](https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/25095) | Accounts Receivable / O2C | Maharashtra, India |
+| Bunge | [Deputy General Manager - RTR](https://jobs.bunge.com/job/Bhurai-In-Deputy-General-Manager-RTR-PB-160059/1458671133/) | Record to Report / GL | PB, India |
+| Bunge | [Manager-RTR](https://jobs.bunge.com/job/Bhurai-In-Manager-RTR-PB-160059/1437883533/) | Record to Report / GL | PB, India |
+| Axis Bank | [Clearing & Settlement (C & S):Team Member-ATM Reconciliation](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/787012) | Record to Report / GL | Ghatkesar |
+| Axis Bank | [Retail Transaction Services:Retail Credit Card Operations Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/787009) | Deals / Valuation / IB | Mumbai |
+| Axis Bank | [Retail Transaction Services:Retail Credit Card Operations Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/787007) | Deals / Valuation / IB | Ghatkesar |
+| Axis Bank | [Clearing & Settlement (C & S):Team Member -Network Settlement Reconcil](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/786999) | Record to Report / GL | Ghatkesar |
 | Tata Steel | [Manager Corporate Audit Finance & Commercial](https://tatasteel.ripplehire.com/candidate/?token=DFwOOO2VFAGlqLQoae5h&source=CAREERSITE#detail/job/639775) | Audit / Assurance / SOX | Jamshedpur, Meramandali |
 | Tata Steel | [Manager Financial Reporting](https://tatasteel.ripplehire.com/candidate/?token=DFwOOO2VFAGlqLQoae5h&source=CAREERSITE#detail/job/59995) | Controllership / Reporting | Kolkata |
 | Tata Capital | [Area Technical Manager - Technical Valuation - Housing - Valuation - B](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57575) | Deals / Valuation / IB | Bhopal, Madhya Pradesh, India |
@@ -707,14 +719,3 @@ Run: 2026-11-19T20:06:00Z
 | Axis Mutual Fund | [Team Member, MIS](https://axismf.ripplehire.com/candidate/?token=gGtjuEsWfCb0FxsKXRNG&source=CAREERSITE#detail/job/321360) | FP&A / Business Finance | Corporate Office Worli |
 | Axis Bank | [Compliance:Transaction Monitoring Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/785276) | Deals / Valuation / IB | Mumbai |
 | Axis Bank | [Finance & Accounts:Financial Reporting Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783794) | Controllership / Reporting | Mumbai |
-| Axis Bank | [RC & WC - Underwriting:CPC Credit Officer - SBB Credit](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783574) | Risk / Credit | Noida |
-| Axis Bank | [Compliance:Transaction Monitoring Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783571) | Deals / Valuation / IB | Bidhan Nagar |
-| Axis Bank | [Treasury & Markets: FMSG - Alpha & Prime Desk Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/783290) | Treasury | BANGALORE |
-| Axis Bank | [Risk:Market Risk Team](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/782772) | Risk / Credit | Mumbai |
-| Axis Bank | [Internal Audit:Auditor - Retail Lending Audit (Process Audit)](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/782734) | Audit / Assurance / SOX | Mumbai |
-| Axis Bank | [CBG:Credit Analyst - CAMPU](https://axisbank.ripplehire.com/candidate/?token=WIXhCuz0XRZ7H0GZCwjJ&source=CAREERSITE#detail/job/782715) | Risk / Credit | Surat |
-| Zensar | [ESaaS - Oracle - Functional - Cloud Financials](https://fa-etvl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/153090_2) | Accounting / Finance (general) | Pune, Maharashtra, India |
-| Tata Capital | [Customer Service Executive - PV Finance - Car Finance - New Car - PV -](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57568) | Accounting / Finance (general) | Ernakulam, Kerala, India |
-| Tata Capital | [Customer Service Executive - Car Finance - New Car - PV - Davanagere -](https://eofh.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/57570) | Accounting / Finance (general) | Davanagere, Karnataka, India |
-| EXL | [Senior Executive-P2P-Invoice Processing](https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21000) | Accounts Payable / P2P | Kochi, Kerala, India |
-| Deloitte India | [Assistant Manager | IFRS | Mumbai | Accounting & Reporting Assurance](https://southasiacareers.deloitte.com/job/Mumbai-Assistant-Manager-IFRS-Mumbai-Accounting-&amp;-Reporting-Assurance/55426244/) | Controllership / Reporting | Mumbai, India |

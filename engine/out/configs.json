@@ -5631,5 +5631,23 @@
    "company_domain": "ripplehire.com"
   },
   "at": "2026-11-19T19:50:42Z"
+ },
+ "Jupiter": {
+  "cfg": {
+   "platform": "sitemap",
+   "origin": "https://jupiter.keka.com",
+   "probed": true,
+   "company_domain": "keka.com"
+  },
+  "at": "2026-11-20T02:39:49Z"
+ },
+ "Open Financial": {
+  "cfg": {
+   "platform": "keka",
+   "host": "openfinancial.keka.com",
+   "found_on": "https://open.money/company/careers",
+   "company_domain": "open.money"
+  },
+  "at": "2026-11-20T02:39:49Z"
  }
 }
