@@ -241,6 +241,15 @@ body.nosplit #main{grid-template-columns:minmax(0,1fr)}
 .card .q{font-size:17px;font-weight:600;margin:4px 0}
 .lvl{display:flex;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}.lvl>span:first-child{flex:1}
 .rev{padding:8px 0;border-bottom:1px solid var(--line)}.rev p{margin:2px 0}.rev.no b{color:inherit}
+
+.lvlrow{display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;padding:10px 12px;margin:6px 0 0;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--fg);font:inherit;font-weight:600;cursor:pointer}
+.lvlrow.open{border-color:var(--accent);background:var(--accent-soft)}.lvlrow.done{color:var(--pos)}.lvlc{font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.lvlbody{padding:8px 2px 4px}
+.mrow{display:flex;gap:8px;align-items:center;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:8px 2px;color:var(--fg);font:inherit;cursor:pointer}
+.mrow b{font-weight:500}.mrow:hover b{color:var(--accent)}
+.mis.nextm{border-left:3px solid var(--accent);padding-left:8px}
+body.focus #main #side,body.focus #viewtoggle{display:none!important}
+body.focus #main{grid-template-columns:minmax(0,1fr)!important}
 </style>
 
 <div id="app">
@@ -3456,7 +3465,8 @@ function go(code,params,replace){
   if(scrLocked(code))sc=lockedScreen(code,sc);
   if(!replace&&NAV.cur&&!(NAV.cur.code===code&&!params))NAV.stack.push(NAV.cur);
   NAV.cur={code,params:params||{}};NAV.dupAck=false;
-  $('#screen').innerHTML=sc.render(NAV.cur.params);
+  document.body.classList.toggle('focus',!SESS&&['START','CHECK','BASICS','PREP','QBANK','REVISE','CERT'].includes(code));
+ $('#screen').innerHTML=sc.render(NAV.cur.params);
   $('#crumb').innerHTML=`<span><b>${esc(code)}</b> ${esc(sc.t)}</span><span>Company code ${CC.code} · ${esc(CC.name)}</span><span>FY ${fyOf(TODAY)} · Period ${perOf(TODAY)} (${MON[perOf(TODAY)-1]} ${fyOf(TODAY)+(perOf(TODAY)>=10?1:0)}) · ${fd(TODAY)}</span>`;
   if(typeof renderNotes==='function')renderNotes(code);
   if(sc.after)sc.after(NAV.cur.params);
@@ -3503,7 +3513,7 @@ SCR.HOME={t:'Main Menu',render(){
    ['Simulator tools',[['SIMCFG','Simulation settings (duplicate check, periods, tolerance)'],['SIMCHK','Integrity check and regression tests'],['SIMDATA','Export, import, restore and reset practice data'],['ABOUT','About, change log and known limitations'],['LICENCE','Licence: demo or full version']]]
   ];
   if(SESS)G=G.filter(g=>g[0]!=='Training'&&g[0]!=='Simulator tools'&&!g[0].startsWith('Interview preparation'));
-  return HEAD('SESSION','Main Menu','Company code 1000 · Bharat Traders Pvt Ltd · Currency INR · Fiscal year 2026 = April 2026 to March 2027')
+  return HEAD('HOME','Main Menu','Company code 1000 · Bharat Traders Pvt Ltd · Currency INR · Fiscal year 2026 = April 2026 to March 2027')
    +(SELLABLE&&!isPro()?`<div class="banner warn"><b>Free demo.</b> You can use the core transactions, the first ${MIS.filter(m=>!missionLocked(m)).length} missions and ${FREE_TASKS.size} training tasks. Bank reconciliation, month-end closing, fixed assets, tax configuration, sales, interview mode and the remaining missions need the full version. ${BTN('See what is included','open','LICENCE','primary')}</div>`:'')
    +`<div class="banner">LedgerLab is an <b>independent educational simulator</b>. It is not an SAP product and nothing you post here runs in a real SAP system. The screens look like an ERP so you can practise real finance workflows. New to ERP? Start with <b>Interview preparation</b>. Otherwise work through the <b>Missions</b> in order.<br><span class="help">SAP and S/4HANA are trademarks or registered trademarks of SAP SE in Germany and other countries. LedgerLab is not affiliated with, sponsored by or endorsed by SAP SE.</span></div>`
    +`<div class="hgrid">${G.map(([t,rows])=>`<div class="hgrp"><h3>${t}</h3>${rows.map(([c,d])=>`<button type="button" class="hrow" data-act="open" data-arg="${c}"><span class="tc">${c}</span><span>${d}${scrLocked(c)?' '+CHIP('full version','info'):''}</span></button>`).join('')}</div>`).join('')}</div>`;
@@ -4969,20 +4979,32 @@ function evalMission(m,ans){
 NAV.mans={};NAV.mfeed={};
 function checkMissions(){if(!SESS)renderMissions()}
 function renderMissions(){
-  if(SESS)return;
-  const n=MIS.filter(m=>S.done[m.id]).length;
-  const nextId=(MIS.find(m=>!S.done[m.id]&&!missionLocked(m))||{}).id;
-  $('#pane-mis').innerHTML=`<div class="card"><div class="ttl"><h2>${n} / ${MIS.filter(m=>!missionLocked(m)).length} missions${SELLABLE&&!isPro()?' <span class="help">(demo, '+MIS.length+' in the full version)</span>':''}</h2></div><div class="prog"><i style="width:${Math.round(n/MIS.filter(m=>!missionLocked(m)).length*100)}%"></i></div>`
-   +`<p class="help" style="margin:0 0 10px">A mission passes only when the ledger shows the right result (your own posting, not seed data) and your verification answers match the live data. Opening a screen or posting something unrelated is not enough.</p>`
-   +MIS.map((m,ix)=>{
-      const gh=(!ix||MIS[ix-1].grp!==m.grp)?`<h3 class="mgrp">${esc(m.grp)}</h3>`:'';
-      const done=S.done[m.id],fb=NAV.mfeed[m.id];
-      const asks=m.ask?`<div class="mask">${m.ask.map(a=>`<label for="ma_${m.id}_${a.id}">${a.label}</label><input class="mans" id="ma_${m.id}_${a.id}" data-m="${m.id}" data-f="${a.id}" type="${a.type==='number'?'number':'text'}" step="any" value="${esc((NAV.mans[m.id]||{})[a.id]||'')}" autocomplete="off">`).join('')}</div>`:'';
-      const fbh=fb?`<ul class="mfb">${fb.map(c=>`<li class="${c.ok?'pos':'neg'}">${c.ok?'✓':'✗'} ${esc(c.text)}</li>`).join('')}</ul>`:'';
-      if(missionLocked(m))return gh+`<div class="mis"><div class="mh"><span class="box"></span><div style="min-width:0;flex:1"><b>${m.t}</b> ${CHIP('full version','info')}<p>This mission is part of the full version. ${BTN('See what is included','open','LICENCE','sm')}</p></div></div></div>`;
-      return gh+`<div class="mis${done?' done':''}"><div class="mh"><span class="box">${done?'&#10003;':''}</span><div style="min-width:0;flex:1"><b>${m.t}</b>${m.id===nextId?' '+CHIP('next','info'):''}<p>${m.how}</p>${asks}${fbh}<div class="go">${m.go?BTN('Open '+m.go,'open',m.go,'sm'):''} ${BTN(done?'Check again':'Check my work','mcheck',m.id,'sm primary')}</div></div></div></div>`;
-   }).join('')+`</div>`;
+ if(SESS)return;
+ const live=MIS.filter(m=>!missionLocked(m)),n=live.filter(m=>S.done[m.id]).length;
+ const nextM=MIS.find(m=>!S.done[m.id]&&!missionLocked(m))||null,nextId=nextM&&nextM.id;
+ const groups=[];MIS.forEach(m=>{let g=groups[groups.length-1];if(!g||g.name!==m.grp){g={name:m.grp,ms:[]};groups.push(g)}g.ms.push(m)});
+ const lvlName=g=>{const m=g.name.match(/^Part\s+(\d+)\s*·\s*([^(]+)(\(([^)]*)\))?/);return m?{no:+m[1],t:m[2].trim(),hint:m[4]||''}:{no:0,t:g.name,hint:''}};
+ const curG=(nextM?groups.find(g=>g.ms.includes(nextM)):groups[groups.length-1]);
+ const openG=NAV.mgrp||(curG&&curG.name);
+ const mcard=(m)=>{
+ const done=S.done[m.id],fb=NAV.mfeed[m.id],isNext=m.id===nextId,open=isNext||(NAV.mopen===m.id);
+ if(missionLocked(m))return `<div class="mis"><div class="mh"><span class="box"></span><div style="min-width:0;flex:1"><b>${m.t}</b> ${CHIP('full version','info')}<p>${BTN('See what is included','open','LICENCE','sm')}</p></div></div></div>`;
+ if(!open)return `<button type="button" class="mis mrow${done?' done':''}" data-act="mopen" data-arg="${m.id}"><span class="box">${done?'&#10003;':''}</span><b>${m.t}</b></button>`;
+ const asks=m.ask?`<div class="mask">${m.ask.map(a=>`<label for="ma_${m.id}_${a.id}">${a.label}</label><input class="mans" id="ma_${m.id}_${a.id}" data-m="${m.id}" data-f="${a.id}" type="${a.type==='number'?'number':'text'}" step="any" value="${esc((NAV.mans[m.id]||{})[a.id]||'')}" autocomplete="off">`).join('')}</div>`:'';
+ const fbh=fb?`<ul class="mfb">${fb.map(c=>`<li class="${c.ok?'pos':'neg'}">${c.ok?'✓':'✗'} ${esc(c.text)}</li>`).join('')}</ul>`:'';
+ return `<div class="mis${done?' done':''}${isNext?' nextm':''}"><div class="mh"><span class="box">${done?'&#10003;':''}</span><div style="min-width:0;flex:1"><b>${m.t}</b>${isNext?' '+CHIP('do this next','info'):''}<p>${m.how}</p>${asks}${fbh}<div class="go">${m.go?BTN('Open '+m.go,'open',m.go,'sm'):''} ${BTN(done?'Check again':'Check my work','mcheck',m.id,'sm primary')}</div></div></div></div>`;
+ };
+ let h=`<div class="card"><div class="ttl"><h2>${curG?'Level '+lvlName(curG).no+' of '+groups.length:'Missions'}</h2></div>`
+ +`<p class="help" style="margin:0 0 8px">${n} of ${live.length} missions done${SELLABLE&&!isPro()?' (demo, '+MIS.length+' in the full version)':''}. A mission passes only when your own posting shows the right result.</p>`;
+ groups.forEach(g=>{
+ const L=lvlName(g),gl=g.ms.filter(m=>!missionLocked(m)),gd=gl.filter(m=>S.done[m.id]).length,isOpen=g.name===openG,all=gl.length&&gd===gl.length;
+ h+=`<button type="button" class="lvlrow${isOpen?' open':''}${all?' done':''}" data-act="mgrp" data-arg="${esc(g.name)}"><span>${all?'&#10003; ':''}Level ${L.no} · ${esc(L.t)}</span><span class="lvlc">${gd}/${g.ms.length}</span></button>`;
+ if(isOpen){h+=`<div class="lvlbody"><div class="prog"><i style="width:${gl.length?Math.round(gd/gl.length*100):0}%"></i></div>${L.hint?`<p class="help" style="margin:0 0 6px">Tip: ${esc(L.hint)}.</p>`:''}${g.ms.map(mcard).join('')}</div>`}
+ });
+ $('#pane-mis').innerHTML=h+`</div>`;
 }
+ACT.mgrp=g=>{NAV.mgrp=(NAV.mgrp===g?'__none__':g);NAV.mopen=null;renderMissions()};
+ACT.mopen=id=>{NAV.mopen=(NAV.mopen===id?null:id);renderMissions()};
 ACT.mcheck=id=>{
   const m=MIS.find(x=>x.id===id);if(missionLocked(m)){msg('w','This mission is part of the full version');return}const ans={};
   $$('.mans[data-m="'+id+'"]').forEach(i=>{ans[i.dataset.f]=i.value;(NAV.mans[id]=NAV.mans[id]||{})[i.dataset.f]=i.value});
@@ -5175,11 +5197,11 @@ SCR.TRAIN={t:'Training Center',render(){
    +`<div class="card"><h3>Guided Practice</h3><p class="help" style="margin:0 0 6px">Step-by-step instructions with the transaction codes, the accounting reasons, a live check of your work and a preview of the expected outcome. Pick a task from the table below.</p></div>`
    +`<div class="card"><h3>Independent Practice</h3><p class="help" style="margin:0 0 6px">You get only a business scenario. You choose how to do it. Up to three optional hints are recorded. Feedback appears after you submit. Pick a task from the table below.</p></div>`
    +`<div class="card"><h3>Interview Simulation</h3><p class="help" style="margin:0 0 6px">No hints, no menu and no suggestions. Tasks come in random order against a time limit. Detailed feedback only after the assessment ends. <b>Take it last:</b> it checks how well you can do everything you practised in the missions.</p>`
-   +`<p class="help" style="margin:0 0 6px">Drawn only from tasks whose skills you practised in the missions: ${TASKS.filter(t=>taskReady(t.id)&&!taskLocked(t.id)).length} available now.</p>`+SEL('inum','Number of tasks',[['3','3 tasks'],['5','5 tasks'],['8','8 tasks'],[String(TASKS.length),'All '+TASKS.length+' tasks']],'5')
+   +`<p class="help" style="margin:0 0 6px">${(()=>{const k=TASKS.filter(t=>taskReady(t.id)&&!taskLocked(t.id)).length;return k?`${k} task${k>1?'s':''} ready for the interview, from the missions you have finished.`:'Finish a few missions first. Each finished mission adds its tasks to the interview.'})()}</p>`+SEL('inum','Number of tasks',[['3','3 tasks'],['5','5 tasks'],['8','8 tasks'],[String(TASKS.length),'All '+TASKS.length+' tasks']],'5')
    +F('ilim','Time limit (minutes, 0 = none)',30,{type:'number',step:'1'})
    +`<div class="actions">${(interviewLocked()?CHIP('full version','info')+' ':'')+BTN(interviewLocked()?'Unlock interview mode':'Start interview',interviewLocked()?'open':'startInterview',interviewLocked()?'LICENCE':'','primary')}</div></div></div>`;
   h+=`<div class="card"><h3>Task bank</h3>`+TBL(['Task','Scenario','Level','Skills',{h:'Best',n:1},'Start'],
-    TASKS.map(t=>[`<span class="mono">${esc(t.id)}</span>`,esc(t.title)+(taskReady(t.id)||taskLocked(t.id)?'':'<br><span class="tech">Learn first in the Missions panel: '+esc(taskNeedTitles(t.id))+'</span>'),t.level,Object.keys(t.areas).map(a=>SKILLS[a]).join(', '),pctTxt(bestOf(t.id)),taskLocked(t.id)?CHIP('full version','info')+' '+BTN('Unlock','open','LICENCE','sm'):`${BTN('Guided','startGuided',t.id,'sm')} ${taskReady(t.id)?BTN('Independent','startIndep',t.id,'sm'):CHIP('learn first','mid')}`]),{min:760})+`</div>`;
+    TASKS.map(t=>[`<span class="mono">${esc(t.id)}</span>`,esc(t.title)+(taskReady(t.id)||taskLocked(t.id)?'':'<br><span class="tech">Independent mode opens after the mission: '+esc(taskNeedTitles(t.id))+'</span>'),t.level,Object.keys(t.areas).map(a=>SKILLS[a]).join(', '),pctTxt(bestOf(t.id)),taskLocked(t.id)?CHIP('full version','info')+' '+BTN('Unlock','open','LICENCE','sm'):`${BTN('Guided','startGuided',t.id,'sm')} ${taskReady(t.id)?BTN('Independent','startIndep',t.id,'sm'):CHIP('Independent: after the mission','mid')}`]),{min:760})+`</div>`;
   if(hist.length){
     const all=[];hist.forEach(a=>a.results.forEach(r=>all.push(r)));const rep=skillReport(all);
     h+=`<div class="card"><h3>Your skills across all attempts</h3>`+skillRows(rep)+`</div>`;
