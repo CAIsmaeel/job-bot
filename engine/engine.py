@@ -917,6 +917,15 @@ def main():
             reports.append(rep)
             jobs += js
     new = []
+    last = state.setdefault("last", {})
+    for j in jobs:
+        last[j["key"]] = NOW
+    # forget jobs not seen for 60 days, so the record does not grow for ever
+    cutoff = (datetime.now(timezone.utc).timestamp() - 60 * 86400)
+    for k in [k for k, t in state["seen"].items()
+              if datetime.strptime(last.get(k, t), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp() < cutoff]:
+        state["seen"].pop(k, None)
+        last.pop(k, None)
     for j in jobs:
         if j["key"] not in state["seen"]:
             state["seen"][j["key"]] = NOW

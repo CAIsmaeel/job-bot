@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Load last results (data branch)
+        run: git fetch -q --depth=1 origin data && git checkout origin/data -- engine/out || true
       - name: Put website online
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

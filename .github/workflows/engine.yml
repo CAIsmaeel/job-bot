@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests
+      - name: Load last results (data branch)
+        run: |
+          git fetch -q --depth=1 origin data 2>/dev/null && git checkout origin/data -- engine/out 2>/dev/null || echo "no data branch yet, using main copy"
       - name: Run engine
         env:
           TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
@@ -41,13 +44,9 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: bash engine/deploy.sh
-      - name: Save results
+      - name: Save results (data branch, one commit, no history)
         if: always()
         run: |
-          git config user.name "engine"
-          git config user.email "engine@users.noreply.github.com"
-          git add -f engine/out
-          git diff --cached --quiet && exit 0
-          git commit -q -m "engine results"
-          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && exit 0; sleep 5; done
-          exit 1
+          rm -rf /tmp/data && mkdir -p /tmp/data/engine && cp -r engine/out /tmp/data/engine/out
+          cd /tmp/data && git init -q -b data && git add -A && git -c user.name=engine -c user.email=engine@users.noreply.github.com commit -q -m "engine results $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data:data
