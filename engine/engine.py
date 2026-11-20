@@ -170,6 +170,9 @@ def identify(blob, url):
     m = re.search(r"(?:boards|job-boards)\.greenhouse\.io/(?:embed/job_board(?:/js)?\?for=)?([A-Za-z0-9_-]+)", blob)
     if m and m.group(1) not in ("embed",):
         return {"platform": "greenhouse", "token": m.group(1)}
+    m = re.search(r"([a-z0-9-]+)\.keka\.com", blob, re.I)
+    if m and m.group(1).lower() not in ("www", "cdn", "app", "help"):
+        return {"platform": "keka", "host": m.group(1).lower() + ".keka.com"}
     m = re.search(r"([a-z0-9-]+)\.ripplehire\.com", blob, re.I)
     if m and m.group(1).lower() not in ("www", "cdn", "static"):
         return {"platform": "ripplehire", "host": m.group(1).lower() + ".ripplehire.com"}
@@ -373,6 +376,24 @@ def a_lever(c):
              "url": p.get("hostedUrl"), "posted": p.get("createdAt")} for p in j]
 
 
+def a_keka(c):
+    """Keka career portals: the portal's own public job widget feed."""
+    host = c["host"]
+    r = get(f"https://{host}/careers")
+    m = re.search(r"/ats/documents/([0-9a-f-]{36})/careerportal", r.text) or re.search(r"embedjobs/js/([0-9a-f-]{36})", r.text)
+    if not m:
+        return []
+    jobs = get(f"https://{host}/careers/api/embedjobs/default/active/{m.group(1)}").json() or []
+    out = []
+    for p in jobs:
+        locs = p.get("jobLocations") or p.get("locations") or []
+        loc = ", ".join(filter(None, ((x.get("city") or x.get("name") or "") if isinstance(x, dict) else str(x) for x in locs))) \
+            or p.get("location") or p.get("city") or "India"
+        out.append({"id": p.get("id"), "title": p.get("title"), "location": loc,
+                    "url": f"https://{host}/careers/jobdetails/{p.get('id')}", "posted": p.get("publishedOn") or p.get("createdOn")})
+    return out
+
+
 def a_ripplehire(c):
     """RippleHire career sites (HDFC Bank, Axis Bank, Tata Steel ...): the page's own job search call."""
     host = c["host"]
@@ -537,7 +558,7 @@ def a_sitemap(c):
 
 ADAPTERS = {"workday": a_workday, "oracle": a_oracle, "smartrecruiters": a_smartrecruiters, "greenhouse": a_greenhouse,
             "lever": a_lever, "eightfold": a_eightfold, "phenom": a_phenom, "avature": a_avature,
-            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "sitemap": a_sitemap}
+            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap}
 
 
 # ---------------- run ----------------
