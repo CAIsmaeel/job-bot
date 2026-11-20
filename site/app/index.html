@@ -226,6 +226,21 @@ body.nosplit #main{grid-template-columns:minmax(0,1fr)}
   #main{display:block;padding:0} .card{border:1px solid #999;break-inside:avoid} .qa{break-inside:avoid}
   .cert{border-color:#000;background:#fff;margin-top:40px}
 }
+
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.path{display:flex;flex-direction:column;gap:6px;text-align:left;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);font:inherit;cursor:pointer}
+.path:hover,.path:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.path.on{border-color:var(--accent)}
+.path b{font-size:16px}.path span{color:var(--muted);font-size:14px;line-height:1.45}.path em{font-style:normal;color:var(--accent);font-weight:600;margin-top:auto}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline}
+.today{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-left:4px solid var(--pos);margin:10px 0 14px}
+.today p{margin:4px 0 0}.today-k{font-weight:700}
+.opts{display:grid;gap:8px;margin:10px 0}
+.opt{text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--fg);font:inherit;cursor:pointer}
+.opt:hover,.opt:focus-visible{border-color:var(--accent);background:var(--accent-soft)}
+.card .q{font-size:17px;font-weight:600;margin:4px 0}
+.lvl{display:flex;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}.lvl>span:first-child{flex:1}
+.rev{padding:8px 0;border-bottom:1px solid var(--line)}.rev p{margin:2px 0}.rev.no b{color:inherit}
 </style>
 
 <div id="app">
@@ -1887,7 +1902,7 @@ const LIC_REVOKED=[];
 const BUY_URL="";
 const KEY_LIC='ledgerlab-licence-v1';
 const LIC={status:'demo',info:null,error:''};
-const FREE_SCR=new Set(['HOME','SESSION','FBL1N','FBL5N','FBL3N','FB03','XK03','FK03','XD03','FD03','BP','S_ALR_87012277','ME21N','ME23N','ME2N','MIGO','MIRO','FB60','FB70','F-53','F-28','FB50','FB08','TRAIN','TRAINREP','SIMCHK','SIMDATA','SIMCFG','ABOUT','LICENCE','PREP','BASICS','QBANK','REVISE']);
+const FREE_SCR=new Set(['HOME','SESSION','FBL1N','FBL5N','FBL3N','FB03','XK03','FK03','XD03','FD03','BP','S_ALR_87012277','ME21N','ME23N','ME2N','MIGO','MIRO','FB60','FB70','F-53','F-28','FB50','FB08','TRAIN','TRAINREP','SIMCHK','SIMDATA','SIMCFG','ABOUT','LICENCE','PREP','BASICS','QBANK','REVISE','START','CHECK']);
 const FREE_TASKS=new Set(['AP-01','AR-01','P2P-01','JE-01','GL-01']);
 const FREE_GRP=['Part 1 · Core ERP skills','Part 2 · Accounting controls'];
 const isPro=()=>!SELLABLE||LIC.status==='pro';
@@ -3472,7 +3487,7 @@ function kTag(it){
 SCR.HOME={t:'Main Menu',render(){
   if(SESS&&SESS.mode==='interview')return HEAD('SESSION','Interview Simulation','No menu is shown in an interview.')+`<div class="banner">Enter the transaction code you need in the command field above and press Enter. Read the scenario in the task bar, work in the simulator and submit when you are done.</div>`;
   let G=[
-   ['Interview preparation (freshers start here)',[['PREP','Preparation hub: what to do, in which order'],['BASICS','Fresher basics: lessons with check questions'],['QBANK','Interview question bank and recall drill'],['REVISE','Revision sheet (printable)'],['CERT','Certificate of completion']]],
+   ['Interview preparation (freshers start here)',[['START','Choose where to start, or check my level'],['PREP','Preparation hub: what to do, in which order'],['BASICS','Fresher basics: lessons with check questions'],['QBANK','Interview question bank and recall drill'],['REVISE','Revision sheet (printable)'],['CERT','Certificate of completion']]],
    ['Vendor / Accounts Payable',[['XK03','Display vendor master'],['FK03','Display vendor (FI view)'],['FBL1N','Vendor line items'],['FB60','Enter vendor invoice (no PO)'],['F-53','Post outgoing payment'],['FB08','Reverse document']]],
    ['Customer / Accounts Receivable',[['XD03','Display customer master'],['FD03','Display customer (FI view)'],['FBL5N','Customer line items'],['FB70','Enter customer invoice'],['FB65','Enter vendor credit memo (no PO)'],['FB75','Enter customer credit memo'],['F-28','Post incoming payment']]],
    ['General Ledger',[['S_ALR_87012277','G/L balances = Trial Balance'],['FBL3N','G/L account line items'],['FB50','Enter G/L journal entry'],['FB03','Display document'],['FB08','Reverse document']]],
@@ -5509,6 +5524,95 @@ NOTES.QBANK={w:['Filter by area and level. <b>Fresher</b> questions are asked in
 NOTES.REVISE={w:['Print it or save it as a PDF from the print dialog.'],q:[]};
 NOTES.CERT={w:['The certificate is a record of practice in this simulator. Do not present it as an SAP certification.','On a CV write it as: "LedgerLab ERP finance practice: certificate of completion".'],q:[]};
 
+
+/* ---------- START: first-run choice, 5-minute level check, "today" card ---------- */
+const START_PATHS=[
+ ['learn','Learn from zero','Accounting or ERP is new to you. Short lessons, one idea at a time.','BASICS','Start lesson 1'],
+ ['revise','Revise what I know','You have worked in accounts before. Quick recall cards on your weak topics.','QBANK','Start revising'],
+ ['interview','Interview is close','Practise the real tasks interviewers ask about, then take a mock interview.','TRAIN','Go to practice'],
+ ['check','Not sure, check my level','10 tap-only questions, about 5 minutes. No timer, no pass or fail.','CHECK','Check my level']
+];
+const CHK_AREAS={B:'Accounting basics',E:'ERP understanding',I:'Real work and interview'};
+const CHK_Q=[
+ {a:'B',q:'You buy goods worth Rs. 10,000 on credit. Which account is credited?',o:['Cash','Vendor (creditor)','Purchases','Bank'],k:1,why:'Bought on credit means you owe the vendor, so the vendor (a liability) is credited and purchases or inventory is debited.'},
+ {a:'B',q:'A customer pays Rs. 5,000 into your bank account. What is the entry?',o:['Dr Customer, Cr Bank','Dr Bank, Cr Customer','Dr Sales, Cr Bank','Dr Bank, Cr Sales'],k:1,why:'Bank goes up (debit) and the amount the customer owed goes down (credit). Sales was recorded earlier, when you raised the invoice.'},
+ {a:'B',q:'GST paid on a purchase that you can claim back is booked as:',o:['Output GST, a liability','Input GST, an asset (receivable)','An expense','Part of sales'],k:1,why:'Input GST is a credit you can set off against the output GST you collect, so it sits as an asset until it is used.'},
+ {a:'B',q:'Rent for March is unpaid on 31 March. To show it in March you post:',o:['Nothing until it is paid','An accrual: Dr Rent expense, Cr Accrued liability','Dr Bank, Cr Rent','A prepaid expense'],k:1,why:'Accrual accounting records the cost in the month it belongs to, even if the cash goes out later.'},
+ {a:'E',q:'Goods have arrived but the vendor invoice has not. In an ERP the credit side goes to:',o:['The vendor account','GR/IR clearing','Bank','Sales'],k:1,why:'The goods receipt posts Dr Inventory, Cr GR/IR. When the invoice comes, GR/IR is cleared and the vendor is credited.'},
+ {a:'E',q:'Why can you not post directly to the "Trade payables" G/L account in an ERP?',o:['It is closed for the year','It is a reconciliation account, filled only from vendor postings','It needs a manager password','It is only for reports'],k:1,why:'Reconciliation accounts are updated automatically from the sub-ledger, so the vendor list and the G/L always agree.'},
+ {a:'E',q:'An "open item" in a vendor account is:',o:['Any posting this month','An invoice or payment not yet matched (cleared) against another item','A blocked vendor','A draft document'],k:1,why:'Open items stay open until an invoice and its payment are matched and cleared. This is how you see what is still payable.'},
+ {a:'I',q:'A customer paid Rs. 49,800 against a Rs. 50,000 invoice. What is the usual handling?',o:['Reject the whole payment','Clear the invoice and write off the small difference, or keep it as a residual item','Delete the invoice','Ignore it'],k:1,why:'Small differences are written off within a tolerance, or left as a residual item to collect later. Both keep the ledger correct.'},
+ {a:'I',q:'Three-way match before paying a vendor compares:',o:['PO, goods receipt and invoice','Invoice, bank statement and GST return','PO, budget and invoice','Vendor, customer and bank'],k:0,why:'You pay only what was ordered (PO), received (GR) and billed (invoice). Mismatches are blocked for payment.'},
+ {a:'I',q:'At month-end the trial balance does not tally. What do you check first?',o:['Delete recent entries','Unposted or parked documents and one-sided entries, then suspense balances','Call the auditor','Change the period'],k:1,why:'In an ERP every posted document balances, so look for parked items, wrong period postings and suspense or clearing accounts.'}
+];
+function chkInit(){return {i:0,ans:[],done:false,stop:false}}
+function chkScore(st){const r={B:[0,0],E:[0,0],I:[0,0]};st.ans.forEach((x,i)=>{const q=CHK_Q[i];r[q.a][1]++;if(x===q.k)r[q.a][0]++});return r}
+function chkRoute(r){
+ if(r.B[1]&&r.B[0]/r.B[1]<0.75)return ['learn','Start with accounting basics','BASICS'];
+ if(!r.E[1]||r.E[0]/r.E[1]<0.67)return ['learn','Start with ERP understanding: lessons 3, 7 and 9','BASICS','B03'];
+ if(r.I[0]/Math.max(1,r.I[1])<0.67)return ['revise','Revise real-work scenarios in the question bank','QBANK'];
+ return ['interview','You are ready for task practice and a mock interview','TRAIN'];
+}
+function nextLesson(){return LESSONS.find(l=>!lessonDone(l.id))}
+function nextMissionObj(){return MIS.find(m=>!S.done[m.id]&&!missionLocked(m))}
+function todayCard(){
+ const p=LEARN.path||'',nl=nextLesson(),nm=nextMissionObj();
+ let title,body,btn,code,arg=null;
+ if(p==='learn'&&nl){title='Today: one lesson';body=`Lesson ${LESSONS.indexOf(nl)+1}: ${esc(nl.t)}. About 5 minutes, then 3 check questions.`;btn='Open the lesson';code='lesOpen';arg=nl.id}
+ else if(p==='revise'){title='Today: 20 recall cards';body='Answer from memory, then compare with the model answer. Your weak topics come back more often.';btn='Start the drill';code='open';arg='QBANK'}
+ else if(nm){title='Today: your next mission';body=esc(nm.t)+'.';btn='Show the mission';code='sidetab';arg='mis'}
+ else if(nl){title='Today: one lesson';body=`Lesson ${LESSONS.indexOf(nl)+1}: ${esc(nl.t)}.`;btn='Open the lesson';code='lesOpen';arg=nl.id}
+ else return '';
+ return `<div class="today card"><div><span class="today-k">${title}</span><p>${body}</p></div><div class="actions">${BTN(btn,code,arg,'primary')}${BTN('Change my path','open','START','')}</div></div>`;
+}
+SCR.START={t:'Welcome',render(){
+ if(SESS)return HEAD('START','Welcome')+prepBusy();
+ let h=`<div class="ttl"><h2>Where would you like to start?</h2></div><p class="sub">Pick one. You can change it any time from the main menu.</p><div class="paths">`;
+ START_PATHS.forEach(([k,t,d,c,b])=>{h+=`<button type="button" class="path${LEARN.path===k?' on':''}" data-act="startPick" data-arg="${k}"><b>${t}</b><span>${d}</span><em>${b}</em></button>`});
+ h+=`</div><p class="help"><button type="button" class="linkbtn" data-act="startSkip">Not now, show me the simulator</button></p>`;
+ return h;
+}};
+ACT.startPick=k=>{
+ LEARN.start=true;if(k!=='check')LEARN.path=k;learnSave();
+ const p=START_PATHS.find(x=>x[0]===k);if(!p)return;
+ if(k==='check'){NAV.chk=chkInit();go('CHECK',null,true);return}
+ if(k==='learn'){const nl=nextLesson();if(nl){go('BASICS',{les:nl.id},true);return}}
+ go(p[3],null,true);
+};
+ACT.startSkip=()=>{LEARN.start=true;learnSave();go('HOME',null,true)};
+SCR.CHECK={t:'Check my level',render(){
+ if(SESS)return HEAD('CHECK','Check my level')+prepBusy();
+ const st=NAV.chk||(NAV.chk=chkInit());
+ if(st.done){
+ const r=chkScore(st),rt=chkRoute(r);
+ let h=HEAD('CHECK','Your level','No pass or fail. This only decides where you start.');
+ h+=`<div class="card">`+Object.keys(CHK_AREAS).filter(a=>r[a][1]).map(a=>{const ok=r[a][0]/r[a][1]>=0.67;return `<div class="lvl"><span>${CHK_AREAS[a]}</span><b>${r[a][0]} / ${r[a][1]}</b>${CHIP(ok?'good':'start here',ok?'ok':'mid')}</div>`}).join('')
+ +(st.stop?`<p class="help">We stopped early because the basics need a little work first. That is the right place to start.</p>`:'')
+ +`<div class="actions">${BTN('My path: '+rt[1],'chkGo',rt[0],'primary')}${BTN('Take it again','chkAgain','','')}</div></div>`;
+ h+=`<div class="card"><h3>Review your answers</h3>`+st.ans.map((x,i)=>{const q=CHK_Q[i],ok=x===q.k;return `<div class="rev ${ok?'ok':'no'}"><p><b>${i+1}. ${esc(q.q)}</b></p><p>${ok?'&#10003; ':'&#10007; Your answer: '+esc(q.o[x])+'. '}Right answer: <b>${esc(q.o[q.k])}</b></p><p class="help">${esc(q.why)}</p></div>`}).join('')+`</div>`;
+ return h;
+ }
+ const q=CHK_Q[st.i];
+ let h=HEAD('CHECK','Check my level',`Question ${st.i+1} of ${CHK_Q.length} · ${CHK_AREAS[q.a]}`);
+ h+=`<div class="prog"><i style="width:${Math.round(st.i/CHK_Q.length*100)}%"></i></div><div class="card"><p class="q">${esc(q.q)}</p><div class="opts">`
+ +q.o.map((o,j)=>`<button type="button" class="opt" data-act="chkAns" data-arg="${j}">${esc(o)}</button>`).join('')
+ +`</div><p class="help">Not sure? Pick your best guess. A wrong answer only shows us where to start.</p></div>`;
+ return h;
+}};
+ACT.chkAns=j=>{
+ const st=NAV.chk||(NAV.chk=chkInit());if(st.done)return;
+ st.ans.push(+j);st.i++;
+ if(st.i===4){const r=chkScore(st);if(r.B[0]<=1){st.stop=true;st.done=true}}
+ if(st.i>=CHK_Q.length)st.done=true;
+ if(st.done){LEARN.check={at:nowIso(),score:chkScore(st)};learnSave()}
+ go('CHECK',null,true);
+};
+ACT.chkAgain=()=>{NAV.chk=chkInit();go('CHECK',null,true)};
+ACT.chkGo=k=>{LEARN.start=true;LEARN.path=k;learnSave();const st=NAV.chk;const rt=st&&st.done?chkRoute(chkScore(st)):null;if(rt&&rt[3]&&!lessonDone(rt[3])){go('BASICS',{les:rt[3]},true);return}ACT.startPick(k)};
+NOTES.START={w:['Pick the path that matches you today. You can change it from the main menu.'],q:[]};
+NOTES.CHECK={w:['The level check only decides where you start. It is not a score on your certificate.'],q:[]};
+(function(){const r=SCR.HOME.render;SCR.HOME.render=function(p){const h=r.call(this,p);if(SESS)return h;const i=h.indexOf('</p>');const tc=todayCard();return i>0?h.slice(0,i+4)+tc+h.slice(i+4):tc+h}})();
+
 /* ---------- lists, wiring, init ---------- */
 function fillLists(){
   const set=(id,html)=>{let d=document.getElementById(id);if(!d){d=document.createElement('datalist');d.id=id;document.body.appendChild(d)}d.innerHTML=html};
@@ -5549,5 +5653,6 @@ licLoad().then(()=>{renderMissions();if(NAV.cur&&NAV.cur.code==='HOME')go('HOME'
 fillLists();renderMissions();
 go('HOME',null,true);
 if(typeof resumeSession==='function')resumeSession();
+if(!SESS&&!LEARN.start)go('START',null,true);
 if(MIGRATED)msg('w','LedgerLab was upgraded with bank reconciliation. Your practice data was rebuilt with the new starting data. Your training history was kept.');
 </script>
