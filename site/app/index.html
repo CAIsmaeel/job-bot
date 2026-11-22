@@ -293,6 +293,55 @@ body{margin:0}.sitehdr,.sitefoot{margin-left:calc(-1 * max(16px,env(safe-area-in
 .shell{top:64px}
 @media (max-width:979px){.shell{top:auto}}
 @media (min-width:980px){#side{top:178px!important;max-height:calc(100vh - 230px)!important}}
+
+/* ================= Workbench (Mercury / Stripe style) ================= */
+#wbbar{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:10px 14px;font-size:13px;color:#52525B}
+#wbbar .wbmode{background:#F4F4F5}#wbbar .wbmode.live{background:#EFF6FF;color:#1D4ED8;border-color:#BFDBFE}
+#wbbar .wbprog{display:flex;align-items:center;gap:8px}
+#wbbar .wbtrack{display:inline-block;width:120px;height:4px;border-radius:4px;background:#F4F4F5;overflow:hidden;margin-left:4px}
+#wbbar .wbtrack i{display:block;height:100%;width:0;background:#18181B;border-radius:4px;transition:width .3s}
+#wbbar .wbsp{flex:1}
+#wbbar .btn.sm{min-height:32px;padding:4px 12px;font-size:13px}
+#modnav{display:none}
+#screen{min-width:0}
+#screen .card{background:#fff;border:1px solid #E4E4E7;border-radius:12px;box-shadow:none}
+td.n,th.n,.amt,input[type=number],.kv .n,.tot,.grand td{font-family:var(--fr-mono);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1,"zero" 0}
+table.t td.n{font-size:12.5px;letter-spacing:-.01em}
+table.t tr.grand td{background:#FAFAFA;font-weight:600}
+table.t td,table.t th{border-color:#F4F4F5}
+.banner{background:#FAFAFA;border:1px solid #E4E4E7;border-left:3px solid #A1A1AA;border-radius:10px;color:#3F3F46}
+.banner.warn{border-left-color:#D97706;background:#FFFBEB;color:#78350F}
+.banner.bad,.banner.err{border-left-color:#B91C1C;background:#FEF2F2;color:#7F1D1D}
+.chip{border-radius:999px;font-family:var(--fr-mono);font-size:11.5px;font-weight:500}
+/* right drawer: missions and ledger feedback */
+#side{background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:14px}
+.mis{border:1px solid #E4E4E7;border-radius:10px;background:#fff;padding:12px 14px;margin-bottom:8px}
+.mis.done{background:#FAFAFA}.mis.done b{color:#71717A}
+.mis .box{border:1.5px solid #D4D4D8;border-radius:5px}.mis.done .box{background:#18181B;border-color:#18181B;color:#fff}
+.mis p{color:#52525B}
+.mis ul.fb,.mis .fb{font-size:12.5px}
+@media (min-width:1200px){
+  body{padding-left:0!important;padding-right:0!important}
+  .sitehdr,.sitefoot{margin-left:0!important;margin-right:0!important}
+  .sitehdr .in{max-width:none;padding:0 20px}
+  .shell{margin-inline:0!important;padding-left:20px!important;padding-right:20px!important}
+  #main{grid-template-columns:260px minmax(0,1fr) 340px!important;gap:0!important;padding:0 0 76px!important;align-items:start;min-height:calc(100vh - 64px)}
+  #wbbar{border-radius:0;border-width:0 0 1px;margin:0;padding:10px 20px}
+  #modnav{display:block;position:sticky;top:calc(64px + var(--shellh,90px));align-self:start;height:calc(100vh - 64px - var(--shellh,90px));overflow:auto;background:#fff;border-right:1px solid #E4E4E7;padding:16px 12px 40px}
+  #screen{padding:24px 28px}
+  #side{position:sticky!important;top:calc(64px + var(--shellh,90px))!important;height:calc(100vh - 64px - var(--shellh,90px));max-height:none!important;border-radius:0;border-width:0 0 0 1px;padding:16px}
+  body.intv #main{grid-template-columns:minmax(0,1fr) 340px!important}body.intv #modnav{display:none}
+  body.nosplit #main{grid-template-columns:260px minmax(0,1fr)!important}
+  body.nosplit.intv #main{grid-template-columns:minmax(0,1fr)!important}
+}
+.mg{margin:0 0 14px}
+.mgh{margin:0 0 4px;padding:0 10px;font:600 11px/1.6 var(--fr-mono);letter-spacing:.06em;text-transform:uppercase;color:#A1A1AA}
+.ml{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;text-align:left;background:transparent;border:0;border-radius:8px;padding:7px 10px;font:500 13.5px/1.3 var(--fr-sans);color:#52525B;cursor:pointer}
+.ml:hover{background:#FAFAFA;color:#18181B}
+.ml.on{background:#F4F4F5;color:#18181B;font-weight:600}
+.ml .mc{font-size:10.5px;color:#A1A1AA;white-space:nowrap}
+.ml.on .mc{color:#2563EB}
+@media (max-width:640px){#wbbar .wbtrack{width:70px}#wbbar{font-size:12px;gap:10px}}
 </style>
 
 <header class="sitehdr"><div class="in"><a class="lg" href="/" aria-label="FinRehearse home"><img src="/logo.svg" alt="FinRehearse" width="140" height="28"></a><nav aria-label="Site"><a href="/"><span class="fl">Home</span><span class="sh">Home</span></a><a href="/app/" aria-current="page"><span class="fl">Practice</span><span class="sh">Practice</span></a><a href="/interview/"><span class="fl">Guides</span><span class="sh">Guides</span></a><a href="/jobs/"><span class="fl">Jobs</span><span class="sh">Jobs</span></a><a href="/#price"><span class="fl">Pricing</span><span class="sh">Pricing</span></a></nav><a class="launch" href="/app/">Launch App</a></div></header>
@@ -321,6 +370,8 @@ body{margin:0}.sitehdr,.sitefoot{margin-left:calc(-1 * max(16px,env(safe-area-in
   </div>
 
   <main id="main" data-view="screen">
+    <div id="wbbar" aria-label="Workbench status"><span class="wbmode pill mono" id="wbmode">Free practice</span><span class="wbprog"><span class="mono" id="wbcount">0 / 0</span> missions<span class="wbtrack"><i id="wbfill"></i></span></span><span class="wbsp"></span><button type="button" class="btn sm" data-act="open" data-arg="SIMDATA" id="wbdata">Export / Import Data</button></div>
+    <nav id="modnav" aria-label="Modules"><div class="mg"><p class="mgh">Start</p><button type="button" class="ml" data-act="open" data-arg="HOME"><span>Main menu</span><span class="mc mono">HOME</span></button><button type="button" class="ml" data-act="open" data-arg="DAILY"><span>Daily Close</span><span class="mc mono">DAILY</span></button><button type="button" class="ml" data-act="open" data-arg="TRAIN"><span>Training and interview</span><span class="mc mono">TRAIN</span></button><button type="button" class="ml" data-act="open" data-arg="QBANK"><span>Question bank</span><span class="mc mono">QBANK</span></button></div><div class="mg"><p class="mgh">AP / AR</p><button type="button" class="ml" data-act="open" data-arg="FBL1N"><span>Vendor line items</span><span class="mc mono">FBL1N</span></button><button type="button" class="ml" data-act="open" data-arg="FB60"><span>Vendor invoice</span><span class="mc mono">FB60</span></button><button type="button" class="ml" data-act="open" data-arg="F-53"><span>Pay a vendor</span><span class="mc mono">F-53</span></button><button type="button" class="ml" data-act="open" data-arg="FBL5N"><span>Customer line items</span><span class="mc mono">FBL5N</span></button><button type="button" class="ml" data-act="open" data-arg="FB70"><span>Customer invoice</span><span class="mc mono">FB70</span></button><button type="button" class="ml" data-act="open" data-arg="F-28"><span>Customer receipt</span><span class="mc mono">F-28</span></button></div><div class="mg"><p class="mgh">Procure to pay</p><button type="button" class="ml" data-act="open" data-arg="ME21N"><span>Purchase order</span><span class="mc mono">ME21N</span></button><button type="button" class="ml" data-act="open" data-arg="MIGO"><span>Goods receipt</span><span class="mc mono">MIGO</span></button><button type="button" class="ml" data-act="open" data-arg="MIRO"><span>Invoice verification</span><span class="mc mono">MIRO</span></button></div><div class="mg"><p class="mgh">Bank reconciliation</p><button type="button" class="ml" data-act="open" data-arg="FF67"><span>Bank statement</span><span class="mc mono">FF67</span></button></div><div class="mg"><p class="mgh">Month-end close</p><button type="button" class="ml" data-act="open" data-arg="CLOSE"><span>Closing cockpit</span><span class="mc mono">CLOSE</span></button><button type="button" class="ml" data-act="open" data-arg="FBS1"><span>Accrual</span><span class="mc mono">FBS1</span></button><button type="button" class="ml" data-act="open" data-arg="FB50"><span>Journal entry</span><span class="mc mono">FB50</span></button><button type="button" class="ml" data-act="open" data-arg="S_ALR_87012277"><span>Trial balance</span><span class="mc mono">S_ALR_87012277</span></button></div><div class="mg"><p class="mgh">Assets and GST</p><button type="button" class="ml" data-act="open" data-arg="ASSET"><span>Fixed assets</span><span class="mc mono">ASSET</span></button><button type="button" class="ml" data-act="open" data-arg="OB40"><span>Tax codes</span><span class="mc mono">OB40</span></button></div><div class="mg"><p class="mgh">Order to cash</p><button type="button" class="ml" data-act="open" data-arg="VA01"><span>Sales order</span><span class="mc mono">VA01</span></button><button type="button" class="ml" data-act="open" data-arg="VL01N"><span>Delivery</span><span class="mc mono">VL01N</span></button><button type="button" class="ml" data-act="open" data-arg="VF01"><span>Billing</span><span class="mc mono">VF01</span></button></div><div class="mg"><p class="mgh">FP&amp;A</p><button type="button" class="ml" data-act="open" data-arg="S_ALR_87013611"><span>Budget versus actual</span><span class="mc mono">S_ALR_87013611</span></button></div><div class="mg"><p class="mgh">Payroll and inventory</p><button type="button" class="ml" data-act="open" data-arg="PC00"><span>Payroll run</span><span class="mc mono">PC00</span></button><button type="button" class="ml" data-act="open" data-arg="INV"><span>Inventory</span><span class="mc mono">INV</span></button></div><div class="mg"><p class="mgh">Your data</p><button type="button" class="ml" data-act="open" data-arg="SIMDATA"><span>Export / import data</span><span class="mc mono">SIMDATA</span></button></div></nav>
     <section id="screen" aria-live="polite"></section>
     <aside id="side">
       <div class="sidehd" role="tablist">
@@ -3518,6 +3569,19 @@ function POSTACT(fn){
     }
   };
 }
+/* ---------- workbench chrome: module sidebar highlight, mode and progress bar (display only, reads state) ---------- */
+function wbUpdate(code){
+  const m=SESS&&SESS.mode, ML={guided:'Guided',independent:'Independent',interview:'Interview Timer'};
+  document.body.classList.toggle('intv',m==='interview');
+  const md=document.getElementById('wbmode');if(md){md.textContent=m?ML[m]||m:'Free practice';md.classList.toggle('live',!!m)}
+  const n=MIS.filter(x=>S.done[x.id]).length,t=MIS.length;
+  const c=document.getElementById('wbcount');if(c)c.textContent=n+' / '+t;
+  const f=document.getElementById('wbfill');if(f)f.style.width=(t?Math.round(n/t*100):0)+'%';
+  const d=document.getElementById('wbdata');if(d)d.disabled=!!m;
+  document.querySelectorAll('#modnav .ml').forEach(b=>{const k=b.dataset.arg;if(!SCR[k])b.hidden=true;b.classList.toggle('on',k===code)});
+  const sh=document.querySelector('.shell');if(sh)document.documentElement.style.setProperty('--shellh',sh.getBoundingClientRect().height+'px');
+}
+window.addEventListener('resize',()=>{try{wbUpdate(NAV.cur&&NAV.cur.code)}catch(e){}});
 function go(code,params,replace){
   let sc=SCR[code];if(!sc){msg('e','Transaction '+code+' does not exist');return}
   if(scrLocked(code))sc=lockedScreen(code,sc);
@@ -3529,6 +3593,7 @@ function go(code,params,replace){
   if(typeof renderNotes==='function')renderNotes(code);
   if(sc.after)sc.after(NAV.cur.params);
   if(!replace)window.scrollTo({top:0});
+  try{wbUpdate(code)}catch(e){}
   /* phones: after a report runs, bring its result into view instead of leaving it below the selection screen */
   if(params&&params.run&&!window.matchMedia('(min-width:980px)').matches){setTimeout(()=>{const cs=document.querySelectorAll('#screen .card');const r=cs[cs.length-1];if(r&&cs.length>1)r.scrollIntoView({block:'start',behavior:'smooth'})},60)}
   save();
@@ -5789,6 +5854,8 @@ function fillLists(){
 }
 function setView(v){$('#main').dataset.view=v;$$('#viewtoggle button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===v)))}
 const _open=ACT.open;ACT.open=a=>{setView('screen');_open(a)};
+{const _rm=renderMissions;renderMissions=function(){const r=_rm.apply(this,arguments);try{wbUpdate(NAV.cur&&NAV.cur.code)}catch(e){}return r};
+ const _as=applySessionUI;applySessionUI=function(){const r=_as.apply(this,arguments);try{wbUpdate(NAV.cur&&NAV.cur.code)}catch(e){}return r}}
 ACT.back=()=>{setView('screen');const prev=NAV.stack.pop();if(prev)go(prev.code,prev.params,true);else go('HOME',null,true)};
 ACT.home=()=>{
   if(SESS&&SESS.mode==='interview'){msg('w','The menu is not available in Interview Simulation. Enter the transaction code yourself.');return}
