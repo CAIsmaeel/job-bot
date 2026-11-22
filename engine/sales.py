@@ -96,17 +96,28 @@ def send_email(to, subject, text):
 
 
 def tell_owner(text):
-    tok = os.environ.get("TELEGRAM_TOKEN")
-    try:
-        chat = json.load(open("state.json")).get("chat_id")
-    except Exception:
-        chat = None
+    """Sales alerts go to the separate FinRehearse sales bot only (SALES_BOT_TOKEN + SALES_CHAT_ID)."""
+    tok, chat = os.environ.get("SALES_BOT_TOKEN"), os.environ.get("SALES_CHAT_ID")
     if tok and chat:
         requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
                       data={"chat_id": chat, "text": text, "disable_web_page_preview": "true"}, timeout=30)
 
 
+def sales_bot_setup():
+    """Reply to whoever messaged the sales bot with their chat id (sent in Telegram, never logged)."""
+    tok = os.environ.get("SALES_BOT_TOKEN")
+    if not tok or os.environ.get("SALES_CHAT_ID"):
+        return
+    ups = requests.get(f"https://api.telegram.org/bot{tok}/getUpdates", timeout=30).json().get("result", [])
+    chats = {(u.get("message") or {}).get("chat", {}).get("id") for u in ups} - {None}
+    for c in chats:
+        requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", data={"chat_id": c,
+            "text": f"Your chat id is {c}\n\nSave it in GitHub as a secret named SALES_CHAT_ID. After that, every FinRehearse sale will be reported here."}, timeout=30)
+    print("sales bot setup: replied to", len(chats), "chat(s)")
+
+
 def main():
+    sales_bot_setup()
     auth = (os.environ["RZP_KEY_ID"], os.environ["RZP_KEY_SECRET"])
     jwk = json.loads(os.environ["LICENCE_PRIVATE_JWK"])
     since = int(time.time()) - 7 * 86400

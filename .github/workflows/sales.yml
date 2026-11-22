@@ -21,7 +21,8 @@ jobs:
           RZP_KEY_SECRET: ${{ secrets.RZP_KEY_SECRET }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           LICENCE_PRIVATE_JWK: ${{ secrets.LICENCE_PRIVATE_JWK }}
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          SALES_BOT_TOKEN: ${{ secrets.SALES_BOT_TOKEN }}
+          SALES_CHAT_ID: ${{ secrets.SALES_CHAT_ID }}
         run: |
           for v in RZP_KEY_ID RZP_KEY_SECRET GMAIL_APP_PASSWORD LICENCE_PRIVATE_JWK; do
             if [ -z "${!v}" ]; then echo "secret $v is not set yet, skipping"; exit 0; fi
