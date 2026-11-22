@@ -3,7 +3,7 @@
 # Needs secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID. Does nothing if they are missing.
 set -e
 if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then echo "deploy: skipped (no Cloudflare secrets)"; exit 0; fi
-PROJECT="${PAGES_PROJECT:-ledgerlab}"
+PROJECT="${PAGES_PROJECT:-finrehearse}"
 rm -rf /tmp/deploy && cp -r site /tmp/deploy && mkdir -p /tmp/deploy/jobs
 [ -f engine/out/site/index.html ] && cp engine/out/site/index.html /tmp/deploy/jobs/index.html
 [ -d engine/out/seo ] && cp -r engine/out/seo/. /tmp/deploy/
