@@ -103,7 +103,7 @@ a.btn{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
 table.t{border-collapse:collapse;width:100%;font-size:12.5px;min-width:560px}
 table.t th{position:sticky;top:0;background:var(--surface2);text-align:left;font-weight:600;padding:7px 9px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--muted);font-size:12px}
 table.t td{padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top}
-table.jrn{min-width:520px}table.jrn select{width:100%;min-width:220px}table.jrn input{width:120px;text-align:right}
+.lvlrow.lvllock{color:var(--muted)}.lvlrow.lvllock .lvlc{font-size:11px;white-space:nowrap}table.jrn{min-width:520px}table.jrn select{width:100%;min-width:220px}table.jrn input{width:120px;text-align:right}
 table.t tr:last-child td{border-bottom:0}
 table.t .n{text-align:right;font-family:var(--mono);white-space:nowrap}
 table.t td.m{font-family:var(--mono)}
@@ -5171,8 +5171,10 @@ function renderMissions(){
  +`<p class="help" style="margin:0 0 8px">${n} of ${live.length} missions done${SELLABLE&&!isPro()?' (demo, '+MIS.length+' in the full version)':''}. A mission passes only when your own posting shows the right result.</p>`;
  groups.forEach(g=>{
  const L=lvlName(g),gl=g.ms.filter(m=>!missionLocked(m)),gd=gl.filter(m=>S.done[m.id]).length,isOpen=g.name===openG,all=gl.length&&gd===gl.length;
- h+=`<button type="button" class="lvlrow${isOpen?' open':''}${all?' done':''}" data-act="mgrp" data-arg="${esc(g.name)}"><span>${all?'&#10003; ':''}Level ${L.no} · ${esc(L.t)}</span><span class="lvlc">${gd}/${g.ms.length}</span></button>`;
- if(isOpen){h+=`<div class="lvlbody"><div class="prog"><i style="width:${gl.length?Math.round(gd/gl.length*100):0}%"></i></div>${L.hint?`<p class="help" style="margin:0 0 6px">Tip: ${esc(L.hint)}.</p>`:''}${g.ms.map(mcard).join('')}</div>`}
+ const lk=!gl.length;
+ h+=`<button type="button" class="lvlrow${isOpen?' open':''}${all?' done':''}${lk?' lvllock':''}" data-act="mgrp" data-arg="${esc(g.name)}"><span>${all?'&#10003; ':''}Level ${L.no} · ${esc(L.t)}</span><span class="lvlc">${lk?'&#128274; Full version':gd+'/'+g.ms.length}</span></button>`;
+ if(isOpen&&lk){h+=`<div class="lvlbody"><p class="help" style="margin:0 0 8px">Level ${L.no} has ${g.ms.length} missions. It opens with the full version, together with every other locked level.</p><div class="actions">${BTN('See what is included','open','LICENCE','sm')}${buyBtn()}</div></div>`}
+ else if(isOpen){h+=`<div class="lvlbody"><div class="prog"><i style="width:${gl.length?Math.round(gd/gl.length*100):0}%"></i></div>${L.hint?`<p class="help" style="margin:0 0 6px">Tip: ${esc(L.hint)}.</p>`:''}${g.ms.map(mcard).join('')}</div>`}
  });
  $('#pane-mis').innerHTML=h+`</div>`;
 }
