@@ -210,3 +210,44 @@
 .cmpd[open] summary::after{content:"−"}
 .cmpd .cmp{margin:0;padding:0 18px 18px}
 @media (max-width:900px){.pgrid{grid-template-columns:1fr;gap:24px}.ptrust{justify-content:flex-start}.ptrust span{display:block;width:100%}.ptrust span+span::before{display:none}}
+
+/* ===== rhythm + brand colour pass ===== */
+.home .band{padding:56px 0;background:#fff;border-top:1px solid #E2E8F0}
+.home .band:nth-of-type(even){background:#fff}
+#see.band,#teach.band,#faq.band{background:#F4F6FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0}
+.home h2{margin:0 0 24px}
+.hero{padding:48px 0 56px;background:radial-gradient(circle at 75% 20%,rgba(29,78,216,.08),transparent 55%),#FAFAFA}
+.shots,.mods,.pils,.scg,.two{gap:16px}
+.mod,.pil,.sc,.panel{padding:22px}
+.mod .tag,.sc .tag{color:#1D4ED8;background:#EFF6FF;border-color:#BFDBFE}
+.pil .ic{background:#EFF6FF;border-color:#BFDBFE}.pil svg{stroke:#1D4ED8}
+/* primary actions in cobalt */
+.hero .ctas .btn:not(.alt){background:#1D4ED8;border-color:#1D4ED8}
+.hero .ctas .btn:not(.alt):hover{background:#1E40AF;border-color:#1E40AF}
+.lwlink,.certbtn,.sclink{color:#1D4ED8!important}
+/* ledger widget with a navy title bar */
+.lw{padding:0 0 18px;overflow:hidden}
+.lw>*:not(.lwh){margin-left:20px!important;margin-right:20px!important}
+.lw .lwh{background:#0F172A;margin:0 0 14px;padding:12px 20px}
+.hero .lw .lwt{color:#F8FAFC}
+.lw .lwh .pill{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#E2E8F0}
+.lw .lwa .btn{background:#1D4ED8;border-color:#1D4ED8}.lw .lwa .btn:hover{background:#1E40AF}
+.lwfb.ok .pill.ok{background:#ECFDF5;color:#059669;border-color:#A7F3D0}
+.lwfb.bad{border-left-color:#DC2626;background:#FEF2F2}
+/* yes / no lists */
+#fit .two>.panel:first-child ul,#fit .two>.panel:last-child ul{list-style:none;padding-left:0}
+#fit .two>.panel li{position:relative;padding-left:28px}
+#fit .two>.panel li::before{position:absolute;left:0;top:2px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font:600 11px/1 var(--fr-mono)}
+#fit .two>.panel:first-child li::before{content:"✓";background:#ECFDF5;color:#059669;border:1px solid #A7F3D0}
+#fit .two>.panel:last-child li::before{content:"✕";background:#FEF2F2;color:#DC2626;border:1px solid #FECACA}
+/* pricing: three columns, cobalt for the annual plan */
+.pgrid{gap:20px}
+.pc{padding:24px 22px 22px}
+.pc.best{border:2px solid #1D4ED8;background:linear-gradient(rgba(239,246,255,.4),rgba(239,246,255,.4)),#fff;padding:23px 21px 21px}
+.pb{background:#1D4ED8;color:#fff;border-color:#1D4ED8}
+.pc.best .pcta{background:#1D4ED8;border-color:#1D4ED8}.pc.best .pcta:hover{background:#1E40AF;border-color:#1E40AF}
+.pc.best .feat svg{stroke:#1D4ED8}
+.feat{margin:0 0 20px;padding:16px 0 0}
+.home .pc .ps{margin:8px 0 16px}
+.ptrust,.cmpd{margin-bottom:14px}
+@media (max-width:640px){.home .band{padding:44px 0}.hero{padding:32px 0 40px}.home h2{margin-bottom:18px}}
