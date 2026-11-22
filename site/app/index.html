@@ -103,6 +103,7 @@ a.btn{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
 table.t{border-collapse:collapse;width:100%;font-size:12.5px;min-width:560px}
 table.t th{position:sticky;top:0;background:var(--surface2);text-align:left;font-weight:600;padding:7px 9px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--muted);font-size:12px}
 table.t td{padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+table.jrn{min-width:520px}table.jrn select{width:100%;min-width:220px}table.jrn input{width:120px;text-align:right}
 table.t tr:last-child td{border-bottom:0}
 table.t .n{text-align:right;font-family:var(--mono);white-space:nowrap}
 table.t td.m{font-family:var(--mono)}
@@ -5912,44 +5913,121 @@ const CHAL_TRACKS=[
     {id:'e',label:'Credit note entry',type:'choice',o:['Dr Sales returns 5,000, Dr Output CGST 450, Dr Output SGST 450, Cr Customer 5,900','Dr Customer 5,900, Cr Sales 5,900','Dr Sales returns 5,900, Cr Customer 5,900','Dr Output GST 900, Cr Bank 900'],k:0,why:'Revenue and output GST both come down, and the customer owes 5,900 less.'},
     {id:'d',label:'Amount the customer should now pay (INR)',type:'number',k:53100,why:'59,000 minus 5,900 = 53,100, which is 45 cartons x 1,180.'},
     {id:'l',label:'Last date to issue this credit note and still reduce your GST',type:'choice',o:['Within 30 days of the invoice','30 November 2027, or the date you file the annual return for 2026-27 if that is earlier','31 March 2027','There is no time limit'],k:1,why:'Under section 34 of the CGST Act the credit note must be declared by 30 November after the end of the financial year, or the annual return date if earlier. After that you cannot cut your output tax.'}]}
+ ]},
+ {k:'R2R',t:'Record to Report',d:'A full month-end close: bank reconciliation, accruals, prepaid, depreciation and the closing profit.',items:[
+  {id:'r2r1',t:'October month-end close for Bharat Traders Pvt Ltd',
+   brief:'You are the R2R executive. It is 31.10.2026 and the controller wants October closed. Work through the five steps in order: prepare each working, post the journal entry, then move on. Ignore GST unless a step mentions it.',
+   stages:[
+    {h:'Bank reconciliation',brief:'The bank ledger in the books and the bank statement do not agree. Find every difference, reconcile both sides to the same figure, and book only what belongs in the books.',
+     docs:[{h:'Balances on 31.10.2026',cols:['Source','Balance (INR)'],rows:[['Bank ledger 100000 in the books (debit)','4,85,000.00'],['Bank statement (credit in your favour)','5,39,300.00']]},
+      {h:'Items found while ticking the statement against the ledger',cols:['Date','Item','Amount (INR)','In books?','On statement?'],rows:[['28.10','Cheque 004512 to Apex Steel Works','45,000.00','Yes','No'],['30.10','Cheque 004515 to Sharma Stationers','12,500.00','Yes','No'],['31.10','Cheques deposited at branch','30,000.00','Yes','No'],['30.10','Bank charges debited by bank','1,180.00','No','Yes'],['31.10','Interest credited by bank','2,980.00','No','Yes'],['29.10','NEFT from customer Sun Traders','25,000.00','No','Yes']]}],
+     qs:[{id:'ab',label:'Adjusted book balance (INR)',type:'number',k:511800,why:'4,85,000 - 1,180 charges + 2,980 interest + 25,000 NEFT = 5,11,800. These are items the bank knows about and the books do not.'},
+      {id:'up',label:'Total cheques issued but not yet presented (INR)',type:'number',k:57500,why:'45,000 + 12,500 = 57,500. The vendors have not banked them yet.'},
+      {id:'bb',label:'Adjusted bank balance (INR)',type:'number',k:511800,why:'5,39,300 - 57,500 unpresented cheques + 30,000 deposit in transit = 5,11,800. Both sides now agree, so the reconciliation is complete.'},
+      {id:'je',label:'Post the entry for the items that belong in the books (one entry, any line order)',type:'journal',accts:[['100000','Bank'],['140000','Trade receivables (customers)'],['400000','Interest income'],['630000','Bank charges'],['200000','Trade payables (vendors)']],
+       k:[{a:'100000',d:26800},{a:'630000',d:1180},{a:'400000',c:2980},{a:'140000',c:25000}],why:'Bank charges and interest are new to the books, and the NEFT clears Sun Traders. Net effect on the bank: -1,180 + 2,980 + 25,000 = +26,800. Separate lines for the bank are also fine.'},
+      {id:'tm',label:'What do you do about the unpresented cheques and the deposit in transit?',type:'choice',o:['Reverse the cheques in the books','Nothing in the books: they are timing differences. Check they clear on the November statement and chase any cheque older than 3 months','Post them to a suspense account','Ask the bank to correct its statement'],k:1,why:'The books are already right for these items. The bank will catch up in a few days. Very old unpresented cheques are investigated and written back.'}]},
+    {h:'Accruals',brief:'Three costs belong to October but the invoices will only come in November. Book them in October so the profit is right.',
+     docs:[{h:'Information collected',cols:['Cost','Details'],rows:[['Electricity','Meter reading for October: 4,625 units. Tariff INR 4.00 per unit. The bill arrives around 10 November.'],['Statutory audit fee','Agreed fee INR 1,80,000 for FY 2026-27, billed after the audit in May 2027. Accrue it evenly every month.'],['Consultant','Tax consultant worked in October. Invoice of INR 40,000 + GST received on 05.11.2026.']]}],
+     qs:[{id:'el',label:'Electricity accrual (INR)',type:'number',k:18500,why:'4,625 units x 4.00 = 18,500. Use the actual meter reading, not last month\'s bill.'},
+      {id:'au',label:'Audit fee accrual for October (INR)',type:'number',k:15000,why:'1,80,000 / 12 months = 15,000 each month, so March does not take the whole hit.'},
+      {id:'tt',label:'Total accruals for October (INR)',type:'number',k:73500,why:'18,500 + 15,000 + 40,000 = 73,500. The consultant is accrued at 40,000: the GST input is booked only when you hold the invoice.'},
+      {id:'je',label:'Post the accrual entry',type:'journal',accts:[['240000','Accrued expenses'],['610000','Electricity expense'],['615000','Audit fees'],['618000','Consultancy fees'],['200000','Trade payables (vendors)'],['100000','Bank']],
+       k:[{a:'610000',d:18500},{a:'615000',d:15000},{a:'618000',d:40000},{a:'240000',c:73500}],why:'Each expense is debited in October and the total sits in accrued expenses, a liability, until the invoices are posted.'},
+      {id:'rv',label:'What happens to the electricity and consultant accruals on 1 November?',type:'choice',o:['Nothing, they stay forever','They are reversed on 1 November, so when the real invoices are posted the cost is not counted twice','They are paid to the vendors','They are moved to prepaid expenses'],k:1,why:'An auto-reversing accrual (in SAP, a reversal date on the document, or F.81) clears it on day one of the next month. The audit fee keeps building until the audit invoice arrives.'}]},
+    {h:'Prepaid insurance',brief:'On 01.07.2026 the company paid INR 1,20,000 for a fire insurance policy covering 01.07.2026 to 30.06.2027. The accounts team booked the full amount to insurance expense.',
+     docs:[{h:'Insurance expense 625000 · line items',cols:['Date','Text','Amount (INR)'],rows:[['01.07.2026','Fire policy 01.07.2026 - 30.06.2027, paid by bank','1,20,000.00']]}],
+     qs:[{id:'mo',label:'Insurance cost per month (INR)',type:'number',k:10000,why:'1,20,000 / 12 = 10,000.'},
+      {id:'pp',label:'Prepaid insurance that should be on the balance sheet on 31.10.2026 (INR)',type:'number',k:80000,why:'July to October (4 months) is used: 40,000. November to June (8 months) is still to come: 80,000.'},
+      {id:'je',label:'Post the correction entry',type:'journal',accts:[['160000','Prepaid insurance'],['625000','Insurance expense'],['100000','Bank'],['240000','Accrued expenses']],
+       k:[{a:'160000',d:80000},{a:'625000',c:80000}],why:'Move the unused 80,000 out of expense into the prepaid asset. From November, release 10,000 a month back to expense.'},
+      {id:'ft',label:'How do you stop this happening again?',type:'choice',o:['Book all insurance to expense, it is simpler','Post such payments to prepaid first and set up a monthly release (a recurring entry), with a prepaid schedule reviewed at every close','Only correct it in March','Ask the insurer to bill monthly'],k:1,why:'A prepaid schedule with a recurring monthly entry keeps every month right, and the controller reviews it as part of the close checklist.'}]},
+    {h:'Depreciation',brief:'Company policy: straight line, monthly. An asset bought on or before the 15th is depreciated for that month; after the 15th, from the next month.',
+     docs:[{h:'Fixed asset register (extract)',cols:['Asset','Capitalised','Cost (INR)','Residual (INR)','Life'],rows:[['Delivery van','12.04.2025','9,00,000','60,000','7 years'],['Laptops (6)','01.05.2026','2,16,000','0','3 years'],['Office furniture','01.01.2024','3,00,000','0','10 years'],['Printer','18.10.2026','36,000','0','3 years']]}],
+     qs:[{id:'vn',label:'Monthly depreciation on the delivery van (INR)',type:'number',k:10000,why:'(9,00,000 - 60,000) / 84 months = 10,000.'},
+      {id:'lp',label:'Monthly depreciation on the laptops (INR)',type:'number',k:6000,why:'2,16,000 / 36 months = 6,000.'},
+      {id:'pr',label:'October depreciation on the printer (INR)',type:'number',k:0,why:'It was bought on 18.10, after the 15th, so depreciation starts in November at 1,000 a month.'},
+      {id:'tt',label:'Total depreciation for October (INR)',type:'number',k:18500,why:'Van 10,000 + laptops 6,000 + furniture 2,500 (3,00,000 / 120) + printer 0 = 18,500.'},
+      {id:'je',label:'Post the depreciation entry',type:'journal',accts:[['640000','Depreciation expense'],['220000','Accumulated depreciation'],['100000','Bank'],['160000','Prepaid insurance']],
+       k:[{a:'640000',d:18500},{a:'220000',c:18500}],why:'Depreciation is a non-cash expense. The credit goes to accumulated depreciation so the asset keeps its cost and its net value falls. In SAP this is the depreciation run AFAB.'}]},
+    {h:'Close and report',brief:'Before your adjustments, the October profit in the trial balance was INR 2,50,000. Bring the whole close together.',
+     docs:[{h:'Your adjustments',cols:['Step','What you posted'],rows:[['1','Bank charges, interest, customer receipt'],['2','Accruals for electricity, audit fee, consultant'],['3','Prepaid insurance correction'],['4','Depreciation']]}],
+     qs:[{id:'pf',label:'Adjusted profit for October (INR)',type:'number',k:239800,why:'2,50,000 - 1,180 + 2,980 - 73,500 + 80,000 - 18,500 = 2,39,800. The customer receipt does not touch profit: it only moves money from receivables to bank.'},
+      {id:'ch',label:'Net change in profit from your close (INR, a fall is negative)',type:'number',k:-10200,why:'2,39,800 - 2,50,000 = -10,200.'},
+      {id:'bk',label:'Bank balance in the final trial balance (INR)',type:'number',k:511800,why:'The reconciled figure from step 1.'},
+      {id:'lk',label:'Last step before you tell the controller October is closed',type:'choice',o:['Delete the draft documents','Run the trial balance, check debits equal credits and every reconciliation is signed off, then close period 10 for posting (OB52)','Email the vendors','Start November without closing October'],k:1,why:'Closing the period stops anyone posting into October after the numbers are reported. In an interview, walk through these five steps in this order.'}]}
+   ]}
  ]}
 ];
-const CHAL_NEXT=['Record to Report','FP&A','Treasury','Tax','Audit','Costing','Payroll'];
+const CHAL_NEXT=['FP&A','Treasury','Tax','Audit','Costing','Payroll'];
 const chalAll=()=>CHAL_TRACKS.flatMap(tr=>tr.items.map((it,i)=>Object.assign({tr:tr.k,ix:i},it)));
+const chalStages=it=>it.stages||[{h:'',brief:'',docs:it.docs,qs:it.qs}];
+const chalQn=it=>chalStages(it).reduce((a,g)=>a+g.qs.length,0);
 const chalLocked=it=>SELLABLE&&!isPro()&&it.ix>0;
-function chalNum(s){return parseFloat(String(s).replace(/[,\s₹]|INR|Rs\.?/gi,''))}
-function chalMark(it,ans){return it.qs.map(q=>{const g=ans[q.id];let ok=false;if(g!==undefined&&g!==''){ok=q.type==='number'?Math.abs(chalNum(g)-q.k)<0.01:+g===q.k}return ok})}
+const chalStageLocked=(it,si)=>SELLABLE&&!isPro()&&si>0;
+function chalNum(s){const v=parseFloat(String(s==null?'':s).replace(/[,\s₹]|INR|Rs\.?/gi,''));return Number.isFinite(v)?v:0}
+function chalJnet(lines){const n={};let d=0,c=0;(lines||[]).forEach(l=>{if(!l||!l.a)return;const dv=chalNum(l.d),cv=chalNum(l.c);if(!dv&&!cv)return;d+=dv;c+=cv;n[l.a]=(n[l.a]||0)+dv-cv});return {n,d,c}}
+function chalOk(q,g){
+ if(q.type==='journal'){const r=chalJnet(g);if(Math.abs(r.d-r.c)>0.01||r.d<0.01)return false;const e={};q.k.forEach(l=>{e[l.a]=(e[l.a]||0)+(l.d||0)-(l.c||0)});const ks=new Set([...Object.keys(e),...Object.keys(r.n)]);for(const k of ks)if(Math.abs((e[k]||0)-(r.n[k]||0))>0.01)return false;return true}
+ if(g===undefined||g==='')return false;
+ return q.type==='number'?Math.abs(chalNum(g)-q.k)<0.01:+g===q.k}
+const chalEmpty=(q,g)=>q.type==='journal'?chalJnet(g).d<0.01&&chalJnet(g).c<0.01:(g===undefined||g==='');
+function chalJtext(q){return q.k.map(l=>(l.d?'Dr ':'Cr ')+(q.accts.find(a=>a[0]===l.a)||[l.a,l.a])[1]+' '+fmtN(l.d||l.c)).join(', ')}
+function chalField(q,key,v,done){
+ if(q.type==='number')return `<input id="cq_${key}" inputmode="decimal" value="${esc(v==null?'':v)}"${done?' disabled':''}>`;
+ if(q.type==='choice')return `<div class="opts">${q.o.map((o,j)=>{const sel=v!==undefined&&v!==''&&+v===j;return done?`<div class="opt ${j===q.k?'right':sel?'wrong':''}">${j===q.k?'&#10003; ':sel?'&#10007; ':''}${esc(o)}</div>`:`<label class="opt"><input type="radio" name="cq_${key}" value="${j}"${sel?' checked':''}> ${esc(o)}</label>`}).join('')}</div>`;
+ const rows=q.rows||Math.max(6,q.k.length+2),L=v||[];
+ let h=`<div style="overflow-x:auto"><table class="t jrn"><thead><tr><th>Account</th><th>Debit (INR)</th><th>Credit (INR)</th></tr></thead><tbody>`;
+ for(let r=0;r<rows;r++){const l=L[r]||{};h+=`<tr><td><select id="cq_${key}_a${r}"${done?' disabled':''}><option value="">Choose account</option>${q.accts.map(a=>`<option value="${esc(a[0])}"${l.a===a[0]?' selected':''}>${esc(a[0]+' '+a[1])}</option>`).join('')}</select></td><td><input id="cq_${key}_d${r}" inputmode="decimal" value="${esc(l.d||'')}"${done?' disabled':''}></td><td><input id="cq_${key}_c${r}" inputmode="decimal" value="${esc(l.c||'')}"${done?' disabled':''}></td></tr>`}
+ return h+`</tbody></table></div>`}
+function chalRead(q,key){
+ if(q.type==='number')return val('cq_'+key);
+ if(q.type==='choice'){const e=document.querySelector(`input[name="cq_${key}"]:checked`);return e?e.value:''}
+ const rows=q.rows||Math.max(6,q.k.length+2),L=[];for(let r=0;r<rows;r++)L.push({a:val(`cq_${key}_a${r}`),d:val(`cq_${key}_d${r}`),c:val(`cq_${key}_c${r}`)});return L}
+function chalDocs(docs){return (docs||[]).map(d=>`<div class="card"><h3>${esc(d.h)}</h3><div style="overflow-x:auto"><table class="t"${d.cols.length<=3?' style="min-width:0"':''}><thead><tr>${d.cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${d.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`).join('')}
 SCR.CHAL={t:'Practical challenges',render(p){
  if(SESS)return HEAD('CHAL','Practical challenges')+prepBusy();
  const R=LEARN.chal||(LEARN.chal={});
  const it=p&&p.id?chalAll().find(x=>x.id===p.id):null;
  if(!it){
-  let h=HEAD('CHAL','Practical challenges','Real work situations from a finance desk. Read the documents, find the problem, decide what to do. Each role has its own set.');
-  CHAL_TRACKS.forEach(tr=>{h+=`<div class="card"><h3>${esc(tr.t)}</h3><p class="help">${esc(tr.d)}</p>`+tr.items.map((x,i)=>{const lk=chalLocked(Object.assign({ix:i},x)),r=R[x.id];return `<div class="drev"><p class="q">${i+1}. ${esc(x.t)}</p><p class="help">${x.qs.length} questions${r?' · best '+r.best+' / '+x.qs.length:''}${lk?' · '+CHIP('full version','inf'):''}</p><div class="actions">${lk?BTN('See what is included','open','LICENCE',''):BTN(r?'Try again':'Start','chalOpen',x.id,'')}</div></div>`}).join('')+`</div>`});
+  let h=HEAD('CHAL','Practical challenges','Real work from a finance desk. Read the documents, prepare the workings, post the entries. Each role has its own set.');
+  CHAL_TRACKS.forEach(tr=>{h+=`<div class="card"><h3>${esc(tr.t)}</h3><p class="help">${esc(tr.d)}</p>`+tr.items.map((x,i)=>{const xi=Object.assign({ix:i},x),lk=chalLocked(xi),r=R[x.id],n=chalQn(x);return `<div class="drev"><p class="q">${x.stages?'Project: ':''}${esc(x.t)}</p><p class="help">${x.stages?x.stages.length+' steps · ':''}${n} tasks${r?' · best '+r.best+' / '+n:''}${lk?' · '+CHIP('full version','inf'):''}${x.stages&&!lk&&SELLABLE&&!isPro()?' · step 1 free':''}</p><div class="actions">${lk?BTN('See what is included','open','LICENCE',''):BTN(r?'Start again':'Start','chalOpen',x.id,'')}</div></div>`}).join('')+`</div>`});
   h+=`<div class="card"><p class="help">Coming next, one role at a time: ${CHAL_NEXT.map(esc).join(', ')}.</p></div>`;
   return h;
  }
  if(chalLocked(it))return HEAD('CHAL','Practical challenges')+`<div class="card"><h3>This challenge is in the full version</h3><p class="help">The first challenge of every role is free.</p><div class="actions">${BTN('See what is included','open','LICENCE','primary')}${buyBtn()}</div></div>`;
- const st=NAV.chal&&NAV.chal.id===it.id?NAV.chal:(NAV.chal={id:it.id,ans:{},done:false});
- let h=HEAD('CHAL',esc(it.t),esc(it.brief));
- h+=it.docs.map(d=>`<div class="card"><h3>${esc(d.h)}</h3><div style="overflow-x:auto"><table class="t"><thead><tr>${d.cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${d.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`).join('');
- const mk=st.done?chalMark(it,st.ans):null;
- h+=`<div class="card"><h3>Your answers</h3>`+it.qs.map((q,n)=>{const v=st.ans[q.id]==null?'':st.ans[q.id];
-  let f=q.type==='number'?`<input id="cq_${q.id}" inputmode="decimal" value="${esc(v)}"${st.done?' disabled':''}>`:`<div class="opts">${q.o.map((o,j)=>st.done?`<div class="opt ${j===q.k?'right':(+v===j&&v!=='')?'wrong':''}">${j===q.k?'&#10003; ':(+v===j&&v!=='')?'&#10007; ':''}${esc(o)}</div>`:`<label class="opt"><input type="radio" name="cq_${q.id}" value="${j}"${v!==''&&+v===j?' checked':''}> ${esc(o)}</label>`).join('')}</div>`;
-  const fb=st.done?`<p class="${mk[n]?'pos':'neg'}"><b>${mk[n]?'&#10003; Right.':'&#10007; Not quite.'}</b>${!mk[n]&&q.type==='number'?' Answer: '+esc(fmtN(q.k))+'.':''} ${esc(q.why)}</p>`:'';
-  return `<div class="drev"><p class="q">${n+1}. ${esc(q.label)}</p>${f}${fb}</div>`}).join('');
- if(!st.done)h+=`<div class="actions">${BTN('Check my answers','chalCheck','','primary')}${BTN('All challenges','chalList','','')}</div></div>`;
- else{const sc=mk.filter(Boolean).length;h+=`</div><div class="card"><p class="q">Score: ${sc} / ${it.qs.length}</p><p>${sc===it.qs.length?'Clean. You would handle this on the job.':'Read the explanations above. In an interview, explain the steps in this order.'}</p><div class="actions">${BTN('Try again','chalRetry','','primary')}${BTN('All challenges','chalList','','')}</div></div>`}
+ const st=NAV.chal&&NAV.chal.id===it.id?NAV.chal:(NAV.chal={id:it.id,ans:{},chk:{}});
+ const G=chalStages(it);
+ let h=HEAD('CHAL',esc(it.t),esc(it.brief||''));
+ if(it.stages)h+=`<div class="prog"><i style="width:${Math.round(Object.keys(st.chk).length/G.length*100)}%"></i></div>`;
+ if(!it.stages)h+=chalDocs(it.docs);
+ for(let si=0;si<G.length;si++){
+  if(si>0&&!st.chk[si-1])break;
+  const g=G[si];
+  if(it.stages){
+   if(chalStageLocked(it,si)){h+=`<div class="card"><h3>Step ${si+1}: ${esc(g.h)}</h3><p>The rest of this project is in the full version: ${G.slice(si).map(x=>esc(x.h)).join(', ')}.</p><div class="actions">${BTN('See what is included','open','LICENCE','primary')}${buyBtn()}</div></div>`;break}
+   h+=`<div class="card"><h3>Step ${si+1} of ${G.length}: ${esc(g.h)}</h3><p>${esc(g.brief)}</p></div>`+chalDocs(g.docs);
+  }
+  const done=!!st.chk[si];
+  h+=`<div class="card"><h3>${it.stages?'Your working':'Your answers'}</h3>`+g.qs.map((q,n)=>{const key=si+'_'+q.id,v=st.ans[key],ok=done&&chalOk(q,v);
+   const fb=done?`<p class="${ok?'pos':'neg'}"><b>${ok?'&#10003; Right.':'&#10007; Not quite.'}</b>${!ok&&q.type==='number'?' Answer: '+esc(fmtN(q.k))+'.':''}${!ok&&q.type==='journal'?' Correct entry: '+esc(chalJtext(q))+'.':''} ${esc(q.why)}</p>`:'';
+   return `<div class="drev"><p class="q">${n+1}. ${esc(q.label)}</p>${chalField(q,key,v,done)}${fb}</div>`}).join('');
+  if(!done){h+=`<div class="actions">${BTN(it.stages?'Check this step':'Check my answers','chalCheck',String(si),'primary')}${BTN('All challenges','chalList','','')}</div></div>`;break}
+  h+=`</div>`;
+ }
+ if(G.every((g,si)=>st.chk[si])){const tot=chalQn(it),sc=st.score||0;h+=`<div class="card"><p class="q">Score: ${sc} / ${tot}</p><p>${sc===tot?'Clean. You would handle this on the job.':'Read the explanations above. In an interview, explain your working in this order.'}</p><div class="actions">${BTN('Start again','chalRetry','','primary')}${BTN('All challenges','chalList','','')}</div></div>`}
  return h;
 }};
 ACT.chalOpen=id=>{NAV.chal=null;go('CHAL',{id},true)};
 ACT.chalList=()=>{NAV.chal=null;go('CHAL',null,true)};
 ACT.chalRetry=()=>{const id=NAV.chal&&NAV.chal.id;NAV.chal=null;go('CHAL',{id},true)};
-ACT.chalCheck=()=>{const st=NAV.chal;if(!st)return;const it=chalAll().find(x=>x.id===st.id);if(!it)return;
- it.qs.forEach(q=>{if(q.type==='number')st.ans[q.id]=val('cq_'+q.id);else{const e=document.querySelector(`input[name="cq_${q.id}"]:checked`);st.ans[q.id]=e?e.value:''}});
- if(it.qs.some(q=>st.ans[q.id]===''))return msg('e','Answer every question first');
- st.done=true;const sc=chalMark(it,st.ans).filter(Boolean).length;const R=LEARN.chal||(LEARN.chal={});const o=R[it.id]||{best:0};R[it.id]={best:Math.max(o.best,sc),last:sc,at:nowIso()};learnSave();go('CHAL',{id:it.id},true)};
-NOTES.CHAL={w:['Work it out on paper first, the way you would at a desk. Numbers can be typed with or without commas.','Interviewers love these: walk them through what you checked, in order.'],q:[]};
+ACT.chalCheck=arg=>{const st=NAV.chal;if(!st)return;const it=chalAll().find(x=>x.id===st.id);if(!it)return;const si=+arg||0,G=chalStages(it),g=G[si];
+ g.qs.forEach(q=>{st.ans[si+'_'+q.id]=chalRead(q,si+'_'+q.id)});
+ if(g.qs.some(q=>chalEmpty(q,st.ans[si+'_'+q.id])))return msg('e','Fill in every task of this step first');
+ st.chk[si]=true;
+ if(G.every((x,k)=>st.chk[k])){let sc=0;G.forEach((x,k)=>x.qs.forEach(q=>{if(chalOk(q,st.ans[k+'_'+q.id]))sc++}));st.score=sc;const R=LEARN.chal||(LEARN.chal={});const o=R[it.id]||{best:0};R[it.id]={best:Math.max(o.best,sc),last:sc,at:nowIso()};learnSave()}
+ go('CHAL',{id:it.id},true)};
+NOTES.CHAL={w:['Work it out on paper first, the way you would at a desk. Numbers can be typed with or without commas.','In a journal, use one line per account. Debits must equal credits. Line order does not matter.','Interviewers love these: walk them through what you checked, in order.'],q:[]};
 
 /* ---------- lists, wiring, init ---------- */
 function fillLists(){
