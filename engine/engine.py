@@ -48,7 +48,11 @@ NOT_FIN = re.compile(r"software|developer|engineer(?!ing finance)|architect|devo
                      r"quality (auditor|analyst)|\bvoice\b|design assurance|product manag|program manag|product team|"
                      r"strategic accounts|key accounts?|account (manager|executive|director)|\bit due diligence|"
                      r"housing finance.*(sales|product)|loan officer|\bsales\b(?! tax| accounting| audit| finance)|"
-                     r"identity|governance user|access management|\biam\b|user reconciliation|business development", re.I)
+                     r"identity|governance user|access management|\biam\b|user reconciliation|business development|"
+                     r"customer service|\bcse\b|\bdsmg\b|collections?\b.*(flows|bkt|bucket|motor|loans?|retail)|technical valuation|"
+                     r"technical manager|bancassurance|relationship mgr|insurance (advisor|agent)|branch (manager|head)|\bteller\b|"
+                     r"phone banking|call cent|customer (care|support)|loan (sales|counsel)|\bdsa\b|channel (manager|partner)|"
+                     r"acquisition manager|wealth manager|privilege banker|personal banker", re.I)
 INDIA = re.compile(r"\bindia\b|\bind\b|, ?in\b|mumbai|navi mumbai|thane|pune|bengaluru|bangalore|hyderabad|chennai|gurgaon|gurugram|"
                    r"noida|delhi|kolkata|ahmedabad|vadodara|jaipur|kochi|coimbatore|chandigarh|indore|nagpur|lucknow|bhubaneswar|"
                    r"vizag|visakhapatnam|mysore|mysuru|trivandrum|thiruvananthapuram|goa|surat|jamnagar|bhopal|maharashtra|karnataka|"
@@ -593,9 +597,11 @@ def run_company(co):
         try:
             raw = ADAPTERS[cfg["platform"]](cfg)
         except Exception:
-            if cfg["platform"] != "workday":
-                raise
-            raw = []
+            if cfg["platform"] == "workday":
+                raw = []
+            else:
+                time.sleep(5)
+                raw = ADAPTERS[cfg["platform"]](cfg)  # one retry: career sites often time out once
         if cfg["platform"] == "workday" and not raw:
             # Workday turned us away: read the company's own public careers site list instead
             origins = {"{0.scheme}://{0.netloc}".format(urlparse(u)) for u in (url, cfg.get("found_on") or "") if u}
@@ -958,6 +964,27 @@ def main():
     last = state.setdefault("last", {})
     for j in jobs:
         last[j["key"]] = NOW
+    # A company whose site failed this run (error, or 0 jobs where it had 5+) keeps its last known jobs
+    # for up to 3 days, so one bad run does not wipe hundreds of openings off the site.
+    jp = os.path.join(OUT, "jobs.json")
+    prev = json.load(open(jp)) if os.path.exists(jp) and not only else []
+    prev_n = {}
+    for j in prev:
+        prev_n[j["company"]] = prev_n.get(j["company"], 0) + 1
+    have = {j["key"] for j in jobs}
+    flaky = {r["company"] for r in reports if r.get("error") or (r.get("kept") == 0 and prev_n.get(r["company"], 0) >= 5)}
+    cut3 = datetime.now(timezone.utc).timestamp() - 3 * 86400
+    carried = 0
+    for j in prev:
+        seen_at = last.get(j["key"])
+        if j["company"] in flaky and j["key"] not in have and seen_at and \
+                datetime.strptime(seen_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp() >= cut3 \
+                and not NOT_FIN.search(j["title"]):
+            j.pop("first_seen", None)
+            jobs.append(j)
+            carried += 1
+    if carried:
+        print(f"kept {carried} jobs from the last run for companies whose site failed: {sorted(flaky)[:10]}")
     # forget jobs not seen for 60 days, so the record does not grow for ever
     cutoff = (datetime.now(timezone.utc).timestamp() - 60 * 86400)
     for k in [k for k, t in state["seen"].items()
