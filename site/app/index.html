@@ -6023,9 +6023,192 @@ const CHAL_TRACKS=[
       {id:'bk',label:'Bank balance in the final trial balance (INR)',type:'number',k:511800,why:'The reconciled figure from step 1.'},
       {id:'lk',label:'Last step before you tell the controller October is closed',type:'choice',o:['Delete the draft documents','Run the trial balance, check debits equal credits and every reconciliation is signed off, then close period 10 for posting (OB52)','Email the vendors','Start November without closing October'],k:1,why:'Closing the period stops anyone posting into October after the numbers are reported. In an interview, walk through these five steps in this order.'}]}
    ]}
+ ]},
+ {k:'TAX',t:'Tax (GST and TDS)',d:'A monthly compliance cycle: output GST, input credit against GSTR-2B, set-off, due dates and TDS.',items:[
+  {id:'tx1',t:'October GST and TDS compliance for Bharat Traders Pvt Ltd',
+   brief:'You are the tax executive of a Maharashtra company that files GST returns monthly. Close October tax in five steps.',
+   stages:[
+    {h:'Output GST',brief:'Work out the tax on October sales from the sales register. GST rate 18% on all goods.',
+     docs:[{h:'Sales register · October 2026',cols:['Type','Taxable value (INR)'],rows:[['Sales within Maharashtra','10,00,000'],['Sales to other states','5,00,000'],['Exports under LUT (no tax paid)','3,00,000']]}],
+     qs:[{id:'cg',label:'Output CGST (INR)',type:'number',k:90000,why:'Intra-state: 9% CGST on 10,00,000 = 90,000 (and SGST the same).'},
+      {id:'ig',label:'Output IGST (INR)',type:'number',k:90000,why:'Inter-state: 18% IGST on 5,00,000 = 90,000.'},
+      {id:'tt',label:'Total output tax (INR)',type:'number',k:270000,why:'CGST 90,000 + SGST 90,000 + IGST 90,000 = 2,70,000.'},
+      {id:'ex',label:'Exports under LUT are',type:'choice',o:['Taxed at 18%','Zero-rated: no tax charged, and input credit is still allowed','Exempt, so input credit is lost','Outside GST, not reported'],k:1,why:'Zero-rated supplies keep their input credit. They are still reported in GSTR-1.'}]},
+    {h:'Input tax credit',brief:'Match the purchase register with GSTR-2B and the rules on blocked credit.',
+     docs:[{h:'Purchase register · October 2026',cols:['Vendor','Nature','Tax (INR)','In GSTR-2B?'],rows:[['Apex Steel Works','Raw material','IGST 36,000','Yes'],['Kiran Facility Services','Housekeeping','CGST 18,000 + SGST 18,000','Yes'],['Nova Logistics','Freight','IGST 9,000','No, vendor has not filed'],['Hotel Sahara','Food for the staff Diwali party','CGST 2,700 + SGST 2,700','Yes']]}],
+     qs:[{id:'el',label:'Eligible input credit this month (INR)',type:'number',k:72000,why:'IGST 36,000 + CGST 18,000 + SGST 18,000 = 72,000.'},
+      {id:'nv',label:'Nova Logistics IGST 9,000',type:'choice',o:['Claim it now, you hold the invoice','Do not claim it yet: it is not in GSTR-2B. Follow up with the vendor and claim it once it appears','Write it off','Claim it twice next month'],k:1,why:'Credit is available only when the vendor reports the invoice and it shows in your GSTR-2B.'},
+      {id:'bl',label:'Tax on the staff party food (INR) that cannot be claimed',type:'number',k:5400,why:'Food and beverages are blocked credit under section 17(5) of the CGST Act: 2,700 + 2,700 = 5,400 becomes a cost.'}]},
+    {h:'Set-off and payment',brief:'Use the credit in the order the law requires: IGST credit first against IGST, the balance against CGST and SGST. Then CGST credit against CGST, SGST credit against SGST. Pay the rest in cash.',
+     docs:[{h:'Ledger balances',cols:['Head','Output (INR)','Input (INR)'],rows:[['IGST','90,000','36,000'],['CGST','90,000','18,000'],['SGST','90,000','18,000']]}],
+     qs:[{id:'ic',label:'IGST paid in cash (INR)',type:'number',k:54000,why:'90,000 - 36,000 = 54,000.'},
+      {id:'cc',label:'CGST paid in cash (INR)',type:'number',k:72000,why:'90,000 - 18,000 = 72,000.'},
+      {id:'tc',label:'Total cash payment (INR)',type:'number',k:198000,why:'54,000 + 72,000 + 72,000 = 1,98,000, which is 2,70,000 output minus 72,000 credit.'},
+      {id:'je',label:'Post the set-off and payment in one entry',type:'journal',accts:[['176000','Output IGST'],['176100','Output CGST'],['176200','Output SGST'],['154000','Input IGST'],['154100','Input CGST'],['154200','Input SGST'],['100000','Bank']],
+       k:[{a:'176000',d:90000},{a:'176100',d:90000},{a:'176200',d:90000},{a:'154000',c:36000},{a:'154100',c:18000},{a:'154200',c:18000},{a:'100000',c:198000}],why:'All output and input balances for October go to zero, and the bank pays the difference.'}]},
+    {h:'Due dates and interest',brief:'Know the calendar, and what a late payment costs.',
+     docs:[{h:'October returns (monthly filer)',cols:['Return','Purpose'],rows:[['GSTR-1','Details of outward supplies'],['GSTR-3B','Summary return and tax payment']]}],
+     qs:[{id:'r1',label:'Due date of GSTR-1 for October',type:'choice',o:['11 November 2026','20 November 2026','7 November 2026','30 November 2026'],k:0,why:'GSTR-1 for monthly filers is due on the 11th of the next month.'},
+      {id:'r3',label:'Due date of GSTR-3B and the tax payment',type:'choice',o:['11 November 2026','20 November 2026','25 November 2026','31 December 2026'],k:1,why:'GSTR-3B for monthly filers is due on the 20th.'},
+      {id:'in',label:'Interest if the 1,98,000 cash is paid 10 days late, at 18% a year (INR, nearest rupee)',type:'number',k:976,tol:0.5,why:'1,98,000 x 18% x 10 / 365 = 976.44, so about 976. Interest runs on the tax paid in cash, not on the part covered by credit.'}]},
+    {h:'TDS for October',brief:'Deposit the TDS deducted in October. From 1 April 2026 these sit in section 393(1) of the Income-tax Act, 2025; the old sections are shown in brackets. Year-to-date payments to each payee are above the thresholds.',
+     docs:[{h:'October payments',cols:['Payee','Nature','Amount (INR, before GST)'],rows:[['Kiran Facility Services Pvt Ltd','Housekeeping contract (old 194C)','80,000'],['Mehta & Co, Chartered Accountants','Professional fees (old 194J)','50,000'],['Shree Properties','Office rent (old 194-I)','1,20,000']]}],
+     qs:[{id:'cf',label:'TDS on the CA firm fees (INR)',type:'number',k:5000,why:'10% on professional fees: 5,000.'},
+      {id:'rn',label:'TDS on rent (INR)',type:'number',k:12000,why:'10% on rent of a building: 12,000.'},
+      {id:'tt',label:'Total TDS to deposit (INR)',type:'number',k:18600,why:'1,600 contractor (2%) + 5,000 + 12,000 = 18,600.'},
+      {id:'je',label:'Post the deposit made on 6 November',type:'journal',accts:[['221000','TDS payable'],['100000','Bank'],['132000','TDS receivable'],['620000','Rent expense']],
+       k:[{a:'221000',d:18600},{a:'100000',c:18600}],why:'The deposit clears the liability that was built up when each invoice was booked. It is due by 7 November.'}]}
+   ]}
+ ]},
+ {k:'PAY',t:'Payroll',d:'A monthly payroll: payslip, payroll journal, statutory payments, a full and final settlement, and the payroll check.',items:[
+  {id:'py1',t:'October payroll for Bharat Traders Pvt Ltd',
+   brief:'You run payroll for a Maharashtra company with 10 employees. PF is 12% of basic, capped at a basic of 15,000, from both employee and employer. Ignore EPF admin charges and ESI (no one earns under 21,000).',
+   stages:[
+    {h:'One payslip',brief:'Prepare the October payslip of Ravi Kumar. Professional tax in Maharashtra is 200 a month. TDS on his salary, worked out from his projected yearly income, is 4,000 a month.',
+     docs:[{h:'Ravi Kumar · salary structure',cols:['Component','Monthly (INR)'],rows:[['Basic','30,000'],['HRA','15,000'],['Special allowance','15,000']]}],
+     qs:[{id:'gr',label:'Gross salary (INR)',type:'number',k:60000,why:'30,000 + 15,000 + 15,000 = 60,000.'},
+      {id:'pf',label:'Employee PF (INR)',type:'number',k:1800,why:'12% of the capped basic 15,000 = 1,800.'},
+      {id:'np',label:'Net pay (INR)',type:'number',k:54000,why:'60,000 - 1,800 PF - 200 PT - 4,000 TDS = 54,000.'},
+      {id:'ct',label:'Monthly cost to the company (INR)',type:'number',k:61800,why:'Gross 60,000 + employer PF 1,800 = 61,800.'}]},
+    {h:'Payroll journal',brief:'Post the October payroll from the register totals.',
+     docs:[{h:'Payroll register totals · October',cols:['Item','Amount (INR)'],rows:[['Gross salaries','6,00,000'],['Employee PF','18,000'],['Professional tax','2,000'],['TDS on salary','40,000'],['Employer PF','18,000']]}],
+     qs:[{id:'np',label:'Total net pay (INR)',type:'number',k:540000,why:'6,00,000 - 18,000 - 2,000 - 40,000 = 5,40,000.'},
+      {id:'pf',label:'Total PF payable (INR)',type:'number',k:36000,why:'Employee 18,000 + employer 18,000 = 36,000.'},
+      {id:'je',label:'Post the payroll entry',type:'journal',accts:[['700000','Salaries'],['701000','Employer PF contribution'],['240100','Salary payable'],['240200','PF payable'],['240300','Professional tax payable'],['221000','TDS payable'],['100000','Bank']],
+       k:[{a:'700000',d:600000},{a:'701000',d:18000},{a:'240100',c:540000},{a:'240200',c:36000},{a:'240300',c:2000},{a:'221000',c:40000}],why:'The company cost is 6,18,000. Employees are owed 5,40,000 and the rest is owed to PF, the state and the income-tax department.'}]},
+    {h:'Paying out',brief:'Salaries are paid on 31.10.2026. Then the statutory dues.',
+     docs:[{h:'Liabilities after the payroll entry',cols:['Item','Amount (INR)'],rows:[['Salary payable','5,40,000'],['PF payable','36,000'],['TDS payable (salary)','40,000']]}],
+     qs:[{id:'je',label:'Post the salary payment',type:'journal',accts:[['240100','Salary payable'],['100000','Bank'],['700000','Salaries']],
+       k:[{a:'240100',d:540000},{a:'100000',c:540000}],why:'Paying clears the salary payable. The expense was booked in the payroll entry.'},
+      {id:'pd',label:'Due date for the October PF payment',type:'choice',o:['7 November 2026','15 November 2026','30 November 2026','31 March 2027'],k:1,why:'PF for a month is due by the 15th of the next month, with the ECR filed on the EPFO portal.'},
+      {id:'td',label:'Due date for the TDS on salary',type:'choice',o:['7 November 2026','15 November 2026','20 November 2026','30 April 2027'],k:0,why:'Like all TDS deducted in October: by 7 November.'}]},
+    {h:'Full and final settlement',brief:'Neha Shah resigns and her last day is 31.10.2026 after 6 years and 2 months of service. Last basic 30,000. Company policy: unused leave is paid at basic / 30 per day. She has 10 days of leave.',
+     docs:[{h:'Gratuity rule',cols:['Item','Rule'],rows:[['Formula','Last basic x 15 / 26 x completed years'],['Years','A part year of more than 6 months counts as a full year']]}],
+     qs:[{id:'yr',label:'Years counted for gratuity',type:'number',k:6,why:'6 years and 2 months: the 2 months are less than 6 months, so 6 years.'},
+      {id:'gr',label:'Gratuity (INR, nearest rupee)',type:'number',k:103846,tol:0.5,why:'30,000 x 15 / 26 x 6 = 1,03,846.15.'},
+      {id:'lv',label:'Leave encashment (INR)',type:'number',k:10000,why:'30,000 / 30 x 10 = 10,000.'},
+      {id:'el',label:'Is she eligible for gratuity at all?',type:'choice',o:['No, she resigned','Yes: 5 years of continuous service completed, and resignation still qualifies','Only if she retires','Only if the company agrees'],k:1,why:'The Payment of Gratuity Act needs 5 years of continuous service on resignation (not needed on death or disablement).'}]},
+    {h:'Payroll check',brief:'Before closing, compare the payroll register with the general ledger and with last month.',
+     docs:[{h:'Comparison',cols:['Item','September','October'],rows:[['Gross salaries per register','5,70,000','6,00,000'],['Salaries expense per G/L','5,70,000','6,10,000'],['Headcount','9','10']]},
+      {h:'Notes',cols:['Note'],rows:[['One new joiner on 01.10.2026 at a gross of 30,000'],['A 10,000 retention bonus was paid outside payroll by a manual journal']]}],
+     qs:[{id:'mv',label:'Increase in gross salaries over September (INR)',type:'number',k:30000,why:'6,00,000 - 5,70,000 = 30,000, fully explained by the new joiner.'},
+      {id:'gl',label:'Difference between the G/L and the register for October (INR)',type:'number',k:10000,why:'6,10,000 - 6,00,000 = 10,000.'},
+      {id:'ac',label:'What is wrong with the 10,000 bonus?',type:'choice',o:['Nothing, it is in the G/L','Paid outside payroll, so no TDS was deducted on it and it will be missing from Form 16. Run it through payroll next month or deduct the tax now','It should be deleted','It should be moved to rent'],k:1,why:'Every payment to an employee is salary for tax. Running it outside payroll skips TDS and the payslip.'}]}
+   ]}
+ ]},
+ {k:'COST',t:'Costing',d:'Product costing, a special order, standard cost variances, inventory valuation and make or buy.',items:[
+  {id:'cs1',t:'Costing review for Bharat Traders Pvt Ltd',
+   brief:'You are the cost accountant. The company makes one product, steel brackets. Plant capacity is 6,000 units a month.',
+   stages:[
+    {h:'Cost sheet and break-even',brief:'Build the unit cost and find the break-even point. Budget volume is 5,000 units a month.',
+     docs:[{h:'Cost data',cols:['Item','Amount (INR)'],rows:[['Material per unit','120'],['Direct labour per unit','40'],['Variable overhead per unit','20'],['Fixed overhead per month','3,00,000'],['Selling price per unit','300']]}],
+     qs:[{id:'vc',label:'Variable cost per unit (INR)',type:'number',k:180,why:'120 + 40 + 20 = 180.'},
+      {id:'cm',label:'Contribution per unit (INR)',type:'number',k:120,why:'300 - 180 = 120.'},
+      {id:'fc',label:'Full cost per unit at 5,000 units (INR)',type:'number',k:240,why:'180 + 3,00,000 / 5,000 = 180 + 60 = 240.'},
+      {id:'be',label:'Break-even units per month',type:'number',k:2500,why:'3,00,000 / 120 = 2,500 units.'},
+      {id:'ms',label:'Margin of safety at 5,000 units (%)',type:'number',k:50,why:'(5,000 - 2,500) / 5,000 = 50%.'}]},
+    {h:'Special order',brief:'A new customer offers to buy 1,000 extra units this month at 220 each. You are selling 5,000 units, so 1,000 units of spare capacity exist. Fixed costs do not change.',
+     docs:[{h:'Offer',cols:['Item','Value'],rows:[['Units','1,000'],['Price','220'],['Variable cost','180']]}],
+     qs:[{id:'ip',label:'Extra profit from the order (INR)',type:'number',k:40000,why:'(220 - 180) x 1,000 = 40,000. Fixed costs are already covered.'},
+      {id:'dc',label:'Decision',type:'choice',o:['Reject: 220 is below the full cost of 240','Accept: it adds 40,000 because there is spare capacity, as long as regular customers do not demand the same price','Accept only at 300','Reject: it uses capacity'],k:1,why:'Full cost includes fixed costs that do not change. With spare capacity, any price above variable cost adds profit.'}]},
+    {h:'Material variances',brief:'Standard: 4 kg of steel per unit at 30 per kg. In October 4,800 units were made using 19,800 kg bought at 31 per kg.',
+     docs:[{h:'October actuals',cols:['Item','Value'],rows:[['Output','4,800 units'],['Steel used','19,800 kg'],['Price paid','31 per kg'],['Actual material cost','6,13,800']]}],
+     qs:[{id:'sq',label:'Standard quantity for the actual output (kg)',type:'number',k:19200,why:'4,800 x 4 = 19,200 kg.'},
+      {id:'pv',label:'Material price variance (INR, adverse negative)',type:'number',k:-19800,why:'(30 - 31) x 19,800 kg = -19,800.'},
+      {id:'uv',label:'Material usage variance (INR, adverse negative)',type:'number',k:-18000,why:'(19,200 - 19,800) x 30 = -18,000.'},
+      {id:'tv',label:'Total material variance (INR)',type:'number',k:-37800,why:'Standard cost 4,800 x 120 = 5,76,000 against actual 6,13,800: -37,800 = price -19,800 + usage -18,000.'},
+      {id:'ow',label:'Who explains the usage variance?',type:'choice',o:['Purchase','Production: scrap, wastage or machine settings','Sales','HR'],k:1,why:'Price is purchase\'s question; usage is production\'s.'}]},
+    {h:'Inventory valuation',brief:'October movements of a bought-in component. Value the closing stock under FIFO and weighted average (for the month), then apply the lower of cost and net realisable value (NRV).',
+     docs:[{h:'Stock card',cols:['Date','Movement','Units','Rate (INR)'],rows:[['01.10','Opening stock','100','50'],['08.10','Purchase','200','56'],['20.10','Purchase','100','62'],['October','Issued to production','250','']]},
+      {h:'Market',cols:['Item','Value'],rows:[['NRV per unit on 31.10','58']]}],
+     qs:[{id:'cu',label:'Closing units',type:'number',k:150,why:'100 + 200 + 100 - 250 = 150.'},
+      {id:'ff',label:'Closing stock at FIFO (INR)',type:'number',k:9000,why:'The latest purchases remain: 100 x 62 + 50 x 56 = 6,200 + 2,800 = 9,000.'},
+      {id:'wa',label:'Closing stock at weighted average (INR)',type:'number',k:8400,why:'Total cost 22,400 for 400 units = 56 each; 150 x 56 = 8,400.'},
+      {id:'wd',label:'Write-down needed under FIFO (INR)',type:'number',k:300,why:'NRV 150 x 58 = 8,700 is below FIFO cost 9,000, so write down 300 (Ind AS 2 / AS 2).'},
+      {id:'je',label:'Post the write-down',type:'journal',accts:[['520000','Inventory write-down'],['130000','Inventory'],['500000','Purchases'],['100000','Bank']],
+       k:[{a:'520000',d:300},{a:'130000',c:300}],why:'Stock is shown at the lower of cost and NRV; the 300 loss goes to the P&L now.'}]},
+    {h:'Make or buy',brief:'A supplier offers the finished bracket at 200 per unit. If you buy, the variable cost of 180 stops, but the fixed overhead of 3,00,000 continues.',
+     docs:[{h:'Comparison per unit',cols:['Option','Cost that changes (INR)'],rows:[['Make','180 variable'],['Buy','200 purchase price']]}],
+     qs:[{id:'df',label:'Extra cost per unit if you buy (INR)',type:'number',k:20,why:'200 - 180 = 20. The fixed 60 per unit stays either way, so it is not relevant.'},
+      {id:'mo',label:'Extra cost per month at 5,000 units if you buy (INR)',type:'number',k:100000,why:'20 x 5,000 = 1,00,000.'},
+      {id:'dc',label:'Decision',type:'choice',o:['Buy: 200 is cheaper than the full cost of 240','Make: buying costs 1,00,000 more a month because the fixed overhead does not go away','Buy and close the plant','No difference'],k:1,why:'Compare only the costs that change. Buying would make sense only if fixed costs could be cut or the capacity used for something more profitable.'}]}
+   ]}
+ ]},
+ {k:'TRS',t:'Treasury',d:'Cash forecasting, short-term borrowing, early payment discounts, foreign currency and a bank covenant.',items:[
+  {id:'tr1',t:'November cash plan for Bharat Traders Pvt Ltd',
+   brief:'You are the treasury executive. The company must keep at least INR 2,00,000 in the bank at the end of every week. Plan November.',
+   stages:[
+    {h:'Weekly cash forecast',brief:'Roll the bank balance forward week by week, starting from the reconciled October closing balance.',
+     docs:[{h:'Forecast (INR)',cols:['Week','Receipts','Payments'],rows:[['Opening 01.11','5,11,800',''],['Week 1','3,00,000','4,50,000'],['Week 2','2,50,000','5,20,000'],['Week 3','4,00,000','2,00,000'],['Week 4','3,50,000','3,00,000']]}],
+     qs:[{id:'w1',label:'Closing balance week 1 (INR)',type:'number',k:361800,why:'5,11,800 + 3,00,000 - 4,50,000 = 3,61,800.'},
+      {id:'w2',label:'Closing balance week 2 (INR)',type:'number',k:91800,why:'3,61,800 + 2,50,000 - 5,20,000 = 91,800.'},
+      {id:'sh',label:'Shortfall against the 2,00,000 minimum in week 2 (INR)',type:'number',k:108200,why:'2,00,000 - 91,800 = 1,08,200.'},
+      {id:'w4',label:'Closing balance week 4 without any borrowing (INR)',type:'number',k:341800,why:'Week 3: 91,800 + 4,00,000 - 2,00,000 = 2,91,800. Week 4: + 3,50,000 - 3,00,000 = 3,41,800.'}]},
+    {h:'Short-term borrowing',brief:'The bank offers an overdraft at 10.95% a year, charged on the daily balance. You draw INR 1,10,000 at the start of week 2 and repay it 14 days later from week 3 receipts.',
+     docs:[{h:'Overdraft terms',cols:['Item','Value'],rows:[['Rate','10.95% a year'],['Amount','1,10,000'],['Days','14']]}],
+     qs:[{id:'in',label:'Interest cost (INR)',type:'number',k:462,why:'1,10,000 x 10.95% x 14 / 365 = 462.'},
+      {id:'wh',label:'Why borrow 1,10,000 and not 1,08,200?',type:'choice',o:['Banks only lend round numbers','A small buffer in case receipts arrive late; the extra cost is a few rupees','To earn interest','No reason'],k:1,why:'Forecasts are never exact. A small buffer avoids breaching the minimum for a trivial cost.'},
+      {id:'je',label:'Post the drawing of the overdraft',type:'journal',accts:[['100000','Bank'],['250000','Bank overdraft'],['650000','Interest expense'],['400000','Interest income']],
+       k:[{a:'100000',d:110000},{a:'250000',c:110000}],why:'Money comes in and a short-term liability is created. In practice the overdraft is often the same bank account going negative; here it is a separate loan account.'}]},
+    {h:'Early payment discount',brief:'Apex Steel Works offers 2% off a INR 5,00,000 invoice if you pay in 10 days instead of the normal 60 days. You would fund it with the overdraft at 10.95%.',
+     docs:[{h:'Offer',cols:['Item','Value'],rows:[['Invoice','5,00,000'],['Discount','2% if paid by day 10'],['Normal terms','60 days']]}],
+     qs:[{id:'ds',label:'Discount amount (INR)',type:'number',k:10000,why:'2% of 5,00,000 = 10,000.'},
+      {id:'ar',label:'Annual rate the discount is worth (%, one decimal)',type:'number',k:14.9,tol:0.06,why:'2 / 98 x 365 / 50 = 14.9% a year: you earn 2% for paying 50 days early.'},
+      {id:'dc',label:'Decision',type:'choice',o:['Do not take it, it needs borrowing','Take it: the discount is worth about 14.9% a year and the overdraft costs 10.95%','Take it only if cash is spare','Ask for 60 days and the discount'],k:1,why:'If the return from paying early beats the cost of the money, take the discount, as long as the minimum balance holds.'}]},
+    {h:'Foreign currency payable',brief:'You import machinery parts for USD 10,000. The invoice was booked on 05.10.2026. The rate on 31.10 (month end) was 85.20 and the payment was made on 20.11 at 85.50.',
+     docs:[{h:'USD/INR rates',cols:['Date','Rate'],rows:[['05.10.2026 invoice','84.00'],['31.10.2026 month end','85.20'],['20.11.2026 payment','85.50']]}],
+     qs:[{id:'bk',label:'Payable booked on 05.10 (INR)',type:'number',k:840000,why:'10,000 x 84.00 = 8,40,000.'},
+      {id:'ml',label:'Exchange loss at month end (INR)',type:'number',k:12000,why:'Restate at 85.20: 8,52,000 - 8,40,000 = 12,000 loss. A foreign currency payable is restated at the closing rate.'},
+      {id:'je',label:'Post the month-end restatement',type:'journal',accts:[['660000','Exchange loss'],['200000','Trade payables (vendors)'],['100000','Bank'],['410000','Revenue']],
+       k:[{a:'660000',d:12000},{a:'200000',c:12000}],why:'The rupee value of what you owe went up, so the payable rises and the P&L takes the loss.'},
+      {id:'sl',label:'Further loss on payment on 20.11 (INR)',type:'number',k:3000,why:'10,000 x (85.50 - 85.20) = 3,000.'},
+      {id:'fw',label:'How could you have fixed the rupee cost on 05.10?',type:'choice',o:['Pay in rupees','Book a forward contract with the bank for the payment date','Delay payment','Ask for a discount'],k:1,why:'A forward contract locks the rate for a future date, so the cost is known when you place the order.'}]},
+    {h:'Bank covenant',brief:'Your working capital loan requires a current ratio of at least 1.33 at every quarter end. Check the 30 September numbers.',
+     docs:[{h:'30.09.2026 (INR)',cols:['Item','Amount'],rows:[['Current assets','1,60,00,000'],['Current liabilities','1,25,00,000']]}],
+     qs:[{id:'cr',label:'Current ratio (two decimals)',type:'number',k:1.28,tol:0.005,why:'1,60,00,000 / 1,25,00,000 = 1.28.'},
+      {id:'br',label:'Is the covenant met?',type:'choice',o:['Yes','No: 1.28 is below 1.33','Only if inventory is excluded','Covenants do not apply mid-year'],k:1,why:'A breach can let the bank recall the loan or charge penalty interest.'},
+      {id:'ac',label:'Best action',type:'choice',o:['Say nothing and hope','Inform the bank early with a plan, for example converting part of the short-term debt to long-term, and ask for a waiver','Change the numbers','Close the account'],k:1,why:'Banks deal far better with a breach raised early and with a plan. Long-term debt does not count in current liabilities, which lifts the ratio.'}]}
+   ]}
+ ]},
+ {k:'AUD',t:'Audit',d:'Statutory audit fieldwork: materiality, selecting items, cut-off, confirmations and the summary of misstatements.',items:[
+  {id:'au1',t:'Year-end audit of Bharat Traders Pvt Ltd (FY 2025-26)',
+   brief:'You are the audit senior on the statutory audit for the year ended 31.03.2026. Profit before tax per the draft accounts is INR 2,00,00,000.',
+   stages:[
+    {h:'Materiality',brief:'Set materiality using the firm\'s method: overall materiality 5% of profit before tax, performance materiality 75% of overall, clearly trivial 5% of overall.',
+     docs:[{h:'Draft accounts',cols:['Item','Amount (INR)'],rows:[['Profit before tax','2,00,00,000'],['Revenue','28,00,00,000']]}],
+     qs:[{id:'om',label:'Overall materiality (INR)',type:'number',k:1000000,why:'5% of 2,00,00,000 = 10,00,000.'},
+      {id:'pm',label:'Performance materiality (INR)',type:'number',k:750000,why:'75% of 10,00,000 = 7,50,000. Set lower so small errors together do not add up past overall materiality.'},
+      {id:'ct',label:'Clearly trivial threshold (INR)',type:'number',k:50000,why:'5% of 10,00,000 = 50,000. Errors below this are not even recorded.'},
+      {id:'bm',label:'Why profit before tax as the benchmark?',type:'choice',o:['It is the largest number','Users of a profit-making company focus on its profit','The law requires it','It is the easiest'],k:1,why:'The benchmark follows what readers of these accounts care about. A loss-making or not-for-profit entity would use revenue, expenses or assets.'}]},
+    {h:'Selecting items to test',brief:'Other expenses total INR 1,40,00,000 across many invoices. Your approach: test every item above performance materiality, then sample the rest.',
+     docs:[{h:'Largest items in other expenses',cols:['Vendor','Amount (INR)'],rows:[['Logistics contract','12,00,000'],['Marketing agency','8,40,000'],['IT services','6,90,000'],['Legal fees','4,80,000'],['Repairs','3,10,000']]}],
+     qs:[{id:'kn',label:'Number of key items tested in full',type:'number',k:2,why:'Only 12,00,000 and 8,40,000 are above 7,50,000.'},
+      {id:'kt',label:'Value covered by the key items (INR)',type:'number',k:2040000,why:'12,00,000 + 8,40,000 = 20,40,000.'},
+      {id:'rs',label:'Population left for sampling (INR)',type:'number',k:11960000,why:'1,40,00,000 - 20,40,000 = 1,19,60,000.'},
+      {id:'ev',label:'Best evidence for the logistics contract',type:'choice',o:['A management email saying it is fine','The signed contract, invoices, proof of service and the bank payments','The general ledger alone','A phone call'],k:1,why:'Documents from outside the company and from independent sources are stronger evidence than what management says.'}]},
+    {h:'Cut-off and unrecorded liabilities',brief:'You review goods receipts around the year end and the invoices posted in April 2026.',
+     docs:[{h:'Your findings',cols:['Item','Date of goods or service','Invoice date','Posted in','Amount (INR)'],rows:[['Steel delivery','29.03.2026','05.04.2026','April 2026','3,50,000'],['Annual maintenance, March quarter','31.03.2026','10.04.2026','April 2026','80,000'],['Packing material','06.04.2026','06.04.2026','April 2026','40,000']]}],
+     qs:[{id:'ul',label:'Unrecorded liabilities at 31.03.2026 (INR)',type:'number',k:430000,why:'3,50,000 steel received in March + 80,000 maintenance for March. The packing material belongs to April.'},
+      {id:'je',label:'Propose the adjusting entry (no GST, inventory already counted the steel at cost)',type:'journal',accts:[['500000','Purchases'],['630100','Repairs and maintenance'],['200000','Trade payables (vendors)'],['130000','Inventory'],['100000','Bank']],
+       k:[{a:'500000',d:350000},{a:'630100',d:80000},{a:'200000',c:430000}],why:'The steel was counted in closing stock but its purchase was missed, so purchases and payables are both understated. The maintenance is a March cost.'},
+      {id:'ef',label:'Effect on profit before tax (INR, decrease negative)',type:'number',k:-430000,why:'Both items are expenses missing from the year: profit falls by 4,30,000.'}]},
+    {h:'Receivable confirmations',brief:'You sent balance confirmations to the largest customers. One reply does not agree.',
+     docs:[{h:'Confirmation results',cols:['Customer','Per books (INR)','Confirmed (INR)','Customer\'s note'],rows:[['Orbit Stores','6,00,000','5,85,000','Credit note CN/112 of 28.03.2026 for 15,000 not deducted by you'],['Metro Retail','9,20,000','9,20,000','Agreed']]},
+      {h:'Your check',cols:['Finding'],rows:[['CN/112 was approved and sent on 28.03.2026, but posted only on 04.04.2026']]}],
+     qs:[{id:'ms',label:'Misstatement in receivables at 31.03.2026 (INR)',type:'number',k:15000,why:'The credit note belongs to March, so receivables are overstated by 15,000.'},
+      {id:'je',label:'Propose the adjusting entry (ignore GST)',type:'journal',accts:[['411000','Sales returns'],['140000','Trade receivables (customers)'],['100000','Bank'],['410000','Revenue']],
+       k:[{a:'411000',d:15000},{a:'140000',c:15000}],why:'Book the credit note in March: revenue down, receivable down.'},
+      {id:'nr',label:'If a customer does not reply at all, you',type:'choice',o:['Accept the balance','Perform alternative procedures: check receipts after the year end and the invoices with proof of delivery','Ignore that customer','Ask management to confirm it'],k:1,why:'A missing reply is not evidence. Cash received after the year end is the best alternative.'}]},
+    {h:'Summary and conclusion',brief:'Bring the misstatements together and decide.',
+     docs:[{h:'Misstatements found',cols:['Item','Effect on profit (INR)'],rows:[['Unrecorded liabilities','-4,30,000'],['Credit note cut-off','-15,000']]}],
+     qs:[{id:'tt',label:'Total misstatements (INR, effect on profit)',type:'number',k:-445000,why:'-4,30,000 - 15,000 = -4,45,000.'},
+      {id:'vs',label:'Compared with overall materiality of 10,00,000, the total is',type:'choice',o:['Material','Below materiality, but above the clearly trivial threshold, so it is recorded and reported to management','Clearly trivial','Not relevant'],k:1,why:'4,45,000 is under 10,00,000 but well above 50,000.'},
+      {id:'cn',label:'What do you do?',type:'choice',o:['Qualify the audit opinion','Ask management to correct both items; if they refuse, list them as uncorrected in the management representation letter and to those charged with governance. The opinion stays unmodified as long as the total stays below materiality','Ignore them','Correct the books yourself'],k:1,why:'The auditor proposes adjustments but does not post them. Uncorrected misstatements are reported and considered together against materiality.'},
+      {id:'pb',label:'Profit before tax after the corrections (INR)',type:'number',k:19555000,why:'2,00,00,000 - 4,45,000 = 1,95,55,000.'}]}
+   ]}
  ]}
 ];
-const CHAL_NEXT=['Treasury','Tax','Audit','Costing','Payroll'];
+const CHAL_NEXT=[];
 const chalAll=()=>CHAL_TRACKS.flatMap(tr=>tr.items.map((it,i)=>Object.assign({tr:tr.k,ix:i},it)));
 const chalStages=it=>it.stages||[{h:'',brief:'',docs:it.docs,qs:it.qs}];
 const chalQn=it=>chalStages(it).reduce((a,g)=>a+g.qs.length,0);
@@ -6036,7 +6219,7 @@ function chalJnet(lines){const n={};let d=0,c=0;(lines||[]).forEach(l=>{if(!l||!
 function chalOk(q,g){
  if(q.type==='journal'){const r=chalJnet(g);if(Math.abs(r.d-r.c)>0.01||r.d<0.01)return false;const e={};q.k.forEach(l=>{e[l.a]=(e[l.a]||0)+(l.d||0)-(l.c||0)});const ks=new Set([...Object.keys(e),...Object.keys(r.n)]);for(const k of ks)if(Math.abs((e[k]||0)-(r.n[k]||0))>0.01)return false;return true}
  if(g===undefined||g==='')return false;
- return q.type==='number'?Math.abs(chalNum(g)-q.k)<0.01:+g===q.k}
+ return q.type==='number'?Math.abs(chalNum(g)-q.k)<=(q.tol||0.01):+g===q.k}
 const chalEmpty=(q,g)=>q.type==='journal'?chalJnet(g).d<0.01&&chalJnet(g).c<0.01:(g===undefined||g==='');
 function chalJtext(q){return q.k.map(l=>(l.d?'Dr ':'Cr ')+(q.accts.find(a=>a[0]===l.a)||[l.a,l.a])[1]+' '+fmtN(l.d||l.c)).join(', ')}
 function chalField(q,key,v,done){
@@ -6058,7 +6241,7 @@ SCR.CHAL={t:'Practical challenges',render(p){
  if(!it){
   let h=HEAD('CHAL','Practical challenges','Real work from a finance desk. Read the documents, prepare the workings, post the entries. Each role has its own set.');
   CHAL_TRACKS.forEach(tr=>{h+=`<div class="card"><h3>${esc(tr.t)}</h3><p class="help">${esc(tr.d)}</p>`+tr.items.map((x,i)=>{const xi=Object.assign({ix:i},x),lk=chalLocked(xi),r=R[x.id],n=chalQn(x);return `<div class="drev"><p class="q">${x.stages?'Project: ':''}${esc(x.t)}</p><p class="help">${x.stages?x.stages.length+' steps · ':''}${n} tasks${r?' · best '+r.best+' / '+n:''}${lk?' · '+CHIP('full version','inf'):''}${x.stages&&!lk&&SELLABLE&&!isPro()?' · step 1 free':''}</p><div class="actions">${lk?BTN('See what is included','open','LICENCE',''):BTN(r?'Start again':'Start','chalOpen',x.id,'')}</div></div>`}).join('')+`</div>`});
-  h+=`<div class="card"><p class="help">Coming next, one role at a time: ${CHAL_NEXT.map(esc).join(', ')}.</p></div>`;
+  if(CHAL_NEXT.length)h+=`<div class="card"><p class="help">Coming next, one role at a time: ${CHAL_NEXT.map(esc).join(', ')}.</p></div>`;
   return h;
  }
  if(chalLocked(it))return HEAD('CHAL','Practical challenges')+`<div class="card"><h3>This challenge is in the full version</h3><p class="help">The first challenge of every role is free.</p><div class="actions">${BTN('See what is included','open','LICENCE','primary')}${buyBtn()}</div></div>`;
