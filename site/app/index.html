@@ -1930,10 +1930,13 @@ const FREE_SCR=new Set(['HOME','SESSION','FBL1N','FBL5N','FBL3N','FB03','XK03','
 const FREE_TASKS=new Set(['AP-01','AR-01','P2P-01','JE-01','GL-01']);
 const FREE_GRP=['Part 1 · Core ERP skills','Part 2 · Accounting controls'];
 const isPro=()=>!SELLABLE||LIC.status==='pro';
-const scrLocked=code=>SELLABLE&&!isPro()&&!FREE_SCR.has(code);
+/* one paid mission can be tried free when it is opened from a job post (#practise=<id>) */
+function trialScr(){try{const m=LEARN&&LEARN.trial&&MIS.find(x=>x.id===LEARN.trial);if(!m)return new Set();
+  return new Set(((m.t+' '+m.how+' '+(m.go||'')).match(/\b[A-Z][A-Z0-9_.\-]{1,}\b/g)||[]).filter(c=>SCR[c]))}catch(e){return new Set()}}
+const scrLocked=code=>SELLABLE&&!isPro()&&!FREE_SCR.has(code)&&!trialScr().has(code);
 const taskLocked=id=>SELLABLE&&!isPro()&&!FREE_TASKS.has(id);
 const interviewLocked=()=>SELLABLE&&!isPro();
-const missionLocked=m=>SELLABLE&&!isPro()&&!FREE_GRP.includes(m.grp)&&m.id!=='m14'&&!/^e\d/.test(m.id);
+const missionLocked=m=>SELLABLE&&!isPro()&&!FREE_GRP.includes(m.grp)&&m.id!=='m14'&&!/^e\d/.test(m.id)&&!(typeof LEARN!=='undefined'&&LEARN.trial===m.id);
 const b64uToBytes=s=>{s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';const bin=atob(s),a=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return a};
 const bytesToB64u=a=>{let s='';a=new Uint8Array(a);for(let i=0;i<a.length;i++)s+=String.fromCharCode(a[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')};
 const utf8=s=>new TextEncoder().encode(s);
@@ -5738,7 +5741,7 @@ if(!SESS&&/daily/i.test(location.hash)){LEARN.start=true;learnSave();go('DAILY',
 /* practice link from a job post: /app/#practise=m7 opens that mission with its steps */
 (function(){const m=/[#&]practi[sc]e=([a-z0-9]+)/i.exec(location.hash||'');if(!m)return;const mi=MIS.find(x=>x.id===m[1].toLowerCase());if(!mi)return;
   try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
-  LEARN.start=true;learnSave();NAV.mgrp=mi.grp;NAV.mopen=mi.id;renderMissions();if(mi.go)go(mi.go,null,true);
+  LEARN.start=true;if(missionLocked(mi))LEARN.trial=mi.id;learnSave();NAV.mgrp=mi.grp;NAV.mopen=mi.id;renderMissions();if(mi.go)go(mi.go,null,true);
   if(!window.matchMedia('(min-width:980px)').matches){try{setView('guide')}catch(e){}}
   setTimeout(()=>{const el=[...document.querySelectorAll('#side .mis')].find(d=>{const b=d.querySelector('b');return b&&b.textContent===mi.t});if(el){el.classList.add('nextm');const h=document.querySelector('header.shell');const off=h&&getComputedStyle(h).position!=='static'?h.getBoundingClientRect().height:0;window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-off-12)}},150);
   msg('i','Interview practice: '+mi.t+'. Follow the steps under Missions & Notes, then press Check my work.');})();

@@ -902,8 +902,9 @@ def post_telegram(new):
             print("facts failed:", j["company"], ex)
             f = {}
         btns = [("✅ Apply on company site", j["url"])]
-        if SIM_URL:
-            btns.append(("🎯 Practise for this interview (free)", seo.practise_link(SIM_URL, j.get("category"))))
+        pl = seo.practise_link(SIM_URL, j.get("category"))
+        if pl:
+            btns.append(("🎯 Practise for this interview (free)", pl))
         tg_send(tok, chat, job_card(j, f), btns)
         time.sleep(3)
     if rest:
