@@ -109,7 +109,8 @@ def sales_bot_setup():
     if not tok or os.environ.get("SALES_CHAT_ID"):
         return
     ups = requests.get(f"https://api.telegram.org/bot{tok}/getUpdates", timeout=30).json().get("result", [])
-    chats = {(u.get("message") or {}).get("chat", {}).get("id") for u in ups} - {None}
+    chats = {(u.get("message") or {}).get("chat", {}).get("id") for u in ups
+             if (u.get("message") or {}).get("chat", {}).get("type") == "private"} - {None}
     for c in chats:
         requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", data={"chat_id": c,
             "text": f"Your chat id is {c}\n\nSave it in GitHub as a secret named SALES_CHAT_ID. After that, every FinRehearse sale will be reported here."}, timeout=30)
