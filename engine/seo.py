@@ -10,6 +10,19 @@ from datetime import datetime, timezone
 MIN_JOBS = 3
 FRESHER = re.compile(r"fresher|trainee|graduate|intern\b|internship|apprentice|entry[ -]level|junior|\bjr\b|articleship|"
                      r"\bca inter\b|semi[- ]qualified|management trainee|\bmt\b", re.I)
+# job area -> free demo mission that matches the work (opened by /app/#practise=<id>)
+PRACTISE = {"Accounts Payable / P2P": "m7", "Accounts Receivable / O2C": "m11", "Record to Report / GL": "m13",
+            "Controllership / Reporting": "m4", "FP&A / Business Finance": "m4", "Deals / Valuation / IB": "m4",
+            "Tax": "m9", "Audit / Assurance / SOX": "p1a", "Treasury": "m10", "Costing": "m6",
+            "Risk / Credit": "m3", "Payroll": "m13", "Finance Transformation / Systems": "m1"}
+
+
+def practise_link(sim, category):
+    if not sim:
+        return ""
+    return sim.rstrip("/") + "/#practise=" + PRACTISE.get(category or "", "m1")
+
+
 AREA_SLUG = {"FP&A / Business Finance": ("fpa", "FP&A and Business Finance"), "Accounts Payable / P2P": ("accounts-payable", "Accounts Payable (P2P)"),
              "Accounts Receivable / O2C": ("accounts-receivable", "Accounts Receivable (O2C)"),
              "Record to Report / GL": ("record-to-report", "Record to Report (R2R) and GL"),
@@ -20,7 +33,7 @@ AREA_SLUG = {"FP&A / Business Finance": ("fpa", "FP&A and Business Finance"), "A
              "Finance Transformation / Systems": ("finance-systems", "Finance Systems and ERP"),
              "Accounting / Finance (general)": ("accounting", "Accounting and Finance")}
 
-CSS = """.logo{display:inline-block;margin:0 0 16px}.logo img{display:block;height:30px;width:auto}@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
+CSS = """.pr{color:#047857;font-weight:600;white-space:nowrap}.logo{display:inline-block;margin:0 0 16px}.logo img{display:block;height:30px;width:auto}@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/jakarta-600.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/jakarta-700.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/jakarta-800.woff2) format('woff2')}
@@ -40,7 +53,8 @@ def page(site, path, title, h1, lede, jobs, city_of, tg, sim, related):
     rows = []
     for j in jobs[:150]:
         rows.append(f'<li><div class="t"><a href="{html.escape(j["url"])}" rel="nofollow noopener" target="_blank">{html.escape(j["title"])}</a></div>'
-                    f'<div class="m">{html.escape(j["company"])} · {html.escape(city_of(j.get("location")))} · {html.escape(j.get("category") or "")}</div></li>')
+                    f'<div class="m">{html.escape(j["company"])} · {html.escape(city_of(j.get("location")))} · {html.escape(j.get("category") or "")}'
+                    + (f' · <a class="pr" href="{html.escape(practise_link(sim, j.get("category")))}">Practise for this interview</a>' if sim else "") + '</div></li>')
     rel = "".join(f'<a href="{site}{p}">{html.escape(n)}</a>' for n, p in related)
     cta = (f'<div class="cta">New finance jobs every 2 hours on Telegram. <a href="{tg}">Join the free channel</a>.'
            + (f' Interview coming up? <a href="{sim}">Practise ERP finance work in the simulator</a>.' if sim else "") + "</div>") if tg else ""

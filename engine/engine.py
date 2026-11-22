@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlparse, urljoin, quote
 from concurrent.futures import ThreadPoolExecutor
 import requests
+import seo
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
@@ -687,9 +688,11 @@ def channel_link():
 
 
 def tg_send(tok, chat, text, button=None):
+    """button: one (text, url) pair, or a list of them (one button per row)."""
     data = {"chat_id": chat, "text": text[:4090], "parse_mode": "HTML", "disable_web_page_preview": "true"}
     if button:
-        data["reply_markup"] = json.dumps({"inline_keyboard": [[{"text": button[0], "url": button[1]}]]})
+        rows = button if isinstance(button, list) else [button]
+        data["reply_markup"] = json.dumps({"inline_keyboard": [[{"text": t, "url": u}] for t, u in rows]})
     try:
         r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=T, data=data)
         print("telegram:", r.status_code, r.text[:100])
@@ -898,7 +901,10 @@ def post_telegram(new):
         except Exception as ex:
             print("facts failed:", j["company"], ex)
             f = {}
-        tg_send(tok, chat, job_card(j, f), ("✅ Apply on company site", j["url"]))
+        btns = [("✅ Apply on company site", j["url"])]
+        if SIM_URL:
+            btns.append(("🎯 Practise for this interview (free)", seo.practise_link(SIM_URL, j.get("category"))))
+        tg_send(tok, chat, job_card(j, f), btns)
         time.sleep(3)
     if rest:
         lines = [f"➕ <b>{len(rest)} more new finance jobs</b>\n"]
