@@ -1,9 +1,12 @@
-:root{--bg:#F6F8FB;--card:#fff;--fg:#1B2733;--muted:#5A6A7B;--line:#D3DAE3;--accent:#0A5ED7;--accent-fg:#fff;--soft:#E7F0FD;--shell:#1D2D3E}
-@media (prefers-color-scheme:dark){:root{--bg:#0E161F;--card:#17212C;--fg:#E5ECF3;--muted:#94A5B7;--line:#2C3B4C;--accent:#5CA8FF;--accent-fg:#06121F;--soft:#16304D;--shell:#0A1118}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/jakarta-600.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/jakarta-700.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/jakarta-800.woff2) format('woff2')}
+:root{--bg:#F7F8FA;--card:#fff;--fg:#111827;--muted:#5B6472;--line:#E3E6EA;--accent:#047857;--accent-fg:#fff;--soft:#E2F5EE;--shell:#FFFFFF}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .w{max-width:960px;margin:0 auto;padding:0 16px}
-header{background:var(--shell);color:#E8EEF4}header .w{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:12px;flex-wrap:wrap}
-header a{color:#E8EEF4;text-decoration:none;margin-left:16px}header b{font-size:18px}
+header{background:var(--shell);color:var(--fg);border-bottom:1px solid var(--line)}header .w{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:12px;flex-wrap:wrap}
+header a{color:var(--fg);text-decoration:none;margin-left:16px}header b{font-size:18px}
 .hero{padding:48px 0 24px}.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px;max-width:18ch}
 .hero p{font-size:18px;color:var(--muted);max-width:60ch;margin:0 0 22px}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-fg);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:600;margin:0 10px 10px 0}
@@ -16,3 +19,6 @@ table{border-collapse:collapse;width:100%;background:var(--card);border:1px soli
 footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0;color:var(--muted);font-size:14px}footer a{color:var(--muted);margin-right:14px}
 .legal{padding:30px 0;max-width:72ch}.legal h1{font-size:30px}.legal h2{font-size:20px;margin-top:24px}
 .todo{background:#FFF0DB;color:#5a3000;padding:10px 14px;border-radius:6px;margin-bottom:18px;font-size:14px}
+
+h1,h2,h3{letter-spacing:-.02em}.hero h1{font-weight:800}h2{font-weight:700}
+.btn{border-radius:10px}.card{border-radius:14px;border-color:#E8EBEF;box-shadow:0 1px 2px rgba(17,24,39,.04)}

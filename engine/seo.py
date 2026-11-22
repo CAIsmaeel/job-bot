@@ -20,12 +20,16 @@ AREA_SLUG = {"FP&A / Business Finance": ("fpa", "FP&A and Business Finance"), "A
              "Finance Transformation / Systems": ("finance-systems", "Finance Systems and ERP"),
              "Accounting / Finance (general)": ("accounting", "Accounting and Finance")}
 
-CSS = """body{margin:0;background:#f7f5ef;color:#1d2a26;font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
-main{max-width:860px;margin:0 auto;padding:28px 18px 60px}a{color:#145c4a}h1{font:600 2rem/1.2 Newsreader,Georgia,serif;margin:.2em 0 .3em}
-.lede{color:#4a5752;max-width:68ch}.crumb{font-size:.9rem}.cta{background:#e5efe9;border-left:4px solid #145c4a;padding:12px 16px;margin:20px 0}
-ul.jobs{list-style:none;padding:0;margin:0}ul.jobs li{background:#fff;border:1px solid #e1ddd2;border-radius:8px;padding:12px 16px;margin:8px 0}
-.t{font-weight:700}.m{color:#5b6763;font-size:.93rem}.links{columns:3 200px;font-size:.95rem}.links a{display:block}
-footer{margin-top:40px;font-size:.85rem;color:#6a746f}"""
+CSS = """@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/jakarta-600.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/jakarta-700.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/jakarta-800.woff2) format('woff2')}
+body{margin:0;background:#F7F8FA;color:#111827;font:16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 18px 60px}a{color:#047857}h1{font-weight:800;font-size:2rem;line-height:1.2;letter-spacing:-.02em;margin:.2em 0 .3em}
+h2{letter-spacing:-.01em}.lede{color:#5B6472;max-width:68ch}.crumb{font-size:.9rem}.cta{background:#E2F5EE;border-left:4px solid #047857;border-radius:10px;padding:12px 16px;margin:20px 0}
+ul.jobs{list-style:none;padding:0;margin:0}ul.jobs li{background:#fff;border:1px solid #E8EBEF;border-radius:14px;padding:12px 16px;margin:8px 0;box-shadow:0 1px 2px rgba(17,24,39,.04)}
+.t{font-weight:700}.m{color:#5B6472;font-size:.93rem}.links{columns:3 200px;font-size:.95rem}.links a{display:block}
+footer{margin-top:40px;font-size:.85rem;color:#6B7280}"""
 
 
 def slug(s):
