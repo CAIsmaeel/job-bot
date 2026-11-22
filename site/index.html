@@ -4,12 +4,27 @@
 <link rel="stylesheet" href="style.css"><link rel="preload" href="/fonts/jakarta-500.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fr.css"><link rel="stylesheet" href="/fr-pages.css"><link rel="stylesheet" href="/home.css"></head><body>
 <header class="sitehdr"><div class="in"><a class="lg" href="/" aria-label="FinRehearse home"><img src="/logo.svg" alt="FinRehearse" width="140" height="28"></a><nav aria-label="Site"><a href="/" aria-current="page"><span class="fl">Home</span><span class="sh">Home</span></a><a href="/app/"><span class="fl">Practice</span><span class="sh">Practice</span></a><a href="/interview/"><span class="fl">Guides</span><span class="sh">Guides</span></a><a href="/jobs/"><span class="fl">Jobs</span><span class="sh">Jobs</span></a><a href="/#price"><span class="fl">Pricing</span><span class="sh">Pricing</span></a></nav><a class="launch" href="/app/">Launch App</a></div></header>
 <main class="home">
-<section class="hero"><div class="grid-bg" aria-hidden="true"></div><div class="wrap">
+<section class="hero"><div class="grid-bg" aria-hidden="true"></div><div class="wrap hw"><div class="hcopy">
 <h1>Practise ERP finance work before the interview</h1>
 <p class="lede">A hands-on simulator of the everyday transactions in an ERP finance system. Post real entries, make real mistakes, and get told exactly what went wrong. Every posting follows double-entry rules, so what you learn is accounting, not button clicking.</p>
 <div class="ctas"><a class="btn" href="app/">Try the free demo</a><a class="btn alt" href="#price">See pricing</a></div>
 <p class="trust"><span>Runs in your browser.</span><span>Nothing to install.</span><span>Your practice data stays on your device.</span></p>
-</div></section>
+</div><div class="lw" id="lw" aria-label="Try a 10-second ledger entry">
+<div class="lwh"><p class="lwt">Try a 10-second ledger entry</p><span class="pill mono">MIRO</span></div>
+<p class="lws mono">Vendor invoice #INV-409 · PO value ₹50,000 · Invoice received ₹52,500 <span>(price variance)</span></p>
+<p class="lwq">The goods were already received. Post the invoice: choose the side for GR/IR and the account for the extra ₹2,500.</p>
+<div class="lwg" role="table">
+<div class="lwr hd" role="row"><span>Account</span><span>Dr / Cr</span><span class="r">Amount</span></div>
+<div class="lwr" role="row"><span>GR/IR Clearing</span><span><select id="lw1" aria-label="Side for GR/IR Clearing"><option value="">Choose</option><option value="Dr">Dr</option><option value="Cr">Cr</option></select></span><span class="r mono">50,000</span></div>
+<div class="lwr" role="row"><span><select id="lw2" aria-label="Account for the 2,500 difference"><option value="">Choose account</option><option value="pv">Inventory / Price Variance</option><option value="cash">Cash</option></select></span><span class="mono fx">Dr</span><span class="r mono">2,500</span></div>
+<div class="lwr" role="row"><span>Vendor Account</span><span class="mono fx">Cr</span><span class="r mono">52,500</span></div>
+<div class="lwr tot" role="row"><span>Totals</span><span class="mono" id="lwd">Dr 2,500</span><span class="r mono" id="lwc">Cr 52,500</span></div>
+</div>
+<div class="lwa"><button type="button" class="btn" id="lwpost">Post Entry</button><button type="button" class="lwreset" id="lwreset" hidden>Try again</button></div>
+<div class="lwfb" id="lwfb" role="status" aria-live="polite"></div>
+<a class="lwlink" href="app/">Practice 20+ full missions in the Simulator →</a>
+<p class="lwnote">GST is left out to keep the example short.</p>
+</div></div></section>
 
 <section id="see" class="band"><div class="wrap"><h2>See it before you try it</h2><div class="shots"><div class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i><span class="mono">app.finrehearse / MIRO</span></div><img src="/img/shot-invoice.webp" alt="Posting a vendor invoice against a purchase order, with the mission steps beside it" loading="lazy" width="1280" height="780"></div><p class="cap mono">Post a vendor invoice against a PO. The mission on the right checks your result in the ledger.</p></div><div class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i><span class="mono">app.finrehearse / S_ALR_87013611</span></div><img src="/img/shot-budget.webp" alt="Budget versus actual report with adverse variances in red" loading="lazy" width="1280" height="780"></div><p class="cap mono">FP&amp;A: read budget versus actual and explain the overspend.</p></div><div class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i><span class="mono">app.finrehearse / QBANK</span></div><img src="/img/shot-questions.webp" alt="Interview question bank with 165 questions and model answers" loading="lazy" width="1280" height="780"></div><p class="cap mono">165 interview questions with model answers and a recall drill.</p></div></div></div></section>
 
@@ -51,4 +66,21 @@
 <div><h4>Product</h4><ul><li><a href="/app/">Practice app</a></li><li><a href="/interview/">Interview guides</a></li><li><a href="/#price">Pricing</a></li><li><a href="/verify/">Verify a certificate</a></li></ul></div>
 <div><h4>Jobs</h4><ul><li><a href="/jobs/">All finance jobs</a></li><li><a href="/jobs/browse/">Browse by city or area</a></li><li><a href="/jobs/freshers/">Jobs for freshers</a></li><li><a href="https://t.me/financeopeningsindia">Telegram channel</a></li></ul></div>
 <div><h4>Legal</h4><ul><li><a href="/terms.html">Terms</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/refund.html">Refunds</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
-</div><div class="legal-note"><p>FinRehearse is an independent educational simulator. It is not SAP software and is not affiliated with, sponsored by or endorsed by SAP SE. SAP and S/4HANA are trademarks or registered trademarks of SAP SE in Germany and other countries.</p><p>&copy; 2026 FinRehearse</p></div></div></footer></body></html>
+</div><div class="legal-note"><p>FinRehearse is an independent educational simulator. It is not SAP software and is not affiliated with, sponsored by or endorsed by SAP SE. SAP and S/4HANA are trademarks or registered trademarks of SAP SE in Germany and other countries.</p><p>&copy; 2026 FinRehearse</p></div></div></footer><script>
+(function(){
+var $=function(i){return document.getElementById(i)},f=function(n){return n.toLocaleString('en-IN')};
+var s1=$('lw1'),s2=$('lw2'),fb=$('lwfb'),post=$('lwpost'),rs=$('lwreset');if(!s1)return;
+function totals(){var d=2500,c=52500;if(s1.value==='Dr')d+=50000;if(s1.value==='Cr')c+=50000;$('lwd').textContent='Dr '+f(d);$('lwc').textContent='Cr '+f(c);return [d,c]}
+function say(ok,html){fb.className='lwfb '+(ok?'ok':'bad');fb.innerHTML=html}
+[s1,s2].forEach(function(e){e.addEventListener('change',function(){totals();fb.className='lwfb';fb.innerHTML=''})});
+post.addEventListener('click',function(){
+  var t=totals();
+  if(!s1.value||!s2.value){say(false,'Choose the side for GR/IR and the account for the ₹2,500 first.');return}
+  if(s1.value==='Cr'){say(false,'<b>Not balanced: Dr ₹'+f(t[0])+' vs Cr ₹'+f(t[1])+'.</b> GR/IR was credited when the goods arrived (Dr Inventory, Cr GR/IR). The invoice clears it, so GR/IR is <b>debited</b> here.');rs.hidden=false;return}
+  if(s2.value==='cash'){say(false,'<b>Balanced, but wrong account.</b> No cash moves when you post an invoice; cash moves only when you pay the vendor. The extra ₹2,500 is a price difference: it goes to inventory if the stock is still on hand, otherwise to a price variance account.');rs.hidden=false;return}
+  say(true,'<span class="pill ok mono">✓ Balanced &amp; Passed — Ledger Updated</span><span class="lwok mono">Dr ₹52,500 = Cr ₹52,500</span>');rs.hidden=false;
+});
+rs.addEventListener('click',function(){s1.value='';s2.value='';totals();fb.className='lwfb';fb.innerHTML='';rs.hidden=true;s1.focus()});
+totals();
+})();
+</script></body></html>
