@@ -52,7 +52,7 @@ NOT_FIN = re.compile(r"software|developer|engineer(?!ing finance)|architect|devo
                      r"customer service|\bcse\b|\bdsmg\b|collections?\b.*(flows|bkt|bucket|motor|loans?|retail)|technical valuation|"
                      r"technical manager|bancassurance|relationship mgr|insurance (advisor|agent)|branch (manager|head)|\bteller\b|"
                      r"phone banking|call cent|customer (care|support)|loan (sales|counsel)|\bdsa\b|channel (manager|partner)|"
-                     r"acquisition manager|wealth manager|privilege banker|personal banker", re.I)
+                     r"acquisition manager|wealth manager|privilege banker|personal banker|coding auditor|medical coding|clinical|\bcoder\b", re.I)
 INDIA = re.compile(r"\bindia\b|\bind\b|, ?in\b|mumbai|navi mumbai|thane|pune|bengaluru|bangalore|hyderabad|chennai|gurgaon|gurugram|"
                    r"noida|delhi|kolkata|ahmedabad|vadodara|jaipur|kochi|coimbatore|chandigarh|indore|nagpur|lucknow|bhubaneswar|"
                    r"vizag|visakhapatnam|mysore|mysuru|trivandrum|thiruvananthapuram|goa|surat|jamnagar|bhopal|maharashtra|karnataka|"
@@ -652,7 +652,9 @@ def build_page(jobs):
     slim = [{k: j[k] for k in ("title", "company", "category", "location", "url", "first_seen")} for j in jobs]
     data = json.dumps(slim, ensure_ascii=False).replace("</", "<\\/")
     t = (t.replace("__JOBS__", data).replace("__UPDATED_ISO__", NOW).replace("__UPDATED__", upd)
-          .replace("__PRACTICE__", practice + '<p class="browse"><a href="/jobs/browse/">Browse finance jobs by city, company or area</a></p>').replace("__BRAND__", html.escape(BRAND)))
+          .replace("__PRACTICE__", practice + '<p class="browse"><a href="/jobs/browse/">Browse finance jobs by city, company or area</a></p>').replace("__BRAND__", html.escape(BRAND))
+          .replace("__PRACTISE_MAP__", json.dumps({k: v for k, v in seo.PRACTISE.items() if v} if SIM_URL else {}))
+          .replace("__SIM__", html.escape(SIM_URL.rstrip("/") + "/" if SIM_URL else "")))
     os.makedirs(os.path.join(OUT, "site"), exist_ok=True)
     open(os.path.join(OUT, "site", "index.html"), "w", encoding="utf-8").write(t)
 
