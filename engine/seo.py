@@ -20,7 +20,7 @@ AREA_SLUG = {"FP&A / Business Finance": ("fpa", "FP&A and Business Finance"), "A
              "Finance Transformation / Systems": ("finance-systems", "Finance Systems and ERP"),
              "Accounting / Finance (general)": ("accounting", "Accounting and Finance")}
 
-CSS = """@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
+CSS = """.logo{display:inline-block;margin:0 0 16px}.logo img{display:block;height:30px;width:auto}@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/jakarta-600.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/jakarta-700.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/jakarta-800.woff2) format('woff2')}
@@ -46,9 +46,9 @@ def page(site, path, title, h1, lede, jobs, city_of, tg, sim, related):
            + (f' Interview coming up? <a href="{sim}">Practise ERP finance work in the simulator</a>.' if sim else "") + "</div>") if tg else ""
     upd = datetime.now(timezone.utc).strftime("%d %b %Y")
     desc = f"{lede} {len(jobs)} openings, updated {upd}."
-    return f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc[:300])}">
-<link rel="canonical" href="{site}{path}"><style>{CSS}</style></head><body><main>
+<link rel="canonical" href="{site}{path}"><style>{CSS}</style></head><body><main><a class="logo" href="/"><img src="/logo.svg" alt="FinRehearse" width="150" height="30"></a>
 <p class="crumb"><a href="{site}/">Home</a> › <a href="{site}/jobs/">All finance jobs</a> › <a href="{site}/jobs/browse/">Browse</a></p>
 <h1>{html.escape(h1)}</h1><p class="lede">{html.escape(lede)} {len(jobs)} openings right now, taken from the companies' own career sites. Updated {upd}.</p>
 {cta}<ul class="jobs">{"".join(rows)}</ul>
@@ -104,9 +104,9 @@ def build(jobs, out_dir, site, city_of, tg, sim):
     d = os.path.join(out_dir, "jobs", "browse")
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(
-        f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+        f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
 <title>Browse finance jobs in India by city, company and area</title><meta name="description" content="Finance and accounting jobs in India sorted by city, company and finance area. Updated every 2 hours.">
-<link rel="canonical" href="{site}/jobs/browse/"><style>{CSS}</style></head><body><main><p class="crumb"><a href="{site}/">Home</a> › <a href="{site}/jobs/">All finance jobs</a></p>
+<link rel="canonical" href="{site}/jobs/browse/"><style>{CSS}</style></head><body><main><a class="logo" href="/"><img src="/logo.svg" alt="FinRehearse" width="150" height="30"></a><p class="crumb"><a href="{site}/">Home</a> › <a href="{site}/jobs/">All finance jobs</a></p>
 <h1>Browse finance jobs</h1>{body}</main></body></html>""")
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
