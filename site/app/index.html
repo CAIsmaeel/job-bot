@@ -265,6 +265,9 @@ header{border-bottom:1px solid var(--line)}.card{border-radius:14px;border-color
 .ddots{display:flex;gap:6px;align-items:center}.ddot{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;line-height:1;box-sizing:border-box;font-size:12px;border:1px solid var(--line);color:var(--muted)}
 .ddot.on{background:var(--accent);border-color:var(--accent);color:#fff}.ddot.today{box-shadow:0 0 0 3px var(--accent-soft)}
 .opt.right{border-color:var(--pos);background:#E6F4EA}.opt.wrong{border-color:#B3261E;background:#FCE8E6}
+
+/* phones: the header scrolls away so screens and reports get the full height */
+@media (max-width:979px){.shell{position:static}}
 </style>
 
 <div id="app">
@@ -1959,7 +1962,11 @@ async function licVerify(key,pub,now){
     return {ok:true,info};
   }catch(e){return {ok:false,error:'The licence key could not be read'}}
 }
+/* refunded keys are listed online in /app/revoked.json; offline the built-in list is used */
+let LIC_REV_P=null;
+function licRevoked(){return LIC_REV_P||(LIC_REV_P=(async()=>{try{if(location.protocol.startsWith('http')){const c=new AbortController();setTimeout(()=>c.abort(),4000);const r=await fetch('/app/revoked.json',{cache:'no-store',signal:c.signal});if(r.ok){const l=await r.json();if(Array.isArray(l))l.forEach(i=>{if(typeof i==='string'&&!LIC_REVOKED.includes(i))LIC_REVOKED.push(i)})}}}catch(e){}})())}
 async function licActivate(key){
+  await licRevoked();
   const r=await licVerify(key,LIC_PUB);
   if(r.ok){LIC.status='pro';LIC.info=r.info;LIC.error='';try{STORE_IO.set(KEY_LIC,String(key).trim().replace(/\s+/g,''))}catch(e){}}
   else{LIC.error=r.error}
@@ -1967,6 +1974,7 @@ async function licActivate(key){
 }
 async function licLoad(){
   if(!SELLABLE)return;
+  await licRevoked();
   let k=null;try{k=STORE_IO.get(KEY_LIC)}catch(e){}
   if(!k)return;
   const r=await licVerify(k,LIC_PUB);
@@ -2536,7 +2544,7 @@ const TASKS=[
  setup(){},
  guide:[
   {code:'AFAB',step:'Run the depreciation for period 07/2026 first.',why:'October is the month of the sale. The book value must include October depreciation: 7 months x 10,000 = 70,000.'},
-  {code:'ABAVN',step:'Retire A1001 on 25.10.2026 with proceeds of 4,80,000.',why:'Dr accumulated depreciation 70,000, Dr bank 4,80,000, Dr loss 50,000, Cr asset cost 6,00,000.'},
+  {code:'ABAON',step:'Retire A1001 on 25.10.2026 with proceeds of 4,80,000.',why:'Dr accumulated depreciation 70,000, Dr bank 4,80,000, Dr loss 50,000, Cr asset cost 6,00,000.'},
   {code:'AR01',step:'Check the register: A1001 is retired and the cost accounts are back to zero.',why:'The register and the ledger must agree after every asset transaction.'}],
  hints:['The sale result is proceeds minus book value.','Book value is 6,00,000 minus 70,000. Proceeds are lower, so it is a loss.','The retirement is blocked until depreciation is up to date.'],
  outcome:['Depreciation up to October posted','Retirement posted with a loss of 50,000','Asset cost and accumulated depreciation of A1001 are removed from the ledger'],
@@ -2547,7 +2555,7 @@ const TASKS=[
   const retOk=!!a&&a.status==='retired'&&!!rd&&rd.user==='PRACTICE'&&rd.postDate==='2026-10-25'&&near(a.ret.proceeds,480000)&&near(sumL(rd,'120900','S'),70000)&&near(sumL(rd,'100000','S'),480000)&&near(sumL(rd,'690000','S'),50000)&&near(sumL(rd,'120000','H'),600000);
   return [
    C_('dep','date','Depreciation for October was run before the retirement',20,!!dep&&near(sumL(dep,'680000','S'),10000),'Run AFAB for period 07/2026 first so the book value is current',true),
-   C_('ret','gl','The sale is posted: Dr 120900 70,000, Dr bank 4,80,000, Dr loss 50,000, Cr 120000 6,00,000',40,retOk,'Retire A1001 on 25.10.2026 in ABAVN with proceeds of 4,80,000',true),
+   C_('ret','gl','The sale is posted: Dr 120900 70,000, Dr bank 4,80,000, Dr loss 50,000, Cr 120000 6,00,000',40,retOk,'Retire A1001 on 25.10.2026 in ABAON with proceeds of 4,80,000',true),
    C_('bal','balance','Cost, accumulated depreciation and gain accounts are clean; the loss is 50,000',10,near(balanceOf('120000'),0)&&near(balanceOf('120900'),0)&&near(balanceOf('690000'),50000)&&near(balanceOf('430000'),0),'After the sale 120000 and 120900 are zero and the loss account holds 50,000'),
    C_('ctl','control','Exactly two documents were posted (depreciation run and retirement)',5,ud().length===2,'Post only the depreciation run and the retirement'),
    V_(ans,'accum',e.accum,'Accumulated depreciation at the sale',7),V_(ans,'nbv',e.nbv,'Book value at the sale',7),V_(ans,'res',e.res,'Amount of the loss',6),V_(ans,'kind',e.kind,'Gain or loss',5,'text')];
@@ -3489,6 +3497,8 @@ function go(code,params,replace){
   if(typeof renderNotes==='function')renderNotes(code);
   if(sc.after)sc.after(NAV.cur.params);
   if(!replace)window.scrollTo({top:0});
+  /* phones: after a report runs, bring its result into view instead of leaving it below the selection screen */
+  if(params&&params.run&&!window.matchMedia('(min-width:980px)').matches){setTimeout(()=>{const cs=document.querySelectorAll('#screen .card');const r=cs[cs.length-1];if(r&&cs.length>1)r.scrollIntoView({block:'start',behavior:'smooth'})},60)}
   save();
 }
 function runCmd(raw){
@@ -3523,7 +3533,7 @@ SCR.HOME={t:'Main Menu',render(){
    ['Payroll',[['PAY','Payroll cockpit'],['PA30','Employee master'],['PC00','Run payroll'],['PAYSLIP','Payslips']]],
    ['Sales and Distribution',[['SD','Sales cockpit: orders, delivery, billing, stock'],['VA01','Create sales order'],['VA03','Display sales orders'],['VL01N','Delivery with goods issue'],['VF01','Billing'],['VKM1','Blocked orders (credit limit)'],['SDRET','Customer return (cockpit tab)'],['SDCM','Credit memo for returned goods (cockpit tab)'],['MMBE','Stock overview']]],
    ['Configuration',[['OB40','Tax codes (GST), default codes, asset lives, change log']]],
-   ['Fixed assets',[['ASSET','Fixed asset cockpit'],['F-90','Acquire asset (vendor invoice)'],['AFAB','Depreciation run'],['ABAVN','Retire asset (sale / scrapping)'],['AR01','Asset register']]],
+   ['Fixed assets',[['ASSET','Fixed asset cockpit'],['F-90','Acquire asset (vendor invoice)'],['AFAB','Depreciation run'],['ABAON','Sell an asset (no customer)'],['ABAVN','Scrap an asset (no proceeds)'],['AR01','Asset register']]],
    ['Month-end closing',[['CLOSE','Closing cockpit: checklist, accruals, period lock'],['FBS1','Post accrual'],['F.81','Accrual reversal run'],['OB52','Posting periods (open / closed)']]],
    ['Bank',[['FF67','Manual bank reconciliation (statement matching, reconciliation statement)']]],
    ['Business Partner',[['BP','Business Partner (vendor + customer master)']]],
@@ -4217,7 +4227,7 @@ ACT.clreopen=POSTACT(k=>{reopenPeriod(k);L('post','CLOSE',{reopen:k});clGo('i','
 /* ---------- ASSET: fixed asset cockpit (Phase 5). F-90, AFAB, ABAVN and AR01 open its tabs ---------- */
 function faRender(){
   const f=faOn(),reg=assetRegister(),per=FAUI.per||'202607';
-  let h=HEAD('ASSET','Fixed Assets','Register, acquisition (F-90), monthly depreciation run (AFAB) and retirement (ABAVN). Straight-line depreciation by whole months, starting in the month of acquisition.');
+  let h=HEAD('ASSET','Fixed Assets','Register, acquisition (F-90), monthly depreciation run (AFAB) and retirement (ABAON sale, ABAVN scrapping). Straight-line depreciation by whole months, starting in the month of acquisition.');
   h+=`<div class="actions">${BTN('Asset register (AR01)','fatab','reg',FAUI.tab==='reg'?'primary':'')}${BTN('Acquire (F-90)','fatab','acq',FAUI.tab==='acq'?'primary':'')}${BTN('Depreciation run (AFAB)','fatab','dep',FAUI.tab==='dep'?'primary':'')}${BTN('Retire (ABAVN)','fatab','ret',FAUI.tab==='ret'?'primary':'')}</div>`;
   if(FAUI.tab==='acq'){
     h+=`<div class="card"><h3>Acquire an asset from a vendor invoice</h3>`
@@ -4258,7 +4268,8 @@ function faRender(){
 SCR.ASSET={t:'Fixed Assets',render(p){if(!p||!p.keep)FAUI.tab='reg';return faRender()}};
 SCR['F-90']={t:'Acquire Asset (vendor invoice)',render(){FAUI.tab='acq';return faRender()}};
 SCR.AFAB={t:'Depreciation Run',render(){FAUI.tab='dep';return faRender()}};
-SCR.ABAVN={t:'Asset Retirement',render(){FAUI.tab='ret';return faRender()}};
+SCR.ABAVN={t:'Asset Retirement by Scrapping',render(){FAUI.tab='ret';return faRender()}};
+SCR.ABAON={t:'Asset Sale without Customer',render(){FAUI.tab='ret';return faRender()}};
 SCR.AR01={t:'Asset Register',render(){FAUI.tab='reg';return faRender()}};
 const faGo=(t,m)=>{go('ASSET',{keep:1},true);msg(t||'s',m)};
 ACT.fatab=t=>{FAUI.tab=t;go('ASSET',{keep:1},true)};
@@ -4673,7 +4684,7 @@ const CHANGELOG=[
  ['Phase 2','Training and interview','Training Center with Guided, Independent and Interview modes; outcome-based scoring with critical failures capped at 50%.'],
  ['Phase 3','Bank reconciliation (FF67)','Statement lines, suggestions with confidence, manual matching, duplicates, bank entries, timing differences and the reconciliation statement.'],
  ['Phase 4','Month-end closing','Accruals (FBS1), reversal (F.81), closing checklist, period locking and reopening (CLOSE, OB52).'],
- ['Phase 5','Fixed assets','Register, acquisition (F-90), monthly depreciation (AFAB), retirement (ABAVN), reports (AR01); asset accounts are protected from manual posting.'],
+ ['Phase 5','Fixed assets','Register, acquisition (F-90), monthly depreciation (AFAB), retirement (ABAON, ABAVN), reports (AR01); asset accounts are protected from manual posting.'],
  ['Phase 6','Accounting configuration (OB40)','Effective-dated GST rates, tax codes, default codes and asset useful lives, each change logged.'],
  ['Phase 7','Extra scenarios and outcome missions','Net settlement with credit memo, overpayment on account, read-only questions; missions check the ledger result, not only that something was posted.'],
  ['Phase 8','Data safety (SIMDATA)','Checksummed export, two-step import, restore points, recovery copy of unreadable data, reset with undo.'],
@@ -4897,7 +4908,7 @@ const MIS=[
   out:()=>{const d=S.docs.find(x=>x.user==='PRACTICE'&&x.meta&&x.meta.dep==='202607'&&!x.revBy);return [ck(d,'Your depreciation run for 07/2026 was found'),ck(S.fa.assets.every(a=>a.status!=='active'||a.dep.some(x=>x.pk==='202607')||faAccum(a)>=a.cost),'Every active asset has been depreciated for October')]},
   ask:[{id:'t',label:'Depreciation posted for October (INR)',type:'number'},{id:'e',label:'Balance of 680000 Depreciation Expense (INR)',type:'number'}],
   exp:()=>{let t=0;S.fa.assets.forEach(a=>a.dep.forEach(d=>{if(d.pk==='202607')t+=d.amt}));return {t:r2(t),e:balanceOf('680000')}}},
- {grp:'Part 7 · Fixed assets (do these before closing October)',id:'f4',t:'Sell the CNC machine (ABAVN)',how:'ABAVN: retire A1001 on 25.10.2026 with proceeds of 4,80,000 received in the bank. Depreciation must be up to date first. The 4,80,000 is not on the bank statement yet, so in FF67 reopen the reconciliation, flag this receipt as a deposit in transit and complete it again (needed before closing). Report the amount of the loss.',go:'ABAVN',
+ {grp:'Part 7 · Fixed assets (do these before closing October)',id:'f4',t:'Sell the CNC machine (ABAON)',how:'ABAON (asset sale without a customer; ABAVN is for scrapping, F-92 for a sale to a customer): retire A1001 on 25.10.2026 with proceeds of 4,80,000 received in the bank. Depreciation must be up to date first. The 4,80,000 is not on the bank statement yet, so in FF67 reopen the reconciliation, flag this receipt as a deposit in transit and complete it again (needed before closing). Report the amount of the loss.',go:'ABAVN',
   out:()=>{const a=faAssetOf('A1001'),d=a&&a.ret&&getDoc(a.ret.doc);return [ck(a&&a.status==='retired'&&near(a.ret.proceeds,480000)&&d&&d.user==='PRACTICE','A1001 was retired by you with proceeds of 4,80,000'),ck(d&&near(sumL(d,'690000','S'),50000),'The loss on disposal of 50,000 is booked to 690000')]},
   ask:[{id:'l',label:'Loss on the sale (INR)',type:'number'}],exp:()=>{const a=faAssetOf('A1001');return {l:a&&a.ret?-a.ret.result:NaN}}},
  {grp:'Part 7 · Fixed assets (do these before closing October)',id:'f5',t:'Prove the register to the general ledger',how:'Step 1, register: in AR01 add the Book value of every asset with status active. Retired and cancelled assets are not counted. Step 2, ledger: in S_ALR_87012277 (Trial Balance) or FBL3N read the balances of 120000 and 121000 (cost, debit) and of 120900 and 121900 (accumulated depreciation, credit). Net book value per ledger = (120000 + 121000) minus (120900 + 121900). An account with no balance counts as 0, for example IT Equipment if you capitalised no IT asset, and a retired asset has already left both its cost and its accumulated depreciation. The two figures must be equal. Report both and the difference.',go:'AR01',
@@ -5022,7 +5033,7 @@ function evalMission(m,ans){
       if(given===undefined||given==='')good=false;
       else if(a.type==='number'){const g=parseFloat(String(given).replace(/,/g,''));good=Number.isFinite(g)&&Number.isFinite(e[a.id])&&Math.abs(g-e[a.id])<0.01}
       else good=String(given).trim().toUpperCase()===String(e[a.id]).toUpperCase();
-      checks.push(ck(good,'Answer: '+a.label+(good?' is correct':' does not match the ledger. Correct answer: '+(a.type==='number'?(e[a.id]<0?'-'+fmtN(-e[a.id]):fmtN(e[a.id])):e[a.id])+'. Check the report again to see how it comes out')));
+      checks.push(ck(good,'Answer: '+a.label+(good?' is correct':(a.type==='number'&&!Number.isFinite(e[a.id]))?' cannot be checked yet: do the posting in the steps first, then read the figure':' does not match the ledger. Correct answer: '+(a.type==='number'?(e[a.id]<0?'-'+fmtN(-e[a.id]):fmtN(e[a.id])):e[a.id])+'. Check the report again to see how it comes out')));
       if(!good)ok=false;
     });
   }
@@ -5356,7 +5367,7 @@ const NOTES={
  ASSET:{w:['An <b>asset</b> is capitalised at its cost <b>excluding recoverable GST</b>. The invoice is posted Dr asset, Dr input GST, Cr vendor.','<b>Straight-line depreciation</b>: cost divided by useful life in months, charged every month from the month of acquisition. Dr depreciation expense, Cr accumulated depreciation.','Accumulated depreciation is a contra-asset account. <b>Book value = cost - accumulated depreciation</b>.','Retirement: remove the cost and the accumulated depreciation, book the proceeds, and the balancing figure is a <b>gain or loss on disposal</b>. Depreciation must be up to date first, otherwise the book value is wrong.','The asset register must always equal the general ledger. Asset accounts can only be posted through F-90, AFAB and ABAVN.'],
   q:[['Why is GST not part of the asset cost?','Input GST is recovered from the tax authority, so it is a receivable, not a cost of the asset.'],['Why run depreciation before selling an asset?','The sale result is proceeds minus book value. A stale book value gives a wrong gain or loss.'],['What is the entry when an asset is sold below book value?','Dr accumulated depreciation, Dr bank, Dr loss on disposal, Cr asset cost.']]},
  OB40:{w:['<b>Tax codes</b> decide the rate and the tax account for an invoice. Input codes (V) are used on vendor invoices, output codes (A) on customer invoices.','Rates are <b>effective-dated</b>. An invoice dated before the change keeps the old rate. A document remembers the code and rate it was posted with, so reports of earlier periods never change.','A zero-rated or exempt code posts no tax line. The invoice amount is all net.','Configuration changes are written to a change log. In a real company an audit trail of configuration is a control.','Useful life of an asset class applies to assets acquired after the change.'],
-  q:[['What happens to old invoices when the GST rate changes?','Nothing. They stay at the rate they were posted with. Only documents dated on or after the effective date use the new rate.'],['Which date decides the rate?','The date of the invoice. In this simulator the invoice date is used.'],['Why keep a change log?','To show who changed which setting and when. A changed rate affects every later posting.']]},
+  q:[['What happens to old invoices when the GST rate changes?','Nothing. They stay at the rate they were posted with. Only documents dated on or after the effective date use the new rate.'],['Which date decides the rate?','Under GST the time of supply decides it. When the rate changes, section 14 of the CGST Act looks at three events: supply, invoice and payment. If two of them fall after the change, the new rate applies; if two fall before, the old rate applies. This simulator keeps it simple and uses the invoice date.'],['Why keep a change log?','To show who changed which setting and when. A changed rate affects every later posting.']]},
  SIMCFG:{w:['Duplicate invoice check: vendor + reference (+ amount, + date). In a real ERP this comes from the vendor master flag and configuration.','Posting period control decides in which periods posting is allowed.','Payment tolerance allows small differences to be written off.'],q:[['How do you prevent duplicate invoices?','The system warns or blocks on the same vendor, reference, date and amount. This is why the reference field is mandatory.']]},
  SIMCHK:{w:['This screen tests the accounting engine of the simulator itself, not any real ERP.'],q:[]},
  SD:{w:['<b>Order to cash</b>: sales order (no posting) &rarr; delivery with goods issue (Dr cost of goods sold / Cr inventory) &rarr; billing (Dr customer / Cr revenue and output GST).','Billing is based on the <b>delivered</b> quantity.','An order above the customer credit limit is saved with a credit block and must be released in VKM1.','Sales documents are cancelled in the reverse order: billing first, then the delivery. FB08 is not used.','<b>Returns</b>: a customer return puts the goods back into stock at their original cost (Dr inventory / Cr cost of goods sold). The <b>credit memo</b> is a separate step: it reverses revenue and GST and reduces the receivable. SAP uses a returns order and a returns delivery for this; the simulator shows both as one cockpit tab.'],q:[['Why does the sales order not post anything?','It is only a commitment. Revenue is recognised at billing and the stock leaves at goods issue.'],['What happens to inventory and cost at goods issue?','Stock is credited and cost of goods sold is debited at the average receipt price.'],['Why are the return and the credit memo two steps?','Goods and money move at different times. The goods may come back before the customer is credited, and the credit memo uses the tax rate of the original invoice.'],['Why can you only return billed goods?','Goods that were never billed are simply cancelled with the delivery. A return is for goods the customer already owns.'],['Why can you not bill more than you delivered?','The invoice must reflect goods that actually left. This also keeps the sub-ledger and stock consistent.']]},
@@ -5366,7 +5377,7 @@ const NOTES={
  ABOUT:{w:['This page lists what each phase added and what the simulator does not do.'],q:[]},
  SIMDATA:{w:['Data lives only in this browser. There are no accounts and no cloud sync.','An <b>export</b> is a file with a checksum. An <b>import</b> is checked first and only applied after you confirm.','<b>Restore points</b> are taken daily, before an import and before a reset. Restoring brings the books back and keeps mission progress.','If saved data cannot be read the app starts with the starting data and keeps the unreadable text as a recovery copy.'],q:[['Why export if there are restore points?','Restore points live in the same browser. A file export survives clearing browser data and works on another device.'],['What does the checksum prove?','That the file was not edited or damaged after export. It does not prove the numbers are right: the import also runs the accounting integrity check.']]}
 };
-NOTES['F-90']=NOTES.ASSET;NOTES.AFAB=NOTES.ASSET;NOTES.ABAVN=NOTES.ASSET;NOTES.AR01=NOTES.ASSET;NOTES.FBS1=NOTES.CLOSE;NOTES['F.81']=NOTES.CLOSE;NOTES.OB52=NOTES.CLOSE;
+NOTES['F-90']=NOTES.ASSET;NOTES.AFAB=NOTES.ASSET;NOTES.ABAVN=NOTES.ASSET;NOTES.ABAON=NOTES.ASSET;NOTES.AR01=NOTES.ASSET;NOTES.FBS1=NOTES.CLOSE;NOTES['F.81']=NOTES.CLOSE;NOTES.OB52=NOTES.CLOSE;
 ['XK03','FK03','XD03','FD03'].forEach(k=>NOTES[k]=NOTES.MASTER);
 ['PA30','PC00','PAYSLIP'].forEach(k=>NOTES[k]=NOTES.PAY);
 ['VA01','VA03','VL01N','VF01','VKM1','MMBE','SDRET','SDCM'].forEach(k=>NOTES[k]=NOTES.SD);NOTES.PRCM=NOTES.PRET;['MB52','MI01','MI07','MB1A','MB51'].forEach(k=>NOTES[k]=NOTES.INV);
@@ -5536,7 +5547,7 @@ const REV_TC=[
  ['G/L','FB50 journal · FB03 display · FB08 reversal · FBRA reset clearing · FBS1 accrual · F.81 reversal run · FBD1 / F.14 recurring · FBL3N line items · FAGLB03 balances · S_ALR_87012277 trial balance'],
  ['Purchasing','ME51N requisition · ME21N / ME23N PO · ME2N PO list · MIGO goods movement · MRBR release blocked invoices · MR11 GR/IR maintenance · MB52 stock · MI01 / MI04 / MI07 count'],
  ['Sales','VA01 order · VL01N delivery · VF01 billing · VFX3 release billing to accounting · VKOA revenue accounts'],
- ['Closing and others','OB52 posting periods · FAGL_FCV currency revaluation · FAGLGVTR / F.07 carryforward · FF67 / FF_5 / FEBAN bank statements · AFAB depreciation · ABAVN / F-92 retirement · AW01N asset explorer']];
+ ['Closing and others','OB52 posting periods · FAGL_FCV currency revaluation · FAGLGVTR / F.07 carryforward · FF67 / FF_5 / FEBAN bank statements · AFAB depreciation · ABAON / ABAVN / F-92 retirement · AW01N asset explorer']];
 const REV_JE=[
  ['Goods receipt (MIGO 101)','Dr Inventory','Cr GR/IR'],['Invoice with PO (MIRO)','Dr GR/IR + Dr Input GST','Cr Vendor'],['Invoice without PO (FB60)','Dr Expense + Dr Input GST','Cr Vendor'],
  ['Vendor payment','Dr Vendor','Cr Bank'],['Goods issue for delivery (601)','Dr COGS','Cr Inventory'],['Billing (VF01)','Dr Customer','Cr Revenue + Cr Output GST'],

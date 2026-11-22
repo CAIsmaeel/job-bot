@@ -118,27 +118,46 @@ def sales_bot_setup():
     print("sales bot setup: replied to", len(chats), "chat(s)")
 
 
-def register_for_verify(ids):
-    """Add sha256(licence id) to site/verify/ids.txt so the certificate check page can confirm a paid licence."""
-    if not ids:
-        return
-    path = "site/verify/ids.txt"
-    with open(path, "a") as f:
-        for i in ids:
-            f.write(hashlib.sha256(i.encode()).hexdigest() + "\n")
+def publish(message):
+    """Commit changed site files, push, and redeploy the site."""
     run = lambda *a: subprocess.run(a, check=False, capture_output=True, text=True)
-    run("git", "-c", "user.name=sales", "-c", "user.email=sales@users.noreply.github.com", "commit", "-qam", "verify: register new licence ids")
+    run("git", "-c", "user.name=sales", "-c", "user.email=sales@users.noreply.github.com", "commit", "-qam", message)
     for _ in range(3):
         run("git", "pull", "-q", "--rebase", "origin", "main")
         if run("git", "push", "-q", "origin", "HEAD:main").returncode == 0:
-            print("verify list updated")
             repo, tok = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GH_TOKEN")
             if repo and tok:
                 requests.post(f"https://api.github.com/repos/{repo}/actions/workflows/site.yml/dispatches",
                               headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"},
                               json={"ref": "main"}, timeout=30)
-            return
-    print("verify list: push failed")
+            print("site updated:", message)
+            return True
+    print("push failed:", message)
+    return False
+
+
+def register_for_verify(ids):
+    """Add sha256(licence id) to site/verify/ids.txt so the certificate check page can confirm a paid licence."""
+    if not ids:
+        return False
+    with open("site/verify/ids.txt", "a") as f:
+        for i in ids:
+            f.write(hashlib.sha256(i.encode()).hexdigest() + "\n")
+    return True
+
+
+def revoke(ids):
+    """Refunded keys go into site/app/revoked.json; the app checks this list online."""
+    if not ids:
+        return False
+    path = "site/app/revoked.json"
+    try:
+        cur = json.load(open(path))
+    except Exception:
+        cur = []
+    cur += [i for i in ids if i not in cur]
+    json.dump(cur, open(path, "w"))
+    return True
 
 
 def main():
@@ -146,13 +165,13 @@ def main():
     issued = []
     auth = (os.environ["RZP_KEY_ID"], os.environ["RZP_KEY_SECRET"])
     jwk = json.loads(os.environ["LICENCE_PRIVATE_JWK"])
-    since = int(time.time()) - 7 * 86400
+    since = int(time.time()) - 12 * 86400
     r = requests.get(f"{API}/payments", auth=auth, params={"from": since, "count": 100}, timeout=30)
     r.raise_for_status()
     pays = r.json().get("items", [])
     todo = [p for p in pays if p.get("status") == "captured" and p.get("amount") in PLANS
             and not (isinstance(p.get("notes"), dict) and p["notes"].get("fr_key"))]
-    print(f"payments in last 7 days: {len(pays)}, new paid ones to handle: {len(todo)}")
+    print(f"payments in last 12 days: {len(pays)}, new paid ones to handle: {len(todo)}")
     done = 0
     for p in todo:
         months = PLANS[p["amount"]]
@@ -179,7 +198,29 @@ def main():
                    f"Key, in case they ask again:\n{key}"
                    + ("" if u.ok else "\n\n⚠️ Could not mark the payment as done on Razorpay, so the next run may email the key again."))
     print(f"keys emailed: {done}")
-    register_for_verify(issued)
+
+    # paid, but not 499 or 999 (a different amount): tell the owner once
+    for p in pays:
+        n = p.get("notes") if isinstance(p.get("notes"), dict) else {}
+        if p.get("status") == "captured" and p.get("amount") not in PLANS and not n.get("fr_key"):
+            tell_owner(f"⚠️ FinRehearse: payment {p['id']} of Rs {p['amount']/100:g} does not match a plan, so no key was sent. "
+                       f"Issue one by hand or refund it.\nBuyer: {buyer_name(p)} <{p.get('email')}>")
+            requests.patch(f"{API}/payments/{p['id']}", auth=auth, json={"notes": {**n, "fr_key": "MANUAL"}}, timeout=30)
+
+    # refunded: withdraw the key
+    gone = []
+    for p in pays:
+        n = p.get("notes") if isinstance(p.get("notes"), dict) else {}
+        kid = n.get("fr_key")
+        if kid and kid != "MANUAL" and not n.get("fr_revoked") and (p.get("status") == "refunded" or (p.get("amount_refunded") or 0) > 0):
+            gone.append(kid)
+            requests.patch(f"{API}/payments/{p['id']}", auth=auth, json={"notes": {**n, "fr_revoked": "1"}}, timeout=30)
+            tell_owner(f"↩️ FinRehearse refund: key {kid} ({buyer_name(p)}) has been withdrawn and will stop working.")
+    print(f"keys withdrawn: {len(gone)}")
+
+    changed = register_for_verify(issued) | revoke(gone)
+    if changed:
+        publish("sales: update verify list and withdrawn keys")
 
 
 if __name__ == "__main__":
