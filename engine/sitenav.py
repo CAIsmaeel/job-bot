@@ -24,7 +24,7 @@ def html(active="", logo=True):
 
 def footer():
     return '''<footer class="sitefoot"><div class="in"><div class="cols">
-<div class="about"><img src="/logo.svg" alt="FinRehearse" width="130" height="26"><p>Practise real ERP finance work before your interview. Free finance jobs from company career pages.</p></div>
+<div class="about"><img src="/logo-light.svg" alt="FinRehearse" width="130" height="26"><p>Practise real ERP finance work before your interview. Free finance jobs from company career pages.</p></div>
 <div><h4>Product</h4><ul><li><a href="/app/">Practice app</a></li><li><a href="/interview/">Interview guides</a></li><li><a href="/#price">Pricing</a></li><li><a href="/verify/">Verify a certificate</a></li></ul></div>
 <div><h4>Jobs</h4><ul><li><a href="/jobs/">All finance jobs</a></li><li><a href="/jobs/browse/">Browse by city or area</a></li><li><a href="/jobs/freshers/">Jobs for freshers</a></li><li><a href="https://t.me/financeopeningsindia">Telegram channel</a></li></ul></div>
 <div><h4>Legal</h4><ul><li><a href="/terms.html">Terms</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/refund.html">Refunds</a></li><li><a href="/contact.html">Contact</a></li></ul></div>

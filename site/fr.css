@@ -50,15 +50,15 @@
 }
 @media (max-width:520px){.sitehdr .fl{display:none}.sitehdr .sh{display:inline}}
 
-/* ---------- site footer ---------- */
-.sitefoot{background:#fff;border-top:1px solid var(--fr-line);margin-top:64px;font:14px/1.6 var(--fr-sans);color:var(--fr-muted)}
-.sitefoot .in{max-width:1200px;margin:0 auto;padding:48px 24px 28px;box-sizing:border-box}
-.sitefoot .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
-.sitefoot h4{margin:0 0 12px;font:600 13px/1 var(--fr-sans);color:var(--fr-ink);letter-spacing:0}
-.sitefoot ul{list-style:none;margin:0;padding:0}.sitefoot li{margin:0 0 8px}
-.sitefoot a{color:var(--fr-muted);text-decoration:none;margin:0}.sitefoot a:hover{color:var(--fr-ink)}
-.sitefoot .about img{height:26px;width:auto;display:block;margin:0 0 12px}.sitefoot .about p{margin:0;max-width:34ch}
-.sitefoot .legal-note{margin-top:36px;padding-top:20px;border-top:1px solid var(--fr-line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px}
-.sitefoot .legal-note p{margin:0;max-width:80ch}
-@media (max-width:760px){.sitefoot .cols{grid-template-columns:1fr 1fr}.sitefoot .about{grid-column:1/-1}}
+/* ---------- site footer: dark, same obsidian as the buttons ---------- */
+.sitefoot{background:#18181B;border-top:1px solid #18181B;margin-top:0;font:14px/1.6 var(--fr-sans);color:#A1A1AA}
+.sitefoot .in{max-width:1200px;margin:0 auto;padding:64px 24px 32px;box-sizing:border-box}
+.sitefoot .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.sitefoot h4{margin:0 0 14px;font:600 12px/1 var(--fr-mono);letter-spacing:.06em;text-transform:uppercase;color:#FAFAFA}
+.sitefoot ul{list-style:none;margin:0;padding:0}.sitefoot li{margin:0 0 10px}
+.sitefoot a{color:#A1A1AA;text-decoration:none;margin:0;transition:color .15s}.sitefoot a:hover{color:#FFFFFF}
+.sitefoot .about img{height:26px;width:auto;display:block;margin:0 0 14px}.sitefoot .about p{margin:0;max-width:34ch;color:#A1A1AA}
+.sitefoot .legal-note{margin-top:48px;padding-top:24px;border-top:1px solid #27272A;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:#71717A}
+.sitefoot .legal-note p{margin:0;max-width:80ch;color:#71717A}
+@media (max-width:760px){.sitefoot .cols{grid-template-columns:1fr 1fr;gap:28px}.sitefoot .about{grid-column:1/-1}.sitefoot .in{padding:48px 20px 28px}}
 @media print{.sitehdr,.sitefoot{display:none}}
