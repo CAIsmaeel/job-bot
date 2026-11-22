@@ -124,7 +124,7 @@ def build(jobs, out_dir, site, city_of, tg, sim):
 <h1>Browse finance jobs</h1>{body}</main></body></html>""")
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    urls = ["/", "/jobs/", "/jobs/browse/"] + sorted(groups)
+    urls = ["/", "/jobs/", "/jobs/browse/", "/interview/"] + ["/interview/" + p["slug"] + "/" for p in __import__("interview_pages").PAGES] + sorted(groups)
     sm = "".join(f"<url><loc>{site}{u}</loc><lastmod>{now}</lastmod></url>" for u in urls)
     open(os.path.join(out_dir, "sitemap.xml"), "w").write(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
