@@ -252,3 +252,38 @@
 .ptrust,.cmpd{margin-bottom:14px}
 @media (max-width:640px){.home .band{padding:44px 0}.hero{padding:32px 0 40px}.home h2{margin-bottom:18px}}
 .btn.blue{background:#1D4ED8;border-color:#1D4ED8;color:#fff!important}.btn.blue:hover{background:#1E40AF;border-color:#1E40AF}
+
+/* latest jobs on the home page */
+.ljh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:-8px 0 12px}
+.home .ljm{margin:0;font-size:14px;color:#52525B}.ljm .mono{font-weight:600;color:var(--fr-ink)}
+.ljall{font-size:14px;font-weight:500;color:#1D4ED8!important;text-decoration:none!important}
+.ljg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.ljg:empty{display:none}
+.lj{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--fr-line);border-radius:12px;padding:16px;text-decoration:none!important;color:inherit!important;transition:border-color .15s}
+.lj:hover{border-color:#1D4ED8}
+.ljt{font-weight:600;color:var(--fr-ink);font-size:14.5px;line-height:1.35;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ljc{font-size:13px;color:#52525B}
+.ljp{display:flex;flex-wrap:wrap;gap:6px}
+.ljp .pl{font:500 11px/1 var(--fr-mono);padding:4px 7px;border-radius:6px;background:#F4F4F5;border:1px solid var(--fr-line);color:#3F3F46}
+.ljp .pl.new{background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8}
+.lja{margin-top:auto;padding-top:4px;font-size:13px;font-weight:500;color:#1D4ED8}
+@media (max-width:900px){.ljg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ljg{grid-template-columns:1fr}}
+
+/* ===== tighter spacing, everywhere on the home page ===== */
+.home .band{padding:40px 0}
+.home h2{margin:0 0 16px;font-size:clamp(24px,2.8vw,30px)}
+.hero{padding:32px 0 40px}
+.hero .hw{gap:36px}
+.home .wrap{max-width:1180px;padding:0 20px}
+.shots,.mods,.pils,.scg,.two,.pgrid{gap:12px}
+.mod,.pil,.sc,.panel{padding:18px}
+.mod .tag,.sc .tag{margin-bottom:10px}
+.pil .ic{width:34px;height:34px;margin-bottom:12px}
+.pc{padding:20px 18px 18px}.pc.best{padding:19px 17px 17px}
+.feat{gap:8px;margin-bottom:16px;padding-top:14px}
+.home .pc .ps{margin:6px 0 12px}
+.ptrust,.cmpd,.plans{margin-bottom:10px}
+.cap{margin-top:8px}
+#faq .faqs summary{padding:14px 18px}
+@media (max-width:640px){.home .band{padding:32px 0}.hero{padding:20px 0 28px}.home .wrap{padding:0 16px}}

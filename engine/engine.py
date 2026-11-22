@@ -1018,6 +1018,21 @@ def main():
     try:
         import seo
         n = seo.build(jobs, os.path.join(OUT, "seo"), SITE_URL or "https://finrehearse.pages.dev", city_of, channel_link(), SIM_URL)
+        # newest openings for the home page, one per company, spread across areas
+        try:
+            pick, cos = [], set()
+            for j in sorted(jobs, key=lambda x: x.get("first_seen") or "", reverse=True):
+                if j["company"] in cos or NOT_FIN.search(j["title"]):
+                    continue
+                cos.add(j["company"])
+                pick.append({k: j.get(k) for k in ("title", "company", "category", "url", "first_seen")} | {"city": city_of(j.get("location"))})
+                if len(pick) == 6:
+                    break
+            os.makedirs(os.path.join(OUT, "seo", "jobs"), exist_ok=True)
+            json.dump({"updated": NOW, "total": len(jobs), "companies": len({j["company"] for j in jobs}), "jobs": pick},
+                      open(os.path.join(OUT, "seo", "jobs", "latest.json"), "w"), ensure_ascii=False)
+        except Exception as e:
+            print("latest.json failed:", e)
         print(f"seo pages: {n}")
     except Exception as e:
         print("seo pages failed:", e)
