@@ -87,11 +87,11 @@ def head(title, desc, path, active="guides"):
     return f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{SITE}{path}">
-<link rel="stylesheet" href="/style.css"><style>{CSS}{sitenav.CSS}</style></head><body>
+<link rel="stylesheet" href="/style.css"><style>{CSS}</style>{sitenav.head()}</head><body>
 {sitenav.html(active)}"""
 
 
-FOOT = """<footer><div class="w"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div></footer></body></html>"""
+FOOT = sitenav.footer() + "</body></html>"
 
 
 def build(root="site"):

@@ -1,0 +1,46 @@
+/* FinRehearse page layer: loaded after each page's own CSS on every page except the app. Monochrome, hairline, no heavy shadows. */
+:root{--bg:#FAFAFA;--card:#FFFFFF;--fg:#18181B;--muted:#71717A;--line:#E4E4E7;--accent:#18181B;--accent-fg:#FFFFFF;--soft:#F4F4F5;--shell:#FFFFFF;
+  --paper:#FAFAFA;--rule:#E4E4E7;--rule-strong:#E4E4E7;--ink:#18181B;--focus:#2563EB;--body:var(--fr-sans);--head:var(--fr-sans)}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{background:var(--fr-canvas);color:var(--fr-text);font-family:var(--fr-sans)}
+h1,h2,h3{color:var(--fr-ink);letter-spacing:-.025em;font-family:var(--fr-sans)}
+h1{font-weight:800}h2{font-weight:700}h3{font-weight:600}
+main a:not(.btn):not(.apply):not(.cta){color:var(--fr-accent);text-decoration-thickness:1px;text-underline-offset:3px}
+p,li{color:var(--fr-text)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--fr-ink);color:#fff!important;border:1px solid var(--fr-ink);border-radius:8px;
+  padding:11px 18px;font:500 15px/1.2 var(--fr-sans);text-decoration:none;box-shadow:none;transition:background .15s,border-color .15s}
+.btn:hover{background:#27272A;border-color:#27272A}
+.btn.alt,.btn.ghost{background:#fff;color:var(--fr-ink)!important;border:1px solid var(--fr-line)}
+.btn.alt:hover,.btn.ghost:hover{background:#FAFAFA;border-color:#D4D4D8}
+
+/* surfaces */
+.card,.vc,#faq details,.box{background:var(--fr-card);border:1px solid var(--fr-line);border-radius:12px;box-shadow:var(--fr-shadow)}
+.card h3{font-size:16px}.card p{color:var(--fr-muted)}
+.note{background:var(--fr-sub);border:1px solid var(--fr-line);border-radius:12px;color:var(--fr-text)}
+.box{background:var(--fr-card)}
+.shots img{border:1px solid var(--fr-line);border-radius:12px;box-shadow:var(--fr-shadow)}
+
+/* tables: accounting figures line up */
+table{background:var(--fr-card);border:1px solid var(--fr-line);border-radius:12px;border-collapse:separate;border-spacing:0;overflow:hidden;font-variant-numeric:tabular-nums}
+th{background:var(--fr-sub);color:var(--fr-ink);font-weight:600;font-size:13.5px}
+th,td{border-bottom:1px solid var(--fr-line)}tr:last-child td{border-bottom:0}
+.price{font-family:var(--fr-mono);font-weight:600;font-size:20px!important;line-height:1.35;letter-spacing:-.02em;color:var(--fr-ink)}
+
+/* old page chrome replaced by the shared header and footer */
+body>header:not(.sitehdr),body>footer:not(.sitefoot){display:none}
+
+/* jobs pages */
+header.top{border-bottom:1px solid var(--fr-line)!important;background:transparent}
+.bar{background:rgba(250,250,250,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--fr-line)}
+.bar input,.bar select{border:1px solid var(--fr-line)!important;border-radius:8px!important;background:#fff}
+.bar input:focus,.bar select:focus{outline:2px solid var(--fr-accent);outline-offset:0;border-color:transparent!important}
+.apply{background:var(--fr-ink)!important;color:#fff!important;border-radius:8px!important;font-weight:500!important;box-shadow:none!important}
+.apply:hover{background:#27272A!important}
+.pr{color:var(--fr-accent)!important}
+.date,.date.new{font-family:var(--fr-mono);font-size:12.5px;color:var(--fr-muted)!important}.date.new{color:var(--fr-accent)!important;font-weight:600}
+.row{border-color:var(--fr-line)!important}
+.practice{background:var(--fr-card)!important;border:1px solid var(--fr-line)!important;border-left:3px solid var(--fr-accent)!important;border-radius:12px}
+.cta{background:var(--fr-sub)!important;border:1px solid var(--fr-line)!important;border-radius:12px}
+#lede-n,#lede-c,.lede b{font-family:var(--fr-mono);font-weight:600}

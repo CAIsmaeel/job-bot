@@ -64,13 +64,13 @@ def page(site, path, title, h1, lede, jobs, city_of, tg, sim, related):
     desc = f"{lede} {len(jobs)} openings, updated {upd}."
     return f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc[:300])}">
-<link rel="canonical" href="{site}{path}"><style>{CSS}{sitenav.CSS}</style></head><body>{sitenav.html("jobs")}<main>
+<link rel="canonical" href="{site}{path}"><style>{CSS}</style>{sitenav.head()}</head><body>{sitenav.html("jobs")}<main>
 <p class="crumb"><a href="{site}/">Home</a> › <a href="{site}/jobs/">All finance jobs</a> › <a href="{site}/jobs/browse/">Browse</a></p>
 <h1>{html.escape(h1)}</h1><p class="lede">{html.escape(lede)} {len(jobs)} openings right now, taken from the companies' own career sites. Updated {upd}.</p>
 {cta}<ul class="jobs">{"".join(rows)}</ul>
 <h2>Related searches</h2><div class="links">{rel}</div>
 <footer>Every job links to the employer's own page. We do not charge job seekers or employers for listings.</footer>
-</main></body></html>"""
+</main>{sitenav.footer()}</body></html>"""
 
 
 def build(jobs, out_dir, site, city_of, tg, sim):
@@ -122,8 +122,8 @@ def build(jobs, out_dir, site, city_of, tg, sim):
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(
         f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
 <title>Browse finance jobs in India by city, company and area</title><meta name="description" content="Finance and accounting jobs in India sorted by city, company and finance area. Updated every 2 hours.">
-<link rel="canonical" href="{site}/jobs/browse/"><style>{CSS}{sitenav.CSS}</style></head><body>{sitenav.html("jobs")}<main><p class="crumb"><a href="{site}/">Home</a> › <a href="{site}/jobs/">All finance jobs</a></p>
-<h1>Browse finance jobs</h1>{body}</main></body></html>""")
+<link rel="canonical" href="{site}/jobs/browse/"><style>{CSS}</style>{sitenav.head()}</head><body>{sitenav.html("jobs")}<main><p class="crumb"><a href="{site}/">Home</a> › <a href="{site}/jobs/">All finance jobs</a></p>
+<h1>Browse finance jobs</h1>{body}</main>{sitenav.footer()}</body></html>""")
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     urls = ["/", "/jobs/", "/jobs/browse/", "/interview/"] + ["/interview/" + p["slug"] + "/" for p in __import__("interview_pages").PAGES] + sorted(groups)

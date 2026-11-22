@@ -1,0 +1,64 @@
+/* FinRehearse design foundation: fonts, tokens, site header and footer. Safe to load on every page, the app included. */
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jakarta-400.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:500;font-style:normal;font-display:swap;src:url(/fonts/jakarta-500.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/jakarta-600.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/jakarta-700.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/jakarta-800.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/jbmono-400.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-style:normal;font-display:swap;src:url(/fonts/jbmono-500.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/jbmono-600.woff2) format('woff2')}
+
+:root{
+  --fr-canvas:#FAFAFA;   /* page */
+  --fr-card:#FFFFFF;     /* cards, modals, drawers */
+  --fr-sub:#F4F4F5;      /* table headers, code boxes, summary strips */
+  --fr-line:#E4E4E7;     /* hairline borders */
+  --fr-ink:#18181B;      /* primary text and primary buttons */
+  --fr-text:#3F3F46;     /* body copy */
+  --fr-muted:#71717A;    /* secondary text */
+  --fr-accent:#2563EB;   /* active nav, focus, tabs, links */
+  --fr-ok-bg:#ECFDF5;--fr-ok:#047857;   /* only small Balanced / Verified / Passed badges */
+  --fr-bad-bg:#FEF2F2;--fr-bad:#B91C1C;
+  --fr-shadow:0 1px 2px rgba(0,0,0,.03);
+  --fr-sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --fr-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.mono,.num,.price,code,kbd{font-family:var(--fr-mono);font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--fr-mono);padding:5px 9px;border-radius:999px;background:var(--fr-sub);color:var(--fr-ink);border:1px solid var(--fr-line)}
+.pill.ok{background:var(--fr-ok-bg);color:var(--fr-ok);border-color:#A7F3D0}
+
+/* ---------- site header: one bar on every page ---------- */
+.sitehdr{position:sticky;top:0;z-index:60;height:64px;background:rgba(255,255,255,.85);-webkit-backdrop-filter:saturate(180%) blur(12px);backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--fr-line);font-family:var(--fr-sans)}
+.sitehdr .in{max-width:1200px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:28px;box-sizing:border-box}
+.sitehdr .lg{display:flex;align-items:center;flex:none;margin:0}.sitehdr .lg img{height:28px;width:auto;display:block}
+.sitehdr nav{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}.sitehdr nav::-webkit-scrollbar{display:none}
+.sitehdr nav a{position:relative;padding:8px 12px;margin:0;border-radius:8px;color:var(--fr-muted);text-decoration:none;font-size:14.5px;font-weight:500;white-space:nowrap;transition:color .15s,background .15s}
+.sitehdr nav a:hover{color:var(--fr-ink);background:var(--fr-sub)}
+.sitehdr nav a[aria-current]{color:var(--fr-accent);font-weight:600}
+.sitehdr nav a[aria-current]::after{content:"";position:absolute;left:12px;right:12px;bottom:-13px;height:2px;border-radius:2px;background:var(--fr-accent)}
+.sitehdr .launch{margin-left:auto;flex:none;display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:8px;background:var(--fr-ink);color:#fff;text-decoration:none;font:500 14px/1 var(--fr-sans);transition:background .15s}
+.sitehdr .launch:hover{background:#27272A}
+.sitehdr .sh{display:none}
+:focus-visible{outline:2px solid var(--fr-accent);outline-offset:2px}
+@media (max-width:760px){
+  .sitehdr{height:auto}
+  .sitehdr .in{height:auto;flex-wrap:wrap;gap:0 12px;padding:10px 16px 0}
+  .sitehdr .launch{height:32px;font-size:13px}
+  .sitehdr nav{order:3;width:calc(100% + 32px);margin:6px -16px 0;padding:0 10px;border-top:1px solid var(--fr-line)}
+  .sitehdr nav a{padding:10px 9px;font-size:14px}.sitehdr nav a[aria-current]::after{bottom:0}
+}
+@media (max-width:520px){.sitehdr .fl{display:none}.sitehdr .sh{display:inline}}
+
+/* ---------- site footer ---------- */
+.sitefoot{background:#fff;border-top:1px solid var(--fr-line);margin-top:64px;font:14px/1.6 var(--fr-sans);color:var(--fr-muted)}
+.sitefoot .in{max-width:1200px;margin:0 auto;padding:48px 24px 28px;box-sizing:border-box}
+.sitefoot .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+.sitefoot h4{margin:0 0 12px;font:600 13px/1 var(--fr-sans);color:var(--fr-ink);letter-spacing:0}
+.sitefoot ul{list-style:none;margin:0;padding:0}.sitefoot li{margin:0 0 8px}
+.sitefoot a{color:var(--fr-muted);text-decoration:none;margin:0}.sitefoot a:hover{color:var(--fr-ink)}
+.sitefoot .about img{height:26px;width:auto;display:block;margin:0 0 12px}.sitefoot .about p{margin:0;max-width:34ch}
+.sitefoot .legal-note{margin-top:36px;padding-top:20px;border-top:1px solid var(--fr-line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px}
+.sitefoot .legal-note p{margin:0;max-width:80ch}
+@media (max-width:760px){.sitefoot .cols{grid-template-columns:1fr 1fr}.sitefoot .about{grid-column:1/-1}}
+@media print{.sitehdr,.sitefoot{display:none}}

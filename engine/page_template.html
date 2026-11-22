@@ -86,8 +86,8 @@ h1{font-family:var(--head);font-weight:800;letter-spacing:-.02em;font-size:clamp
 footer{border-top:2px solid var(--rule-strong);padding:22px 0 40px;color:var(--muted);font-size:14px}
 footer p{max-width:72ch;margin:0 0 8px}
 @media (prefers-reduced-motion:no-preference){.row.fresh{animation:ink .9s ease-out}@keyframes ink{from{background:#F7E3DF}to{background:transparent}}}
-__SITENAV_CSS__
 </style>
+__SITENAV_HEAD__
 </head>
 <body>
 __SITENAV__
@@ -113,10 +113,11 @@ __SITENAV__
   <button class="more" id="more" type="button" hidden>Show more openings</button>
 </main>
 
-<footer><div class="wrap">
+<section class="jobs-note"><div class="wrap">
   <p>These openings come from the public career pages of each company. We are not the employer and we do not charge for applying. Always apply on the company's own site, and never pay anyone for a job offer.</p>
   <p>Spotted a wrong or closed listing? It drops off on the next check once the company removes it.</p>
-</div></footer>
+</div></section>
+__SITEFOOT__
 
 <script>
 const JOBS = __JOBS__;
