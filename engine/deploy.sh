@@ -9,3 +9,7 @@ rm -rf /tmp/deploy && cp -r site /tmp/deploy && mkdir -p /tmp/deploy/jobs
 [ -d engine/out/seo ] && cp -r engine/out/seo/. /tmp/deploy/
 npx --yes wrangler@3 pages project create "$PROJECT" --production-branch main >/dev/null 2>&1 || true
 npx --yes wrangler@3 pages deploy /tmp/deploy --project-name "$PROJECT" --branch main --commit-dirty=true 2>&1 | tee /tmp/deploy.log | tail -5
+
+# old address -> new address (one small redirect site on the old project)
+mkdir -p /tmp/oldsite && printf '/* https://finrehearse.pages.dev/:splat 301\n' > /tmp/oldsite/_redirects && printf '<meta http-equiv="refresh" content="0;url=https://finrehearse.pages.dev/">' > /tmp/oldsite/index.html
+npx --yes wrangler@3 pages deploy /tmp/oldsite --project-name ledgerlab --branch main --commit-dirty=true 2>&1 | tail -2 || true

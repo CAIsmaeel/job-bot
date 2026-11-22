@@ -972,7 +972,7 @@ def main():
     build_page(jobs)
     try:
         import seo
-        n = seo.build(jobs, os.path.join(OUT, "seo"), SITE_URL or "https://ledgerlab-a4g.pages.dev", city_of, channel_link(), SIM_URL)
+        n = seo.build(jobs, os.path.join(OUT, "seo"), SITE_URL or "https://finrehearse.pages.dev", city_of, channel_link(), SIM_URL)
         print(f"seo pages: {n}")
     except Exception as e:
         print("seo pages failed:", e)

@@ -34,8 +34,8 @@ jobs:
           TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
           TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
           BRAND_NAME: ${{ vars.BRAND_NAME }}
-          SITE_URL: ${{ vars.SITE_URL || 'https://ledgerlab-a4g.pages.dev' }}
-          SIMULATOR_URL: ${{ vars.SIMULATOR_URL || 'https://ledgerlab-a4g.pages.dev/app/' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://finrehearse.pages.dev' }}
+          SIMULATOR_URL: ${{ vars.SIMULATOR_URL || 'https://finrehearse.pages.dev/app/' }}
           TG_TEST: ${{ inputs.test_post }}
         run: python engine/engine.py
       - name: Put website online
