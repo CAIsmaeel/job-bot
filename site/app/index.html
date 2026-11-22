@@ -5882,9 +5882,39 @@ const CHAL_TRACKS=[
     {id:'g',label:'Input GST you book (INR)',type:'number',k:14400,why:'CGST 7,200 + SGST 7,200 = 14,400, if the vendor files the invoice in its GST return so it shows in your GSTR-2B.'},
     {id:'d',label:'Last date to deposit this TDS with the government',type:'choice',o:['7 November 2026','30 November 2026','31 March 2027','The day you pay the vendor'],k:0,why:'TDS is deducted when the invoice is booked or paid, whichever is first. Deducted in October means it is deposited by the 7th of the following month.'},
     {id:'m',label:'By when must the vendor be paid?',type:'choice',o:['By 2 November 2026, the 30 days agreed in writing','By 17 November 2026, as 45 days always apply','By 18 October 2026, 15 days','Any time before the year end'],k:0,why:'Under the MSMED Act the agreed period applies, but it can never be more than 45 days from acceptance. Without a written agreement it is 15 days. Pay late and the company owes interest, and the unpaid amount is not allowed as a tax deduction until it is paid (the old section 43B(h) rule).'}]}
+ ]},
+ {k:'AR',t:'Accounts Receivable',d:'Short payments, ageing and provisions, credit notes with GST.',items:[
+  {id:'ar1',t:'Short payment: the customer paid less than the invoice',
+   brief:'You are the AR executive. The bank statement shows a receipt from customer 200001 Metro Retail Pvt Ltd, but it does not match the open invoice. Work out why before you clear anything.',
+   docs:[{h:'FBL5N · customer 200001 · open item',cols:['Document','Reference','Date','Amount (INR)'],rows:[['1800000412','INV/2026/0918','01.10.2026','1,18,000.00']]},
+    {h:'Invoice INV/2026/0918',cols:['Line','Amount (INR)'],rows:[['Installation and maintenance work','1,00,000.00'],['IGST 18%','18,000.00'],['Invoice total','1,18,000.00']]},
+    {h:'Bank statement · 28.10.2026',cols:['Narration','Credit (INR)'],rows:[['NEFT METRO RETAIL INV 0918','1,16,000.00']]},
+    {h:'Customer remittance note',cols:['Text'],rows:[['Paid INV/2026/0918 after TDS on contract work.']]}],
+   qs:[{id:'d',label:'Short payment (INR)',type:'number',k:2000,why:'1,18,000 invoiced minus 1,16,000 received = 2,000.'},
+    {id:'w',label:'What is the 2,000?',type:'choice',o:['A discount the customer took on its own','TDS deducted by the customer: 2% on the 1,00,000 before GST, under section 393(1) (old section 194C)','A bank charge','A dispute about the quantity'],k:1,why:'The remittance note says TDS. 2% of 1,00,000 is exactly 2,000. TDS is not charged on the GST when GST is shown separately.'},
+    {id:'e',label:'Correct entry when you clear the invoice',type:'choice',o:['Dr Bank 1,16,000, Dr TDS receivable 2,000, Cr Customer 1,18,000','Dr Bank 1,16,000, Cr Customer 1,16,000, leave 2,000 open','Dr Bank 1,16,000, Dr Discount 2,000, Cr Customer 1,18,000','Dr Customer 2,000, Cr Bank 2,000'],k:0,why:'The 2,000 is tax paid on your behalf. It becomes an asset (TDS receivable) that you set off against your own income tax.'},
+    {id:'o',label:'Open balance of customer 200001 after you post it (INR)',type:'number',k:0,why:'The whole invoice is cleared: 1,16,000 by bank and 2,000 by TDS.'},
+    {id:'v',label:'Before you book the TDS as yours, what do you check?',type:'choice',o:['Nothing, the customer said so','That the 2,000 shows against your PAN in Form 26AS / AIS, and follow up with the customer if it does not','Only the bank statement','The vendor master'],k:1,why:'You can claim the credit only if the customer deposits it and reports it against your PAN. If it is missing, the customer owes you 2,000.'}]},
+  {id:'ar2',t:'Ageing and the provision for doubtful debts at month end',
+   brief:'It is 31.10.2026. Your controller asks for the receivables ageing and the provision entry. Company policy: provide 50% for amounts overdue 91 to 180 days and 100% for more than 180 days. Age every invoice from its invoice date.',
+   docs:[{h:'Open customer invoices on 31.10.2026',cols:['Customer','Invoice date','Amount (INR)'],rows:[['Metro Retail','15.10.2026','40,000.00'],['Sun Traders','20.09.2026','25,000.00'],['Kaveri Foods','10.08.2026','30,000.00'],['Orbit Stores','01.06.2026','60,000.00'],['Delta Mart','15.03.2026','20,000.00']]}],
+   qs:[{id:'t',label:'Total receivables (INR)',type:'number',k:175000,why:'40,000 + 25,000 + 30,000 + 60,000 + 20,000 = 1,75,000.'},
+    {id:'b',label:'Amount in the 61 to 90 days bucket (INR)',type:'number',k:30000,why:'Kaveri Foods: 10 August to 31 October is 82 days.'},
+    {id:'o',label:'Amount older than 90 days (INR)',type:'number',k:80000,why:'Orbit Stores is 152 days old and Delta Mart 230 days: 60,000 + 20,000 = 80,000.'},
+    {id:'p',label:'Provision required (INR)',type:'number',k:50000,why:'50% of Orbit Stores 60,000 = 30,000, plus 100% of Delta Mart 20,000 = 50,000.'},
+    {id:'e',label:'Entry for the provision',type:'choice',o:['Dr Customer, Cr Provision','Dr Bad and doubtful debts expense, Cr Provision for doubtful debts','Dr Provision, Cr Customer','Dr Bad debts expense, Cr Customer'],k:1,why:'A provision is an estimate. It reduces receivables on the balance sheet but leaves every customer open, because you still try to collect. You write off a customer only when the money is truly lost.'}]},
+  {id:'ar3',t:'Goods returned: credit note with GST',
+   brief:'Customer 200003 Green Valley Stores was billed 50 cartons at INR 1,000 each plus CGST 9% and SGST 9% on 12.10.2026 (invoice INR 59,000). 5 cartons arrived damaged and were returned. The customer has not paid yet.',
+   docs:[{h:'Invoice GV/2026/221 · 12.10.2026',cols:['Line','Amount (INR)'],rows:[['50 cartons x 1,000','50,000.00'],['CGST 9%','4,500.00'],['SGST 9%','4,500.00'],['Invoice total','59,000.00']]},
+    {h:'Return note · 20.10.2026',cols:['Item','Qty','Reason'],rows:[['Cartons','5','Damaged in transit']]}],
+   qs:[{id:'n',label:'Credit note value before GST (INR)',type:'number',k:5000,why:'5 cartons x 1,000 = 5,000.'},
+    {id:'g',label:'GST reversed on the credit note (INR, CGST + SGST)',type:'number',k:900,why:'CGST 450 + SGST 450 = 900. The GST you charged on the returned goods comes back off your output liability.'},
+    {id:'e',label:'Credit note entry',type:'choice',o:['Dr Sales returns 5,000, Dr Output CGST 450, Dr Output SGST 450, Cr Customer 5,900','Dr Customer 5,900, Cr Sales 5,900','Dr Sales returns 5,900, Cr Customer 5,900','Dr Output GST 900, Cr Bank 900'],k:0,why:'Revenue and output GST both come down, and the customer owes 5,900 less.'},
+    {id:'d',label:'Amount the customer should now pay (INR)',type:'number',k:53100,why:'59,000 minus 5,900 = 53,100, which is 45 cartons x 1,180.'},
+    {id:'l',label:'Last date to issue this credit note and still reduce your GST',type:'choice',o:['Within 30 days of the invoice','30 November 2027, or the date you file the annual return for 2026-27 if that is earlier','31 March 2027','There is no time limit'],k:1,why:'Under section 34 of the CGST Act the credit note must be declared by 30 November after the end of the financial year, or the annual return date if earlier. After that you cannot cut your output tax.'}]}
  ]}
 ];
-const CHAL_NEXT=['Accounts Receivable','Record to Report','FP&A','Treasury','Tax','Audit','Costing','Payroll'];
+const CHAL_NEXT=['Record to Report','FP&A','Treasury','Tax','Audit','Costing','Payroll'];
 const chalAll=()=>CHAL_TRACKS.flatMap(tr=>tr.items.map((it,i)=>Object.assign({tr:tr.k,ix:i},it)));
 const chalLocked=it=>SELLABLE&&!isPro()&&it.ix>0;
 function chalNum(s){return parseFloat(String(s).replace(/[,\s₹]|INR|Rs\.?/gi,''))}
