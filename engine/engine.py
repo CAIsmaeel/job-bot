@@ -727,7 +727,7 @@ def post_daily_quiz(state):
         if r.ok:
             state["daily_posted"] = key
             if SIM_URL:
-                tg_send(tok, chat, "Aaj ke baaki 3 sawaal, aur apni streak, simulator ke Daily Close mein. Free, sign-up nahi.",
+                tg_send(tok, chat, "3 more questions and your streak are waiting in today's Daily Close. Free, no sign-up.",
                         ("Open today's Daily Close", SIM_URL.rstrip("/") + "/#daily"))
     except Exception as ex:
         print("daily quiz error:", ex)
