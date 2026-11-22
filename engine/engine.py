@@ -59,7 +59,14 @@ INDIA = re.compile(r"\bindia\b|\bind\b|, ?in\b|mumbai|navi mumbai|thane|pune|ben
                    r"vizag|visakhapatnam|mysore|mysuru|trivandrum|thiruvananthapuram|goa|surat|jamnagar|bhopal|maharashtra|karnataka|"
                    r"telangana|tamil nadu|haryana|uttar pradesh|west bengal|gujarat|kerala|rajasthan", re.I)
 FOREIGN = re.compile(r"\b(usa|united states|united kingdom|\buk\b|london|poland|philippines|manila|mexico|brazil|singapore|"
-                     r"dubai|china|germany|spain|portugal|costa rica|malaysia|kuala lumpur|hungary|romania|czech|canada|australia)\b", re.I)
+                     r"dubai|china|germany|spain|portugal|costa rica|malaysia|kuala lumpur|hungary|romania|czech|canada|australia|"
+                     r"new york|hoboken|rotterdam|netherlands|hoofddorp|amsterdam|luxembourg|mauritius|port louis|belgium|anderlecht|brussels|"
+                     r"france|paris|italy|milan|ireland|dublin|switzerland|zurich|geneva|austria|vienna|sweden|denmark|norway|finland|"
+                     r"greece|turkey|istanbul|egypt|cairo|kenya|nairobi|nigeria|lagos|south africa|johannesburg|angola|luanda|congo|kinshasa|"
+                     r"ghana|morocco|vietnam|ho chi minh|hanoi|cambodia|phnom penh|thailand|bangkok|indonesia|jakarta|japan|tokyo|korea|seoul|"
+                     r"hong kong|taiwan|shanghai|beijing|sri lanka|colombo|bangladesh|dhaka|nepal|kathmandu|pakistan|karachi|saudi|riyadh|"
+                     r"qatar|doha|uae|abu dhabi|oman|bahrain|kuwait|sydney|melbourne|north rocks|new zealand|auckland|argentina|chile|colombia|"
+                     r"peru|mannheim|stuttgart|hamburg|berlin|frankfurt|munich|kingston upon thames|manchester|edinburgh|toronto|chicago|texas|california)\b", re.I)
 
 
 def category(title):

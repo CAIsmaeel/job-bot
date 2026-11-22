@@ -251,3 +251,4 @@
 .home .pc .ps{margin:8px 0 16px}
 .ptrust,.cmpd{margin-bottom:14px}
 @media (max-width:640px){.home .band{padding:44px 0}.hero{padding:32px 0 40px}.home h2{margin-bottom:18px}}
+.btn.blue{background:#1D4ED8;border-color:#1D4ED8;color:#fff!important}.btn.blue:hover{background:#1E40AF;border-color:#1E40AF}

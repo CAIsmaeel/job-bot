@@ -342,6 +342,10 @@ table.t td,table.t th{border-color:#F4F4F5}
 .ml .mc{font-size:10.5px;color:#A1A1AA;white-space:nowrap}
 .ml.on .mc{color:#2563EB}
 @media (max-width:640px){#wbbar .wbtrack{width:70px}#wbbar{font-size:12px;gap:10px}}
+
+.drev{padding:12px 0;border-top:1px solid #F4F4F5}.drev:first-of-type{border-top:0}.drev .q{margin:2px 0 6px;font-weight:600}.drev p{margin:4px 0}
+.ml.lock .mc::after{content:" · Full";color:#1D4ED8;font-weight:600}
+body.focus #wbbar{display:none}
 </style>
 
 <header class="sitehdr"><div class="in"><a class="lg" href="/" aria-label="FinRehearse home"><img src="/logo.svg" alt="FinRehearse" width="140" height="28"></a><nav aria-label="Site"><a href="/"><span class="fl">Home</span><span class="sh">Home</span></a><a href="/app/" aria-current="page"><span class="fl">Practice</span><span class="sh">Practice</span></a><a href="/interview/"><span class="fl">Guides</span><span class="sh">Guides</span></a><a href="/jobs/"><span class="fl">Jobs</span><span class="sh">Jobs</span></a><a href="/#price"><span class="fl">Pricing</span><span class="sh">Pricing</span></a></nav><a class="launch" href="/app/">Launch App</a></div></header>
@@ -3578,12 +3582,14 @@ function wbUpdate(code){
   const c=document.getElementById('wbcount');if(c)c.textContent=n+' / '+t;
   const f=document.getElementById('wbfill');if(f)f.style.width=(t?Math.round(n/t*100):0)+'%';
   const d=document.getElementById('wbdata');if(d)d.disabled=!!m;
-  document.querySelectorAll('#modnav .ml').forEach(b=>{const k=b.dataset.arg;if(!SCR[k])b.hidden=true;b.classList.toggle('on',k===code)});
+  document.querySelectorAll('#modnav .ml').forEach(b=>{const k=b.dataset.arg;if(!SCR[k])b.hidden=true;b.classList.toggle('on',k===code);b.classList.toggle('lock',!!(SCR[k]&&scrLocked(k)))});
   const sh=document.querySelector('.shell');if(sh)document.documentElement.style.setProperty('--shellh',sh.getBoundingClientRect().height+'px');
 }
 window.addEventListener('resize',()=>{try{wbUpdate(NAV.cur&&NAV.cur.code)}catch(e){}});
 function go(code,params,replace){
   let sc=SCR[code];if(!sc){msg('e','Transaction '+code+' does not exist');return}
+  /* phones: opening any screen shows the practice screen, not the missions panel */
+  try{if(typeof setView==='function'&&!window.matchMedia('(min-width:980px)').matches)setView('screen')}catch(e){}
   if(scrLocked(code))sc=lockedScreen(code,sc);
   if(!replace&&NAV.cur&&!(NAV.cur.code===code&&!params))NAV.stack.push(NAV.cur);
   NAV.cur={code,params:params||{}};NAV.dupAck=false;
@@ -5825,7 +5831,8 @@ SCR.DAILY={t:'Daily Close',render(){
  }
  if(st.i>=set.length){
   const sc=st.final;
-  return h+`<div class="card"><p class="q">Done: ${sc} / 4</p><p>${sc===4?'Perfect close.':sc>=2?'Good work. Read the explanations of the ones you missed.':'Tough set. The explanations below are the lesson for today.'} Your streak is now ${dailyStreakNow()} day${dailyStreakNow()===1?'':'s'}.</p><div class="actions">${BTN('Back to the main menu','home','','primary')}${BTN('Revise in the question bank','open','QBANK','')}</div></div>`;
+  const review=`<div class="card"><h3>Today's answers</h3>${set.map((q,n)=>{const a=st.ans[n],ok=a===q.k;return `<div class="drev"><p class="help">Question ${n+1} · ${esc(q.tag)}</p><p class="q">${esc(q.q)}</p><p class="${ok?'pos':'neg'}"><b>${ok?'&#10003; You were right:':'&#10007; Right answer:'}</b> ${esc(q.o[q.k])}${!ok&&a!=null?` <span class="help">(you chose ${esc(q.o[a])})</span>`:''}</p><p>${esc(q.why)}</p></div>`}).join('')}</div>`;
+  return h+`<div class="card"><p class="q">Done: ${sc} / 4</p><p>${sc===4?'Perfect close.':sc>=2?'Good work. Read the explanations of the ones you missed.':'Tough set. The explanations below are the lesson for today.'} Your streak is now ${dailyStreakNow()} day${dailyStreakNow()===1?'':'s'}.</p><div class="actions">${BTN('Back to the main menu','home','','primary')}${BTN('Revise in the question bank','open','QBANK','')}</div></div>`+review;
  }
  const q=set[st.i];
  h+=`<div class="prog"><i style="width:${Math.round(st.i/set.length*100)}%"></i></div><div class="card"><p class="help">Question ${st.i+1} of ${set.length} · ${esc(q.tag)}</p><p class="q">${esc(q.q)}</p><div class="opts">`;
