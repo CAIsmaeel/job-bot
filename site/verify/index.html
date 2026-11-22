@@ -7,8 +7,18 @@
 .vc .nm{font-size:28px;font-weight:800;margin:4px 0 2px;color:#111827}
 .vc dl{display:grid;grid-template-columns:150px 1fr;gap:8px 14px;margin:18px 0 0}.vc dt{color:#6B7280}.vc dd{margin:0;font-weight:600}
 .fine{font-size:14px;color:#6B7280;max-width:640px}
-</style></head><body>
-<header><div class="w"><a class="logo" href="/"><img src="/logo.svg" alt="FinRehearse" width="150" height="30"></a><nav><a href="/">Home</a><a href="/app/">Open the app</a></nav></div></header>
+</style><style>.sitehdr{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #E5E7EB;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif}
+.sitehdr .in{max-width:1160px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;min-height:58px;box-sizing:border-box}
+.sitehdr .lg{display:flex;align-items:center;margin:0}.sitehdr .lg img{height:30px;width:auto;display:block}
+.sitehdr nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}.sitehdr nav::-webkit-scrollbar{display:none}
+.sitehdr nav a{padding:8px 12px;margin:0;border-radius:8px;color:#111827;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap}
+.sitehdr nav a:hover{background:#F3F4F6}.sitehdr nav a[aria-current]{color:#047857;font-weight:700;background:#ECFDF5}
+@media (max-width:760px){.sitehdr .in{flex-wrap:wrap;gap:4px;padding:8px 12px 6px;min-height:0}.sitehdr nav{margin-left:-8px;width:calc(100% + 8px)}.sitehdr nav a{padding:7px 10px;font-size:14px}}
+.sitehdr .sh{display:none}
+@media (max-width:520px){.sitehdr .fl{display:none}.sitehdr .sh{display:inline}}
+@media (max-width:400px){.sitehdr nav a{padding:6px 7px!important;font-size:13px}}
+@media print{.sitehdr{display:none}}</style></head><body>
+<header class="sitehdr"><div class="in"><a class="lg" href="/" aria-label="FinRehearse home"><img src="/logo.svg" alt="FinRehearse" width="150" height="30"></a><nav aria-label="Site"><a href="/"><span class="fl">Home</span><span class="sh">Home</span></a><a href="/app/"><span class="fl">Practice app</span><span class="sh">Practice</span></a><a href="/interview/"><span class="fl">Interview guides</span><span class="sh">Guides</span></a><a href="/jobs/"><span class="fl">Finance jobs</span><span class="sh">Jobs</span></a><a href="/#price"><span class="fl">Pricing</span><span class="sh">Pricing</span></a></nav></div></header>
 <main class="w"><h1>Certificate check</h1><div id="out"><p>Checking...</p></div>
 <p class="fine">FinRehearse issues a certificate of completion for practice done in its ERP finance simulator. It is a practice record. It is not an SAP certification, is not issued or endorsed by SAP SE, and is not proof of work experience. The practice figures are recorded by the learner's own copy of the simulator.</p></main>
 <footer><div class="w"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div></footer>

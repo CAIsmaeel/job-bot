@@ -1,6 +1,7 @@
 """Interview preparation pages, one per finance role. Run: python engine/interview_pages.py
 Writes site/interview/<slug>/index.html and site/interview/index.html. The sitemap picks them up (seo.py)."""
 import html, os
+import sitenav
 
 SITE = "https://finrehearse.pages.dev"
 APP = SITE + "/app/"
@@ -82,12 +83,12 @@ def art(role):
     return "an" if role[0] in "AEIOUaeiou" or role.startswith("FP") else "a"
 
 
-def head(title, desc, path):
+def head(title, desc, path, active="guides"):
     return f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{SITE}{path}">
-<link rel="stylesheet" href="/style.css"><style>{CSS}</style></head><body>
-<header><div class="w"><a class="logo" href="/"><img src="/logo.svg" alt="FinRehearse" width="150" height="30"></a><nav><a href="/interview/">Interview guides</a><a href="/jobs/">Finance jobs</a><a href="/app/">Try the free demo</a></nav></div></header>"""
+<link rel="stylesheet" href="/style.css"><style>{CSS}{sitenav.CSS}</style></head><body>
+{sitenav.html(active)}"""
 
 
 FOOT = """<footer><div class="w"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div></footer></body></html>"""

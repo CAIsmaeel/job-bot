@@ -14,6 +14,7 @@ from urllib.parse import urlparse, urljoin, quote
 from concurrent.futures import ThreadPoolExecutor
 import requests
 import seo
+import sitenav
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
@@ -654,6 +655,7 @@ def build_page(jobs):
     t = (t.replace("__JOBS__", data).replace("__UPDATED_ISO__", NOW).replace("__UPDATED__", upd)
           .replace("__PRACTICE__", practice + '<p class="browse"><a href="/jobs/browse/">Browse finance jobs by city, company or area</a></p>').replace("__BRAND__", html.escape(BRAND))
           .replace("__PRACTISE_MAP__", json.dumps({k: v for k, v in seo.PRACTISE.items() if v} if SIM_URL else {}))
+          .replace("__SITENAV_CSS__", sitenav.CSS).replace("__SITENAV__", sitenav.html("jobs"))
           .replace("__SIM__", html.escape(SIM_URL.rstrip("/") + "/" if SIM_URL else "")))
     os.makedirs(os.path.join(OUT, "site"), exist_ok=True)
     open(os.path.join(OUT, "site", "index.html"), "w", encoding="utf-8").write(t)
