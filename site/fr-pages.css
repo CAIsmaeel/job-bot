@@ -44,3 +44,12 @@ header.top{border-bottom:1px solid var(--fr-line)!important;background:transpare
 .practice{background:var(--fr-card)!important;border:1px solid var(--fr-line)!important;border-left:3px solid var(--fr-accent)!important;border-radius:12px}
 .cta{background:var(--fr-sub)!important;border:1px solid var(--fr-line)!important;border-radius:12px}
 #lede-n,#lede-c,.lede b{font-family:var(--fr-mono);font-weight:600}
+
+/* editorial container for Terms, Privacy, Refunds, Contact, Thank you */
+main.legal{max-width:768px!important;box-sizing:border-box;margin:48px auto!important;padding:80px 56px!important;background:#fff;border:1px solid var(--fr-line);border-radius:16px;box-shadow:var(--fr-shadow)}
+main.legal h1{font-size:clamp(30px,4vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin:0 0 28px}
+main.legal h2{font-size:18px;font-weight:700;letter-spacing:-.015em;margin:36px 0 10px;padding-top:24px;border-top:1px solid #F4F4F5}
+main.legal h1+p,main.legal h1+h2{border-top:0;padding-top:0}
+main.legal p,main.legal li{font-size:15.5px;line-height:1.75;color:#3F3F46;max-width:65ch}
+main.legal .btn{margin:8px 10px 0 0}
+@media (max-width:760px){main.legal{margin:20px 16px!important;padding:44px 22px!important;border-radius:14px}}
