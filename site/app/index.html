@@ -3518,7 +3518,7 @@ SCR.HOME={t:'Main Menu',render(){
    ['Interview preparation (freshers start here)',[['DAILY','Daily Close: 4 questions a day, keep a streak'],['START','Choose where to start, or check my level'],['PREP','Preparation hub: what to do, in which order'],['BASICS','Fresher basics: lessons with check questions'],['QBANK','Interview question bank and recall drill'],['REVISE','Revision sheet (printable)'],['CERT','Certificate of completion']]],
    ['Vendor / Accounts Payable',[['XK03','Display vendor master'],['FK03','Display vendor (FI view)'],['FBL1N','Vendor line items'],['FB60','Enter vendor invoice (no PO)'],['F-53','Post outgoing payment'],['FB08','Reverse document']]],
    ['Customer / Accounts Receivable',[['XD03','Display customer master'],['FD03','Display customer (FI view)'],['FBL5N','Customer line items'],['FB70','Enter customer invoice'],['FB65','Enter vendor credit memo (no PO)'],['FB75','Enter customer credit memo'],['F-28','Post incoming payment']]],
-   ['General Ledger',[['S_ALR_87012277','G/L balances = Trial Balance'],['FBL3N','G/L account line items'],['FB50','Enter G/L journal entry'],['FB03','Display document'],['FB08','Reverse document']]],
+   ['General Ledger',[['S_ALR_87012277','G/L balances = Trial Balance'],['FBL3N','G/L account line items'],['FB50','Enter G/L journal entry'],['FB03','Display document'],['FB08','Reverse document'],['S_ALR_87013611','Budget versus actual (FP&A)']]],
    ['Purchasing and Inventory',[['ME21N','Create purchase order'],['ME23N','Display purchase order'],['ME2N','POs by number / vendor'],['MIGO','Goods receipt against PO'],['MIRO','Invoice verification against PO'],['PRET','Purchase returns: return to vendor, credit memo'],['PRCM','Vendor credit memo (cockpit tab)'],['INV','Inventory cockpit'],['MB52','Stock valuation'],['MI01','Physical inventory count'],['MI07','Post inventory differences'],['MB1A','Scrapping'],['MB51','Material movements']]],
    ['Payroll',[['PAY','Payroll cockpit'],['PA30','Employee master'],['PC00','Run payroll'],['PAYSLIP','Payslips']]],
    ['Sales and Distribution',[['SD','Sales cockpit: orders, delivery, billing, stock'],['VA01','Create sales order'],['VA03','Display sales orders'],['VL01N','Delivery with goods issue'],['VF01','Billing'],['VKM1','Blocked orders (credit limit)'],['SDRET','Customer return (cockpit tab)'],['SDCM','Credit memo for returned goods (cockpit tab)'],['MMBE','Stock overview']]],
@@ -3711,6 +3711,30 @@ ACT.execTB=()=>{
   L('exec','TB',{fy,pf,pt});S.tbRun={docs:S.docs.length,fy,pf,pt};go('S_ALR_87012277',{fy,pf,pt,run:true},true);msg('s','Report executed');
 };
 ACT.tbdrill=arg=>{const [a,fy,pf,pt]=arg.split('|');go('FBL3N',{acct:a,st:'all',fy:+fy,pf:+pf,pt:+pt,run:true})};
+
+/* ---------- S_ALR_87013611: cost elements, actual versus plan (FP&A) ---------- */
+const PLAN_P7={'610000':5000,'620000':55000,'630000':18000,'640000':500,'660000':15200,'670000':20000,'680000':10000,'710000':300000,'711000':36000};
+function planRows(fy,per){const R=tbCalc(fy,per,per);const rows=[];let tp=0,ta=0;
+  Object.keys(PLAN_P7).forEach(a=>{const r=R[a]||{d:0,c:0};const act=r2(r.d-r.c),pl=fy===2026&&per===7?PLAN_P7[a]:0;tp+=pl;ta+=act;
+    rows.push({a,n:GL[a]?GL[a].n:a,pl,act,v:r2(act-pl)})});
+  return {rows,tp:r2(tp),ta:r2(ta),tv:r2(ta-tp)}}
+SCR.S_ALR_87013611={t:'Cost Elements: Actual/Plan/Variance',render(p){
+  const fy=p.fy||2026,per=p.per||7;
+  let h=HEAD('S_ALR_87013611','Cost Elements: Actual/Plan/Variance','Compares what was spent (actual, from the ledger) with the budget (plan) for one month. A positive variance means you spent more than planned (adverse).');
+  h+=`<div class="card"><h3>Selection screen</h3>`+F('bukrs','Company code','1000',{tech:'BUKRS',ro:true})
+    +F('fy','Fiscal year',fy,{tech:'GJAHR',type:'number'})+F('per','Period',per,{tech:'Period',type:'number',help:'Plan figures are loaded for period 7 (October 2026).'})
+    +`<div class="actions">${BTN('Execute (F8)','execPlan','','primary')}</div></div>`;
+  if(p.run){const P=planRows(fy,per);
+    const pct=(v,pl)=>pl?Math.round(v/pl*1000)/10+'%':'-';
+    const rows=P.rows.map(r=>({act:'tbdrill',arg:r.a+'|'+fy+'|'+per+'|'+per,c:[r.a,esc(r.n),fmtN(r.pl),fmtN(r.act),(r.v>0?'<span class="neg">':r.v<0?'<span class="pos">':'<span>')+(r.v<0?'-'+fmtN(-r.v):fmtN(r.v))+'</span>',pct(r.v,r.pl)]}));
+    rows.push({cls:'grand',c:['','Total',fmtN(P.tp),fmtN(P.ta),(P.tv<0?'-'+fmtN(-P.tv):fmtN(P.tv)),pct(P.tv,P.tp)]});
+    h+=`<div class="card"><h3>Company code 1000 · FY ${fy} · Period ${per} · INR</h3>`
+      +TBL([{h:'Cost element',m:1},'Name',{h:'Plan',n:1},{h:'Actual',n:1},{h:'Variance (actual - plan)',n:1},{h:'Var %',n:1}],rows,{min:700})
+      +`<p class="help">Red = adverse (over budget), green = favourable (under budget). Actuals change as you post, so run the report again after each posting. Click a row to see its line items.</p></div>`}
+  return h;
+}};
+ACT.execPlan=()=>{const fy=parseInt(val('fy')),per=parseInt(val('per'));if(!(per>=1&&per<=12)){msg('e','Enter a period from 1 to 12');return}
+  S.planRun={fy,per,docs:S.docs.length};go('S_ALR_87013611',{fy,per,run:true},true);msg('s','Report executed')};
 
 /* ---------- Master data: XK03 / FK03 / XD03 / FD03 / BP ---------- */
 function partnerTabs(kind){
@@ -4966,16 +4990,26 @@ const MIS=[
   ask:[{id:'v',label:'Checksum line in the preview (verified / none)',type:'text'}],exp:()=>({v:'verified'})},
  {grp:'Part 14 · Data safety',id:'e3',t:'Create a restore point and restore it',how:'In SIMDATA press "Create restore point". Then press Restore on that row (twice, to confirm). Your books return to that point and your previous state is kept as "Before restore". Mission progress is kept.',go:'SIMDATA',
   out:()=>[ck(S.meta&&S.meta.snaps>=1,'You created a restore point'),ck(S.meta&&S.meta.restores>=1,'You restored a restore point')]},
- {grp:'Part 15 · Final check',id:'m14',t:'Verify the Trial Balance after all postings',how:'After the postings above run S_ALR_87012277 (FY 2026, periods 1 to 7 or more). Do not post anything afterwards. Report the total debit.',go:'S_ALR_87012277',
+ {grp:'Part 15 · FP&A: budget versus actual',id:'fa1',t:'Find the biggest overspend against budget (S_ALR_87013611)',how:'Run S_ALR_87013611 for FY 2026, period 7 (October). Find the cost element with the largest adverse variance, that is the most spent above plan. Report its G/L account and the variance.',go:'S_ALR_87013611',
+  out:()=>[ck(S.planRun&&S.planRun.fy===2026&&S.planRun.per===7,'The plan/actual report was run for FY 2026, period 7')],
+  ask:[{id:'a',label:'G/L account with the largest adverse variance',type:'text'},{id:'v',label:'Its variance (INR, actual minus plan)',type:'number'}],
+  exp:()=>{const P=planRows(2026,7).rows.slice().sort((x,y)=>y.v-x.v)[0];return {a:P.a,v:P.v}}},
+ {grp:'Part 15 · FP&A: budget versus actual',id:'fa2',t:'Split the electricity variance into price and volume',how:'Budget for October: 4,000 units at 3.80 per unit = 15,200. Actual from the meter: 4,625 units at 4.00 = 18,500. Price variance = (actual rate - plan rate) x actual units. Volume variance = (actual units - plan units) x plan rate. Report both, over budget as a positive number. They must add up to the total variance of 3,300.',go:'S_ALR_87013611',
+  ask:[{id:'p',label:'Price variance (INR)',type:'number'},{id:'q',label:'Volume variance (INR)',type:'number'}],exp:()=>({p:925,q:2375})},
+ {grp:'Part 15 · FP&A: budget versus actual',id:'fa3',t:'Report the total cost variance for October',how:'Run S_ALR_87013611 for FY 2026, period 7 and read the Total row. Report the total plan, the total actual and the total variance. In an interview, say in one line which lines explain most of it. Tip: a large favourable line is often a cost that is not posted yet (timing), not a real saving.',go:'S_ALR_87013611',
+  out:()=>[ck(S.planRun&&S.planRun.fy===2026&&S.planRun.per===7&&S.planRun.docs===S.docs.length,'The report was run for period 7 after your last posting')],
+  ask:[{id:'p',label:'Total plan (INR)',type:'number'},{id:'a',label:'Total actual (INR)',type:'number'},{id:'v',label:'Total variance (INR)',type:'number'}],
+  exp:()=>{const P=planRows(2026,7);return {p:P.tp,a:P.ta,v:P.tv}}},
+ {grp:'Part 16 · Final check',id:'m14',t:'Verify the Trial Balance after all postings',how:'After the postings above run S_ALR_87012277 (FY 2026, periods 1 to 7 or more). Do not post anything afterwards. Report the total debit.',go:'S_ALR_87012277',
   out:()=>{const t=S.tbRun,bad=integrity();
     return [ck(ud().length>0,'At least one posting of yours exists'),ck(t&&t.fy===2026&&t.pf===1&&t.pt>=7,'The Trial Balance was run for FY 2026, periods 1 to at least 7'),
       ck(t&&t.docs===S.docs.length,'No posting was made after the Trial Balance was run'),ck(!bad.length,'The integrity check is clean')]},
   ask:[{id:'x',label:'Trial Balance (periods 1-7) total debit (INR)',type:'number'}],exp:()=>({x:tbTotals().d})},
- {grp:'Part 16 · Final assessment · Training and interview',id:'p2a',t:'Pass a task in Guided Practice',how:'Open the Training Center (TRAIN), start any task in Guided Practice (it is open for every task), follow the guide steps and submit. Reach at least 70% with no critical error, then press Check here.',go:'TRAIN',
+ {grp:'Part 17 · Final assessment · Training and interview',id:'p2a',t:'Pass a task in Guided Practice',how:'Open the Training Center (TRAIN), start any task in Guided Practice (it is open for every task), follow the guide steps and submit. Reach at least 70% with no critical error, then press Check here.',go:'TRAIN',
   out:()=>[ck(S.assess.some(a=>a.mode==='guided'&&a.results.some(r=>r.pass)),'A passed Guided Practice task is in your history')]},
- {grp:'Part 16 · Final assessment · Training and interview',id:'p2b',t:'Pass a task in Independent Practice',how:'In the Training Center start a task in Independent Practice. A task offers this mode once the missions that teach it are done. You get only the business scenario. Use hints only if you must. Pass with at least 70% and no critical error, then press Check here.',go:'TRAIN',
+ {grp:'Part 17 · Final assessment · Training and interview',id:'p2b',t:'Pass a task in Independent Practice',how:'In the Training Center start a task in Independent Practice. A task offers this mode once the missions that teach it are done. You get only the business scenario. Use hints only if you must. Pass with at least 70% and no critical error, then press Check here.',go:'TRAIN',
   out:()=>[ck(S.assess.some(a=>a.mode==='independent'&&a.results.some(r=>r.pass)),'A passed Independent Practice task is in your history')]},
- {grp:'Part 16 · Final assessment · Training and interview',id:'p2c',t:'Pass the final Interview Simulation',how:'This tests everything you practised. Start an Interview Simulation with at least 8 tasks (no menu, no suggestions, time limit). Attempt at least 6 of them, finish or let the time run out, and read the skill report. Press Check here afterwards.',go:'TRAIN',
+ {grp:'Part 17 · Final assessment · Training and interview',id:'p2c',t:'Pass the final Interview Simulation',how:'This tests everything you practised. Start an Interview Simulation with at least 8 tasks (no menu, no suggestions, time limit). Attempt at least 6 of them, finish or let the time run out, and read the skill report. Press Check here afterwards.',go:'TRAIN',
   out:()=>[ck(S.assess.some(a=>a.mode==='interview'&&a.results.length>=8&&a.results.filter(r=>!r.skipped).length>=6),'A finished Interview Simulation with at least 8 tasks and 6 attempted is in your history')]}
 ];
 function evalMission(m,ans){
@@ -5743,7 +5777,7 @@ if(!SESS&&/daily/i.test(location.hash)){LEARN.start=true;learnSave();go('DAILY',
   try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
   LEARN.start=true;if(missionLocked(mi))LEARN.trial=mi.id;learnSave();NAV.mgrp=mi.grp;NAV.mopen=mi.id;renderMissions();if(mi.go)go(mi.go,null,true);
   if(!window.matchMedia('(min-width:980px)').matches){try{setView('guide')}catch(e){}}
-  setTimeout(()=>{const el=[...document.querySelectorAll('#side .mis')].find(d=>{const b=d.querySelector('b');return b&&b.textContent===mi.t});if(el){el.classList.add('nextm');const h=document.querySelector('header.shell');const off=h&&getComputedStyle(h).position!=='static'?h.getBoundingClientRect().height:0;window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-off-12)}},150);
+  setTimeout(()=>{const el=[...document.querySelectorAll('#side .mis')].find(d=>{const b=d.querySelector('b');return b&&b.textContent===mi.t});if(el){el.classList.add('nextm');const sd=document.getElementById('side');if(sd&&sd.scrollHeight>sd.clientHeight+4&&getComputedStyle(sd).overflowY!=='visible'){sd.scrollTop=el.offsetTop-sd.offsetTop-10}const h=document.querySelector('header.shell');const off=h&&getComputedStyle(h).position!=='static'?h.getBoundingClientRect().height:0;window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-off-12)}},150);
   msg('i','Interview practice: '+mi.t+'. Follow the steps under Missions & Notes, then press Check my work.');})();
 /* licence link from the purchase email: /app/#key=LL1... activates and opens the main menu */
 (function(){const m=/[#&]key=(LL1\.[A-Za-z0-9_\-]+\.[A-Za-z0-9_\-]+)/.exec(location.hash||'');if(!m||!SELLABLE)return;

@@ -30,7 +30,7 @@ PAGES = [
          ("How do you correct a wrong journal entry?", "Reverse it with a reversal document that refers to the original, then post the correct entry. You never edit or delete a posted document because the audit trail must show both."),
          ("What is a balance sheet reconciliation?", "Proving that a ledger balance is supported by detail, such as a bank statement, a sub-ledger or a schedule. Every difference is explained and old items are cleared."),
          ("Why can't you post directly to a reconciliation account?", "Accounts like trade payables are updated only from vendor or customer postings so the sub-ledger and the general ledger always agree.")]},
- {"slug": "fpa", "role": "FP&A analyst", "area": "fpa", "m": "m14",
+ {"slug": "fpa", "role": "FP&A analyst", "area": "fpa", "m": "fa1",
   "intro": "FP&A interviews mix accounting with analysis: reading the trial balance and P&L, explaining variances against budget, and building a simple forecast.",
   "skills": ["Reading a trial balance, P&L and balance sheet", "Budget versus actual variance analysis", "Rolling forecasts and driver-based planning", "Unit economics, margins and contribution", "Working capital: debtor, creditor and inventory days", "Presenting numbers in plain language"],
   "qa": [("How do you explain a cost variance?", "Split it into price and volume. For example, raw material spend is 10% over budget: 6% because we bought more to support higher sales (volume) and 4% because the price per kg rose (price). Then say what action follows."),

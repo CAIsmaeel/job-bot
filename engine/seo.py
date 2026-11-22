@@ -14,7 +14,7 @@ FRESHER = re.compile(r"fresher|trainee|graduate|intern\b|internship|apprentice|e
 PRACTISE = {"Accounts Payable / P2P": "m7", "Accounts Receivable / O2C": "m11", "Record to Report / GL": "c2",
             "Controllership / Reporting": "m14", "Tax": "g2", "Audit / Assurance / SOX": "p1a", "Treasury": "p3a",
             "Costing": "i4", "Risk / Credit": "v4", "Payroll": "y1", "Finance Transformation / Systems": "m1",
-            "FP&A / Business Finance": None, "Deals / Valuation / IB": None}  # None: no matching task yet, no button
+            "FP&A / Business Finance": "fa1", "Deals / Valuation / IB": None}  # None: no matching task yet, no button
 
 
 def practise_link(sim, category):
