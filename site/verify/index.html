@@ -19,7 +19,7 @@
   if(!m){out.innerHTML='<div class="vc"><p>Open this page from the verify link on a FinRehearse certificate.</p></div>';return}
   let c;try{const b=atob(m[1].replace(/-/g,'+').replace(/_/g,'/'));c=JSON.parse(decodeURIComponent(escape(b)))}catch(e){out.innerHTML='<div class="vc"><div class="st no">This link is damaged. Ask the certificate holder for the full link.</div></div>';return}
   const fnv=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return h};
-  const rid='LLC-'+String(c.d).replace(/-/g,'')+'-'+fnv(c.n+'|'+c.d+'|'+c.l).toString(36).toUpperCase().padStart(6,'0').slice(-6);
+  const rid='FR-'+String(c.d).replace(/-/g,'')+'-'+fnv(c.n+'|'+c.d+'|'+c.l).toString(36).toUpperCase().padStart(6,'0').slice(-6);
   let paid=false;
   try{const h=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(c.l)))).map(b=>b.toString(16).padStart(2,'0')).join('');
       const list=await (await fetch('/verify/ids.txt',{cache:'no-store'})).text();paid=list.split(/\s+/).includes(h)}catch(e){}

@@ -154,3 +154,34 @@
 .home .plan .rr{margin:4px 0 0;padding:8px 12px;font-size:12px;line-height:1.4;color:#52525B;background:#FAFAFA;border:1px solid var(--fr-line);border-radius:8px}
 .cmp .price{font-family:var(--fr-sans)!important;font-weight:600}
 .plan .buy .btn{gap:5px}
+/* certificate preview */
+.certbtn{margin-top:14px;background:none;border:0;padding:0;color:var(--fr-accent);font:500 14px var(--fr-sans);cursor:pointer;text-underline-offset:3px}
+.certbtn:hover{text-decoration:underline}
+.certm{width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:0;border:1px solid var(--fr-line);border-radius:16px;background:#fff;box-shadow:0 24px 64px rgba(0,0,0,.18);color:var(--fr-text)}
+.certm::backdrop{background:rgba(9,9,11,.45);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.cmh{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--fr-line)}
+.cmh p{margin:0;font-weight:600;color:var(--fr-ink);font-size:14px}
+.cmx{width:32px;height:32px;border-radius:8px;border:1px solid var(--fr-line);background:#fff;font-size:20px;line-height:1;cursor:pointer;color:var(--fr-ink)}
+.cert-doc{position:relative;margin:20px;padding:36px 32px;text-align:center;border:3px double #18181B;background:#fff}
+.cert-doc .cs{position:absolute;top:12px;right:12px;font-size:10.5px;padding:3px 7px;border-radius:4px;border:1px solid #D4D4D8;color:#71717A}
+.cert-doc .ck{margin:0;font-size:12px;letter-spacing:.14em;color:#71717A}
+.cert-doc h3{margin:8px 0 14px;font-size:28px;letter-spacing:-.02em;color:#18181B}
+.cert-doc .cr{margin:0 auto 6px;max-width:52ch;font-size:14px;color:#3F3F46}
+.cert-doc .cn{margin:6px 0 12px;font-size:26px;font-weight:700;color:#18181B;border-bottom:1px solid #E4E4E7;display:inline-block;padding:0 24px 6px}
+.cert-doc .cm{list-style:none;margin:14px auto;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:560px}
+.cert-doc .cm li{font-size:11px;padding:4px 8px;border-radius:6px;background:#F4F4F5;border:1px solid #E4E4E7;color:#3F3F46}
+.cert-doc .cf{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:18px 0 10px;font-size:12px;color:#52525B}
+.cert-doc .cv{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:11.5px;color:#52525B;margin:0 0 12px}
+.cert-doc .cd{margin:0;font-size:11px;line-height:1.5;color:#A1A1AA}
+.certm .cmf{margin:0 20px 20px;font-size:13px;color:#52525B}
+@media (max-width:520px){.cert-doc{margin:12px;padding:28px 14px}.cert-doc h3{font-size:21px}.cert-doc .cn{font-size:20px}}
+/* scenarios */
+.scg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sc{background:#fff;border:1px solid var(--fr-line);border-radius:12px;padding:24px;transition:border-color .15s;display:flex;flex-direction:column}
+.sc:hover{border-color:#D4D4D8}
+.sct{display:flex;justify-content:space-between;align-items:center;margin:0 0 14px}
+.sc .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--fr-muted);background:var(--fr-sub);border:1px solid var(--fr-line);border-radius:6px;padding:2px 7px}
+.sc h3{font-size:16px;line-height:1.45;margin:0 0 10px;letter-spacing:-.01em}
+.sc p{margin:0;font-size:14px;line-height:1.6;color:#52525B}
+.sclink{margin-top:20px}
+@media (max-width:900px){.scg{grid-template-columns:1fr}}

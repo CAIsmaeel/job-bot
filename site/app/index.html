@@ -5671,7 +5671,7 @@ function certReqs(){
    {ok:mis>=Math.ceil(MIS.length*CERT_MIS_PCT),t:'Complete at least '+Math.round(CERT_MIS_PCT*100)+'% of the missions ('+Math.ceil(MIS.length*CERT_MIS_PCT)+' of '+MIS.length+')',v:mis+' done',go:'HOME'},
    {ok:bd>=CERT_DRILL_PCT,t:'Recall at least '+Math.round(CERT_DRILL_PCT*100)+'% in one recall drill of '+CERT_DRILL_MIN+' cards',v:bd?'best '+Math.round(bd*100)+'%':'no full drill yet',go:'QBANK'}];
 }
-function certId(name,date){let h=2166136261;const s=name+'|'+date+'|'+(LIC.info&&LIC.info.id||'full');for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return 'LLC-'+date.replace(/-/g,'')+'-'+h.toString(36).toUpperCase().padStart(6,'0').slice(-6)}
+function certId(name,date){let h=2166136261;const s=name+'|'+date+'|'+(LIC.info&&LIC.info.id||'full');for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return 'FR-'+date.replace(/-/g,'')+'-'+h.toString(36).toUpperCase().padStart(6,'0').slice(-6)}
 SCR.CERT={t:'Certificate of completion',render(){
   if(SESS)return HEAD('CERT','Certificate of completion')+prepBusy();
   const rq=certReqs(),ready=rq.every(r=>r.ok);
