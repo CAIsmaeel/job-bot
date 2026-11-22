@@ -346,6 +346,12 @@ table.t td,table.t th{border-color:#F4F4F5}
 .drev{padding:12px 0;border-top:1px solid #F4F4F5}.drev:first-of-type{border-top:0}.drev .q{margin:2px 0 6px;font-weight:600}.drev p{margin:4px 0}
 .ml.lock .mc::after{content:" · Full";color:#1D4ED8;font-weight:600}
 body.focus #wbbar{display:none}
+
+@media (min-width:1200px){
+  body.focus #main{grid-template-columns:260px minmax(0,1fr)!important}
+  body.focus.intv #main{grid-template-columns:minmax(0,1fr)!important}
+  #modnav{grid-column:1;grid-row:2}#screen{grid-row:2}#side{grid-row:2}
+}
 </style>
 
 <header class="sitehdr"><div class="in"><a class="lg" href="/" aria-label="FinRehearse home"><img src="/logo.svg" alt="FinRehearse" width="140" height="28"></a><nav aria-label="Site"><a href="/"><span class="fl">Home</span><span class="sh">Home</span></a><a href="/app/" aria-current="page"><span class="fl">Practice</span><span class="sh">Practice</span></a><a href="/interview/"><span class="fl">Guides</span><span class="sh">Guides</span></a><a href="/jobs/"><span class="fl">Jobs</span><span class="sh">Jobs</span></a><a href="/#price"><span class="fl">Pricing</span><span class="sh">Pricing</span></a></nav><a class="launch" href="/app/">Launch App</a></div></header>
