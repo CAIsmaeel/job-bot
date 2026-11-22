@@ -51,14 +51,14 @@
 @media (max-width:520px){.sitehdr .fl{display:none}.sitehdr .sh{display:inline}}
 
 /* ---------- site footer: dark, same obsidian as the buttons ---------- */
-.sitefoot{background:#18181B;border-top:1px solid #18181B;margin-top:0;font:14px/1.6 var(--fr-sans);color:#A1A1AA}
-.sitefoot .in{max-width:1200px;margin:0 auto;padding:64px 24px 32px;box-sizing:border-box}
-.sitefoot .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
-.sitefoot h4{margin:0 0 14px;font:600 12px/1 var(--fr-mono);letter-spacing:.06em;text-transform:uppercase;color:#FAFAFA}
-.sitefoot ul{list-style:none;margin:0;padding:0}.sitefoot li{margin:0 0 10px}
+.sitefoot{background:#18181B;border-top:1px solid #18181B;margin-top:0;font:13px/1.55 var(--fr-sans);color:#A1A1AA}
+.sitefoot .in{max-width:1200px;margin:0 auto;padding:36px 24px 20px;box-sizing:border-box}
+.sitefoot .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px}
+.sitefoot h4{margin:0 0 10px;font:600 12px/1 var(--fr-mono);letter-spacing:.06em;text-transform:uppercase;color:#FAFAFA}
+.sitefoot ul{list-style:none;margin:0;padding:0}.sitefoot li{margin:0 0 6px}
 .sitefoot a{color:#A1A1AA;text-decoration:none;margin:0;transition:color .15s}.sitefoot a:hover{color:#FFFFFF}
-.sitefoot .about img{height:26px;width:auto;display:block;margin:0 0 14px}.sitefoot .about p{margin:0;max-width:34ch;color:#A1A1AA}
-.sitefoot .legal-note{margin-top:48px;padding-top:24px;border-top:1px solid #27272A;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:#71717A}
+.sitefoot .about img{height:22px;width:auto;display:block;margin:0 0 10px}.sitefoot .about p{margin:0;max-width:34ch;color:#A1A1AA}
+.sitefoot .legal-note{margin-top:24px;padding-top:14px;border-top:1px solid #27272A;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:11.5px;color:#71717A}
 .sitefoot .legal-note p{margin:0;max-width:80ch;color:#71717A}
-@media (max-width:760px){.sitefoot .cols{grid-template-columns:1fr 1fr;gap:28px}.sitefoot .about{grid-column:1/-1}.sitefoot .in{padding:48px 20px 28px}}
+@media (max-width:760px){.sitefoot .cols{grid-template-columns:1fr 1fr;gap:18px}.sitefoot .about{grid-column:1/-1}.sitefoot .in{padding:28px 20px 18px}}
 @media print{.sitehdr,.sitefoot{display:none}}

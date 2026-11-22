@@ -73,55 +73,138 @@ PAGES = [
          ("Why should we hire a fresher like you?", "Say what you have practised: for example, that you have posted invoices, payments and a month-end close in a practice ERP and can explain each entry. Concrete practice beats general claims.")]},
 ]
 
-CSS = """body{font-family:'Plus Jakarta Sans',system-ui,sans-serif}.w{max-width:760px}main h2{margin-top:34px}
-.lead{font-size:18px;color:#374151}.qa{border-top:1px solid #E5E7EB;padding:16px 0}.qa h3{margin:0 0 6px;font-size:17px}.qa p{margin:0;color:#374151}
-.box{background:#ECFDF5;border:1px solid #A7F3D0;border-radius:14px;padding:20px;margin:28px 0}.box p{margin:0 0 12px}
-ul.sk li{margin:6px 0}.more a{display:inline-block;margin:0 14px 8px 0}"""
+
+import json
+
+QB = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "qb_public.json"), encoding="utf-8"))
+BY = {p["slug"]: p for p in PAGES}
+E = html.escape
+LVL = {"F": "Fresher", "X": "Experienced"}
+
+# left index: (anchor, label, guide slug or None)
+INDEX = [("basics", "Basics", "freshers"), ("ap", "Accounts payable", "accounts-payable"), ("ar", "Accounts receivable", "accounts-receivable"),
+         ("r2r", "Record to report", "record-to-report"), ("gst", "GST and tax", "tax-gst"), ("fpa", "FP&A", "fpa"),
+         ("audit", "Audit", "audit"), ("treasury", "Treasury", "treasury")]
 
 
 def art(role):
     return "an" if role[0] in "AEIOUaeiou" or role.startswith("FP") else "a"
 
 
-def head(title, desc, path, active="guides"):
+def card(q, a, pill=""):
+    pl = '<span class="lv mono">%s</span>' % pill if pill else ""
+    return (f'<details class="qa" data-s="{E((q + " " + a).lower())}"><summary><span class="qq">{E(q)}</span>'
+            f'{pl}<span class="tg" aria-hidden="true"></span></summary>'
+            f'<div class="ans"><p>{E(a)}</p><div class="rc"><button type="button" class="k" data-k="1">I knew it</button>'
+            f'<button type="button" class="k" data-k="0">Review again</button></div></div></details>')
+
+
+def head(title, desc, path):
     return f"""<!doctype html><html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#064E3B">
-<title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{SITE}{path}">
-<link rel="stylesheet" href="/style.css"><style>{CSS}</style>{sitenav.head()}</head><body>
-{sitenav.html(active)}"""
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/mark.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAFAFA">
+<title>{E(title)}</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="{SITE}{path}">
+<link rel="stylesheet" href="/style.css">{sitenav.head()}<link rel="stylesheet" href="/docs.css"></head><body class="docs">{sitenav.html("guides")}"""
 
 
-FOOT = sitenav.footer() + "</body></html>"
+def sidebar(cur=""):
+    hub = "" if cur else ' aria-current="page"'
+    items = "".join(f'<li><a href="/interview/#{a}" data-a="{a}">{E(l)}</a></li>' for a, l, _ in INDEX)
+    ac = ' aria-current="page"'
+    guides = "".join('<li><a href="/interview/%s/"%s>%s</a></li>' % (p["slug"], ac if p["slug"] == cur else "", E(p["role"])) for p in PAGES)
+    return f"""<aside class="dside"><div class="dsticky">
+<div class="dsearch"><input id="q" type="search" placeholder="Search questions" aria-label="Search questions" autocomplete="off"><kbd class="mono">/</kbd></div>
+<p class="dh mono">Topics</p><ul class="dnav"><li><a href="/interview/"{hub}>All questions</a></li>{items}<li><a href="/interview/#more">More in the full version</a></li><li><a href="/interview/#sheet">Revision sheet</a></li></ul>
+<p class="dh mono">Role guides</p><ul class="dnav sm">{guides}</ul></div></aside>"""
+
+
+TOOLBAR = """<div class="dbar"><label class="sw"><input type="checkbox" id="recall"><span class="tr"><i></i></span><span>Active recall mode</span></label>
+<span class="dcount mono" id="dcount"></span><span class="dsp"></span>
+<button type="button" class="btn alt sm" id="expand">Expand all</button><button type="button" class="btn sm" id="printsheet">One-Page Revision Sheet</button></div>"""
+
+SCRIPT = r"""<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const q=$('#q'),cnt=$('#dcount'),cards=$$('.qa');let known=0,seen=0;
+function count(){const v=cards.filter(c=>!c.hidden).length;if(cnt)cnt.textContent=v+' questions'+(seen?' · knew '+known+' of '+seen:'')}
+function filter(){const t=(q&&q.value||'').trim().toLowerCase();cards.forEach(c=>c.hidden=!!t&&!c.dataset.s.includes(t));
+  $$('.dsec').forEach(s=>{const has=s.querySelector('.qa:not([hidden])');s.hidden=!!t&&!has});count()}
+if(q){q.addEventListener('input',filter);document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus()}})}
+const rc=$('#recall');if(rc)rc.addEventListener('change',()=>{document.body.classList.toggle('recall',rc.checked);cards.forEach(c=>c.open=false);known=0;seen=0;count()});
+const ex=$('#expand');if(ex)ex.addEventListener('click',()=>{const open=ex.dataset.o!=='1';cards.forEach(c=>{if(!c.hidden)c.open=open});ex.dataset.o=open?'1':'0';ex.textContent=open?'Collapse all':'Expand all'});
+document.addEventListener('click',e=>{const b=e.target.closest('.k');if(!b)return;const d=b.closest('.qa');if(d.dataset.m)return;d.dataset.m=b.dataset.k;seen++;if(b.dataset.k==='1')known++;d.classList.add(b.dataset.k==='1'?'ok':'again');d.open=false;count()});
+const pr=$('#printsheet');if(pr)pr.addEventListener('click',()=>{document.body.classList.add('sheet');setTimeout(()=>{window.print();},50)});
+window.addEventListener('afterprint',()=>document.body.classList.remove('sheet'));
+const links=$$('.dnav a[data-a]');if('IntersectionObserver' in window&&links.length){const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.dataset.a===en.target.id))}})},{rootMargin:'-80px 0px -70% 0px'});$$('.dsec[id]').forEach(s=>io.observe(s))}
+count();
+})();
+</script>"""
+
+
+def section(aid, title, intro, cards_html, guide=None, extra=""):
+    g = BY.get(guide) if guide else None
+    gl = f'<a class="glink" href="/interview/{g["slug"]}/">Full {E(g["role"])} guide</a>' if g else ""
+    pr = f'<a class="btn alt sm" href="{APP}#practise={g["m"]}">Practise a real task</a>' if g else ""
+    return (f'<section class="dsec" id="{aid}"><div class="dsh"><h2>{E(title)}</h2><div class="dsa">{gl}{pr}</div></div>'
+            + ('<p class="dlead">%s</p>' % E(intro) if intro else "") + f'<div class="qas">{cards_html}</div>{extra}</section>')
 
 
 def build(root="site"):
     out = []
+    qb = {}
+    for x in QB["free"]:
+        qb.setdefault(x["a"], []).append(x)
+    cards = lambda a: "".join(card(x["q"], x["ans"], LVL.get(x["l"], "")) for x in qb.get(a, []))
+    gcards = lambda slug: "".join(card(q, a, "Guide") for q, a in BY[slug]["qa"])
+    locked = {x["a"]: x for x in QB["locked"]}
+    tease = lambda k: (f'<div class="lock"><span class="pill mono">+{locked[k]["count"]} more</span><p>{E(locked[k]["n"])} questions with model answers are in the full version, for example: '
+                       f'{E("; ".join(locked[k]["sample"][:3]))}.</p><a class="btn sm" href="/#price">See pricing</a></div>') if k in locked else ""
+    secs = [section("basics", "Basics", "Asked in almost every first interview for an accounts role.", cards("BAS") + gcards("freshers"), "freshers"),
+            section("ap", "Accounts payable", BY["accounts-payable"]["intro"], cards("AP") + gcards("accounts-payable"), "accounts-payable", tease("P2P")),
+            section("ar", "Accounts receivable", BY["accounts-receivable"]["intro"], cards("AR") + gcards("accounts-receivable"), "accounts-receivable", tease("O2C")),
+            section("r2r", "Record to report", BY["record-to-report"]["intro"], gcards("record-to-report"), "record-to-report", tease("GL")),
+            section("gst", "GST and tax", BY["tax-gst"]["intro"], gcards("tax-gst"), "tax-gst", tease("TAX")),
+            section("fpa", "FP&A", BY["fpa"]["intro"], gcards("fpa"), "fpa"),
+            section("audit", "Audit", BY["audit"]["intro"], gcards("audit"), "audit"),
+            section("treasury", "Treasury", BY["treasury"]["intro"], gcards("treasury"), "treasury", tease("BANK"))]
+    more = "".join(f'<li><span>{E(x["n"])}</span><span class="mono">{x["count"]}</span></li>' for x in QB["locked"])
+    more_sec = (f'<section class="dsec" id="more"><div class="dsh"><h2>More in the full version</h2></div><p class="dlead">The simulator has 165 questions with model answers, '
+                f'a recall drill that tracks what you know, and the full revision sheet.</p><ul class="morel">{more}</ul>'
+                f'<p><a class="btn" href="/#price">See pricing</a> <a class="btn alt" href="{APP}">Try the free demo</a></p></section>')
+    tc = "".join(f"<tr><td>{E(a)}</td><td class=\"mono\">{E(b)}</td></tr>" for a, b in QB["tc"])
+    je = "".join(f"<tr><td>{E(r[0])}</td><td class=\"mono\">{E(r[1])}</td><td class=\"mono\">{E(r[2])}</td></tr>" for r in QB["je"])
+    sheet = (f'<section class="dsec" id="sheet"><div class="dsh"><h2>One-page revision sheet</h2></div><p class="dlead">The night before the interview: read it once and say the answers out loud. '
+             f'Press <b>One-Page Revision Sheet</b> above to print it or save it as a PDF.</p>'
+             f'<h3>T-codes by area</h3><div class="tw"><table><thead><tr><th>Area</th><th>T-codes</th></tr></thead><tbody>{tc}</tbody></table></div>'
+             f'<h3>Key accounting entries</h3><div class="tw"><table><thead><tr><th>Event</th><th>Debit</th><th>Credit</th></tr></thead><tbody>{je}</tbody></table></div></section>')
+    pq = [x for x in QB["free"] if x["t"]][:12]
+    printq = "".join(f'<div class="pq"><b>{i}. {E(x["q"])}</b> {E(x["ans"])}</div>' for i, x in enumerate(pq, 1))
+    printsheet = f'<div class="printonly"><h1>FinRehearse revision sheet</h1><h3>Top questions</h3><div class="pqs">{printq}</div></div>'
+    hub = (head("Finance interview questions with answers: AP, AR, R2R, GST, FP&A | FinRehearse",
+                "Free finance interview questions with model answers for accounts, AP, AR, R2R, GST, FP&A, audit and treasury roles in India, with an active recall mode and a one-page revision sheet.", "/interview/")
+           + '<div class="dwrap">' + sidebar() + '<main class="dmain"><div class="dhead"><p class="crumb mono">Interview guides</p>'
+           + '<h1>Finance interview questions, with model answers</h1><p class="dlead">Read a question, say your answer out loud, then open the model answer. '
+           + 'Turn on active recall to hide every answer and mark what you knew.</p>' + TOOLBAR + '</div>'
+           + "".join(secs) + more_sec + sheet + printsheet + '</main></div>' + sitenav.footer() + SCRIPT + "</body></html>")
+    d = os.path.join(root, "interview"); os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(hub)
+    out.append("/interview/")
     for p in PAGES:
         path = f"/interview/{p['slug']}/"
-        title = f"How to prepare for {art(p['role'])} {p['role']} interview | FinRehearse"
-        e = html.escape
-        qa = "".join(f'<div class="qa"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q, a in p["qa"])
-        sk = "".join(f"<li>{e(s)}</li>" for s in p["skills"])
-        jobs = f'<a href="/jobs/area/{p["area"]}/">See live {e(p["role"])} jobs</a>' if p["area"] else '<a href="/jobs/freshers/">See live jobs for freshers</a>'
-        others = "".join(f'<a href="/interview/{o["slug"]}/">{e(o["role"])}</a>' for o in PAGES if o is not p)
-        body = f"""<main class="w"><h1>How to prepare for {art(p['role'])} {e(p['role'])} interview</h1><p class="lead">{e(p['intro'])}</p>
-<h2>What interviewers check</h2><ul class="sk">{sk}</ul>
-<div class="box"><p><b>Practise it, don't just read it.</b> Interviewers can tell when you have only memorised answers. Post the entries yourself in a practice ERP and you can explain every step.</p>
-<a class="btn" href="{APP}#practise={p['m']}">Practise a real {e(p['role'].split(' (')[0].split(' and ')[0])} task free</a></div>
-<h2>Common questions, with short answers</h2>{qa}
-<h2>Next steps</h2><p class="more">{jobs}<a href="{APP}">Open the free simulator</a></p>
-<h2>Other interview guides</h2><p class="more">{others}</p></main>"""
-        d = os.path.join(root, path.strip("/"))
-        os.makedirs(d, exist_ok=True)
+        sk = "".join(f"<li>{E(x)}</li>" for x in p["skills"])
+        jobs = f'<a href="/jobs/area/{p["area"]}/">See live {E(p["role"])} jobs</a>' if p["area"] else '<a href="/jobs/freshers/">See live jobs for freshers</a>'
+        body = (f'<div class="dwrap">{sidebar(p["slug"])}<main class="dmain"><div class="dhead"><p class="crumb mono"><a href="/interview/">Interview guides</a> / {E(p["role"])}</p>'
+                f'<h1>How to prepare for {art(p["role"])} {E(p["role"])} interview</h1><p class="dlead">{E(p["intro"])}</p>{TOOLBAR}</div>'
+                f'<section class="dsec"><h2>What interviewers check</h2><ul class="skl">{sk}</ul></section>'
+                f'<div class="callout"><p><b>Practise it, don\'t just read it.</b> Interviewers can tell when you have only memorised answers. Post the entries yourself in a practice ERP and you can explain every step.</p>'
+                f'<a class="btn" href="{APP}#practise={p["m"]}">Practise a real {E(p["role"].split(" (")[0].split(" and ")[0])} task free</a></div>'
+                f'<section class="dsec"><h2>Common questions, with short answers</h2><div class="qas">{"".join(card(q, a) for q, a in p["qa"])}</div></section>'
+                f'<section class="dsec"><h2>Next steps</h2><p class="more">{jobs} · <a href="{APP}">Open the free simulator</a> · <a href="/interview/">All interview questions</a></p></section>'
+                f'</main></div>')
+        d = os.path.join(root, path.strip("/")); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(
-            head(title, f"{p['intro'][:150]}", path) + body + FOOT)
+            head(f"How to prepare for {art(p['role'])} {p['role']} interview | FinRehearse", p["intro"][:150], path) + body + sitenav.footer() + SCRIPT + "</body></html>")
         out.append(path)
-    links = "".join(f'<li><a href="/interview/{p["slug"]}/">{html.escape(p["role"])}</a></li>' for p in PAGES)
-    os.makedirs(os.path.join(root, "interview"), exist_ok=True)
-    open(os.path.join(root, "interview", "index.html"), "w", encoding="utf-8").write(
-        head("Finance interview preparation guides | FinRehearse", "How to prepare for accounts, AP, AR, R2R, FP&A, GST, audit and treasury interviews in India, with common questions and free practice.", "/interview/")
-        + f'<main class="w"><h1>Finance interview guides</h1><p class="lead">Pick your role. Each guide lists what interviewers check, common questions with short answers, and a free practice task in the simulator.</p><ul class="sk">{links}</ul></main>' + FOOT)
-    return ["/interview/"] + out
+    return out
 
 
 if __name__ == "__main__":

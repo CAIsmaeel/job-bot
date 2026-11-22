@@ -1,0 +1,639 @@
+{
+"free": [
+{
+"a": "BAS",
+"l": "F",
+"t": true,
+"q": "What is a company code?",
+"ans": "The smallest organisational unit for which a complete, self-contained balance sheet and P&L are drawn up for external reporting. It is usually one legal entity, and every FI document is posted in a company code."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What is the difference between a client and a company code?",
+"ans": "The client is the top level of the system with its own master data and settings. Company codes sit inside a client; one client can hold many company codes (legal entities)."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": true,
+"q": "What is a reconciliation account?",
+"ans": "A G/L account linked to a sub-ledger (vendors, customers, assets). Every sub-ledger posting updates it automatically and it cannot be posted to directly, so the sub-ledger total always equals the G/L."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What is a chart of accounts?",
+"ans": "The list of G/L accounts that one or more company codes use. Each account has chart-of-accounts data (number, name, balance sheet or P&L type) and company-code data (currency, open item management, tax category)."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "Which T-code maintains G/L account master data?",
+"ans": "FS00, the central G/L account maintenance (chart-of-accounts and company-code segments together)."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": true,
+"q": "What is a posting key? Give examples.",
+"ans": "A 2-digit key on each line that decides debit or credit and the account type. 40 G/L debit, 50 G/L credit, 31 vendor invoice, 21 vendor credit memo, 25 vendor payment, 01 customer invoice, 11 customer credit memo, 15 customer payment."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": true,
+"q": "What is a document type? Give examples.",
+"ans": "A key that classifies a document and controls its number range and allowed account types. KR vendor invoice, KZ vendor payment, DR customer invoice, DZ customer payment, SA G/L journal, WE goods receipt, RE invoice receipt, AA asset posting."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "Document date vs posting date vs entry date?",
+"ans": "Document date is the date on the invoice. Posting date decides the fiscal year and period in the books. Entry date is the system date when the document was keyed in."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": true,
+"q": "What is a fiscal year variant? What is V3?",
+"ans": "It defines how many posting periods a year has and how they map to months. V3 is the Indian April to March year with 12 normal and 4 special periods. K4 is the calendar year."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What are special periods used for?",
+"ans": "Periods 13 to 16 take year-end and audit adjustments after period 12, without changing the March monthly figures."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "How are posting periods controlled?",
+"ans": "With the posting period variant in OB52. Periods are opened and closed per account type: + all, A assets, D customers, K vendors, M materials, S G/L, with optional account ranges."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What is open item management?",
+"ans": "A G/L account setting where items must be matched and cleared against each other, for example GR/IR, bank clearing or salaries payable. Vendor and customer accounts are always managed on an open item basis."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "Parking vs posting a document?",
+"ans": "A parked document is saved but does not update balances; it can be changed, checked and approved. Posting updates the ledger and can no longer be changed except by reversal."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "Can you change a posted document?",
+"ans": "Amounts, accounts and dates cannot change. FB02 allows only certain fields such as texts, reference or assignment. A wrong posting is reversed (FB08) and posted again."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What is a cost center?",
+"ans": "A controlling object that collects costs by area of responsibility, for example a department. Expense postings usually need a cost center or another cost object."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What is a profit center?",
+"ans": "An internal unit, for example a product line or region, for which profit is reported for management. In S/4HANA profit center is a field in the Universal Journal line."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What does Simulate do before posting?",
+"ans": "It shows the complete accounting entry, including tax lines and automatic postings, so you can check debit and credit before saving."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "Explain debit and credit rules.",
+"ans": "Assets and expenses increase with a debit. Liabilities, equity and income increase with a credit. Every document must balance: total debit equals total credit."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "What are tolerance groups?",
+"ans": "Settings that limit the amount a user may post per document or line, and the payment difference a user may accept or write off automatically."
+},
+{
+"a": "BAS",
+"l": "F",
+"t": false,
+"q": "Document currency vs local currency?",
+"ans": "Document currency is the currency of the transaction, for example USD on an import invoice. Local currency is the company code currency (INR). The system stores both and converts at the exchange rate."
+},
+{
+"a": "AP",
+"l": "F",
+"t": true,
+"q": "Explain the accounts payable process.",
+"ans": "Vendor master, invoice entry (MIRO with PO or FB60 without PO), checks (3-way match, duplicate check, approval), payment (F110 or F-53), then vendor reconciliation and ageing in FBL1N."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "Which T-codes are used for vendor invoices and credit memos?",
+"ans": "MIRO for PO-based invoices, FB60 for invoices without a PO, FB65 for vendor credit memos without a PO, MIR7 or FV60 to park an invoice."
+},
+{
+"a": "AP",
+"l": "F",
+"t": true,
+"q": "How do you see a vendor balance?",
+"ans": "FK10N for the balance by period, or FBL1N for the open items that make up the balance."
+},
+{
+"a": "AP",
+"l": "X",
+"t": true,
+"q": "How does the automatic payment program F110 work?",
+"ans": "Enter parameters (run date, company code, payment methods, next run date, vendors), run the proposal, review and edit it (block or remove items), execute the payment run, then create the payment medium or bank file. Configuration is in FBZP: house banks, payment methods and ranking order."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What are payment terms?",
+"ans": "A key that calculates the due date and any cash discount from the baseline date, for example 2% within 10 days, net 30. It comes from the vendor master and can be changed on the invoice."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What is a payment block?",
+"ans": "A block key on the vendor master or on an invoice that stops the payment run from paying it, for example a manual block or block R from invoice verification differences."
+},
+{
+"a": "AP",
+"l": "X",
+"t": true,
+"q": "How do you post a vendor advance (down payment)?",
+"ans": "Optionally a down payment request (F-47), then the down payment with a special G/L indicator (F-48), which goes to a separate reconciliation account. When the invoice arrives the advance is cleared against it with F-54."
+},
+{
+"a": "AP",
+"l": "X",
+"t": false,
+"q": "What is a special G/L indicator?",
+"ans": "A one-character key that posts special transactions such as down payments (A), bills of exchange (W) or guarantees to an alternative reconciliation account, so they are shown separately from normal payables."
+},
+{
+"a": "AP",
+"l": "F",
+"t": true,
+"q": "How does the duplicate invoice check work?",
+"ans": "If the vendor master flag is set, the system warns when an invoice with the same company code, vendor, currency, reference, invoice date and amount already exists. MIRO has its own duplicate check settings."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "How do you do a vendor ageing analysis?",
+"ans": "FBL1N with open items at a key date and the arrears (days overdue) column, sorted or subtotalled into buckets like 0-30, 31-60, 61-90 and above 90 days. Standard due date analysis reports also exist."
+},
+{
+"a": "AP",
+"l": "X",
+"t": true,
+"q": "How do you reconcile a vendor statement?",
+"ans": "Compare the vendor's statement with FBL1N for the same date. Typical differences: invoices not yet booked, payments in transit, debit notes, TDS deducted, GST differences. List each item, book what is missing, follow up the rest."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What is a one-time vendor?",
+"ans": "A vendor account (one-time account group) used for vendors you buy from rarely. The name, address and bank are entered on each document instead of a separate master record."
+},
+{
+"a": "AP",
+"l": "X",
+"t": false,
+"q": "How do you reverse a payment that was already cleared?",
+"ans": "Reset the clearing with FBRA and choose reset and reverse. The invoice becomes open again and the payment document is reversed."
+},
+{
+"a": "AP",
+"l": "X",
+"t": false,
+"q": "What is the MSME 45-day rule and why does AP care?",
+"ans": "Under the MSMED Act, micro and small suppliers must be paid within the agreed period, at most 45 days (15 days if nothing is agreed). Income tax law disallows the expense until paid if the limit is crossed. AP tracks MSME vendors in the master and their ageing."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "Which entry is passed when a vendor invoice without PO is posted?",
+"ans": "Dr expense (or asset), Dr input GST, Cr vendor for the gross amount."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What is cash discount and how is it posted?",
+"ans": "A reduction for paying early. If the vendor is paid within the discount period, the payment program takes the discount and posts it to the cash discount received account automatically."
+},
+{
+"a": "AR",
+"l": "F",
+"t": true,
+"q": "Explain the accounts receivable process.",
+"ans": "Customer master and credit limit, invoice (VF01 billing or FB70 direct), monitoring in FBL5N, collection and dunning, incoming payment (F-28) with clearing, and handling of short payments, disputes and write-offs."
+},
+{
+"a": "AR",
+"l": "F",
+"t": true,
+"q": "Partial payment vs residual payment?",
+"ans": "Partial: the invoice stays open and the payment is linked to it. Residual: the invoice is cleared and a new open item is created for the remaining amount, with its own due date."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "How do you handle a customer short payment?",
+"ans": "Depending on the amount and reason: write off within tolerance to a payment differences account, keep a residual item, or post a partial payment. Record the reason code so it can be followed up."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "What is dunning?",
+"ans": "Sending reminders to customers for overdue items. The dunning procedure defines levels, intervals and letters; the dunning run is F150."
+},
+{
+"a": "AR",
+"l": "X",
+"t": true,
+"q": "How is customer credit limit managed?",
+"ans": "A credit limit and risk class are kept per customer. Sales orders above the available limit are blocked and released by the credit team in VKM1. In S/4HANA SAP Credit Management uses the BP (UKM_BP) instead of FD32."
+},
+{
+"a": "AR",
+"l": "X",
+"t": false,
+"q": "How do you post a customer advance?",
+"ans": "Down payment with a special G/L indicator (F-29) to a separate reconciliation account, then clear it against the final invoice with F-39."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "What is a payment on account?",
+"ans": "Money received from a customer that is not matched to any invoice yet. It stays as an open credit item on the customer until it is applied."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "What is DSO?",
+"ans": "Days sales outstanding: receivables divided by credit sales, multiplied by the number of days in the period. It shows how many days customers take to pay on average."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "How is a customer credit memo created?",
+"ans": "Directly in FI with FB75, or from sales: a credit memo request (or returns order) referencing the invoice, then billing creates the credit memo and reduces the receivable."
+},
+{
+"a": "AR",
+"l": "X",
+"t": false,
+"q": "How do you make a provision for doubtful debts?",
+"ans": "Review the AR ageing and specific risky customers, then book Dr bad debt expense, Cr provision for doubtful debts. Actual write-off of a customer later clears against the provision."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "How do you see a customer balance?",
+"ans": "FD10N for balances by period, FBL5N for the open items."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What is the difference between an open item and a cleared item?",
+"ans": "An open item has not yet been matched by a payment or credit memo. Once cleared it carries the clearing document number and date."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "Where do you see the vendor balance?",
+"ans": "In FBL1N as the total of the open items, or FK10N. In Fiori: Manage Supplier Line Items."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "How do you find overdue customer items?",
+"ans": "FBL5N, open items, key date today, and look at the arrears column for positive days. Dunning (F150) runs on these items."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "Which vendor master fields matter most?",
+"ans": "Name, address, GSTIN and PAN, bank details, reconciliation account, payment terms and payment methods. For purchasing: order currency and incoterms."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What is the difference between FB60 and MIRO?",
+"ans": "MIRO is PO-based and matches the goods receipt. FB60 has no PO; the expense is posted directly to a G/L account."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "What do you see after posting a customer invoice?",
+"ans": "A new open item in FBL5N (plus), receivables reconciliation account 140000 debited and revenue 400000 credited."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "How does F110 work?",
+"ans": "Parameters (company code, payment method, vendors, due date), proposal, edit or block items, payment run, payment medium (bank file)."
+},
+{
+"a": "AP",
+"l": "F",
+"t": false,
+"q": "What is clearing?",
+"ans": "Matching an invoice with its payment. Both items then carry the same clearing document number and date."
+},
+{
+"a": "AR",
+"l": "F",
+"t": false,
+"q": "What do you do if a customer short-pays?",
+"ans": "Post the difference as a residual item, a partial payment, or a write-off within tolerance, with a reason code."
+}
+],
+"locked": [
+{
+"a": "P2P",
+"n": "Procure to pay and inventory",
+"count": 25,
+"sample": [
+"Explain the procure-to-pay cycle with entries.",
+"What is GR/IR and why does it have a balance?",
+"What is a 3-way match?",
+"Which movement types should you know?"
+]
+},
+{
+"a": "O2C",
+"n": "Order to cash",
+"count": 11,
+"sample": [
+"Explain the order-to-cash cycle with entries.",
+"How is the revenue account determined in billing?",
+"A billing document did not create an accounting document. What do you do?",
+"What is billed: ordered or delivered quantity?"
+]
+},
+{
+"a": "GL",
+"n": "General ledger and closing",
+"count": 22,
+"sample": [
+"What do you do at month end?",
+"What is an accrual? How is it reversed?",
+"What are recurring entries?",
+"How is foreign currency revalued at period end?"
+]
+},
+{
+"a": "BANK",
+"n": "Bank and cash",
+"count": 8,
+"sample": [
+"Explain bank reconciliation.",
+"What is an outstanding cheque and a deposit in transit?",
+"Why do companies use bank clearing (sub) accounts?",
+"Electronic vs manual bank statement?"
+]
+},
+{
+"a": "FA",
+"n": "Fixed assets",
+"count": 9,
+"sample": [
+"Explain the asset life cycle with T-codes.",
+"What does an asset class control?",
+"What are depreciation areas?",
+"What is an asset under construction (AuC)?"
+]
+},
+{
+"a": "TAX",
+"n": "GST and TDS",
+"count": 9,
+"sample": [
+"How is GST handled in an ERP?",
+"What is reverse charge (RCM) and its entry?",
+"GSTR-1 vs GSTR-3B vs GSTR-2B?",
+"Why reconcile purchase register with GSTR-2B?"
+]
+},
+{
+"a": "PAY",
+"n": "Payroll basics",
+"count": 6,
+"sample": [
+"What entry does a payroll run post?",
+"Payroll vs payslip?",
+"How is loss of pay calculated?",
+"Why is employer PF not part of the net pay?"
+]
+},
+{
+"a": "S4",
+"n": "ECC vs S/4HANA and system",
+"count": 8,
+"sample": [
+"What are the main differences between ECC and S/4HANA in finance?",
+"What is the Universal Journal (ACDOCA)?",
+"What is the Business Partner?",
+"What is Fiori?"
+]
+},
+{
+"a": "SCN",
+"n": "Scenario and HR questions",
+"count": 11,
+"sample": [
+"Have you worked on SAP? (how to answer honestly)",
+"A vendor invoice was posted twice. What do you do?",
+"An expense was posted to the wrong G/L account. What do you do?",
+"You need to post into a closed period. What do you do?"
+]
+}
+],
+"areas": [
+[
+"BAS",
+"Fresher basics"
+],
+[
+"AP",
+"Accounts payable"
+],
+[
+"AR",
+"Accounts receivable"
+],
+[
+"P2P",
+"Procure to pay and inventory"
+],
+[
+"O2C",
+"Order to cash"
+],
+[
+"GL",
+"General ledger and closing"
+],
+[
+"BANK",
+"Bank and cash"
+],
+[
+"FA",
+"Fixed assets"
+],
+[
+"TAX",
+"GST and TDS"
+],
+[
+"PAY",
+"Payroll basics"
+],
+[
+"S4",
+"ECC vs S/4HANA and system"
+],
+[
+"SCN",
+"Scenario and HR questions"
+]
+],
+"tc": [
+[
+"Masters",
+"BP business partner · XK03 / FK03 vendor · XD03 / FD03 customer · FS00 G/L account · AS01 asset"
+],
+[
+"Payables",
+"FB60 invoice without PO · MIRO invoice with PO · FB65 credit memo · F-53 manual payment · F110 payment run · F-48 / F-54 down payment · FBL1N line items · FK10N balance"
+],
+[
+"Receivables",
+"FB70 invoice · FB75 credit memo · F-28 receipt · F-29 / F-39 down payment · F150 dunning · FBL5N line items · FD10N balance · VKM1 credit block"
+],
+[
+"G/L",
+"FB50 journal · FB03 display · FB08 reversal · FBRA reset clearing · FBS1 accrual · F.81 reversal run · FBD1 / F.14 recurring · FBL3N line items · FAGLB03 balances · S_ALR_87012277 trial balance"
+],
+[
+"Purchasing",
+"ME51N requisition · ME21N / ME23N PO · ME2N PO list · MIGO goods movement · MRBR release blocked invoices · MR11 GR/IR maintenance · MB52 stock · MI01 / MI04 / MI07 count"
+],
+[
+"Sales",
+"VA01 order · VL01N delivery · VF01 billing · VFX3 release billing to accounting · VKOA revenue accounts"
+],
+[
+"Closing and others",
+"OB52 posting periods · FAGL_FCV currency revaluation · FAGLGVTR / F.07 carryforward · FF67 / FF_5 / FEBAN bank statements · AFAB depreciation · ABAON / ABAVN / F-92 retirement · AW01N asset explorer"
+]
+],
+"je": [
+[
+"Goods receipt (MIGO 101)",
+"Dr Inventory",
+"Cr GR/IR"
+],
+[
+"Invoice with PO (MIRO)",
+"Dr GR/IR + Dr Input GST",
+"Cr Vendor"
+],
+[
+"Invoice without PO (FB60)",
+"Dr Expense + Dr Input GST",
+"Cr Vendor"
+],
+[
+"Vendor payment",
+"Dr Vendor",
+"Cr Bank"
+],
+[
+"Goods issue for delivery (601)",
+"Dr COGS",
+"Cr Inventory"
+],
+[
+"Billing (VF01)",
+"Dr Customer",
+"Cr Revenue + Cr Output GST"
+],
+[
+"Customer receipt",
+"Dr Bank",
+"Cr Customer"
+],
+[
+"Accrual",
+"Dr Expense",
+"Cr Accrued expenses"
+],
+[
+"Depreciation",
+"Dr Depreciation",
+"Cr Accumulated depreciation"
+],
+[
+"Payroll run",
+"Dr Salaries + Dr Employer PF",
+"Cr Salaries, PF, TDS, PT payable"
+],
+[
+"Return to vendor (122)",
+"Dr GR/IR",
+"Cr Inventory"
+],
+[
+"Vendor down payment (F-48)",
+"Dr Vendor (special G/L A)",
+"Cr Bank"
+]
+]
+}
