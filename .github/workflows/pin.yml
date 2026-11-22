@@ -1,5 +1,8 @@
 name: pin-posts
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      script: {default: pin_posts}
 jobs:
   pin:
     runs-on: ubuntu-latest
@@ -8,7 +11,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: pip install requests
-      - run: python engine/tools/pin_posts.py
+      - run: python engine/tools/${{ inputs.script }}.py
         env:
           TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
           TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
