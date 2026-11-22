@@ -144,7 +144,12 @@ def main():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 2 and sys.argv[1] == "--test-key":
+    if len(sys.argv) > 1 and sys.argv[1] == "--selftest":
+        k, pl = make_key(json.loads(os.environ["LICENCE_PRIVATE_JWK"]), "Test Buyer", 12)
+        send_email(GMAIL, "TEST: your FinRehearse licence key (12 months)", email_text("Test Buyer", k, pl, 12))
+        tell_owner("✅ FinRehearse sales system test: a sample key email was sent to " + GMAIL + ". Razorpay, Gmail and key signing all work.")
+        print("selftest ok")
+    elif len(sys.argv) > 2 and sys.argv[1] == "--test-key":
         k, _ = make_key(json.load(open(sys.argv[2])), "Test Buyer", 12)
         print(k)
     else:

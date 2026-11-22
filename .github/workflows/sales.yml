@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
+    inputs:
+      selftest: {type: boolean, default: false}
 concurrency: {group: sales, cancel-in-progress: false}
 jobs:
   keys:
@@ -24,4 +26,5 @@ jobs:
           for v in RZP_KEY_ID RZP_KEY_SECRET GMAIL_APP_PASSWORD LICENCE_PRIVATE_JWK; do
             if [ -z "${!v}" ]; then echo "secret $v is not set yet, skipping"; exit 0; fi
           done
+          if [ "${{ inputs.selftest }}" = "true" ]; then python engine/sales.py --selftest; fi
           python engine/sales.py
