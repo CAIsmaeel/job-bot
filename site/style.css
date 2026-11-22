@@ -27,3 +27,8 @@ h1,h2,h3{letter-spacing:-.02em}.hero h1{font-weight:800}h2{font-weight:700}
 header .logo{display:flex;align-items:center}header .logo img{display:block;height:30px;width:auto}
 header a.logo{margin-left:0}
 @media (max-width:640px){header .w{padding-top:10px;padding-bottom:10px}header nav{display:flex;gap:14px;overflow-x:auto;white-space:nowrap;width:100%;scrollbar-width:none}header nav a{margin-left:0;font-size:15px}}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.shots figure{margin:0}.shots img{width:100%;height:auto;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 4px 18px rgba(17,24,39,.08);display:block}
+.shots figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+@media (max-width:760px){.shots{grid-template-columns:1fr}}
+#faq details{background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:14px 18px;margin:0 0 10px}#faq summary{font-weight:700;cursor:pointer}#faq details p{margin:10px 0 0}
+#fit ul{margin:0;padding-left:20px}#fit li{margin:6px 0}
