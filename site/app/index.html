@@ -50,6 +50,7 @@ button,input,select{font:inherit;color:inherit}
 
 /* buttons */
 .btn{border:1px solid var(--field-line);background:var(--surface);border-radius:4px;padding:6px 12px;cursor:pointer;min-height:34px;white-space:nowrap}
+a.btn{display:inline-flex;align-items:center;text-decoration:none;color:inherit}a.btn.primary{color:var(--accent-fg)}
 .btn:hover{background:var(--surface2)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg);font-weight:500}
 .btn.primary:hover{filter:brightness(1.08)}
@@ -5536,15 +5537,21 @@ SCR.CERT={t:'Certificate of completion',render(){
   if(ready&&LEARN.name&&LEARN.certDate){
     const mis=MIS.filter(m=>S.done[m.id]).length;
     const d=LEARN.certDate,id=certId(LEARN.name,d);
-    h+=`<div class="actions noprint">${BTN('Print or save as PDF','printPage','','primary')}</div>`
+    const vurl=certVerifyUrl(LEARN.name,d,id,mis),dt=new Date(d+'T00:00:00');
+    const li='https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name='+encodeURIComponent('ERP Finance Practice: Certificate of Completion')+'&organizationName='+encodeURIComponent(BIZ_NAME)+'&issueYear='+dt.getFullYear()+'&issueMonth='+(dt.getMonth()+1)+'&certId='+encodeURIComponent(id)+'&certUrl='+encodeURIComponent(vurl);
+    h+=`<div class="card noprint"><h3>Share it</h3><p class="help" style="margin:0 0 10px">Anyone can open your verify link to check this certificate. Add it to LinkedIn so recruiters see it.</p><div class="actions"><a class="btn primary" href="${esc(li)}" target="_blank" rel="noopener">Add to LinkedIn</a>${BTN('Copy verify link','certCopy','','')}${BTN('Print or save as PDF','printPage','','')}</div></div>`
      +`<div id="printarea"><div class="cert"><p class="cert-k">${esc(BIZ_NAME)}</p><h2>Certificate of Completion</h2><p>This records that</p><p class="cert-n">${esc(LEARN.name)}</p>`
      +`<p>has completed the FinRehearse ERP finance practice programme: ${LESSONS.length} fundamentals lessons, ${mis} of ${MIS.length} hands-on missions, and a recall drill with ${Math.round(bestDrill()*100)}% accuracy.</p>`
      +`<p class="cert-s">Areas practised: accounts payable, accounts receivable, procure to pay, order to cash, general ledger and month-end closing, bank reconciliation, fixed assets, GST configuration, payroll basics.</p>`
-     +`<div class="cert-f"><span>Date: ${fd(d)}</span><span>Record ID: ${esc(id)}</span></div>`
+     +`<div class="cert-f"><span>Date: ${fd(d)}</span><span>Record ID: ${esc(id)}</span></div><p class="cert-s">Verify at finrehearse.pages.dev/verify (link from the holder)</p>`
      +`<p class="cert-d">This is a practice completion record issued by ${esc(BIZ_NAME)} for training done in the FinRehearse simulator. It is not an SAP certification, is not issued or endorsed by SAP SE, and is not proof of work experience in any ERP system. SAP and S/4HANA are trademarks or registered trademarks of SAP SE.</p></div></div>`;
   }
   return h;
 }};
+function certVerifyUrl(name,date,id,mis){const c={n:name,d:date,id,l:(LIC.info&&LIC.info.id)||'full',m:mis,t:MIS.length,r:Math.round(bestDrill()*100),b:basicsDone()};
+  const b=btoa(unescape(encodeURIComponent(JSON.stringify(c)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');return 'https://finrehearse.pages.dev/verify/#c='+b}
+ACT.certCopy=()=>{const mis=MIS.filter(m=>S.done[m.id]).length,u=certVerifyUrl(LEARN.name,LEARN.certDate,certId(LEARN.name,LEARN.certDate),mis);
+  try{navigator.clipboard.writeText(u).then(()=>msg('s','Verify link copied. Paste it in your CV or messages.'),()=>prompt('Copy this link',u))}catch(e){prompt('Copy this link',u)}};
 ACT.certMake=()=>{
   const n=val('cert_name').replace(/\s+/g,' ');
   if(n.length<3){msg('e','Enter your full name');return}

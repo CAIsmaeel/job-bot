@@ -7,7 +7,7 @@ names, emails or keys to the log.
 
 Secrets: RZP_KEY_ID, RZP_KEY_SECRET, GMAIL_APP_PASSWORD, LICENCE_PRIVATE_JWK, TELEGRAM_TOKEN
 """
-import base64, json, os, random, smtplib, string, sys, time
+import base64, hashlib, json, os, random, smtplib, string, subprocess, sys, time
 from datetime import date
 from email.message import EmailMessage
 import requests
@@ -118,8 +118,32 @@ def sales_bot_setup():
     print("sales bot setup: replied to", len(chats), "chat(s)")
 
 
+def register_for_verify(ids):
+    """Add sha256(licence id) to site/verify/ids.txt so the certificate check page can confirm a paid licence."""
+    if not ids:
+        return
+    path = "site/verify/ids.txt"
+    with open(path, "a") as f:
+        for i in ids:
+            f.write(hashlib.sha256(i.encode()).hexdigest() + "\n")
+    run = lambda *a: subprocess.run(a, check=False, capture_output=True, text=True)
+    run("git", "-c", "user.name=sales", "-c", "user.email=sales@users.noreply.github.com", "commit", "-qam", "verify: register new licence ids")
+    for _ in range(3):
+        run("git", "pull", "-q", "--rebase", "origin", "main")
+        if run("git", "push", "-q", "origin", "HEAD:main").returncode == 0:
+            print("verify list updated")
+            repo, tok = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GH_TOKEN")
+            if repo and tok:
+                requests.post(f"https://api.github.com/repos/{repo}/actions/workflows/site.yml/dispatches",
+                              headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"},
+                              json={"ref": "main"}, timeout=30)
+            return
+    print("verify list: push failed")
+
+
 def main():
     sales_bot_setup()
+    issued = []
     auth = (os.environ["RZP_KEY_ID"], os.environ["RZP_KEY_SECRET"])
     jwk = json.loads(os.environ["LICENCE_PRIVATE_JWK"])
     since = int(time.time()) - 7 * 86400
@@ -149,11 +173,13 @@ def main():
         if not u.ok:
             print("could not mark payment as done:", u.status_code)
         done += 1
+        issued.append(payload["id"])
         tell_owner(f"💰 New FinRehearse sale: Rs {p['amount']//100} ({months} months)\n"
                    f"Buyer: {name} <{to}>\nPayment: {p['id']}\nKey id: {payload['id']} (emailed)\n\n"
                    f"Key, in case they ask again:\n{key}"
                    + ("" if u.ok else "\n\n⚠️ Could not mark the payment as done on Razorpay, so the next run may email the key again."))
     print(f"keys emailed: {done}")
+    register_for_verify(issued)
 
 
 if __name__ == "__main__":

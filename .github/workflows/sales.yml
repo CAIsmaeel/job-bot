@@ -6,6 +6,9 @@ on:
     inputs:
       selftest: {type: boolean, default: false}
 concurrency: {group: sales, cancel-in-progress: false}
+permissions:
+  contents: write
+  actions: write
 jobs:
   keys:
     runs-on: ubuntu-latest
@@ -21,6 +24,7 @@ jobs:
           RZP_KEY_SECRET: ${{ secrets.RZP_KEY_SECRET }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           LICENCE_PRIVATE_JWK: ${{ secrets.LICENCE_PRIVATE_JWK }}
+          GH_TOKEN: ${{ github.token }}
           SALES_BOT_TOKEN: ${{ secrets.SALES_BOT_TOKEN || secrets.TG_CHANNEL_TOKEN }}
           SALES_CHAT_ID: ${{ secrets.SALES_CHAT_ID }}
         run: |
