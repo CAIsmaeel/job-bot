@@ -702,6 +702,37 @@ def tg_send(tok, chat, text, button=None):
         return False
 
 
+# ---------------- Daily Close: one journal-entry quiz a day on the channel ----------------
+def post_daily_quiz(state):
+    """Same question as entry 4 of today's Daily Close in the simulator (index (day*5) % N, day = IST day number)."""
+    tok, chat = os.environ.get("TG_CHANNEL_TOKEN"), os.environ.get("TG_CHANNEL_ID")
+    if not (tok and chat):
+        return
+    now = time.time() + 19800
+    day, hour = int(now // 86400), int(now % 86400 // 3600)
+    key = time.strftime("%Y-%m-%d", time.gmtime(day * 86400))
+    if hour < 8 or state.get("daily_posted") == key:
+        return
+    try:
+        E = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "daily_entries.json"), encoding="utf-8"))
+    except Exception as ex:
+        print("daily quiz: no question file", ex)
+        return
+    q = E[(day * 5) % len(E)]
+    data = {"chat_id": chat, "question": ("Daily Close: " + q["q"])[:300], "options": json.dumps([o[:100] for o in q["o"]]),
+            "type": "quiz", "correct_option_id": q["k"], "explanation": q["why"][:200], "is_anonymous": "true"}
+    try:
+        r = requests.post(f"https://api.telegram.org/bot{tok}/sendPoll", timeout=T, data=data)
+        print("daily quiz:", r.status_code, r.text[:120])
+        if r.ok:
+            state["daily_posted"] = key
+            if SIM_URL:
+                tg_send(tok, chat, "Aaj ke baaki 3 sawaal, aur apni streak, simulator ke Daily Close mein. Free, sign-up nahi.",
+                        ("Open today's Daily Close", SIM_URL.rstrip("/") + "/#daily"))
+    except Exception as ex:
+        print("daily quiz error:", ex)
+
+
 # ---------------- job details (read only for jobs we are about to post) ----------------
 SKILLS = ["SAP", "SAP FICO", "S/4HANA", "Oracle", "Tally", "Excel", "Power BI", "SQL", "Python", "Alteryx", "Hyperion", "Blackline",
           "GST", "TDS", "Income Tax", "Transfer Pricing", "Ind AS", "IFRS", "US GAAP", "Consolidation", "Reconciliation",
@@ -949,6 +980,8 @@ def main():
         sample_post(jobs)
     else:
         post_telegram(new)
+        post_daily_quiz(state)
+        json.dump(state, open(sp, "w"))
     json.dump(reports, open(os.path.join(OUT, "companies_report.json"), "w"), indent=1, ensure_ascii=False)
     # markdown report
     working = [r for r in reports if r.get("kept")]
