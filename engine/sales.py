@@ -68,10 +68,11 @@ Thank you for buying FinRehearse ({months} months). Here is your licence key:
 
 {key}
 
-How to use it:
-1. Open {APP_URL}
-2. Type LICENCE in the command field and press Enter (or open Menu, then Licence).
-3. Paste the whole key, starting with LL1, and press Activate.
+Tap this link to open FinRehearse with your full version switched on:
+{APP_URL}#key={key}
+
+If the link does not open properly, open {APP_URL}, type LICENCE in the command field,
+press Enter, paste the whole key above (it starts with LL1) and press Activate.
 
 Your key works until {payload['exp']}. Key id: {payload['id']} (quote it if you write to us).
 Practice data stays in your browser, so use the same browser each time, or export your data.
