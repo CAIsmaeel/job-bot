@@ -72,7 +72,7 @@ def probe(co):
     if out["cfg"]:
         rep, js = E.run_company(dict(co, ats=out["cfg"]))
         out["raw"], out["kept"] = rep.get("raw"), rep.get("kept")
-        out["sample"] = [j["title"] for j in js[:3]]
+        out["sample"] = [f"{j['title']} @ {j['location']}" for j in js[:6]]
         if rep.get("error"):
             out["error"] = rep["error"]
     return out
@@ -95,7 +95,7 @@ def main():
         print(f"PROBE | {o['company'][:30]:<30} | st={o['status']} | {(o['cfg'] or {}).get('platform','-'):<15} | raw={o['raw']} kept={o['kept']} | hints={','.join(o['hints'])[:120]} | {o.get('error','')}", flush=True)
     for o in res:
         if o["cfg"] or o.get("new_careers"):
-            print("PROBECFG", json.dumps({"company": o["company"], "new_careers": o.get("new_careers"), "cfg": o["cfg"], "raw": o["raw"], "kept": o["kept"], "error": o.get("error")}), flush=True)
+            print("PROBECFG", json.dumps({"company": o["company"], "new_careers": o.get("new_careers"), "cfg": o["cfg"], "raw": o["raw"], "kept": o["kept"], "error": o.get("error"), "sample": o.get("sample")}), flush=True)
     os.makedirs(E.OUT, exist_ok=True)
     json.dump(res, open(os.path.join(E.OUT, "probe.json"), "w"), indent=1)
     print("PROBE_SUMMARY", sum(1 for o in res if o["kept"]), "of", len(res), "now give India finance jobs")
