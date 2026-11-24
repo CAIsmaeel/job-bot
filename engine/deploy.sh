@@ -13,3 +13,6 @@ npx --yes wrangler@3 pages deploy /tmp/deploy --project-name "$PROJECT" --branch
 # old address -> new address (one small redirect site on the old project)
 mkdir -p /tmp/oldsite && printf '/* https://finrehearse.pages.dev/:splat 301\n' > /tmp/oldsite/_redirects && printf '<meta http-equiv="refresh" content="0;url=https://finrehearse.pages.dev/">' > /tmp/oldsite/index.html
 npx --yes wrangler@3 pages deploy /tmp/oldsite --project-name ledgerlab --branch main --commit-dirty=true 2>&1 | tail -2 || true
+
+# tell Bing / IndexNow about the pages (once a day, never fails the deploy)
+python3 engine/indexnow.py || true

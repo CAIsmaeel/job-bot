@@ -3,7 +3,7 @@ name: site
 on:
   push:
     branches: [main]
-    paths: ["site/**", "engine/deploy.sh", ".github/workflows/site.yml"]
+    paths: ["site/**", "engine/deploy.sh", "engine/indexnow.py", ".github/workflows/site.yml"]
   workflow_dispatch: {}
 concurrency:
   group: site
@@ -23,4 +23,5 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          FORCE_INDEXNOW: "1"
         run: bash engine/deploy.sh
