@@ -1108,7 +1108,10 @@
  },
  {
   "name": "Amazon",
-  "careers": "https://www.amazon.jobs/en/locations/india"
+  "careers": "https://www.amazon.jobs/en/locations/india",
+  "ats": {
+   "platform": "amazon"
+  }
  },
  {
   "name": "Microsoft",

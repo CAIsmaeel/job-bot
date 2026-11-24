@@ -15,6 +15,30 @@ def probe(co):
     pages = [url]
     try:
         r = E.get(url)
+        if r.status_code >= 400:
+            # careers link is stale: try the home page and common careers paths
+            o = "{0.scheme}://{0.netloc}".format(urlparse(url))
+            host = urlparse(url).netloc
+            base = "https://www." + host[4:] if host.startswith("www.") else "https://" + host
+            for cand in [o + "/careers", o + "/careers/", o + "/en/careers", o + "/career", o + "/careers.html", o + "/about-us/careers", o + "/"]:
+                try:
+                    rc = E.get(cand)
+                except Exception:
+                    continue
+                if rc.status_code < 400:
+                    if cand.endswith("/") and cand == o + "/":
+                        links = [urljoin(rc.url, html.unescape(h)) for h in re.findall(r'href=["\']([^"\'#]*career[^"\'#]*)["\']', rc.text, re.I)]
+                        links = [l for l in links if l.startswith("http")]
+                        if links:
+                            try:
+                                rl = E.get(links[0])
+                                if rl.status_code < 400:
+                                    rc = rl
+                            except Exception:
+                                pass
+                    r = rc
+                    out["new_careers"] = rc.url
+                    break
         out["status"] = r.status_code
         out["final"] = r.url
         blob = r.text[:800000]
@@ -68,8 +92,8 @@ def main():
     for o in res:
         print(f"PROBE | {o['company'][:30]:<30} | st={o['status']} | {(o['cfg'] or {}).get('platform','-'):<15} | raw={o['raw']} kept={o['kept']} | hints={','.join(o['hints'])[:120]} | {o.get('error','')}", flush=True)
     for o in res:
-        if o["cfg"]:
-            print("PROBECFG", json.dumps({"company": o["company"], "cfg": o["cfg"], "raw": o["raw"], "kept": o["kept"], "error": o.get("error")}), flush=True)
+        if o["cfg"] or o.get("new_careers"):
+            print("PROBECFG", json.dumps({"company": o["company"], "new_careers": o.get("new_careers"), "cfg": o["cfg"], "raw": o["raw"], "kept": o["kept"], "error": o.get("error")}), flush=True)
     os.makedirs(E.OUT, exist_ok=True)
     json.dump(res, open(os.path.join(E.OUT, "probe.json"), "w"), indent=1)
     print("PROBE_SUMMARY", sum(1 for o in res if o["kept"]), "of", len(res), "now give India finance jobs")

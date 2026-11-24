@@ -649,9 +649,26 @@ def a_adzuna(c):
     return out
 
 
+def a_amazon(c):
+    """amazon.jobs public search (JSON) for finance roles in India."""
+    out, ids = [], set()
+    for term in ["finance", "accounting", "accounts payable", "tax", "financial analyst"]:
+        r = get(f"https://www.amazon.jobs/en/search.json?base_query={quote(term)}&country=IND&result_limit=100&sort=recent")
+        if r.status_code != 200:
+            continue
+        for x in r.json().get("jobs", []):
+            jid = x.get("id_icims") or x.get("id")
+            if not jid or jid in ids:
+                continue
+            ids.add(jid)
+            out.append({"id": jid, "title": x.get("title"), "location": x.get("normalized_location") or x.get("location") or x.get("city"),
+                        "url": "https://www.amazon.jobs" + (x.get("job_path") or f"/en/jobs/{jid}"), "posted": x.get("posted_date")})
+    return out
+
+
 ADAPTERS = {"workday": a_workday, "oracle": a_oracle, "smartrecruiters": a_smartrecruiters, "greenhouse": a_greenhouse,
             "lever": a_lever, "eightfold": a_eightfold, "phenom": a_phenom, "avature": a_avature,
-            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap, "adzuna": a_adzuna, "jibe": a_jibe}
+            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap, "adzuna": a_adzuna, "jibe": a_jibe, "amazon": a_amazon}
 
 
 # ---------------- run ----------------
