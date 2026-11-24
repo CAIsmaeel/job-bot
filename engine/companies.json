@@ -143,7 +143,11 @@
  },
  {
   "name": "Schneider Electric",
-  "careers": "https://careers.se.com"
+  "careers": "https://careers.se.com",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://careers.se.com"
+  }
  },
  {
   "name": "AB InBev",
@@ -295,7 +299,12 @@
  },
  {
   "name": "Eaton",
-  "careers": "https://jobs.eaton.com"
+  "careers": "https://jobs.eaton.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "app.eightfold.ai",
+   "domain": ""
+  }
  },
  {
   "name": "Emerson",
@@ -323,7 +332,11 @@
  },
  {
   "name": "PepsiCo",
-  "careers": "https://www.pepsicojobs.com"
+  "careers": "https://www.pepsicojobs.com",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://www.pepsicojobs.com:443"
+  }
  },
  {
   "name": "Mondelez",
@@ -343,7 +356,12 @@
  },
  {
   "name": "AstraZeneca",
-  "careers": "https://careers.astrazeneca.com"
+  "careers": "https://careers.astrazeneca.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "astrazeneca.eightfold.ai",
+   "domain": ""
+  }
  },
  {
   "name": "Sanofi",
@@ -1158,7 +1176,11 @@
  },
  {
   "name": "Principal Financial",
-  "careers": "https://www.principal.com/about-us/careers"
+  "careers": "https://www.principal.com/about-us/careers",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://careers.principal.com"
+  }
  },
  {
   "name": "Prudential plc",
@@ -1174,7 +1196,11 @@
  },
  {
   "name": "AXA XL",
-  "careers": "https://careers.axa.com"
+  "careers": "https://careers.axa.com",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://careers.axa.com"
+  }
  },
  {
   "name": "Chubb",
@@ -1303,7 +1329,11 @@
  },
  {
   "name": "Aon",
-  "careers": "https://jobs.aon.com"
+  "careers": "https://jobs.aon.com",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://jobs.aon.com"
+  }
  },
  {
   "name": "Marsh McLennan",
@@ -1331,7 +1361,11 @@
  },
  {
   "name": "ZS Associates",
-  "careers": "https://www.zs.com/careers"
+  "careers": "https://www.zs.com/careers",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://jobs.zs.com"
+  }
  },
  {
   "name": "Evalueserve",
@@ -2267,7 +2301,12 @@
  },
  {
   "name": "Qualcomm",
-  "careers": "https://careers.qualcomm.com"
+  "careers": "https://careers.qualcomm.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "app.eightfold.ai",
+   "domain": ""
+  }
  },
  {
   "name": "Texas Instruments",
@@ -2279,7 +2318,11 @@
  },
  {
   "name": "AMD",
-  "careers": "https://careers.amd.com"
+  "careers": "https://careers.amd.com",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://careers.amd.com"
+  }
  },
  {
   "name": "Micron",
@@ -2287,7 +2330,12 @@
  },
  {
   "name": "Applied Materials",
-  "careers": "https://careers.appliedmaterials.com"
+  "careers": "https://careers.appliedmaterials.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "app.eightfold.ai",
+   "domain": ""
+  }
  },
  {
   "name": "Western Digital",
@@ -2652,7 +2700,11 @@
  },
  {
   "name": "Intercontinental Exchange",
-  "careers": "https://careers.ice.com"
+  "careers": "https://careers.ice.com",
+  "ats": {
+   "platform": "jibe",
+   "origin": "https://careers.ice.com"
+  }
  },
  {
   "name": "Nasdaq",
