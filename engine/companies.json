@@ -2739,5 +2739,13 @@
  {
   "name": "DP World",
   "careers": "https://www.dpworld.com/careers"
+ },
+ {
+  "name": "Adzuna (job boards)",
+  "careers": "https://www.adzuna.in/",
+  "ats": {
+   "platform": "adzuna"
+  },
+  "india_default": true
  }
 ]

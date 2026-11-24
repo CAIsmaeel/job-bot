@@ -4,7 +4,7 @@ name: engine
 # Separate from the personal job bot (bot.py / run.yml), which it does not touch.
 on:
   schedule:
-    - cron: "23 1-17/2 * * *"   # every 2 hours, about 6:53 AM to 10:53 PM India time
+    - cron: "23 1-17 * * *"   # every hour, about 6:53 AM to 10:53 PM India time (GitHub often skips scheduled runs, so more chances)
   workflow_dispatch:
     inputs:
       test_post:
@@ -33,6 +33,8 @@ jobs:
         env:
           TG_CHANNEL_TOKEN: ${{ secrets.TG_CHANNEL_TOKEN }}
           TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
           BRAND_NAME: ${{ vars.BRAND_NAME }}
           SITE_URL: ${{ vars.SITE_URL || 'https://finrehearse.pages.dev' }}
           SIMULATOR_URL: ${{ vars.SIMULATOR_URL || 'https://finrehearse.pages.dev/app/' }}

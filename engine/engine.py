@@ -569,9 +569,39 @@ def a_sitemap(c):
     return out
 
 
+def a_adzuna(c):
+    """Adzuna's official job search API (free key from developer.adzuna.com). Adzuna gathers openings from
+    job boards and company sites across India. Silent (returns nothing) until both secrets are set."""
+    aid, akey = os.environ.get("ADZUNA_APP_ID"), os.environ.get("ADZUNA_APP_KEY")
+    if not (aid and akey):
+        return []
+    out, ids = [], set()
+    for term in ["accountant", "accounts payable", "accounts receivable", "financial analyst", "fp&a", "chartered accountant",
+                 "general ledger", "record to report", "taxation", "internal audit", "treasury", "payroll", "cost accountant", "finance manager"]:
+        try:
+            r = requests.get("https://api.adzuna.com/v1/api/jobs/in/search/1", timeout=T,
+                             params={"app_id": aid, "app_key": akey, "what": term, "results_per_page": 50,
+                                     "max_days_old": 3, "sort_by": "date", "content-type": "application/json"})
+            if r.status_code != 200:
+                print("adzuna:", term, r.status_code)
+                continue
+            for x in r.json().get("results", []):
+                if x.get("id") in ids:
+                    continue
+                ids.add(x.get("id"))
+                out.append({"id": x.get("id"), "title": re.sub(r"<[^>]+>", "", x.get("title") or ""),
+                            "company": re.sub(r"<[^>]+>", "", (x.get("company") or {}).get("display_name") or "").strip() or None,
+                            "location": (x.get("location") or {}).get("display_name") or "India",
+                            "url": x.get("redirect_url"), "posted": (x.get("created") or "")[:10] or None})
+        except Exception as ex:
+            print("adzuna error:", term, ex)
+        time.sleep(1)
+    return out
+
+
 ADAPTERS = {"workday": a_workday, "oracle": a_oracle, "smartrecruiters": a_smartrecruiters, "greenhouse": a_greenhouse,
             "lever": a_lever, "eightfold": a_eightfold, "phenom": a_phenom, "avature": a_avature,
-            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap}
+            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap, "adzuna": a_adzuna}
 
 
 # ---------------- run ----------------
@@ -632,7 +662,7 @@ def run_company(co):
         if not india:
             continue
         key = hashlib.sha1(f"{name}|{j.get('id')}".encode()).hexdigest()[:16]
-        kept.append({"key": key, "company": name, "title": tidy_title(j.get("title")), "category": cat,
+        kept.append({"key": key, "company": j.get("company") or name, "title": tidy_title(j.get("title")), "category": cat,
                      "location": tidy_loc(j.get("location"))[:120], "url": j.get("url"),
                      "posted": j.get("posted"), "platform": rep["platform"], "approx": bool(j.get("approx"))})
     # de-duplicate same title + location within a company
@@ -925,18 +955,33 @@ def post_telegram(new):
         tg_send(tok, chat, job_card(j, f), btns)
         time.sleep(3)
     if rest:
-        lines = [f"➕ <b>{len(rest)} more new finance jobs</b>\n"]
-        for j in rest[:25]:
-            lines.append(f'▫️ <a href="{e(j["url"])}">{e(nice_title(j["title"]))}</a>\n     {e(j["company"])}, {e(city_of(j["location"]))}')
-        if len(rest) > 25:
-            lines.append(f"\n…and {len(rest) - 25} more" + (f" on {e(SITE_URL)}/jobs/" if SITE_URL else ""))
+        items = [f'▫️ <a href="{e(j["url"])}">{e(nice_title(j["title"]))}</a>\n     {e(j["company"])}, {e(city_of(j["location"]))}'
+                 for j in rest[:60]]
         foot = []
+        if len(rest) > 60:
+            foot.append(f"…and {len(rest) - 60} more" + (f" on {e(SITE_URL)}/jobs/" if SITE_URL else ""))
         if SIM_URL:
             foot.append(f"🎯 Interview soon? Practise real ERP finance work: {e(SIM_URL)}")
         if channel_link():
             foot.append(f"📢 Share with a friend who is job hunting: {channel_link()}")
-        tg_send(tok, chat, "\n".join(lines) + ("\n\n" + "\n".join(foot) if foot else ""))
-
+        # Telegram allows 4096 characters; build whole messages so no HTML tag is ever cut
+        msgs, cur = [], f"➕ <b>{len(rest)} more new finance jobs</b>\n"
+        for it in items:
+            if len(cur) + len(it) + 2 > 3600:
+                msgs.append(cur)
+                cur = ""
+            cur += "\n" + it
+        tail = "\n\n" + "\n".join(foot) if foot else ""
+        if len(cur) + len(tail) > 3900:
+            msgs.append(cur)
+            cur = tail.strip()
+        else:
+            cur += tail
+        msgs.append(cur)
+        for m in msgs:
+            if m.strip():
+                tg_send(tok, chat, m)
+                time.sleep(3)
 
 def sample_post(jobs):
     """One-off test: post 3 current openings in the new format."""
