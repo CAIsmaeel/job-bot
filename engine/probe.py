@@ -65,6 +65,8 @@ def probe(co):
         out["hints"] = sorted(hs)
     except Exception as ex:
         out["error"] = f"{type(ex).__name__}: {str(ex)[:120]}"
+    if co.get("ats"):
+        out["cfg"] = dict(co["ats"])
     if not out["cfg"]:
         out["cfg"] = E.probe_boards(name)
     if out["cfg"]:
