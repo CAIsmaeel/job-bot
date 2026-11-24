@@ -67,6 +67,9 @@ def main():
         res = list(ex.map(probe, cos))
     for o in res:
         print(f"PROBE | {o['company'][:30]:<30} | st={o['status']} | {(o['cfg'] or {}).get('platform','-'):<15} | raw={o['raw']} kept={o['kept']} | hints={','.join(o['hints'])[:120]} | {o.get('error','')}", flush=True)
+    for o in res:
+        if o["cfg"]:
+            print("PROBECFG", json.dumps({"company": o["company"], "cfg": o["cfg"], "raw": o["raw"], "kept": o["kept"], "error": o.get("error")}), flush=True)
     os.makedirs(E.OUT, exist_ok=True)
     json.dump(res, open(os.path.join(E.OUT, "probe.json"), "w"), indent=1)
     print("PROBE_SUMMARY", sum(1 for o in res if o["kept"]), "of", len(res), "now give India finance jobs")
