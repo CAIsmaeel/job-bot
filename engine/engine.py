@@ -575,6 +575,9 @@ def a_adzuna(c):
     aid, akey = os.environ.get("ADZUNA_APP_ID"), os.environ.get("ADZUNA_APP_KEY")
     if not (aid and akey):
         return []
+    # free key: ask only 3 times a day (14 searches each, about 42 calls a day), or when FORCE_ADZUNA=1
+    if os.environ.get("FORCE_ADZUNA") != "1" and datetime.now(timezone.utc).hour not in (1, 7, 13):
+        return []
     out, ids = [], set()
     for term in ["accountant", "accounts payable", "accounts receivable", "financial analyst", "fp&a", "chartered accountant",
                  "general ledger", "record to report", "taxation", "internal audit", "treasury", "payroll", "cost accountant", "finance manager"]:
