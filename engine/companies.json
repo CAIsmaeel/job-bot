@@ -90,7 +90,12 @@
  },
  {
   "name": "American Express",
-  "careers": "https://www.americanexpress.com/en-us/careers/"
+  "careers": "https://www.americanexpress.com/en-us/careers/",
+  "ats": {
+   "platform": "eightfold",
+   "host": "aexp.eightfold.ai",
+   "domain": "aexp.com"
+  }
  },
  {
   "name": "Maersk",
@@ -259,7 +264,12 @@
  },
  {
   "name": "HP",
-  "careers": "https://jobs.hp.com"
+  "careers": "https://jobs.hp.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "hp.eightfold.ai",
+   "domain": "hp.com"
+  }
  },
  {
   "name": "Intel",
@@ -389,7 +399,12 @@
  },
  {
   "name": "Ericsson",
-  "careers": "https://jobs.ericsson.com"
+  "careers": "https://jobs.ericsson.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "ericsson.eightfold.ai",
+   "domain": "ericsson.com"
+  }
  },
  {
   "name": "Nokia",
@@ -2366,7 +2381,12 @@
  },
  {
   "name": "PayPal",
-  "careers": "https://careers.pypl.com"
+  "careers": "https://careers.pypl.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "paypal.eightfold.ai",
+   "domain": "paypal.com"
+  }
  },
  {
   "name": "eBay",
@@ -2622,7 +2642,12 @@
  },
  {
   "name": "Liberty Mutual",
-  "careers": "https://jobs.libertymutualgroup.com"
+  "careers": "https://jobs.libertymutualgroup.com",
+  "ats": {
+   "platform": "eightfold",
+   "host": "libertymutual.eightfold.ai",
+   "domain": "libertymutual.com"
+  }
  },
  {
   "name": "Zurich Insurance",
