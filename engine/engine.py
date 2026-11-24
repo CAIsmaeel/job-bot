@@ -359,7 +359,7 @@ def a_oracle(c):
                 if p.get("Id") in ids:
                     continue
                 ids.add(p.get("Id"))
-                out.append({"id": p.get("Id"), "title": p.get("Title"), "location": (p.get("PrimaryLocation") or "") + " India",
+                out.append({"id": p.get("Id"), "title": p.get("Title"), "location": (p.get("PrimaryLocation") or "") + (" India" if loc else ""),
                             "url": f"https://{c['host']}/hcmUI/CandidateExperience/en/sites/{c['site']}/job/{p.get('Id')}",
                             "posted": p.get("PostedDate")})
             if len(rl) < 25:
