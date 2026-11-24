@@ -1142,7 +1142,12 @@
  },
  {
   "name": "Oracle",
-  "careers": "https://careers.oracle.com"
+  "careers": "https://careers.oracle.com",
+  "ats": {
+   "platform": "oracle",
+   "host": "eeho.fa.us2.oraclecloud.com",
+   "site": "CX_45001"
+  }
  },
  {
   "name": "Salesforce",

@@ -347,11 +347,12 @@ def a_workday(c):
 
 def a_oracle(c):
     out, ids = [], set()
+    loc = c.get("loc", "location=India,")
     for term in TERMS:
         for off in range(0, 200, 25):
             api = (f"https://{c['host']}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true"
                    f"&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber={c['site']},"
-                   f"keyword={quote(term)},location=India,limit=25,offset={off},sortBy=POSTING_DATES_DESC")
+                   f"keyword={quote(term)},{loc}limit=25,offset={off},sortBy=POSTING_DATES_DESC")
             it = (get(api).json().get("items") or [{}])[0]
             rl = it.get("requisitionList", []) or []
             for p in rl:
@@ -363,6 +364,9 @@ def a_oracle(c):
                             "posted": p.get("PostedDate")})
             if len(rl) < 25:
                 break
+    if not out and loc and not c.get("loc_tried"):
+        # some sites do not accept the location filter: search everything, the India check happens later
+        return a_oracle(dict(c, loc="", loc_tried=True))
     return out
 
 
