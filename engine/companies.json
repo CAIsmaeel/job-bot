@@ -1,7 +1,12 @@
 [
  {
   "name": "Mastercard",
-  "careers": "https://careers.mastercard.com"
+  "careers": "https://careers.mastercard.com",
+  "ats": {
+   "platform": "phenom",
+   "origin": "https://careers.mastercard.com",
+   "prefix": "/us/en"
+  }
  },
  {
   "name": "Visa",
@@ -121,7 +126,12 @@
  },
  {
   "name": "Honeywell",
-  "careers": "https://careers.honeywell.com"
+  "careers": "https://careers.honeywell.com",
+  "ats": {
+   "platform": "oracle",
+   "host": "ibqbjb.fa.ocs.oraclecloud.com",
+   "site": "Honeywell"
+  }
  },
  {
   "name": "Cummins",
@@ -165,7 +175,11 @@
  },
  {
   "name": "TresVista",
-  "careers": "https://www.tresvista.com/careers"
+  "careers": "https://www.tresvista.com/careers",
+  "ats": {
+   "platform": "ripplehire",
+   "host": "tresvista.ripplehire.com"
+  }
  },
  {
   "name": "Alvarez & Marsal",
@@ -715,7 +729,12 @@
  {
   "name": "SBI Card",
   "careers": "https://www.sbicard.com/en/about-us/careers.page",
-  "india_default": true
+  "india_default": true,
+  "ats": {
+   "platform": "oracle",
+   "host": "edox.fa.ap1.oraclecloud.com",
+   "site": "CX_33"
+  }
  },
  {
   "name": "Hindustan Unilever",
@@ -795,7 +814,11 @@
  {
   "name": "Lupin",
   "careers": "https://www.lupin.com/careers/",
-  "india_default": true
+  "india_default": true,
+  "ats": {
+   "platform": "successfactors",
+   "origin": "https://careers.lupin.com"
+  }
  },
  {
   "name": "Zydus Lifesciences",
@@ -895,7 +918,12 @@
  {
   "name": "Godrej Properties",
   "careers": "https://www.godrejproperties.com/careers",
-  "india_default": true
+  "india_default": true,
+  "ats": {
+   "platform": "phenom",
+   "origin": "https://careers.godrejindustries.com",
+   "prefix": "/in/en"
+  }
  },
  {
   "name": "Lodha (Macrotech)",
@@ -1838,7 +1866,12 @@
  {
   "name": "eClerx",
   "careers": "https://eclerx.com/careers/",
-  "india_default": true
+  "india_default": true,
+  "ats": {
+   "platform": "oracle",
+   "host": "fa-ewji-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1"
+  }
  },
  {
   "name": "Fractal Analytics",
@@ -2013,7 +2046,12 @@
  {
   "name": "Varun Beverages",
   "careers": "https://www.varunbeverages.com/careers/",
-  "india_default": true
+  "india_default": true,
+  "ats": {
+   "platform": "oracle",
+   "host": "rjcorphcm-iacbiz.fa.ocs.oraclecloud.com",
+   "site": "CX_1"
+  }
  },
  {
   "name": "United Breweries",
@@ -2058,7 +2096,12 @@
  {
   "name": "Fortis Healthcare",
   "careers": "https://www.fortishealthcare.com/careers",
-  "india_default": true
+  "india_default": true,
+  "ats": {
+   "platform": "oracle",
+   "host": "fa-ermg-saasfaprod1.fa.ocs.oraclecloud.com",
+   "site": "CX_1"
+  }
  },
  {
   "name": "Max Healthcare",
@@ -2184,7 +2227,11 @@
  },
  {
   "name": "ZF",
-  "careers": "https://jobs.zf.com"
+  "careers": "https://jobs.zf.com",
+  "ats": {
+   "platform": "successfactors",
+   "origin": "https://jobs.zf.com"
+  }
  },
  {
   "name": "Schaeffler",

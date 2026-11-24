@@ -177,6 +177,9 @@ def identify(blob, url):
     m = re.search(r"https?://([\w.-]+\.oraclecloud\.com)/hcmUI/CandidateExperience/[a-z]{2}(?:-[A-Z]{2})?/sites/([\w-]+)", blob)
     if m:
         return {"platform": "oracle", "host": m.group(1), "site": m.group(2)}
+    if re.search(r"jibeapply\.com|jibecdn\.com", blob, re.I):
+        p = urlparse(url)
+        return {"platform": "jibe", "origin": f"{p.scheme}://{p.netloc}"}
     m = re.search(r"(?:careers|jobs|api)\.smartrecruiters\.com/(?:v1/companies/)?([A-Za-z0-9_-]{2,})", blob)
     if m and m.group(1).lower() not in ("static", "assets", "api", "careers", "jobs", "js", "css", "v1"):
         return {"platform": "smartrecruiters", "company": m.group(1)}
@@ -436,19 +439,63 @@ def a_ripplehire(c):
 
 
 def a_eightfold(c):
+    """Eightfold career sites. Older sites answer /api/apply/v2/jobs, newer ones /api/pcsx/search."""
     out, ids = [], set()
     dom = c.get("domain") or c.get("company_domain") or ""
+
+    def add(p):
+        pid = p.get("id") or p.get("positionId")
+        if not pid or pid in ids:
+            return
+        ids.add(pid)
+        loc = p.get("location") or ", ".join(p.get("locations") or []) or p.get("standardizedLocations") and ", ".join(p["standardizedLocations"]) or ""
+        url = p.get("canonicalPositionUrl") or p.get("positionUrl") or f"/careers/job/{pid}"
+        if url.startswith("/"):
+            url = f"https://{c['host']}{url}"
+        out.append({"id": pid, "title": p.get("name") or p.get("title"), "location": loc, "url": url,
+                    "posted": p.get("t_create") or p.get("postedTs")})
+
     for term in TERMS:
-        api = f"https://{c['host']}/api/apply/v2/jobs?domain={dom}&query={quote(term)}&location=India&start=0&num=50"
-        for p in get(api).json().get("positions", []):
-            if p.get("id") in ids:
+        got = False
+        for api in (f"https://{c['host']}/api/apply/v2/jobs?domain={dom}&query={quote(term)}&location=India&start=0&num=50",
+                    f"https://{c['host']}/api/pcsx/search?domain={dom}&query={quote(term)}&location=India&start=0"):
+            try:
+                r = get(api)
+                if r.status_code != 200 or not r.text.strip().startswith("{"):
+                    continue
+                j = r.json()
+                ps = j.get("positions") or (j.get("data") or {}).get("positions") or []
+                for p in ps:
+                    add(p)
+                got = True
+                break
+            except Exception:
                 continue
-            ids.add(p.get("id"))
-            out.append({"id": p.get("id"), "title": p.get("name"), "location": p.get("location"),
-                        "url": p.get("canonicalPositionUrl") or f"https://{c['host']}/careers/job/{p.get('id')}",
-                        "posted": p.get("t_create")})
+        if not got and term == TERMS[0]:
+            break  # neither address works for this site
     return out
 
+
+def a_jibe(c):
+    """Jibe (iCIMS) career sites: <origin>/api/jobs returns JSON."""
+    out, ids = [], set()
+    for page in range(1, 6):
+        r = get(f"{c['origin']}/api/jobs?location=India&page={page}&limit=100&sortBy=posted_date&descending=true")
+        if r.status_code != 200 or not r.text.strip().startswith("{"):
+            break
+        js = r.json().get("jobs") or []
+        for x in js:
+            d = x.get("data") or x
+            jid = d.get("req_id") or d.get("slug") or d.get("id")
+            if not jid or jid in ids:
+                continue
+            ids.add(jid)
+            loc = d.get("full_location") or d.get("location_name") or ", ".join(v for v in (d.get("city"), d.get("state"), d.get("country")) if v)
+            url = d.get("apply_url") or f"{c['origin']}/jobs/{d.get('slug') or jid}"
+            out.append({"id": jid, "title": d.get("title"), "location": loc, "url": url, "posted": (d.get("posted_date") or "")[:10] or None})
+        if len(js) < 100:
+            break
+    return out
 
 def a_phenom(c):
     out, ids = [], set()
@@ -604,7 +651,7 @@ def a_adzuna(c):
 
 ADAPTERS = {"workday": a_workday, "oracle": a_oracle, "smartrecruiters": a_smartrecruiters, "greenhouse": a_greenhouse,
             "lever": a_lever, "eightfold": a_eightfold, "phenom": a_phenom, "avature": a_avature,
-            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap, "adzuna": a_adzuna}
+            "successfactors": a_successfactors, "ripplehire": a_ripplehire, "keka": a_keka, "sitemap": a_sitemap, "adzuna": a_adzuna, "jibe": a_jibe}
 
 
 # ---------------- run ----------------
